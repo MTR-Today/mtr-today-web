@@ -1,0 +1,60 @@
+import { Box, Flex, Heading } from '@chakra-ui/react'
+import styled from '@emotion/styled'
+import React from 'react'
+
+type Props = {
+  nameEn: string
+  nameZh: string
+  color: string
+}
+
+export const LineName: React.FC<Props> = ({ nameEn, nameZh, color }) => {
+  return (
+    <Flex
+      bg={color}
+      w="130px"
+      flexShrink="0"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+    >
+      <StyledHeading mb="4" as="h4" size="lg">
+        {nameZh}
+      </StyledHeading>
+      <Heading as="h4" size="sm">
+        {nameEn}
+      </Heading>
+      <Flex
+        w="full"
+        mt="3"
+        position="relative"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Box
+          w="5"
+          h="5"
+          borderRadius="100%"
+          bg="white"
+          borderWidth="4px"
+          borderColor="gray.700"
+          position="relative"
+          zIndex="1"
+        ></Box>
+        <Box
+          width="full"
+          h="1"
+          bg="white"
+          position="absolute"
+          top="50%"
+          transform="translateY(-50%)"
+        ></Box>
+      </Flex>
+    </Flex>
+  )
+}
+
+const StyledHeading = styled(Heading)`
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+`

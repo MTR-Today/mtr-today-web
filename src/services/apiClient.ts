@@ -1,6 +1,6 @@
 import wretch from 'wretch'
 import QueryStringAddon from 'wretch/addons/queryString'
 
-export const apiClient = wretch(
-  'https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php'
-).addon(QueryStringAddon)
+export const apiClient = wretch('http://dev-api.mtr.today:3000/api/v1').addon(
+  QueryStringAddon
+)

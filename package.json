@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.4",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@tanstack/react-query": "^4.7.1",
+    "framer-motion": "^7.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "wretch": "^2.1.3"
