@@ -1,14 +1,15 @@
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import React from 'react'
+import React, { useContext } from 'react'
+import { lineContext } from '../providers/lineContext'
 
 type Props = {
   nameEn: string
   nameZh: string
-  color: string
 }
 
-export const LineName: React.FC<Props> = ({ nameEn, nameZh, color }) => {
+export const LineName: React.FC<Props> = ({ nameEn, nameZh }) => {
+  const { color } = useContext(lineContext)
   return (
     <Flex
       bg={color}
