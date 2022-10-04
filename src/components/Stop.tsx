@@ -7,9 +7,10 @@ import dayjs from 'dayjs'
 
 type Props = {
   stop: StopType
+  namePosition?: 'top' | 'bottom'
 }
 
-export const Stop: React.FC<Props> = ({ stop }) => {
+export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const now = useTime()
   const { stops, schedules } = useContext(lineContext)
 
@@ -33,9 +34,15 @@ export const Stop: React.FC<Props> = ({ stop }) => {
       flexDirection="column"
       position="relative"
     >
+      {namePosition === 'top' && (
+        <Box position="absolute" bottom="12" w="20" textAlign="center">
+          <Text fontSize="xs">{stops[stop]?.nameZh}</Text>
+          <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
+        </Box>
+      )}
       <Box position="absolute" bottom="6">
         <Text fontSize="xs">
-          {schedule?.down ? getDisplayTime(schedule.down?.[0]?.time) : '-'}
+          {schedule?.up ? getDisplayTime(schedule.up?.[0]?.time) : '-'}
         </Text>
       </Box>
       <Box
@@ -48,13 +55,15 @@ export const Stop: React.FC<Props> = ({ stop }) => {
       ></Box>
       <Box position="absolute" top="6">
         <Text fontSize="xs">
-          {schedule?.up ? getDisplayTime(schedule.up?.[0]?.time) : '-'}
+          {schedule?.down ? getDisplayTime(schedule.down?.[0]?.time) : '-'}
         </Text>
       </Box>
-      <Box position="absolute" top="12" w="20" textAlign="center">
-        <Text fontSize="xs">{stops[stop]?.nameZh}</Text>
-        <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
-      </Box>
+      {namePosition === 'bottom' && (
+        <Box position="absolute" top="12" w="20" textAlign="center">
+          <Text fontSize="xs">{stops[stop]?.nameZh}</Text>
+          <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
+        </Box>
+      )}
     </Flex>
   )
 }

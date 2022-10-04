@@ -14,11 +14,11 @@ export const Line = () => {
       color={color}
     >
       <Text fontSize="xs" position="absolute" bottom="4">
-        <ArrowRightIcon />
+        <ArrowLeftIcon />
       </Text>
       <Box h="6px" w="60px" flexShrink="0" bg={color}></Box>
       <Text fontSize="xs" position="absolute" top="4">
-        <ArrowLeftIcon />
+        <ArrowRightIcon />
       </Text>
     </Flex>
   )

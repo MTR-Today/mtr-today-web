@@ -6,8 +6,8 @@ export const Start = () => {
   const { color } = useContext(lineContext)
 
   return (
-    <Flex flexShrink="0" alignItems="center">
-      <Box h="20px" w="6px" bg={color}></Box>
+    <Flex flexShrink="0" alignItems="center" position="relative">
+      <Box h="20px" w="6px" bg={color} position="absolute" left="0"></Box>
       <Box h="6px" w="16px" bg={color}></Box>
     </Flex>
   )

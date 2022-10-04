@@ -26,4 +26,18 @@ export enum Stop {
   HEO = 'HEO', // Heng On
   MOS = 'MOS', // Ma On Shan
   WKS = 'WKS', // Wu Kai Sha
+  ADM = 'ADM', //  Admiralty
+  EXC = 'EXC', //  Exhibition Centre
+  MKK = 'MKK', //  Mong Kok East
+  KOT = 'KOT', //  Kowloon Tong
+  SHT = 'SHT', //  Sha Tin
+  FOT = 'FOT', //  Fo Tan
+  RAC = 'RAC', //  Racecourse
+  UNI = 'UNI', //  University
+  TAP = 'TAP', //  Tai Po Market
+  TWO = 'TWO', //  Tai Wo
+  FAN = 'FAN', //  Fanling
+  SHS = 'SHS', //  Sheung Shui
+  LOW = 'LOW', //  Lo Wu
+  LMC = 'LMC', //  Lok Ma Chau
 }

@@ -37,7 +37,7 @@ export const TML: React.FC = () => {
     <lineContext.Provider
       value={{ ...lineConfig, stops: lineStopConfig, schedules }}
     >
-      <Flex w="full" height="210" bg="blackAlpha.500">
+      <Flex w="full" height="250" bg="blackAlpha.500">
         <LineName />
         <Flex
           w="full"
