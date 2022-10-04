@@ -4,6 +4,7 @@ import { Stop as StopType } from '../constants/stop'
 import { useTime } from '../hooks/useTime'
 import { lineContext } from '../providers/lineContext'
 import dayjs from 'dayjs'
+import styled from '@emotion/styled'
 
 type Props = {
   stop: StopType
@@ -55,9 +56,9 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
             >
               {schedule.up[0].plat}
             </Box>
-            <Box w="100%" textAlign="right">
+            <Clock w="100%" textAlign="right">
               {getDisplayTime(schedule.up[0].time)}
-            </Box>
+            </Clock>
           </Flex>
         ) : (
           <Text fontSize="xs">-</Text>
@@ -86,9 +87,9 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
             >
               {schedule.down[0].plat}
             </Box>
-            <Box w="100%" textAlign="right">
+            <Clock w="100%" textAlign="right">
               {getDisplayTime(schedule.down[0].time)}
-            </Box>
+            </Clock>
           </Flex>
         ) : (
           <Text fontSize="xs">-</Text>
@@ -103,3 +104,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
     </Flex>
   )
 }
+
+const Clock = styled(Box)`
+  font-variant-numeric: tabular-nums;
+`
