@@ -17,7 +17,7 @@ export const End = () => {
         上行
       </Text>
       <Box h="20px" w="6px" bg={color} position="absolute" right="0"></Box>
-      <Box h="6px" w="40px" bg={color}></Box>
+      <Box h="6px" w="48px" bg={color}></Box>
       <Text fontSize="xs" position="absolute" top="4" color={color} right="0">
         下行
       </Text>

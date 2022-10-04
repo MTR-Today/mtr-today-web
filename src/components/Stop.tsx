@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, color, Flex, Text } from '@chakra-ui/react'
 import React, { useCallback, useContext } from 'react'
 import { Stop as StopType } from '../constants/stop'
 import { useTime } from '../hooks/useTime'
@@ -12,7 +12,7 @@ type Props = {
 
 export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const now = useTime()
-  const { stops, schedules } = useContext(lineContext)
+  const { stops, schedules, color } = useContext(lineContext)
 
   const { schedule } = schedules[stop] || {}
 
@@ -40,10 +40,28 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
           <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
         </Box>
       )}
-      <Box position="absolute" bottom="6">
-        <Text fontSize="xs">
-          {schedule?.up?.[0] ? getDisplayTime(schedule.up[0]?.time) : '-'}
-        </Text>
+      <Box position="absolute" bottom="6" w="56px" textAlign="center">
+        {schedule?.up?.[0] ? (
+          <Flex fontSize="xs">
+            <Box
+              fontSize="xs"
+              bg={color}
+              display="inline-block"
+              w="4"
+              h="4"
+              textAlign="center"
+              borderRadius="100%"
+              flexShrink="0"
+            >
+              {schedule.up[0].plat}
+            </Box>
+            <Box w="100%" textAlign="right">
+              {getDisplayTime(schedule.up[0].time)}
+            </Box>
+          </Flex>
+        ) : (
+          <Text fontSize="xs">-</Text>
+        )}
       </Box>
       <Box
         w="18px"
@@ -53,10 +71,28 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
         borderColor="white"
         borderRadius="100%"
       ></Box>
-      <Box position="absolute" top="6">
-        <Text fontSize="xs">
-          {schedule?.down?.[0] ? getDisplayTime(schedule.down[0]?.time) : '-'}
-        </Text>
+      <Box position="absolute" top="6" w="56px" textAlign="center">
+        {schedule?.down?.[0] ? (
+          <Flex fontSize="xs">
+            <Box
+              fontSize="xs"
+              bg={color}
+              display="inline-block"
+              w="4"
+              h="4"
+              textAlign="center"
+              borderRadius="100%"
+              flexShrink="0"
+            >
+              {schedule.down[0].plat}
+            </Box>
+            <Box w="100%" textAlign="right">
+              {getDisplayTime(schedule.down[0].time)}
+            </Box>
+          </Flex>
+        ) : (
+          <Text fontSize="xs">-</Text>
+        )}
       </Box>
       {namePosition === 'bottom' && (
         <Box position="absolute" top="12" w="20" textAlign="center">
