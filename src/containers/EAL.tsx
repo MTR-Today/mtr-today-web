@@ -41,7 +41,13 @@ export const EAL: React.FC = () => {
     >
       <Flex w="full" height="250" bg="blackAlpha.500">
         <LineName />
-        <Flex w="full" verticalAlign="center" alignItems="center" px="20">
+        <Flex
+          w="full"
+          verticalAlign="center"
+          alignItems="center"
+          px="20"
+          overflow="auto"
+        >
           <Box>
             <Flex verticalAlign="center" alignItems="center" pb="56px">
               <Start />
