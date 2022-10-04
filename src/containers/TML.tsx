@@ -1,5 +1,5 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
-import styled from '@emotion/styled'
+import { Flex } from '@chakra-ui/react'
+import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { End } from '../components/End'
 import { Line } from '../components/Line'
@@ -7,12 +7,40 @@ import { LineName } from '../components/LineName'
 import { Start } from '../components/Start'
 import { Stop } from '../components/Stop'
 import { lineContext } from '../providers/lineContext'
+import { getLineSchedules } from '../services/getLineSchedules'
+import { Line as LineType } from '../constants/line'
+import { getLineConfig } from '../services/getLineConfig'
+import { getLineStopConfig } from '../services/getLineStopConfig'
+import { Stop as StopType } from '../constants/stop'
+
+const line = LineType.TML
 
 export const TML: React.FC = () => {
+  const { data: lineConfig = {} } = useQuery(['line-config', line], () =>
+    getLineConfig({ line })
+  )
+
+  const { data: lineStopConfig = {} } = useQuery(
+    ['line-stop-config', line],
+    () => getLineStopConfig({ line })
+  )
+
+  const { data: schedules = {} } = useQuery(
+    ['line-schedules', line],
+    () => getLineSchedules({ line }),
+    {
+      refetchInterval: 5000,
+    }
+  )
+
+  console.log(schedules)
+
   return (
-    <lineContext.Provider value={{ color: '#5d4037' }}>
-      <Flex w="full" height="200" bg="blackAlpha.500">
-        <LineName nameEn="Tuen Ma Line" nameZh="屯碼線" />
+    <lineContext.Provider
+      value={{ ...lineConfig, stops: lineStopConfig, schedules }}
+    >
+      <Flex w="full" height="210" bg="blackAlpha.500">
+        <LineName />
         <Flex
           w="full"
           verticalAlign="center"
@@ -21,59 +49,59 @@ export const TML: React.FC = () => {
           overflow="auto"
         >
           <Start />
-          <Stop nameEn="Tuen Mun" nameZh="屯門" />
+          <Stop stop={StopType.TUM} />
           <Line />
-          <Stop nameEn="Siu Hong" nameZh="兆康" />
+          <Stop stop={StopType.SIH} />
           <Line />
-          <Stop nameEn="Tin Shui Wai" nameZh="天水圍" />
+          <Stop stop={StopType.TIS} />
           <Line />
-          <Stop nameEn="Long Ping" nameZh="朗屏" />
+          <Stop stop={StopType.LOP} />
           <Line />
-          <Stop nameEn="Yuen Long" nameZh="元朗" />
+          <Stop stop={StopType.YUL} />
           <Line />
-          <Stop nameEn="Kam Sheung Road" nameZh="錦上路" />
+          <Stop stop={StopType.KSR} />
           <Line />
-          <Stop nameEn="Tsuen Wan West" nameZh="荃灣西" />
+          <Stop stop={StopType.TWW} />
           <Line />
-          <Stop nameEn="Mei Foo" nameZh="美孚" />
+          <Stop stop={StopType.MEF} />
           <Line />
-          <Stop nameEn="Nam Cheong" nameZh="南昌" />
+          <Stop stop={StopType.NAC} />
           <Line />
-          <Stop nameEn="Austin" nameZh="柯士甸" />
+          <Stop stop={StopType.AUS} />
           <Line />
-          <Stop nameEn="East Tsim Sha Tsui" nameZh="尖東" />
+          <Stop stop={StopType.ETS} />
           <Line />
-          <Stop nameEn="Hung Hom" nameZh="紅磡" />
+          <Stop stop={StopType.HUH} />
           <Line />
-          <Stop nameEn="Ho Man Tin" nameZh="何文田" />
+          <Stop stop={StopType.HOM} />
           <Line />
-          <Stop nameEn="To Kwa Wan" nameZh="土瓜灣" />
+          <Stop stop={StopType.TKW} />
           <Line />
-          <Stop nameEn="Sung Wong Toi" nameZh="宋皇臺" />
+          <Stop stop={StopType.SUW} />
           <Line />
-          <Stop nameEn="Kai Tak" nameZh="啟德" />
+          <Stop stop={StopType.KAT} />
           <Line />
-          <Stop nameEn="Diamond Hill" nameZh="鑽石山" />
+          <Stop stop={StopType.DIH} />
           <Line />
-          <Stop nameEn="Hin Keng" nameZh="顯徑" />
+          <Stop stop={StopType.HIK} />
           <Line />
-          <Stop nameEn="Tai Wai" nameZh="大圍" />
+          <Stop stop={StopType.TAW} />
           <Line />
-          <Stop nameEn="Che Kung Temple" nameZh="車公廟" />
+          <Stop stop={StopType.CKT} />
           <Line />
-          <Stop nameEn="Sha Tin Wai" nameZh="沙田圍" />
+          <Stop stop={StopType.STW} />
           <Line />
-          <Stop nameEn="City One" nameZh="第一城" />
+          <Stop stop={StopType.CIO} />
           <Line />
-          <Stop nameEn="Shek Mun" nameZh="石門" />
+          <Stop stop={StopType.SHM} />
           <Line />
-          <Stop nameEn="Tai Shui Hang" nameZh="大水坑" />
+          <Stop stop={StopType.TSH} />
           <Line />
-          <Stop nameEn="Heng On" nameZh="恆安" />
+          <Stop stop={StopType.HEO} />
           <Line />
-          <Stop nameEn="Ma On Shan" nameZh="馬鞍山" />
+          <Stop stop={StopType.MOS} />
           <Line />
-          <Stop nameEn="Wu Kai Sha" nameZh="烏溪沙" />
+          <Stop stop={StopType.WKS} />
           <End />
         </Flex>
       </Flex>

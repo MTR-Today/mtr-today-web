@@ -13,6 +13,8 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@tanstack/react-query": "^4.7.1",
+    "constate": "^3.3.2",
+    "dayjs": "^1.11.5",
     "framer-motion": "^7.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

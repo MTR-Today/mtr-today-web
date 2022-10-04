@@ -1,0 +1,29 @@
+export enum Stop {
+  TUM = 'TUM', // Tuen Mun
+  SIH = 'SIH', // Siu Hong
+  TIS = 'TIS', // Tin Shui Wai
+  LOP = 'LOP', // Long Ping
+  YUL = 'YUL', // Yuen Long
+  KSR = 'KSR', // Kam Sheung Road
+  TWW = 'TWW', // Tsuen Wan West
+  MEF = 'MEF', // Mei Foo
+  NAC = 'NAC', // Nam Cheong
+  AUS = 'AUS', // Austin
+  ETS = 'ETS', // East Tsim Sha Tsui
+  HUH = 'HUH', // Hung Hom
+  HOM = 'HOM', // Ho Man Tin
+  TKW = 'TKW', // To Kwa Wan
+  SUW = 'SUW', // Sung Wong Toi
+  KAT = 'KAT', // Kai Tak
+  DIH = 'DIH', // Diamond Hill
+  HIK = 'HIK', // Hin Keng
+  TAW = 'TAW', // Tai Wai
+  CKT = 'CKT', // Che Kung Temple
+  STW = 'STW', // Sha Tin Wai
+  CIO = 'CIO', // City One
+  SHM = 'SHM', // Shek Mun
+  TSH = 'TSH', // Tai Shui Hang
+  HEO = 'HEO', // Heng On
+  MOS = 'MOS', // Ma On Shan
+  WKS = 'WKS', // Wu Kai Sha
+}

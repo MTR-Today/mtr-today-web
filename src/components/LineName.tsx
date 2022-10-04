@@ -3,26 +3,21 @@ import styled from '@emotion/styled'
 import React, { useContext } from 'react'
 import { lineContext } from '../providers/lineContext'
 
-type Props = {
-  nameEn: string
-  nameZh: string
-}
-
-export const LineName: React.FC<Props> = ({ nameEn, nameZh }) => {
-  const { color } = useContext(lineContext)
+export const LineName: React.FC = () => {
+  const { color, nameEn, nameZh } = useContext(lineContext)
   return (
     <Flex
       bg={color}
-      w="130px"
+      w="110px"
       flexShrink="0"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
     >
-      <StyledHeading mb="4" as="h4" size="lg">
+      <StyledHeading mb="4" as="h4" size="md">
         {nameZh}
       </StyledHeading>
-      <Heading as="h4" size="sm">
+      <Heading as="h4" size="xs">
         {nameEn}
       </Heading>
       <Flex

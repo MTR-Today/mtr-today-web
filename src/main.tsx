@@ -3,14 +3,17 @@ import {
   ColorModeScript,
   DarkMode,
   extendTheme,
-  ThemeProvider,
 } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App'
+import { UseTimeProvider } from './hooks/useTime'
+import './utils/dayjs'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { cacheTime: 0 } },
+})
 
 const config = {
   initialColorMode: 'dark',
@@ -29,7 +32,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <DarkMode>
-          <App />
+          <UseTimeProvider>
+            <App />
+          </UseTimeProvider>
         </DarkMode>
       </ChakraProvider>
     </QueryClientProvider>
