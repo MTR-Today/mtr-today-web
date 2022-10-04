@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { Stop as StopType } from '../constants/stop'
 import { useTime } from '../hooks/useTime'
 import { lineContext } from '../providers/lineContext'
@@ -10,10 +10,21 @@ type Props = {
 }
 
 export const Stop: React.FC<Props> = ({ stop }) => {
-  const time = useTime()
+  const now = useTime()
   const { stops, schedules } = useContext(lineContext)
 
   const { schedule } = schedules[stop] || {}
+
+  const getDisplayTime = useCallback(
+    (time: string) => {
+      const timeDayJs = dayjs(time)
+
+      return timeDayJs.isAfter(now)
+        ? dayjs.duration(dayjs(timeDayJs).diff(now)).format('mm:ss')
+        : dayjs.duration(dayjs(now).diff(timeDayJs)).format('-mm:ss')
+    },
+    [now]
+  )
 
   return (
     <Flex
@@ -24,11 +35,7 @@ export const Stop: React.FC<Props> = ({ stop }) => {
     >
       <Box position="absolute" bottom="6">
         <Text fontSize="xs">
-          {schedule?.down
-            ? dayjs
-                .duration(dayjs(schedule.down?.[0]?.time).diff(time))
-                .format('mm:ss')
-            : null}
+          {schedule?.down ? getDisplayTime(schedule.down?.[0]?.time) : '-'}
         </Text>
       </Box>
       <Box
@@ -41,11 +48,7 @@ export const Stop: React.FC<Props> = ({ stop }) => {
       ></Box>
       <Box position="absolute" top="6">
         <Text fontSize="xs">
-          {schedule?.up
-            ? dayjs
-                .duration(dayjs(schedule.up?.[0]?.time).diff(time))
-                .format('mm:ss')
-            : null}
+          {schedule?.up ? getDisplayTime(schedule.up?.[0]?.time) : '-'}
         </Text>
       </Box>
       <Box position="absolute" top="12" w="20" textAlign="center">

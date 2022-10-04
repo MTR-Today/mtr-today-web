@@ -1,9 +1,25 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { lineContext } from '../providers/lineContext'
+import { ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons'
 
 export const Line = () => {
   const { color } = useContext(lineContext)
 
-  return <Box h="6px" w="60px" flexShrink="0" bg={color}></Box>
+  return (
+    <Flex
+      position="relative"
+      flexDirection="column"
+      alignItems="center"
+      color={color}
+    >
+      <Text fontSize="xs" position="absolute" bottom="4">
+        <ArrowRightIcon />
+      </Text>
+      <Box h="6px" w="60px" flexShrink="0" bg={color}></Box>
+      <Text fontSize="xs" position="absolute" top="4">
+        <ArrowLeftIcon />
+      </Text>
+    </Flex>
+  )
 }

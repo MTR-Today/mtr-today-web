@@ -29,11 +29,9 @@ export const TML: React.FC = () => {
     ['line-schedules', line],
     () => getLineSchedules({ line }),
     {
-      refetchInterval: 5000,
+      refetchInterval: 2000,
     }
   )
-
-  console.log(schedules)
 
   return (
     <lineContext.Provider
@@ -47,6 +45,7 @@ export const TML: React.FC = () => {
           alignItems="center"
           px="20"
           overflow="auto"
+          paddingBottom="8"
         >
           <Start />
           <Stop stop={StopType.TUM} />
