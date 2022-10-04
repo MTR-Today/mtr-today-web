@@ -42,7 +42,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
       )}
       <Box position="absolute" bottom="6">
         <Text fontSize="xs">
-          {schedule?.up ? getDisplayTime(schedule.up?.[0]?.time) : '-'}
+          {schedule?.up?.[0] ? getDisplayTime(schedule.up[0]?.time) : '-'}
         </Text>
       </Box>
       <Box
@@ -55,7 +55,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
       ></Box>
       <Box position="absolute" top="6">
         <Text fontSize="xs">
-          {schedule?.down ? getDisplayTime(schedule.down?.[0]?.time) : '-'}
+          {schedule?.down?.[0] ? getDisplayTime(schedule.down[0]?.time) : '-'}
         </Text>
       </Box>
       {namePosition === 'bottom' && (
