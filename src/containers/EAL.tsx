@@ -4,41 +4,16 @@ import { End } from '../components/End'
 import { LineName } from '../components/LineName'
 import { Start } from '../components/Start'
 import { Stop } from '../components/Stop'
-import { lineContext } from '../providers/lineContext'
 import { Line as LineType } from '../constants/line'
-import { getLineConfig } from '../services/getLineConfig'
-import { getLineStopConfig } from '../services/getLineStopConfig'
-import { getLineSchedules } from '../services/getLineSchedules'
-import { useQuery } from '@tanstack/react-query'
 import { Stop as StopType } from '../constants/stop'
 import { Line } from '../components/Line'
 import { Joint } from '../components/Joint'
 import { Split } from '../components/Split'
-
-const line = LineType.EAL
+import { UseLineProvider } from '../hooks/useLine'
 
 export const EAL: React.FC = () => {
-  const { data: lineConfig = {} } = useQuery(['line-config', line], () =>
-    getLineConfig({ line })
-  )
-
-  const { data: lineStopConfig = {} } = useQuery(
-    ['line-stop-config', line],
-    () => getLineStopConfig({ line })
-  )
-
-  const { data: schedules = {} } = useQuery(
-    ['line-schedules', line],
-    () => getLineSchedules({ line }),
-    {
-      refetchInterval: 2000,
-    }
-  )
-
   return (
-    <lineContext.Provider
-      value={{ ...lineConfig, stops: lineStopConfig, schedules }}
-    >
+    <UseLineProvider line={LineType.EAL}>
       <Flex w="full" height="250" bg="blackAlpha.500">
         <LineName />
         <Flex
@@ -100,6 +75,6 @@ export const EAL: React.FC = () => {
           <End />
         </Flex>
       </Flex>
-    </lineContext.Provider>
+    </UseLineProvider>
   )
 }

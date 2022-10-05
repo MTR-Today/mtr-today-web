@@ -1,42 +1,17 @@
 import { Flex } from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { End } from '../components/End'
 import { Line } from '../components/Line'
 import { LineName } from '../components/LineName'
 import { Start } from '../components/Start'
 import { Stop } from '../components/Stop'
-import { lineContext } from '../providers/lineContext'
-import { getLineSchedules } from '../services/getLineSchedules'
 import { Line as LineType } from '../constants/line'
-import { getLineConfig } from '../services/getLineConfig'
-import { getLineStopConfig } from '../services/getLineStopConfig'
 import { Stop as StopType } from '../constants/stop'
-
-const line = LineType.TML
+import { UseLineProvider } from '../hooks/useLine'
 
 export const TML: React.FC = () => {
-  const { data: lineConfig = {} } = useQuery(['line-config', line], () =>
-    getLineConfig({ line })
-  )
-
-  const { data: lineStopConfig = {} } = useQuery(
-    ['line-stop-config', line],
-    () => getLineStopConfig({ line })
-  )
-
-  const { data: schedules = {} } = useQuery(
-    ['line-schedules', line],
-    () => getLineSchedules({ line }),
-    {
-      refetchInterval: 2000,
-    }
-  )
-
   return (
-    <lineContext.Provider
-      value={{ ...lineConfig, stops: lineStopConfig, schedules }}
-    >
+    <UseLineProvider line={LineType.TML}>
       <Flex w="full" height="250" bg="blackAlpha.500">
         <LineName />
         <Flex
@@ -45,7 +20,6 @@ export const TML: React.FC = () => {
           alignItems="center"
           px="20"
           overflow="auto"
-          paddingBottom="8"
         >
           <Start />
           <Stop stop={StopType.TUM} />
@@ -104,6 +78,6 @@ export const TML: React.FC = () => {
           <End />
         </Flex>
       </Flex>
-    </lineContext.Provider>
+    </UseLineProvider>
   )
 }

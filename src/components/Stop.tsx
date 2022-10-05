@@ -2,9 +2,9 @@ import { Box, color, Flex, Text } from '@chakra-ui/react'
 import React, { useCallback, useContext } from 'react'
 import { Stop as StopType } from '../constants/stop'
 import { useTime } from '../hooks/useTime'
-import { lineContext } from '../providers/lineContext'
 import dayjs from 'dayjs'
 import styled from '@emotion/styled'
+import { useLine } from '../hooks/useLine'
 
 type Props = {
   stop: StopType
@@ -13,7 +13,7 @@ type Props = {
 
 export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const now = useTime()
-  const { stops, schedules, color } = useContext(lineContext)
+  const { stops, schedules, color } = useLine()
 
   const { schedule } = schedules[stop] || {}
 

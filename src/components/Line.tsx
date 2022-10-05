@@ -1,10 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import React, { useContext } from 'react'
-import { lineContext } from '../providers/lineContext'
+import React from 'react'
 import { ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons'
+import { useLine } from '../hooks/useLine'
 
 export const Line = () => {
-  const { color } = useContext(lineContext)
+  const { color } = useLine()
 
   return (
     <Flex

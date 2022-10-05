@@ -1,9 +1,9 @@
 import { Box, Flex } from '@chakra-ui/react'
-import React, { useContext } from 'react'
-import { lineContext } from '../providers/lineContext'
+import React from 'react'
+import { useLine } from '../hooks/useLine'
 
 export const Joint = () => {
-  const { color } = useContext(lineContext)
+  const { color } = useLine()
 
   return (
     <Flex flexShrink="0" alignItems="center">
