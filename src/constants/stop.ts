@@ -40,4 +40,18 @@ export enum Stop {
   SHS = 'SHS', //  Sheung Shui
   LOW = 'LOW', //  Lo Wu
   LMC = 'LMC', //  Lok Ma Chau
+  TSW = 'TSW', // Tsuen Wan
+  TWH = 'TWH', // Tai Wo Hau
+  KWH = 'KWH', // Kwai Hing
+  KWF = 'KWF', // Kwai Fong
+  LAK = 'LAK', // Lai King
+  LCK = 'LCK', // Lai Chi Kok
+  CSW = 'CSW', // Cheung Sha Wan
+  SSP = 'SSP', // Sham Shui Po
+  PRE = 'PRE', // Prince Edward
+  MOK = 'MOK', // Mong Kok
+  YMT = 'YMT', // Yau Ma Tei
+  JOR = 'JOR', // Jordan
+  TST = 'TST', // Tsim Sha Tsui
+  CEN = 'CEN', // Central
 }

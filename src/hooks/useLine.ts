@@ -9,8 +9,10 @@ import { useQuery } from '@tanstack/react-query'
 export const [UseLineProvider, useLine] = constate(
   ({
     line,
+    disabled = false,
   }: {
     line: Line
+    disabled?: boolean
   }): Partial<LineConfig> & {
     stops: Partial<LineStopConfig>
     schedules: Partial<LineSchedule>
@@ -29,6 +31,7 @@ export const [UseLineProvider, useLine] = constate(
       () => getLineSchedules({ line }),
       {
         refetchInterval: 2000,
+        enabled: !disabled,
       }
     )
 
