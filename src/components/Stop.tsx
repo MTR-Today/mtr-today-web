@@ -22,8 +22,14 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
       const timeDayJs = dayjs(time)
 
       return timeDayJs.isAfter(now)
-        ? dayjs.duration(dayjs(timeDayJs).diff(now)).format('H[:]mm:ss')
-        : dayjs.duration(dayjs(now).diff(timeDayJs)).format('-H[:]mm:ss')
+        ? dayjs
+            .duration(dayjs(timeDayJs).diff(now))
+            .format('H[:]mm:ss')
+            .replace(/^0:/, '')
+        : dayjs
+            .duration(dayjs(now).diff(timeDayJs))
+            .format('-H[:]mm:ss')
+            .replace(/^-0:/, '')
     },
     [now]
   )
