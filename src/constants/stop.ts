@@ -60,4 +60,12 @@ export enum Stop {
   TSY = 'TSY', // Tsing Yi
   SUN = 'SUN', // Sunny Bay
   TUC = 'TUC', // Tung Chung
+  NOP = 'NOP', // North Point
+  QUB = 'QUB', // Quarry Bay
+  YAT = 'YAT', // Yau Tong
+  TIK = 'TIK', // Tiu Keng Leng
+  TKO = 'TKO', // Tseung Kwan O
+  LHP = 'LHP', // LOHAS Park
+  HAH = 'HAH', // Hang Hau
+  POA = 'POA', // Po Lam
 }

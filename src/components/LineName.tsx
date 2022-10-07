@@ -18,7 +18,7 @@ export const LineName: React.FC = () => {
       <StyledHeading mb="4" as="h4" size="md">
         {nameZh}
       </StyledHeading>
-      <Heading as="h4" size="xs">
+      <Heading as="h4" size="xs" textAlign="center">
         {nameEn}
       </Heading>
       <Flex

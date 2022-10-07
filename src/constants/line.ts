@@ -3,4 +3,5 @@ export enum Line {
   EAL = 'EAL',
   TWL = 'TWL',
   TCL = 'TCL',
+  TKL = 'TKL',
 }
