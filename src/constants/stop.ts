@@ -79,4 +79,5 @@ export enum Stop {
   LOF = 'LOF', // Lok Fu
   SKM = 'SKM', // Shek Kip Mei
   WHA = 'WHA', // Whampo
+  DIS = 'DIS', // Disneyland Resort
 }

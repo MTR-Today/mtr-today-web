@@ -1,4 +1,5 @@
 import { AEL } from './containers/AEL'
+import { DRL } from './containers/DRL'
 import { EAL } from './containers/EAL'
 import { Header } from './containers/Header'
 import { KTL } from './containers/KTL'
@@ -16,8 +17,9 @@ export const App = () => {
       <TCL />
       <TKL />
       <AEL />
-      <KTL />
+      <KTL disabled />
       <TWL disabled />
+      <DRL disabled />
     </>
   )
 }
