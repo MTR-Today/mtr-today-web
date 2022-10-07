@@ -68,4 +68,6 @@ export enum Stop {
   LHP = 'LHP', // LOHAS Park
   HAH = 'HAH', // Hang Hau
   POA = 'POA', // Po Lam
+  AIR = 'AIR', // Airport
+  AWE = 'AWE', // AsiaWorld Expo
 }
