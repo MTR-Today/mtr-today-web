@@ -9,7 +9,7 @@ export const LineName: React.FC = () => {
   return (
     <Flex
       bg={color}
-      w="110px"
+      w="120px"
       flexShrink="0"
       alignItems="center"
       justifyContent="center"

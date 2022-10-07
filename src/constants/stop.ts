@@ -54,4 +54,10 @@ export enum Stop {
   JOR = 'JOR', // Jordan
   TST = 'TST', // Tsim Sha Tsui
   CEN = 'CEN', // Central
+  HOK = 'HOK', // Hong Kong
+  KOW = 'KOW', // Kowloon
+  OLY = 'OLY', // Olympic
+  TSY = 'TSY', // Tsing Yi
+  SUN = 'SUN', // Sunny Bay
+  TUC = 'TUC', // Tung Chung
 }
