@@ -4,6 +4,7 @@ import { EAL } from './containers/EAL'
 import { Header } from './containers/Header'
 import { ISL } from './containers/ISL'
 import { KTL } from './containers/KTL'
+import { SIL } from './containers/SIL'
 import { TCL } from './containers/TCL'
 import { TKL } from './containers/TKL'
 import { TML } from './containers/TML'
@@ -21,6 +22,7 @@ export const App = () => {
       <KTL disabled />
       <TWL disabled />
       <ISL disabled />
+      <SIL disabled />
       <DRL disabled />
     </>
   )

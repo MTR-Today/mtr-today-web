@@ -93,4 +93,8 @@ export enum Stop {
   SYP = 'SYP', // Sai Ying Pun
   HKU = 'HKU', // HKU
   KET = 'KET', // Kennedy Town
+  OCP = 'OCP', // Ocean Park
+  WCH = 'WCH', // Wong Chuk Hang
+  LET = 'LET', // Lei Tung
+  SOH = 'SOH', // South Horizons
 }

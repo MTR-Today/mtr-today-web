@@ -8,4 +8,5 @@ export enum Line {
   KTL = 'KTL',
   DRL = 'DRL',
   ISL = 'ISL',
+  SIL = 'SIL',
 }
