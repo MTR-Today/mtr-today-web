@@ -1,10 +1,12 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Button, Flex, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React from 'react'
 import { useTime } from '../hooks/useTime'
 
 export const Header = () => {
   const now = useTime()
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Flex
       as="header"
@@ -15,13 +17,18 @@ export const Header = () => {
       h="12"
       alignItems="center"
     >
-      <Box w="full"></Box>
+      <Box w="full">
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </Box>
       <Clock
         flexShrink="0"
         bg="blackAlpha.900"
         h="full"
         alignItems="center"
         px="4"
+        color="white"
       >
         {now.format('YYYY-MM-DD HH:mm:ss')}
       </Clock>

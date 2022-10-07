@@ -14,6 +14,7 @@ export const LineName: React.FC = () => {
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
+      color="white"
     >
       <StyledHeading mb="4" as="h4" size="md">
         {nameZh}

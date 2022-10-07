@@ -14,7 +14,7 @@ import { UseLineProvider } from '../hooks/useLine'
 export const EAL: React.FC = () => {
   return (
     <UseLineProvider line={LineType.EAL}>
-      <Flex w="full" height="250" bg="blackAlpha.500">
+      <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
           w="full"

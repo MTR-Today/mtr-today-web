@@ -1,4 +1,4 @@
-import { Box, color, Flex, Text } from '@chakra-ui/react'
+import { Box, color, Flex, Text, useColorMode } from '@chakra-ui/react'
 import React, { useCallback, useContext } from 'react'
 import { Stop as StopType } from '../constants/stop'
 import { useTime } from '../hooks/useTime'
@@ -13,6 +13,7 @@ type Props = {
 
 export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const now = useTime()
+  const { colorMode } = useColorMode()
   const { stops, schedules, color } = useLine()
 
   const { schedule } = schedules[stop] || {}
@@ -59,6 +60,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
               textAlign="center"
               borderRadius="100%"
               flexShrink="0"
+              color="white"
             >
               {schedule.up[0].plat}
             </Box>
@@ -73,9 +75,9 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
       <Box
         w="18px"
         h="18px"
-        bg="blackAlpha.500"
+        bg="blackAlpha.100"
         borderWidth="3px"
-        borderColor="white"
+        borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
         borderRadius="100%"
       ></Box>
       <Box position="absolute" top="6" w="56px" textAlign="center">
@@ -90,6 +92,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
               textAlign="center"
               borderRadius="100%"
               flexShrink="0"
+              color="white"
             >
               {schedule.down[0].plat}
             </Box>

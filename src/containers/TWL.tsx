@@ -13,7 +13,7 @@ import { UseLineProvider } from '../hooks/useLine'
 export const TWL: React.FC<{ disabled?: boolean }> = ({ disabled }) => {
   return (
     <UseLineProvider line={LineType.TWL} disabled={disabled}>
-      <Flex w="full" height="250" bg="blackAlpha.500">
+      <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
           w="full"

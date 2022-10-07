@@ -16,14 +16,11 @@ const queryClient = new QueryClient({
 })
 
 const config = {
-  initialColorMode: 'dark',
+  initialColorMode: 'auto',
   useSystemColorMode: false,
 }
 
 const theme = extendTheme({
-  global: {
-    bg: 'black.900',
-  },
   config,
 })
 
@@ -31,13 +28,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <DarkMode>
-          <UseTimeProvider>
-            <App />
-          </UseTimeProvider>
-        </DarkMode>
+        <UseTimeProvider>
+          <App />
+        </UseTimeProvider>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       </ChakraProvider>
     </QueryClientProvider>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
   </React.StrictMode>
 )
