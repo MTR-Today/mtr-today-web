@@ -80,4 +80,17 @@ export enum Stop {
   SKM = 'SKM', // Shek Kip Mei
   WHA = 'WHA', // Whampo
   DIS = 'DIS', // Disneyland Resort
+  CHW = 'CHW', // Chai Wan
+  HFC = 'HFC', // Heng Fa Chuen
+  SKW = 'SKW', // Shau Kei Wan
+  SWH = 'SWH', // Sai Wan Ho
+  TAK = 'TAK', // Tai Koo
+  FOH = 'FOH', // Fortress Hill
+  TIH = 'TIH', // Tin Hau
+  CAB = 'CAB', // Causeway Bay
+  WAC = 'WAC', // Wan Chai
+  SHW = 'SHW', // Sheung Wan
+  SYP = 'SYP', // Sai Ying Pun
+  HKU = 'HKU', // HKU
+  KET = 'KET', // Kennedy Town
 }
