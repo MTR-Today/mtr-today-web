@@ -5,4 +5,5 @@ export enum Line {
   TCL = 'TCL',
   TKL = 'TKL',
   AEL = 'AEL',
+  KTL = 'KTL',
 }

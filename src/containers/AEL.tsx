@@ -31,7 +31,6 @@ export const AEL: React.FC = () => {
           <Stop stop={StopType.AIR} />
           <Line />
           <Stop stop={StopType.AWE} />
-          <Line />
           <End />
         </Flex>
       </Flex>

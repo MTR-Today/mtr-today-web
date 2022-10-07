@@ -70,4 +70,13 @@ export enum Stop {
   POA = 'POA', // Po Lam
   AIR = 'AIR', // Airport
   AWE = 'AWE', // AsiaWorld Expo
+  LAT = 'LAT', // Lam Tin
+  KWT = 'KWT', // Kwun Tong
+  NTK = 'NTK', // Ngau Tau Kok
+  KOB = 'KOB', // Kowloon Bay
+  CHH = 'CHH', // Choi Hung
+  WTS = 'WTS', // Wong Tai Sin
+  LOF = 'LOF', // Lok Fu
+  SKM = 'SKM', // Shek Kip Mei
+  WHA = 'WHA', // Whampo
 }
