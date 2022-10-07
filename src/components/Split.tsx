@@ -8,7 +8,7 @@ export const Split = () => {
   return (
     <Flex flexShrink="0" alignItems="center">
       <Box h="6px" w="32px" bg={color}></Box>
-      <Box h="80px" w="6px" bg={color}></Box>
+      <Box h="80px" w="6px" bg={color} borderLeftRadius="sm"></Box>
     </Flex>
   )
 }
