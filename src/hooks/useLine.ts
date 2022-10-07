@@ -34,7 +34,7 @@ export const [UseLineProvider, useLine] = constate(
       ['line-schedules', line],
       () => getLineSchedules({ line }),
       {
-        refetchInterval: 2000,
+        refetchInterval: 5000,
         enabled: !disabled,
       }
     )
