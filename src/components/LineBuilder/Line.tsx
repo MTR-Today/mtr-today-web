@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import { ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons'
-import { useLine } from '../hooks/useLine'
+import { useLine } from '../../hooks/useLine'
 
 export const Line = () => {
   const { color } = useLine()

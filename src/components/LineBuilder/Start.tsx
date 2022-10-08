@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
-import { useLine } from '../hooks/useLine'
+import { useLine } from '../../hooks/useLine'
 
 export const Start = () => {
   const { color } = useLine()
