@@ -18,7 +18,7 @@ export const StopName: React.FC<BoxProps> = props => {
         transform="translateY(-50%) translateX(-50%)"
         whiteSpace="nowrap"
         lineHeight="3"
-        fontWeight="medium"
+        fontWeight="semibold"
         fontSize="xs"
         minW="20"
       >
