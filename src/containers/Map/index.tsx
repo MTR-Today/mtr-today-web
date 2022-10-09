@@ -74,7 +74,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 2450 900 L 2240 900 L 2240 630 L 1396 630 L 1396 870 L 1780 870 L 1780 950',
+                'M 2450 900 L 2240 900 L 2240 630 L 1396 630 L 1396 870 L 1780 870 L 1780 1000',
                 20
               ).path
             }
@@ -496,6 +496,12 @@ export const Map = () => {
             right="40px"
           />
         </Stop>
+        <EndTip
+          coord={[1000, 1780]}
+          line={Line.KTL}
+          transform="rotate(-90deg)"
+          flip
+        />
         {/* EAL */}
         <EndTip coord={[330, 880]} line={Line.EAL} />
         <EndTip coord={[270, 950]} line={Line.EAL} />
