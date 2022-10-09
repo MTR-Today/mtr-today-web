@@ -32,7 +32,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1520 1020 L 1650 876 L 1820 876 L 1950 750 L 1950 540 L 1596 540 L 1596 460 L 1820 460 L 1820 270 L 2430 270',
+                'M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1520 1020 L 1665 876 L 1820 876 L 1950 750 L 1950 540 L 1596 540 L 1596 460 L 1820 460 L 1820 270 L 2430 270',
                 20
               ).path
             }
@@ -56,7 +56,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 950 270 L 1590 270 L 1590 951 L 1400 1162 1330 1162',
+                'M 950 270 L 1590 270 L 1590 958 L 1388 1162 1330 1162',
                 20
               ).path
             }
@@ -670,7 +670,7 @@ export const Map = () => {
           <StopSchedule line={Line.TML} direction="up" bottom="20px" />
           <StopSchedule line={Line.TML} direction="down" top="20px" />
         </Stop>
-        <Stop stop={StopType.HUH} coord={[980, 1560]}>
+        <Stop stop={StopType.HUH} coord={[984, 1560]}>
           <StopName top="30px" left="110px" textAlign="left" />
           <ArrowRight bottom="4" left="30px" transform="rotate(-45deg)" />
           <ArrowLeft bottom="8" left="14px" transform="rotate(-45deg)" />
@@ -694,7 +694,7 @@ export const Map = () => {
             left="30px"
           />
         </Stop>
-        <Stop stop={StopType.EXC} coord={[1100, 1455]}>
+        <Stop stop={StopType.EXC} coord={[1095, 1455]}>
           <StopName top="8px" left="125px" textAlign="left" />
           <ArrowRight bottom="4" left="30px" transform="rotate(-45deg)" />
           <ArrowLeft bottom="8" left="14px" transform="rotate(-45deg)" />
