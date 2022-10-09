@@ -1,18 +1,45 @@
 import { Box, BoxProps, Flex, Text, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { Line } from '../../constants/line'
 import { lineConfigsContext } from '../../contexts/lineConfigsContext'
 import { stopContext } from '../../contexts/stopContext'
-import { getLineConfig } from '../../services/getLineConfig'
+import { useTime } from '../../hooks/useTime'
+import { getStopSchedules } from '../../services/getStopSchedules'
+import dayjs from 'dayjs'
 
-export const StopSchedule: React.FC<BoxProps & { line: Line }> = ({
-  line,
-  ...props
-}) => {
+export const StopSchedule: React.FC<
+  BoxProps & { line: Line; disabled?: boolean; direction: 'up' | 'down' }
+> = ({ line, disabled = false, direction, ...props }) => {
+  const now = useTime()
   const { stop } = useContext(stopContext)
   const configs = useContext(lineConfigsContext)
+
+  const { data } = useQuery(
+    ['stop-schedule', line, stop],
+    () => (line && stop ? getStopSchedules({ line, stop }) : null),
+    { enabled: !disabled }
+  )
+
+  const getDisplayTime = useCallback(
+    (time: string) => {
+      const timeDayJs = dayjs(time)
+
+      return timeDayJs.isAfter(now)
+        ? dayjs
+            .duration(dayjs(timeDayJs).diff(now))
+            .format('H[:]mm:ss')
+            .replace(/^0:/, '')
+        : dayjs
+            .duration(dayjs(now).diff(timeDayJs))
+            .format('-H[:]mm:ss')
+            .replace(/^-0:/, '-')
+    },
+    [now]
+  )
+
+  const firstItem = data?.schedule?.[direction]?.[0]
 
   return (
     <Box position="absolute" {...props}>
@@ -33,10 +60,10 @@ export const StopSchedule: React.FC<BoxProps & { line: Line }> = ({
           color="white"
           bg={configs[line]?.color}
         >
-          {1}
+          {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
         <Clock w="100%" textAlign="right">
-          99:99
+          {disabled || !firstItem ? '--:--' : getDisplayTime(firstItem.time)}
         </Clock>
       </Flex>
     </Box>

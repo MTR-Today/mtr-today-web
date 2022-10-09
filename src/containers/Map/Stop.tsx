@@ -10,7 +10,13 @@ export const Stop: React.FC<
 
   return (
     <stopContext.Provider value={{ stop }}>
-      <Box position="absolute" top={`${x}px`} left={`${y}px`} {...props}>
+      <Box
+        position="absolute"
+        top={`${x}px`}
+        left={`${y}px`}
+        fontSize="xs"
+        {...props}
+      >
         {children}
         <Box
           w="18px"
