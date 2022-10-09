@@ -11,6 +11,7 @@ import { lineConfigsContext } from '../../contexts/lineConfigsContext'
 import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
+import { EndTip } from './EndTip'
 
 const lineProps = {
   fill: 'none',
@@ -28,7 +29,7 @@ export const Map = () => {
       <Wrapper>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M 250 450 L 250 260 a20,20 0 0 1 20,-20 L 380 240 a20,20 0 0 1 20,20 L 400 510 a20,20 0 0 0 20,20 L 470 530 L 980 530 a20,20 0 0 1 20,20 L 1000 730"
+            d="M 250 500 L 250 260 a20,20 0 0 1 20,-20 L 380 240 a20,20 0 0 1 20,20 L 400 510 a20,20 0 0 0 20,20 L 470 530 L 980 530 a20,20 0 0 1 20,20 L 1000 730"
             stroke={lineConfigs?.[Line.TML]?.color}
             {...lineProps}
           />
@@ -38,7 +39,7 @@ export const Map = () => {
             {...lineProps}
           />
           <path
-            d="M 930 330 L 1080 330 a20,20 0 0 0 20,-20 L 1100 270"
+            d="M 880 330 L 1060 330 a20,20 0 0 0 20,-20 L 1080 270"
             stroke={lineConfigs?.[Line.EAL]?.color}
             {...lineProps}
           />
@@ -49,22 +50,23 @@ export const Map = () => {
             {...lineProps}
           />
           <path
-            d="M 1000 270 L 1570 270 a20,20 0 0 1 20,20 L 1590 760"
+            d="M 950 270 L 1570 270 a20,20 0 0 1 20,20 L 1590 760"
             stroke={lineConfigs?.[Line.EAL]?.color}
             {...lineProps}
           />
           <path
-            d="M 470 630 L 1370 630 a20,20 0 0 1 20,20 L 1390 1130 a20,20 0 0 1 -20,20 L 1230 1150"
+            d="M 420 630 L 1370 630 a20,20 0 0 1 20,20 L 1390 1130 a20,20 0 0 1 -20,20 L 1230 1150"
             stroke={lineConfigs?.[Line.TWL]?.color}
             {...lineProps}
           />
           <path
-            d="M 2400 900 L 2260 900 a20,20 0 0 1 -20,-20 L 2240 650 a20,20 0 0 0 -20,-20  L 1416 630 a20,20 0 0 0 -20,20 L 1396 850 a20,20 0 0 0 20,20 L 1750 870 a20,20 0 0 1 20,20 L 1770 930"
+            d="M 2450 900 L 2260 900 a20,20 0 0 1 -20,-20 L 2240 650 a20,20 0 0 0 -20,-20  L 1416 630 a20,20 0 0 0 -20,20 L 1396 850 a20,20 0 0 0 20,20 L 1750 870 a20,20 0 0 1 20,20 L 1770 930"
             stroke={lineConfigs?.[Line.KTL]?.color}
             {...lineProps}
           />
         </svg>
         {/* TWL */}
+        <EndTip coord={[630, 420]} line={Line.TWL} />
         <Stop stop={StopType.TSW} coord={[630, 470]}>
           <StopName bottom="45px" />
           <ArrowRight top="4" left="12" />
@@ -300,7 +302,8 @@ export const Map = () => {
             bottom="20px"
           />
         </Stop>
-        {/* KYL */}
+        {/* KTL */}
+        <EndTip coord={[900, 2450]} line={Line.KTL} flip />
         <Stop stop={StopType.TIK} coord={[900, 2400]}>
           <StopName top="45px" />
           <StopSchedule line={Line.KTL} direction="up" disabled top="20px" />
@@ -492,6 +495,8 @@ export const Map = () => {
           />
         </Stop>
         {/* EAL */}
+        <EndTip coord={[330, 880]} line={Line.EAL} />
+        <EndTip coord={[270, 950]} line={Line.EAL} />
         <Stop stop={StopType.LMC} coord={[330, 930]}>
           <StopName top="45px" />
           <ArrowRight top="4" left="12" />
@@ -506,17 +511,12 @@ export const Map = () => {
           <StopSchedule line={Line.EAL} direction="up" bottom="20px" />
           <StopSchedule line={Line.EAL} direction="down" top="20px" />
         </Stop>
-        <Stop stop={StopType.SHS} coord={[270, 1100]}>
+        <Stop stop={StopType.SHS} coord={[270, 1130]}>
           <StopName bottom="45px" />
-          <ArrowRight top="4" left="20" />
+          <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <StopSchedule line={Line.EAL} direction="up" bottom="20px" />
-          <StopSchedule
-            line={Line.EAL}
-            direction="down"
-            top="20px"
-            left="40px"
-          />
+          <StopSchedule line={Line.EAL} direction="down" top="20px" />
         </Stop>
         <Stop stop={StopType.FAN} coord={[270, 1230]}>
           <StopName bottom="45px" />
@@ -578,6 +578,7 @@ export const Map = () => {
           <StopSchedule line={Line.EAL} direction="down" right="40px" />
         </Stop>
         {/* TML */}
+        <EndTip coord={[500, 250]} line={Line.TML} transform="rotate(-90deg)" />
         <Stop stop={StopType.TUM} coord={[450, 250]}>
           <StopName right="120px" textAlign="right" />
           <ArrowRight bottom="9" right="3" transform="rotate(90deg)" />
