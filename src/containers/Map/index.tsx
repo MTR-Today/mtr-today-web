@@ -12,6 +12,7 @@ import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
+import { roundCorners } from 'svg-round-corners'
 
 const lineProps = {
   fill: 'none',
@@ -29,38 +30,54 @@ export const Map = () => {
       <Wrapper>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M 250 500 L 250 260 a20,20 0 0 1 20,-20 L 380 240 a20,20 0 0 1 20,20 L 400 510 a20,20 0 0 0 20,20 L 470 530 L 980 530 a20,20 0 0 1 20,20 L 1000 730"
+            d={
+              roundCorners(
+                'M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1565 1020',
+                20
+              ).path
+            }
             stroke={lineConfigs?.[Line.TML]?.color}
             {...lineProps}
           />
           <path
-            d="M 1950 530 L 1950 730"
+            d={roundCorners('M 1950 530 L 1950 730', 20).path}
             stroke={lineConfigs?.[Line.TML]?.color}
             {...lineProps}
           />
           <path
-            d="M 880 330 L 1060 330 a20,20 0 0 0 20,-20 L 1080 270"
+            d={roundCorners('M 880 330 L 1080 330 L 1080 270', 20).path}
             stroke={lineConfigs?.[Line.EAL]?.color}
             {...lineProps}
           />
           <path
-            d="M 1530 270 L 1660 270 a20,20 0 0 1 20,20 L 1680 380 a20,20 0 0 1 -20,20 L 1590 400"
+            d={
+              roundCorners('M 1530 270 L 1680 270 L 1680 400 L 1590 400', 20)
+                .path
+            }
             stroke={lineConfigs?.[Line.EAL]?.color}
             stroke-dasharray="10,10"
             {...lineProps}
           />
           <path
-            d="M 950 270 L 1570 270 a20,20 0 0 1 20,20 L 1590 760"
+            d={roundCorners('M 950 270 L 1590 270 L 1590 760', 20).path}
             stroke={lineConfigs?.[Line.EAL]?.color}
             {...lineProps}
           />
           <path
-            d="M 420 630 L 1370 630 a20,20 0 0 1 20,20 L 1390 1130 a20,20 0 0 1 -20,20 L 1230 1150"
+            d={
+              roundCorners('M 420 630 L 1390 630 L 1390 1150 L 1230 1150', 20)
+                .path
+            }
             stroke={lineConfigs?.[Line.TWL]?.color}
             {...lineProps}
           />
           <path
-            d="M 2450 900 L 2260 900 a20,20 0 0 1 -20,-20 L 2240 650 a20,20 0 0 0 -20,-20  L 1416 630 a20,20 0 0 0 -20,20 L 1396 850 a20,20 0 0 0 20,20 L 1750 870 a20,20 0 0 1 20,20 L 1770 930"
+            d={
+              roundCorners(
+                'M 2450 900 L 2240 900 L 2240 630 L 1396 630 L 1396 870 L 1770 870 L 1770 930',
+                20
+              ).path
+            }
             stroke={lineConfigs?.[Line.KTL]?.color}
             {...lineProps}
           />
@@ -269,7 +286,7 @@ export const Map = () => {
           />
         </Stop>
         <Stop stop={StopType.TST} coord={[970, 1390]}>
-          <StopName right="120px" textAlign="right" />
+          <StopName left="120px" textAlign="left" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
           <StopSchedule line={Line.TWL} direction="up" disabled left="40px" />
@@ -593,7 +610,7 @@ export const Map = () => {
           <StopSchedule line={Line.TML} direction="up" right="40px" />
           <StopSchedule line={Line.TML} direction="down" left="40px" />
         </Stop>
-        <Stop stop={StopType.TIS} coord={[240, 330]}>
+        <Stop stop={StopType.TIS} coord={[240, 325]}>
           <StopName bottom="45px" />
           <ArrowRight top="4" right="12" />
           <ArrowLeft bottom="4" right="12" />
@@ -629,6 +646,23 @@ export const Map = () => {
           <ArrowLeft bottom="4" left="12" />
           <StopSchedule line={Line.TML} direction="up" bottom="20px" />
           <StopSchedule line={Line.TML} direction="down" top="20px" />
+        </Stop>
+        <Stop stop={StopType.NAC} coord={[730, 1000]}>
+          <StopName left="120px" textAlign="left" />
+          <StopSchedule line={Line.TML} direction="up" left="40px" />
+          <StopSchedule line={Line.TML} direction="down" right="40px" />
+        </Stop>
+        <Stop stop={StopType.AUS} coord={[970, 1220]}>
+          <StopName right="120px" textAlign="right" />
+          <StopSchedule line={Line.TML} direction="up" left="40px" />
+          <StopSchedule line={Line.TML} direction="down" right="40px" />
+        </Stop>
+        <Stop stop={StopType.ETS} coord={[1020, 1450]}>
+          <StopName top="45px" />
+          <ArrowRight top="4" left="12" />
+          <ArrowLeft bottom="4" left="12" />
+          <StopSchedule line={Line.TML} direction="up" disabled bottom="20px" />
+          <StopSchedule line={Line.TML} direction="down" disabled top="20px" />
         </Stop>
       </Wrapper>
     </lineConfigsContext.Provider>
