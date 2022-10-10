@@ -9,6 +9,7 @@ import { Stop } from '../../components/LineBuilder/Stop'
 import { Line as LineType } from '../../constants/line'
 import { Stop as StopType } from '../../constants/stop'
 import { UseLineProvider } from '../../hooks/useLine'
+import { Joint } from '../../components/LineBuilder/Joint'
 
 export const TKL: React.FC = () => {
   return (
@@ -22,30 +23,36 @@ export const TKL: React.FC = () => {
           px="20"
           overflow="auto"
         >
-          <Start />
-          <Stop stop={StopType.NOP} />
-          <Line />
-          <Stop stop={StopType.QUB} />
-          <Line />
-          <Stop stop={StopType.YAT} />
+          <Box>
+            <Flex verticalAlign="center" alignItems="center" pb="56px">
+              <Start />
+              <Stop stop={StopType.POA} namePosition="top" />
+              <Line />
+              <Stop stop={StopType.HAH} namePosition="top" />
+              <Line />
+            </Flex>
+            <Flex
+              verticalAlign="center"
+              justifyContent="flex-end"
+              alignItems="center"
+            >
+              <Start />
+              <Line />
+              <Stop stop={StopType.LHP} />
+              <Line />
+            </Flex>
+          </Box>
+          <Joint />
+          <Stop stop={StopType.TKO} />
           <Line />
           <Stop stop={StopType.TIK} />
           <Line />
-          <Stop stop={StopType.TKO} />
-          <Split />
-          <Box>
-            <Flex verticalAlign="center" alignItems="center" pb="56px">
-              <Line /> <Stop stop={StopType.HAH} namePosition="top" />
-              <Line />
-              <Stop stop={StopType.POA} namePosition="top" />
-              <End />
-            </Flex>
-            <Flex verticalAlign="center" alignItems="center">
-              <Line />
-              <Stop stop={StopType.LHP} />
-              <End />
-            </Flex>
-          </Box>
+          <Stop stop={StopType.YAT} />
+          <Line />
+          <Stop stop={StopType.QUB} />
+          <Line />
+          <Stop stop={StopType.NOP} />
+          <End />
         </Flex>
       </Flex>
     </UseLineProvider>

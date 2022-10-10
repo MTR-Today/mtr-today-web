@@ -22,21 +22,21 @@ export const TCL: React.FC = () => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.HOK} />
-          <Line />
-          <Stop stop={StopType.KOW} />
-          <Line />
-          <Stop stop={StopType.OLY} />
-          <Line />
-          <Stop stop={StopType.NAC} />
-          <Line />
-          <Stop stop={StopType.LAK} />
-          <Line />
-          <Stop stop={StopType.TSY} />
+          <Stop stop={StopType.TUC} />
           <Line />
           <Stop stop={StopType.SUN} />
           <Line />
-          <Stop stop={StopType.TUC} />
+          <Stop stop={StopType.TSY} />
+          <Line />
+          <Stop stop={StopType.LAK} />
+          <Line />
+          <Stop stop={StopType.NAC} />
+          <Line />
+          <Stop stop={StopType.OLY} />
+          <Line />
+          <Stop stop={StopType.KOW} />
+          <Line />
+          <Stop stop={StopType.HOK} />
           <End />
         </Flex>
       </Flex>

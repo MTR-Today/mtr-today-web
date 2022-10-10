@@ -22,15 +22,15 @@ export const AEL: React.FC = () => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.HOK} />
-          <Line />
-          <Stop stop={StopType.KOW} />
-          <Line />
-          <Stop stop={StopType.TSY} />
+          <Stop stop={StopType.AWE} />
           <Line />
           <Stop stop={StopType.AIR} />
           <Line />
-          <Stop stop={StopType.AWE} />
+          <Stop stop={StopType.TSY} />
+          <Line />
+          <Stop stop={StopType.KOW} />
+          <Line />
+          <Stop stop={StopType.HOK} />
           <End />
         </Flex>
       </Flex>

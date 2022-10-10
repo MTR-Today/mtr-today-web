@@ -22,16 +22,15 @@ export const SIL: React.FC<{ disabled?: boolean }> = ({ disabled }) => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.ADM} />
-          <Line />
-          <Stop stop={StopType.OCP} />
-          <Line />
-          <Stop stop={StopType.WCH} />
+          <Stop stop={StopType.SOH} />
           <Line />
           <Stop stop={StopType.LET} />
           <Line />
-          <Stop stop={StopType.SOH} />
+          <Stop stop={StopType.WCH} />
           <Line />
+          <Stop stop={StopType.OCP} />
+          <Line />
+          <Stop stop={StopType.ADM} />
           <End />
         </Flex>
       </Flex>
