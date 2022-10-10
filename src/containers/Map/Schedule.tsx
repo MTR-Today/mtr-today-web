@@ -9,7 +9,7 @@ import { useTime } from '../../hooks/useTime'
 import { getStopSchedules } from '../../services/getStopSchedules'
 import dayjs from 'dayjs'
 
-export const StopSchedule: React.FC<
+export const Schedule: React.FC<
   BoxProps & { line: Line; disabled?: boolean; direction: 'up' | 'down' }
 > = ({ line, disabled = false, direction, ...props }) => {
   const now = useTime()
