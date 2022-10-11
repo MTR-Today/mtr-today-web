@@ -1,20 +1,46 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
-import React from 'react'
+import React, { useContext, useMemo, useState } from 'react'
+import { Line } from '../../constants/line'
 import { Stop as StopType } from '../../constants/stop'
+import { lineConfigsContext } from '../../contexts/lineConfigsContext'
 import { stopContext } from '../../contexts/stopContext'
 
 export const Stop: React.FC<
   BoxProps & { coord: [x: number, y: number]; stop: StopType }
 > = ({ children, stop, coord: [x, y], ...props }) => {
+  const [stopHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
+  const { hoveringLine } = useContext(lineConfigsContext)
+
+  const lineList = useMemo<Line[]>(() => {
+    if (!Array.isArray(children)) return []
+    return children
+      .map(({ props }) => {
+        return props.line
+      })
+      .filter(Boolean)
+  }, [children])
 
   return (
-    <stopContext.Provider value={{ stop }}>
+    <stopContext.Provider
+      value={{
+        stop,
+        hovering: Boolean(
+          stopHovering || (hoveringLine && lineList.includes(hoveringLine))
+        ),
+        lineHovering: Boolean(hoveringLine && lineList.includes(hoveringLine)),
+        setHovering,
+      }}
+    >
       <Box
         position="absolute"
         top={`${y}px`}
         left={`${x}px`}
         fontSize="xs"
+        opacity={
+          hoveringLine && !lineList.includes(hoveringLine) ? '.3' : undefined
+        }
+        style={{ transition: 'opacity .3s' }}
         {...props}
       >
         {children}
@@ -27,6 +53,12 @@ export const Stop: React.FC<
           position="absolute"
           transform="translateY(-50%) translateX(-50%)"
           bg="Background"
+          onMouseEnter={() => {
+            setHovering(true)
+          }}
+          onMouseLeave={() => {
+            setHovering(false)
+          }}
         />
       </Box>
     </stopContext.Provider>

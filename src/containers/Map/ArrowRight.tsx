@@ -6,7 +6,7 @@ export const ArrowRight: React.FC<BoxProps> = props => {
   return (
     <Box position="absolute" {...props}>
       <Box position="absolute" transform="translateY(-50%) translateX(-50%)">
-        <ArrowRightIcon fontSize="8px" color="blackAlpha.400" />
+        <ArrowRightIcon fontSize="8px" opacity=".3" />
       </Box>
     </Box>
   )

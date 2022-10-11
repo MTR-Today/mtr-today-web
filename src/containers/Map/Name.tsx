@@ -5,7 +5,7 @@ import { stopContext } from '../../contexts/stopContext'
 import { getStopConfig } from '../../services/getStopConfig'
 
 export const Name: React.FC<BoxProps> = props => {
-  const { stop } = useContext(stopContext)
+  const { stop, hovering } = useContext(stopContext)
 
   const { data } = useQuery(['stop-config', stop], () =>
     stop ? getStopConfig({ stop }) : null
@@ -18,9 +18,12 @@ export const Name: React.FC<BoxProps> = props => {
         transform="translateY(-50%) translateX(-50%)"
         whiteSpace="nowrap"
         lineHeight="3"
-        fontWeight="semibold"
         fontSize="xs"
         minW="20"
+        opacity={hovering ? undefined : '.3'}
+        transition="opacity .3s"
+        _hover={{ opacity: 1 }}
+        userSelect="none"
       >
         <Box>{data?.nameZh}</Box>
         <Box>{data?.nameEn}</Box>

@@ -13,8 +13,8 @@ export const Schedule: React.FC<
   BoxProps & { line: Line; disabled?: boolean; dir: 'up' | 'down' }
 > = ({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
-  const { stop } = useContext(stopContext)
-  const configs = useContext(lineConfigsContext)
+  const { stop, setHovering } = useContext(stopContext)
+  const { hoveringLine, ...configs } = useContext(lineConfigsContext)
 
   const { data } = useQuery(
     ['stop-schedule', line, stop],
@@ -49,6 +49,15 @@ export const Schedule: React.FC<
         w="56px"
         textAlign="center"
         fontSize="xs"
+        onMouseEnter={() => {
+          setHovering(true)
+        }}
+        onMouseLeave={() => {
+          setHovering(false)
+        }}
+        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+        style={{ transition: 'opacity .3s' }}
+        userSelect="none"
       >
         <Box
           display="inline-block"

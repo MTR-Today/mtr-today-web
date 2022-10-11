@@ -7,7 +7,7 @@ import c from 'color'
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: Line; flip?: boolean }
 > = ({ coord: [x, y], line, flip = false, ...props }) => {
-  const configs = useContext(lineConfigsContext)
+  const { hoveringLine, ...configs } = useContext(lineConfigsContext)
   const { colorMode } = useColorMode()
   const color = configs[line]?.color
 
@@ -17,6 +17,8 @@ export const EndTip: React.FC<
       top={`${y}px`}
       left={`${x}px`}
       fontSize="xs"
+      opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+      style={{ transition: 'opacity .3s' }}
       {...props}
     >
       <Box

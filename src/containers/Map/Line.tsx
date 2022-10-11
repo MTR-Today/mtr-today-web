@@ -21,6 +21,10 @@ export const Line: React.FC<
       fill="none"
       stroke-linejoin="round"
       strokeWidth="6px"
+      opacity={
+        configs.hoveringLine && configs.hoveringLine !== line ? '.3' : undefined
+      }
+      style={{ transition: 'opacity .3s' }}
       {...props}
     />
   )
