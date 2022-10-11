@@ -1,7 +1,7 @@
 import { Box, BoxProps, Flex, Text, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
-import React, { useCallback, useContext } from 'react'
+import React, { memo, useCallback, useContext } from 'react'
 import { Line } from '../../constants/line'
 import { lineConfigsContext } from '../../contexts/lineConfigsContext'
 import { stopContext } from '../../contexts/stopContext'
@@ -11,10 +11,10 @@ import dayjs from 'dayjs'
 
 export const Schedule: React.FC<
   BoxProps & { line: Line; disabled?: boolean; dir: 'up' | 'down' }
-> = ({ line, disabled = false, dir, ...props }) => {
+> = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, ...configs } = useContext(lineConfigsContext)
+  const { hoveringLine, lineConfigs } = useContext(lineConfigsContext)
 
   const { data } = useQuery(
     ['stop-schedule', line, stop],
@@ -67,7 +67,7 @@ export const Schedule: React.FC<
           borderRadius="100%"
           flexShrink="0"
           color="white"
-          bg={configs[line]?.color}
+          bg={lineConfigs[line]?.color}
         >
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
@@ -77,7 +77,7 @@ export const Schedule: React.FC<
       </Flex>
     </Box>
   )
-}
+})
 
 const Clock = styled(Box)`
   font-variant-numeric: tabular-nums;

@@ -1,15 +1,15 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import { Line } from '../../constants/line'
 import { lineConfigsContext } from '../../contexts/lineConfigsContext'
 import c from 'color'
 
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: Line; flip?: boolean }
-> = ({ coord: [x, y], line, flip = false, ...props }) => {
-  const { hoveringLine, ...configs } = useContext(lineConfigsContext)
+> = memo(({ coord: [x, y], line, flip = false, ...props }) => {
+  const { hoveringLine, lineConfigs } = useContext(lineConfigsContext)
   const { colorMode } = useColorMode()
-  const color = configs[line]?.color
+  const color = lineConfigs[line]?.color
 
   return (
     <Box
@@ -50,4 +50,4 @@ export const EndTip: React.FC<
       />
     </Box>
   )
-}
+})

@@ -1,10 +1,10 @@
 import { Box, BoxProps } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import React, { useContext, useMemo } from 'react'
+import React, { memo, useContext, useMemo } from 'react'
 import { stopContext } from '../../contexts/stopContext'
 import { getStopConfig } from '../../services/getStopConfig'
 
-export const Name: React.FC<BoxProps> = props => {
+export const Name: React.FC<BoxProps> = memo(props => {
   const { stop, hovering } = useContext(stopContext)
 
   const { data } = useQuery(['stop-config', stop], () =>
@@ -30,4 +30,4 @@ export const Name: React.FC<BoxProps> = props => {
       </Box>
     </Box>
   )
-}
+})

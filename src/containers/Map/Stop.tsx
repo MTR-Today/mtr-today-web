@@ -1,5 +1,5 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
-import React, { useContext, useMemo, useState } from 'react'
+import React, { memo, useContext, useMemo, useState } from 'react'
 import { Line } from '../../constants/line'
 import { Stop as StopType } from '../../constants/stop'
 import { lineConfigsContext } from '../../contexts/lineConfigsContext'
@@ -7,7 +7,7 @@ import { stopContext } from '../../contexts/stopContext'
 
 export const Stop: React.FC<
   BoxProps & { coord: [x: number, y: number]; stop: StopType }
-> = ({ children, stop, coord: [x, y], ...props }) => {
+> = memo(({ children, stop, coord: [x, y], ...props }) => {
   const [stopHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
   const { hoveringLine } = useContext(lineConfigsContext)
@@ -19,7 +19,7 @@ export const Stop: React.FC<
         return props.line
       })
       .filter(Boolean)
-  }, [children])
+  }, [])
 
   return (
     <stopContext.Provider
@@ -63,4 +63,4 @@ export const Stop: React.FC<
       </Box>
     </stopContext.Provider>
   )
-}
+})

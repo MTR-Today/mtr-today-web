@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import bg from '../../assets/system_map.png'
 import { Line } from './Line'
 import { Line as LineType } from '../../constants/line'
@@ -13,214 +13,72 @@ import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
-import { roundCorners } from 'svg-round-corners'
-import { useColorMode } from '@chakra-ui/react'
+import { Animation } from './animation'
+import { BG } from './BG'
 
 export const Map = () => {
   const [hoveringLine, setHoveringLine] = useState<LineType>()
-  const { data: lineConfigs } = useQuery(['line-configs'], () =>
+  const { data: lineConfigs = {} } = useQuery(['line-configs'], () =>
     getLineConfigs()
   )
-  const { colorMode } = useColorMode()
+  const ref = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    new Animation(ref.current)
+  }, [])
 
   return (
     <lineConfigsContext.Provider
-      value={{ ...(lineConfigs || {}), hoveringLine }}
+      value={{ lineConfigs, hoveringLine, setHoveringLine }}
     >
+      <Water ref={ref} />
       <Wrapper>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d={
-              roundCorners(
-                'M 300 150 L 150 150 L 150 580 L 300 580 L 300 660 L 840 660 L 940 740 L 940 930 L 900 930 L 900 1035 L 1730 1035 L 2080 705 L 2200 705 L 2200 920 L 2300 1020 L 2650 1020 L 2650 600 L 2400 600 L 2400 400 L 2650 400 L 2650 150 L 1800 150 L 1800 400 L 1700 400 L 1700 200 L 900 200 L 750 350 L 600 350 L 400 150 L 280 150',
-                20
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
-          <path
-            d={
-              roundCorners(
-                'M 738 695 L 778 695 L 778 745 L 728 745 L 728 695 L 765 695',
-                10
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
-          <path
-            d={
-              roundCorners(
-                'M 390 950 L 480 950 L 695 735 L 760 800 L 760 1000 L 680 1000 L 480 1200 L 150 1200 L 150 950 L 400 950',
-                20
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
-          <path
-            d={
-              roundCorners(
-                'M 390 900 L 390 920 L 460 920 L 615 765 L 480 765 L 390 855 L 390 910',
-                20
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
-
-          <path
-            d={
-              roundCorners(
-                'M 830 1080 L 2650 1080 L 2650 1550 L 1350 1550 L 1160 1360 L 760 1360 L 760 1080 L 840 1080',
-                20
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
-          <path
-            d={
-              roundCorners(
-                'M 960 1400 L 1150 1400 L 1300 1550 L 900 1550 L 900 1400 L 1000 1400',
-                20
-              ).path
-            }
-            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
-            opacity=".05"
-          />
+          <BG />
           <Line
             d="M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1520 1020 L 1665 876 L 1820 876 L 1950 750 L 1950 540 L 1596 540 L 1596 460 L 1820 460 L 1820 270 L 2430 270"
             line={LineType.TML}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.TML)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
-          <Line
-            d="M 880 330 L 1080 330 L 1080 270"
-            line={LineType.EAL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.EAL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
-          />
+          <Line d="M 880 330 L 1080 330 L 1080 270" line={LineType.EAL} />
           <Line
             d="M 1530 270 L 1680 270 L 1680 400 L 1590 400"
             line={LineType.EAL}
             stroke-dasharray="10,10"
-            onMouseEnter={() => {
-              setHoveringLine(LineType.EAL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 950 270 L 1590 270 L 1590 958 L 1388 1162 1330 1162"
             line={LineType.EAL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.EAL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 400 630 L 1390 630 L 1390 1150 L 1230 1150"
             line={LineType.TWL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.TWL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 2400 900 L 2240 900 L 2240 630 L 1396 630 L 1396 870 L 1780 870 L 1780 1000"
             line={LineType.KTL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.KTL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 1860 1150 L 2010 1150 L 2250 906 L 2500 906 L 2600 906 L 2600 710"
             line={LineType.TKL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.TKL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
-          <Line
-            d="M 2500 906 L 2600 906 L 2600 1040"
-            line={LineType.TKL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.TKL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
-          />
+          <Line d="M 2500 906 L 2600 906 L 2600 1040" line={LineType.TKL} />
           <Line
             d="M 780 1156 L 2360 1156 L 2500 1156 L 2500 1300"
             line={LineType.ISL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.ISL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 1330 1168 L 1400 1168 L 1400 1300 L 1400 1350 L 1200 1350 L 1150 1450 L 930 1450"
             line={LineType.SIL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.SIL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 486 980 L 830 636 L 910 636 L 910 690 L 994 690 L 994 1102 L 1185 1102 L 1185 1102"
             line={LineType.TCL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.TCL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
           <Line
             d="M 582 770 L 472 880 L 522 930 L 650 800 L 690 760 L 727 748 L 828 647 L 900 647 L 900 700 L 983 700 L 983 938 L 988 970 L 988 1108 L 1185 1108"
             line={LineType.AEL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.AEL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
           />
-          <Line
-            d="M 645 830 L 730 745 L 730 970"
-            line={LineType.DRL}
-            onMouseEnter={() => {
-              setHoveringLine(LineType.DRL)
-            }}
-            onMouseLeave={() => {
-              setHoveringLine(undefined)
-            }}
-          />
+          <Line d="M 645 830 L 730 745 L 730 970" line={LineType.DRL} />
         </svg>
         {/* TWL */}
         <EndTip line={LineType.TWL} coord={[400, 630]} />
@@ -1113,4 +971,11 @@ const Wrapper = styled.div`
   background-size: 2430px;
   background-position: right 250px top 80px;
   background-image: url(${bg}); */
+`
+
+const Water = styled.canvas`
+  width: 2800px;
+  height: 1630px;
+  position: absolute;
+  opacity: 0.1;
 `
