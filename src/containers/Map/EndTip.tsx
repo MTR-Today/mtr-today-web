@@ -11,8 +11,8 @@ export const EndTip: React.FC<
   return (
     <Box
       position="absolute"
-      top={`${x}px`}
-      left={`${y}px`}
+      top={`${y}px`}
+      left={`${x}px`}
       fontSize="xs"
       {...props}
     >
