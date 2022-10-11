@@ -65,7 +65,7 @@ export const Map = () => {
           />
           <path
             d={
-              roundCorners('M 420 630 L 1390 630 L 1390 1150 L 1230 1150', 20)
+              roundCorners('M 400 630 L 1390 630 L 1390 1150 L 1230 1150', 20)
                 .path
             }
             stroke={lineConfigs?.[Line.TWL]?.color}
@@ -122,7 +122,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 542 810 L 472 880 L 522 930 L 650 800 L 690 760 L 727 748 L 830 645 L 900 645 L 900 700 L 983 700 L 983 918 L 988 970 L 988 1108 L 1185 1108',
+                'M 542 810 L 472 880 L 522 930 L 650 800 L 690 760 L 727 748 L 828 647 L 900 647 L 900 700 L 983 700 L 983 938 L 988 970 L 988 1108 L 1185 1108',
                 20
               ).path
             }
@@ -131,42 +131,42 @@ export const Map = () => {
           />
         </svg>
         {/* TWL */}
-        <EndTip coord={[630, 420]} line={Line.TWL} />
-        <Stop stop={StopType.TSW} coord={[630, 470]}>
+        <EndTip coord={[630, 400]} line={Line.TWL} />
+        <Stop stop={StopType.TSW} coord={[630, 450]}>
           <Name bottom="25px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.TWL} direction="down" disabled top="20px" />
         </Stop>
-        <Stop stop={StopType.TWH} coord={[630, 570]}>
+        <Stop stop={StopType.TWH} coord={[630, 550]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.TWL} direction="up" disabled bottom="20px" />
           <Schedule line={Line.TWL} direction="down" disabled top="20px" />
         </Stop>
-        <Stop stop={StopType.KWH} coord={[630, 670]}>
+        <Stop stop={StopType.KWH} coord={[630, 650]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.TWL} direction="up" disabled bottom="20px" />
           <Schedule line={Line.TWL} direction="down" disabled top="20px" />
         </Stop>
-        <Stop stop={StopType.KWF} coord={[630, 770]}>
+        <Stop stop={StopType.KWF} coord={[630, 750]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.TWL} direction="up" disabled bottom="20px" />
           <Schedule line={Line.TWL} direction="down" disabled top="20px" />
         </Stop>
-        <Stop stop={StopType.LAK} coord={[633, 870]}>
+        <Stop stop={StopType.LAK} coord={[633, 855]}>
           <Name bottom="65px" />
-          <ArrowRight top="4" left="12" />
-          <ArrowLeft bottom="4" left="12" />
+          <ArrowRight top="4" left="72px" />
+          <ArrowLeft bottom="4" left="72px" />
           <Schedule line={Line.TCL} direction="up" bottom="40px" />
           <Schedule line={Line.TWL} direction="up" disabled bottom="20px" />
-          <Schedule line={Line.TWL} direction="down" disabled top="20px" />
-          <Schedule line={Line.TCL} direction="down" top="40px" />
+          <Schedule line={Line.TWL} direction="down" disabled top="30px" />
+          <Schedule line={Line.TCL} direction="down" top="50px" />
         </Stop>
         <Stop stop={StopType.MEF} coord={[630, 1000]}>
           <Name bottom="45px" left="60px" textAlign="left" />
@@ -603,11 +603,11 @@ export const Map = () => {
           <Name left="120px" textAlign="left" />
           <Schedule line={Line.TML} direction="up" left="40px" bottom="10px" />
           <Schedule line={Line.TCL} direction="up" left="40px" top="10px" />
-          <Schedule line={Line.TCL} direction="down" right="40px" top="10px" />
+          <Schedule line={Line.TCL} direction="down" right="50px" top="10px" />
           <Schedule
             line={Line.TML}
             direction="down"
-            right="40px"
+            right="50px"
             bottom="10px"
           />
         </Stop>
@@ -936,10 +936,10 @@ export const Map = () => {
         </Stop>
         <Stop stop={StopType.OLY} coord={[870, 994]}>
           <Name right="120px" textAlign="right" />
-          <ArrowRight top="9" right="3" transform="rotate(90deg)" />
+          <ArrowRight top="9" right="6" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
           <Schedule line={Line.TCL} direction="up" left="40px" />
-          <Schedule line={Line.TCL} direction="down" right="40px" />
+          <Schedule line={Line.TCL} direction="down" right="45px" />
         </Stop>
         <Stop stop={StopType.KOW} coord={[970, 991]}>
           <Name right="120px" textAlign="right" />
