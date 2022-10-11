@@ -1,12 +1,15 @@
-import { Box, BoxProps } from '@chakra-ui/react'
+import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { Line } from '../../constants/line'
 import { lineConfigsContext } from '../../contexts/lineConfigsContext'
+import c from 'color'
 
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: Line; flip?: boolean }
 > = ({ coord: [x, y], line, flip = false, ...props }) => {
   const configs = useContext(lineConfigsContext)
+  const { colorMode } = useColorMode()
+  const color = configs[line]?.color
 
   return (
     <Box
@@ -41,7 +44,7 @@ export const EndTip: React.FC<
         h="16px"
         position="absolute"
         transform="translateY(-50%) translateX(-50%)"
-        bg={configs[line]?.color}
+        bg={colorMode === 'dark' && color ? c(color).darken(0.3).hex() : color}
       />
     </Box>
   )

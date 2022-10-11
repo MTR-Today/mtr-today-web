@@ -10,8 +10,8 @@ import { getStopSchedules } from '../../services/getStopSchedules'
 import dayjs from 'dayjs'
 
 export const Schedule: React.FC<
-  BoxProps & { line: Line; disabled?: boolean; direction: 'up' | 'down' }
-> = ({ line, disabled = false, direction, ...props }) => {
+  BoxProps & { line: Line; disabled?: boolean; dir: 'up' | 'down' }
+> = ({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { stop } = useContext(stopContext)
   const configs = useContext(lineConfigsContext)
@@ -39,7 +39,7 @@ export const Schedule: React.FC<
     [now]
   )
 
-  const firstItem = data?.schedule?.[direction]?.[0]
+  const firstItem = data?.schedule?.[dir]?.[0]
 
   return (
     <Box position="absolute" {...props}>
