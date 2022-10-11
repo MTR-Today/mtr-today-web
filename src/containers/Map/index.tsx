@@ -162,6 +162,16 @@ export const Map = () => {
               setHoveringLine(undefined)
             }}
           />
+          <Line
+            d="M 645 830 L 730 745 L 730 970"
+            line={LineType.DRL}
+            onMouseEnter={() => {
+              setHoveringLine(LineType.DRL)
+            }}
+            onMouseLeave={() => {
+              setHoveringLine(undefined)
+            }}
+          />
         </svg>
         {/* TWL */}
         <EndTip line={LineType.TWL} coord={[400, 630]} />
@@ -1027,6 +1037,20 @@ export const Map = () => {
           <Schedule line={LineType.SIL} dir="up" disabled bottom="20px" />
         </Stop>
         <EndTip coord={[930, 1450]} line={LineType.SIL} />
+        {/* DRL */}
+        <Stop stop={StopType.DIS} coord={[730, 920]}>
+          <Name left="80px" bottom="20px" textAlign="left" />
+          <ArrowRight bottom="9" right="3" transform="rotate(90deg)" />
+          <ArrowLeft bottom="9" left="3" transform="rotate(90deg)" />
+          <Schedule line={LineType.DRL} dir="up" left="40px" />
+          <Schedule line={LineType.DRL} dir="down" right="45px" />
+        </Stop>
+        <EndTip
+          coord={[730, 970]}
+          line={LineType.DRL}
+          flip
+          transform="rotate(-90deg)"
+        />
       </Wrapper>
     </lineConfigsContext.Provider>
   )
