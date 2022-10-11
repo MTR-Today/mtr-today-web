@@ -117,7 +117,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 526 940 L 830 636 L 910 636 L 910 690 L 994 690 L 994 1102 L 1185 1102 L 1185 1102',
+                'M 486 980 L 830 636 L 910 636 L 910 690 L 994 690 L 994 1102 L 1185 1102 L 1185 1102',
                 20
               ).path
             }
@@ -127,7 +127,7 @@ export const Map = () => {
           <path
             d={
               roundCorners(
-                'M 542 810 L 472 880 L 522 930 L 650 800 L 690 760 L 727 748 L 828 647 L 900 647 L 900 700 L 983 700 L 983 938 L 988 970 L 988 1108 L 1185 1108',
+                'M 582 770 L 472 880 L 522 930 L 650 800 L 690 760 L 727 748 L 828 647 L 900 647 L 900 700 L 983 700 L 983 938 L 988 970 L 988 1108 L 1185 1108',
                 20
               ).path
             }
@@ -918,6 +918,7 @@ export const Map = () => {
         />
         <EndTip coord={[710, 2600]} line={Line.TKL} transform="rotate(90deg)" />
         {/* TCL */}
+        <EndTip coord={[980, 486]} line={Line.TCL} transform="rotate(-45deg)" />
         <Stop stop={StopType.TUC} coord={[940, 526]}>
           <Name bottom="5px" left="80px" textAlign="left" />
           <ArrowRight bottom="4" left="30px" transform="rotate(-45deg)" />
@@ -928,8 +929,8 @@ export const Map = () => {
           <Name bottom="5px" left="80px" textAlign="left" />
           <ArrowRight bottom="4" left="30px" transform="rotate(-45deg)" />
           <ArrowLeft bottom="10" right="4px" transform="rotate(-45deg)" />
-          <Schedule line={Line.DRL} direction="up" bottom="40px" right="40px" />
-          <Schedule line={Line.TCL} direction="up" bottom="20px" right="40px" />
+          <Schedule line={Line.DRL} direction="up" bottom="30px" right="48px" />
+          <Schedule line={Line.TCL} direction="up" bottom="10px" right="48px" />
           <Schedule line={Line.TCL} direction="down" top="20px" left="30px" />
           <Schedule line={Line.DRL} direction="down" top="40px" left="30px" />
         </Stop>
@@ -969,6 +970,12 @@ export const Map = () => {
           <Schedule line={Line.AEL} direction="up" bottom="40px" />
         </Stop>
         {/* AEL */}
+        <EndTip
+          coord={[770, 582]}
+          line={Line.AEL}
+          flip
+          transform="rotate(-45deg)"
+        />
         <Stop stop={StopType.AWE} coord={[810, 542]}>
           <Name bottom="10px" right="110px" textAlign="right" />
           <Schedule
@@ -1032,5 +1039,5 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: 2430px;
   background-position: right 250px top 80px;
-  background-image: url(${bg});
+  /* background-image: url(${bg}); */
 `
