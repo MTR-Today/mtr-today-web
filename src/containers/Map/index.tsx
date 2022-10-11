@@ -105,7 +105,12 @@ export const Map = () => {
             {...lineProps}
           />
           <path
-            d={roundCorners('M 1330 1168 L 1400 1168 L 1400 1300', 20).path}
+            d={
+              roundCorners(
+                'M 1330 1168 L 1400 1168 L 1400 1300 L 1400 1350 L 1200 1350 L 1150 1450 L 930 1450',
+                20
+              ).path
+            }
             stroke={lineConfigs?.[Line.SIL]?.color}
             {...lineProps}
           />
@@ -544,6 +549,8 @@ export const Map = () => {
         </Stop>
         <Stop stop={StopType.MKK} coord={[760, 1590]}>
           <Name left="120px" textAlign="left" />
+          <ArrowRight top="6" right="3" transform="rotate(90deg)" />
+          <ArrowLeft top="6" left="4" transform="rotate(90deg)" />
           <Schedule line={Line.EAL} direction="up" left="40px" />
           <Schedule line={Line.EAL} direction="down" right="40px" />
         </Stop>
@@ -732,28 +739,28 @@ export const Map = () => {
         {/* ISL */}
         <EndTip coord={[1156, 780]} flip line={Line.ISL} />
         <Stop stop={StopType.KET} coord={[1153, 830]}>
-          <Name top="65px" />
+          <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
           <Schedule line={Line.ISL} direction="down" disabled bottom="20px" />
         </Stop>
         <Stop stop={StopType.HKU} coord={[1156, 930]}>
-          <Name top="65px" />
+          <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
           <Schedule line={Line.ISL} direction="down" disabled bottom="20px" />
         </Stop>
         <Stop stop={StopType.SYP} coord={[1156, 1030]}>
-          <Name top="65px" />
+          <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
           <Schedule line={Line.ISL} direction="down" disabled bottom="20px" />
         </Stop>
         <Stop stop={StopType.SHW} coord={[1156, 1130]}>
-          <Name top="65px" />
+          <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
@@ -767,13 +774,14 @@ export const Map = () => {
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
           <Schedule line={Line.ISL} direction="down" disabled bottom="20px" />
         </Stop>
-        <Stop stop={StopType.ADM} coord={[1156, 1330]}>
-          <Name top="85px" />
+        <Stop stop={StopType.ADM} coord={[1159, 1330]}>
+          <Name top="105px" />
           <Schedule line={Line.TWL} direction="up" disabled top="60px" />
           <Schedule line={Line.EAL} direction="up" top="40px" />
           <Schedule line={Line.ISL} direction="up" disabled top="20px" />
           <Schedule line={Line.ISL} direction="down" disabled bottom="20px" />
           <Schedule line={Line.TWL} direction="down" disabled bottom="40px" />
+          <Schedule line={Line.SIL} direction="down" disabled top="80px" />
         </Stop>
         <Stop stop={StopType.WAC} coord={[1156, 1460]}>
           <Name top="45px" />
@@ -982,6 +990,36 @@ export const Map = () => {
           />
           <Schedule line={Line.AEL} direction="up" top="20px" left="30px" />
         </Stop>
+        {/* SIL */}
+        <Stop stop={StopType.OCP} coord={[1290, 1400]}>
+          <Name left="120px" textAlign="left" />
+          <ArrowRight bottom="6" right="3" transform="rotate(90deg)" />
+          <ArrowLeft bottom="6" left="4" transform="rotate(90deg)" />
+          <Schedule line={Line.SIL} disabled direction="up" right="40px" />
+          <Schedule line={Line.SIL} disabled direction="down" left="40px" />
+        </Stop>
+        <Stop stop={StopType.WCH} coord={[1350, 1250]}>
+          <Name top="45px" />
+          <ArrowRight top="4" left="12" />
+          <ArrowLeft bottom="4" left="12" />
+          <Schedule line={Line.SIL} direction="down" disabled top="20px" />
+          <Schedule line={Line.SIL} direction="up" disabled bottom="20px" />
+        </Stop>
+        <Stop stop={StopType.LET} coord={[1450, 1080]}>
+          <Name top="45px" />
+          <ArrowRight top="4" left="12" />
+          <ArrowLeft bottom="4" left="12" />
+          <Schedule line={Line.SIL} direction="down" disabled top="20px" />
+          <Schedule line={Line.SIL} direction="up" disabled bottom="20px" />
+        </Stop>
+        <Stop stop={StopType.SOH} coord={[1450, 980]}>
+          <Name top="45px" />
+          <ArrowRight top="4" left="12" />
+          <ArrowLeft bottom="4" left="12" />
+          <Schedule line={Line.SIL} direction="down" disabled top="20px" />
+          <Schedule line={Line.SIL} direction="up" disabled bottom="20px" />
+        </Stop>
+        <EndTip coord={[1450, 930]} line={Line.SIL} />
       </Wrapper>
     </lineConfigsContext.Provider>
   )
@@ -989,10 +1027,10 @@ export const Map = () => {
 
 const Wrapper = styled.div`
   width: 2800px;
-  height: 1430px;
+  height: 1630px;
   position: relative;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right 300px top 100px;
-  /* background-image: url(${bg}); */
+  background-size: 2430px;
+  background-position: right 250px top 80px;
+  background-image: url(${bg});
 `
