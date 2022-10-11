@@ -23,17 +23,17 @@ export const EndTip: React.FC<
     >
       <Box
         fontSize="8px"
-        color="blackAlpha.500"
         whiteSpace="nowrap"
         position="absolute"
         bottom="2"
         transform="translateX(-50%)"
+        opacity=".3"
       >
         {flip ? '下行' : '上行'}
       </Box>
       <Box
         fontSize="8px"
-        color="blackAlpha.500"
+        opacity=".3"
         whiteSpace="nowrap"
         position="absolute"
         transform="translateX(-50%)"

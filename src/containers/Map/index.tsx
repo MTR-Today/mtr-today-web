@@ -13,13 +13,15 @@ import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
-import {} from 'svg-round-corners'
+import { roundCorners } from 'svg-round-corners'
+import { useColorMode } from '@chakra-ui/react'
 
 export const Map = () => {
   const [hoveringLine, setHoveringLine] = useState<LineType>()
   const { data: lineConfigs } = useQuery(['line-configs'], () =>
     getLineConfigs()
   )
+  const { colorMode } = useColorMode()
 
   return (
     <lineConfigsContext.Provider
@@ -27,6 +29,18 @@ export const Map = () => {
     >
       <Wrapper>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d={
+              roundCorners(
+                'M 300 150 L 150 150 L 150 580 L 300 580 L 300 660 L 840 660 L 940 740 L 940 930 L 900 930 L 900 1035 L 1730 1035 L 2080 705 L 2200 705 L 2200 920 L 2300 1020 L 2650 1020 L 2650 600 L 2400 600 L 2400 400 L 2650 400 L 2650 150 L 1800 150 L 1800 400 L 1700 400 L 1700 200 L 900 200 L 750 350 L 600 350 L 400 150 L 280 150',
+                20
+              ).path
+            }
+            fill={colorMode === 'dark' ? '#FFFFFF' : '#000000'}
+            opacity=".05"
+            stroke-linejoin="round"
+            strokeWidth="1px"
+          />
           <Line
             d="M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1520 1020 L 1665 876 L 1820 876 L 1950 750 L 1950 540 L 1596 540 L 1596 460 L 1820 460 L 1820 270 L 2430 270"
             line={LineType.TML}
@@ -92,7 +106,7 @@ export const Map = () => {
             d="M 1860 1150 L 2010 1150 L 2250 906 L 2500 906 L 2600 906 L 2600 710"
             line={LineType.TKL}
             onMouseEnter={() => {
-              setHoveringLine(LineType.KTL)
+              setHoveringLine(LineType.TKL)
             }}
             onMouseLeave={() => {
               setHoveringLine(undefined)
@@ -102,7 +116,7 @@ export const Map = () => {
             d="M 2500 906 L 2600 906 L 2600 1040"
             line={LineType.TKL}
             onMouseEnter={() => {
-              setHoveringLine(LineType.KTL)
+              setHoveringLine(LineType.TKL)
             }}
             onMouseLeave={() => {
               setHoveringLine(undefined)
@@ -731,7 +745,7 @@ export const Map = () => {
         <EndTip coord={[2430, 270]} line={LineType.TML} />
         {/* ISL */}
         <EndTip coord={[780, 1156]} flip line={LineType.ISL} />
-        <Stop stop={StopType.KET} coord={[830, 1153]}>
+        <Stop stop={StopType.KET} coord={[830, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
