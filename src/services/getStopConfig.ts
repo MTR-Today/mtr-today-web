@@ -1,4 +1,3 @@
-import { Line } from '../constants/line'
 import { Stop } from '../constants/stop'
 import { apiClient } from './apiClient'
 
@@ -7,5 +6,7 @@ export type StopConfig = {
   nameZh: string
 }
 
-export const getStopConfig = ({ stop }: { stop: Stop }) =>
-  apiClient.url(`/stops/${stop}`).get().json<StopConfig>()
+export type StopConfigs = { [key in Stop]: StopConfig }
+
+export const getStopConfigs = () =>
+  apiClient.url(`/stops`).get().json<StopConfigs>()

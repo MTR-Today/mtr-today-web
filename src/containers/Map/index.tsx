@@ -8,7 +8,7 @@ import { Stop } from './Stop'
 import { Name } from './Name'
 import { Stop as StopType } from '../../constants/stop'
 import { Schedule } from './Schedule'
-import { lineConfigsContext } from '../../contexts/lineConfigsContext'
+import { mapContext } from '../../contexts/mapContext'
 import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
@@ -16,6 +16,8 @@ import { EndTip } from './EndTip'
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import { Island } from './Island'
+import { getSchedules } from '../../services/getSchedules'
+import { getStopConfigs } from '../../services/getStopConfig'
 
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
@@ -31,10 +33,22 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
     getLineConfigs()
   )
 
+  const { data: stopConfigs = {} } = useQuery(['stop-configs'], () =>
+    getStopConfigs()
+  )
+
+  const { data: schedules = {} } = useQuery(
+    ['schedules'],
+    () => getSchedules(),
+    { refetchInterval: 10000 }
+  )
+
   return lineConfigs ? (
-    <lineConfigsContext.Provider
+    <mapContext.Provider
       value={{
+        schedules,
         lineConfigs,
+        stopConfigs,
         hoveringLine: isDragging ? undefined : hoveringLine,
         setHoveringLine,
         isDragging,
@@ -120,36 +134,36 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <Name bottom="25px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.TWH} coord={[550, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.KWH} coord={[650, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.KWF} coord={[750, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.LAK} coord={[855, 633]}>
           <Name bottom="65px" />
           <ArrowRight top="4" left="72px" />
           <ArrowLeft bottom="4" left="72px" />
           <Schedule line={LineType.TCL} dir="up" bottom="40px" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="30px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="30px" />
           <Schedule line={LineType.TCL} dir="down" top="50px" />
         </Stop>
         <Stop stop={StopType.MEF} coord={[1000, 630]}>
@@ -160,41 +174,29 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowLeft top="10" left="3" transform="rotate(90deg)" />
           <ArrowRight top="4" left="20" />
           <ArrowLeft bottom="4" left="20" />
-          <Schedule
-            line={LineType.TWL}
-            dir="up"
-            disabled
-            bottom="20px"
-            right="35px"
-          />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" right="35px" />
           <Schedule line={LineType.TML} dir="up" bottom="20px" left="35px" />
-          <Schedule
-            line={LineType.TWL}
-            dir="down"
-            disabled
-            top="20px"
-            left="35px"
-          />
+          <Schedule line={LineType.TWL} dir="down" top="20px" left="35px" />
           <Schedule line={LineType.TML} dir="down" top="20px" right="35px" />
         </Stop>
         <Stop stop={StopType.LCK} coord={[1130, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.CSW} coord={[1230, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.SSP} coord={[1330, 630]}>
           <Name bottom="45px" />
-          <Schedule line={LineType.TWL} dir="up" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.TWL} dir="up" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" top="20px" />
         </Stop>
         <Stop stop={StopType.PRE} coord={[1393, 690]}>
           <Name right="120px" textAlign="right" />
@@ -202,147 +204,75 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowLeft bottom="9" left="3" transform="rotate(90deg)" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule
-            line={LineType.TWL}
-            dir="up"
-            disabled
-            left="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="up"
-            disabled
-            left="40px"
-            bottom="10px"
-          />
-          <Schedule
-            line={LineType.TWL}
-            dir="down"
-            disabled
-            right="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="down"
-            disabled
-            right="40px"
-            bottom="10px"
-          />
+          <Schedule line={LineType.TWL} dir="up" left="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="up" left="40px" bottom="10px" />
+          <Schedule line={LineType.TWL} dir="down" right="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="down" right="40px" bottom="10px" />
         </Stop>
         <Stop stop={StopType.MOK} coord={[1393, 760]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule
-            line={LineType.TWL}
-            dir="up"
-            disabled
-            left="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="up"
-            disabled
-            left="40px"
-            bottom="10px"
-          />
-          <Schedule
-            line={LineType.TWL}
-            dir="down"
-            disabled
-            right="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="down"
-            disabled
-            right="40px"
-            bottom="10px"
-          />
+          <Schedule line={LineType.TWL} dir="up" left="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="up" left="40px" bottom="10px" />
+          <Schedule line={LineType.TWL} dir="down" right="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="down" right="40px" bottom="10px" />
         </Stop>
         <Stop stop={StopType.YMT} coord={[1393, 830]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
-          <Schedule
-            line={LineType.TWL}
-            dir="up"
-            disabled
-            left="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="up"
-            disabled
-            left="40px"
-            bottom="10px"
-          />
-          <Schedule
-            line={LineType.TWL}
-            dir="down"
-            disabled
-            right="40px"
-            top="10px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="down"
-            disabled
-            right="40px"
-            bottom="10px"
-          />
+          <Schedule line={LineType.TWL} dir="up" left="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="up" left="40px" bottom="10px" />
+          <Schedule line={LineType.TWL} dir="down" right="40px" top="10px" />
+          <Schedule line={LineType.KTL} dir="down" right="40px" bottom="10px" />
         </Stop>
         <Stop stop={StopType.JOR} coord={[1390, 900]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.TWL} dir="up" disabled left="40px" />
-          <Schedule line={LineType.TWL} dir="down" disabled right="40px" />
+          <Schedule line={LineType.TWL} dir="up" left="40px" />
+          <Schedule line={LineType.TWL} dir="down" right="40px" />
         </Stop>
         <Stop stop={StopType.TST} coord={[1390, 970]}>
           <Name bottom="6" right="60px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.TWL} dir="up" disabled left="40px" />
-          <Schedule line={LineType.TWL} dir="down" disabled right="40px" />
+          <Schedule line={LineType.TWL} dir="up" left="40px" />
+          <Schedule line={LineType.TWL} dir="down" right="40px" />
         </Stop>
         {/* KTL */}
         <Stop stop={StopType.LAT} coord={[2240, 830]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.KTL} dir="up" disabled right="40px" />
-          <Schedule line={LineType.KTL} dir="down" disabled left="40px" />
+          <Schedule line={LineType.KTL} dir="up" right="40px" />
+          <Schedule line={LineType.KTL} dir="down" left="40px" />
         </Stop>
         <Stop stop={StopType.KWT} coord={[2240, 760]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.KTL} dir="up" disabled right="40px" />
-          <Schedule line={LineType.KTL} dir="down" disabled left="40px" />
+          <Schedule line={LineType.KTL} dir="up" right="40px" />
+          <Schedule line={LineType.KTL} dir="down" left="40px" />
         </Stop>
         <Stop stop={StopType.NTK} coord={[2240, 690]}>
           <Name right="120px" textAlign="right" />
           <ArrowRight top="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft top="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.KTL} dir="up" disabled right="40px" />
-          <Schedule line={LineType.KTL} dir="down" disabled left="40px" />
+          <Schedule line={LineType.KTL} dir="up" right="40px" />
+          <Schedule line={LineType.KTL} dir="down" left="40px" />
         </Stop>
         <Stop stop={StopType.KOB} coord={[2180, 630]}>
           <Name bottom="45px" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" top="20px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.CHH} coord={[2080, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" top="20px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.DIH} coord={[1950, 630]}>
           <Name bottom="45px" left="60px" textAlign="left" />
@@ -352,20 +282,8 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowLeft top="10" left="3" transform="rotate(90deg)" />
           <ArrowRight top="4" left="20" />
           <ArrowLeft bottom="4" left="20" />
-          <Schedule
-            line={LineType.KTL}
-            dir="up"
-            disabled
-            top="20px"
-            left="35px"
-          />
-          <Schedule
-            line={LineType.KTL}
-            dir="down"
-            disabled
-            bottom="20px"
-            right="35px"
-          />
+          <Schedule line={LineType.KTL} dir="up" top="20px" left="35px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" right="35px" />
           <Schedule line={LineType.TML} dir="up" top="20px" right="35px" />
           <Schedule line={LineType.TML} dir="down" bottom="20px" left="35px" />
         </Stop>
@@ -373,15 +291,15 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" top="20px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.LOF} coord={[1720, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" top="20px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.KOT} coord={[1590, 630]}>
           <Name bottom="45px" left="60px" textAlign="left" />
@@ -392,43 +310,31 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowRight top="4" left="20" />
           <ArrowLeft bottom="4" left="20" />
           <Schedule line={LineType.EAL} dir="up" bottom="20px" left="35px" />
-          <Schedule
-            line={LineType.KTL}
-            dir="up"
-            disabled
-            top="20px"
-            left="35px"
-          />
+          <Schedule line={LineType.KTL} dir="up" top="20px" left="35px" />
           <Schedule line={LineType.EAL} dir="down" top="20px" right="35px" />
-          <Schedule
-            line={LineType.KTL}
-            dir="down"
-            disabled
-            bottom="20px"
-            right="35px"
-          />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" right="35px" />
         </Stop>
         <Stop stop={StopType.SKM} coord={[1460, 630]}>
           <Name bottom="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="20px" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="20px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" top="20px" />
         </Stop>
         <Stop stop={StopType.HOM} coord={[1720, 873]}>
           <Name bottom="35px" right="75px" textAlign="right" />
           <ArrowRight top="4" right="12" />
           <ArrowLeft bottom="4" right="12" />
-          <Schedule line={LineType.KTL} dir="up" disabled bottom="20px" />
+          <Schedule line={LineType.KTL} dir="up" bottom="20px" />
           <Schedule line={LineType.TML} dir="up" bottom="40px" />
-          <Schedule line={LineType.KTL} dir="down" disabled top="20px" />
+          <Schedule line={LineType.KTL} dir="down" top="20px" />
           <Schedule line={LineType.TML} dir="down" top="40px" />
         </Stop>
         <Stop stop={StopType.WHA} coord={[1780, 950]}>
           <Name left="120px" textAlign="left" />
           <ArrowRight bottom="9" right="3" transform="rotate(90deg)" />
           <ArrowLeft bottom="9" left="3" transform="rotate(90deg)" />
-          <Schedule line={LineType.KTL} dir="up" disabled left="40px" />
+          <Schedule line={LineType.KTL} dir="up" left="40px" />
         </Stop>
         <EndTip
           coord={[1780, 1000]}
@@ -700,119 +606,119 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.HKU} coord={[930, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.SYP} coord={[1030, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.SHW} coord={[1130, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.CEN} coord={[1230, 1153]}>
           <Name top="65px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.TWL} dir="up" disabled top="40px" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.TWL} dir="up" top="40px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.ADM} coord={[1330, 1159]}>
           <Name top="105px" />
-          <Schedule line={LineType.TWL} dir="up" disabled top="60px" />
+          <Schedule line={LineType.TWL} dir="up" top="60px" />
           <Schedule line={LineType.EAL} dir="up" top="40px" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
-          <Schedule line={LineType.TWL} dir="down" disabled bottom="40px" />
-          <Schedule line={LineType.SIL} dir="down" disabled top="80px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
+          <Schedule line={LineType.TWL} dir="down" bottom="40px" />
+          <Schedule line={LineType.SIL} dir="down" top="80px" />
         </Stop>
         <Stop stop={StopType.WAC} coord={[1460, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.CAB} coord={[1560, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.TIH} coord={[1660, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.FOH} coord={[1760, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.NOP} coord={[1860, 1153]}>
           <Name top="65px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={LineType.TKL} dir="up" top="40px" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.QUB} coord={[1980, 1153]}>
           <Name top="65px" />
           <ArrowRight top="4" left="60px" />
           <ArrowLeft bottom="4" left="60px" />
           <Schedule line={LineType.TKL} dir="up" top="40px" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
           <Schedule line={LineType.TKL} dir="down" bottom="40px" />
         </Stop>
         <Stop stop={StopType.TAK} coord={[2100, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.SWH} coord={[2200, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.SKW} coord={[2300, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.HFC} coord={[2400, 1156]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.ISL} dir="up" disabled top="20px" />
-          <Schedule line={LineType.ISL} dir="down" disabled bottom="20px" />
+          <Schedule line={LineType.ISL} dir="up" top="20px" />
+          <Schedule line={LineType.ISL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.CHW} coord={[2500, 1250]}>
           <Name right="60px" textAlign="right" />
@@ -831,8 +737,8 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={LineType.TKL} dir="up" top="20px" />
-          <Schedule line={LineType.KTL} dir="up" disabled top="40px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="40px" />
+          <Schedule line={LineType.KTL} dir="up" top="40px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="40px" />
           <Schedule line={LineType.TKL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.TIK} coord={[2400, 903]}>
@@ -840,7 +746,7 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
           <Schedule line={LineType.TKL} dir="up" top="20px" />
-          <Schedule line={LineType.KTL} dir="down" disabled bottom="40px" />
+          <Schedule line={LineType.KTL} dir="down" bottom="40px" />
           <Schedule line={LineType.TKL} dir="down" bottom="20px" />
         </Stop>
         <Stop stop={StopType.TKO} coord={[2500, 906]}>
@@ -953,29 +859,29 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           <Name left="120px" textAlign="left" />
           <ArrowRight bottom="6" right="3" transform="rotate(90deg)" />
           <ArrowLeft bottom="6" left="4" transform="rotate(90deg)" />
-          <Schedule line={LineType.SIL} disabled dir="up" right="40px" />
-          <Schedule line={LineType.SIL} disabled dir="down" left="40px" />
+          <Schedule line={LineType.SIL} dir="up" right="40px" />
+          <Schedule line={LineType.SIL} dir="down" left="40px" />
         </Stop>
         <Stop stop={StopType.WCH} coord={[1250, 1350]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.SIL} dir="down" disabled top="20px" />
-          <Schedule line={LineType.SIL} dir="up" disabled bottom="20px" />
+          <Schedule line={LineType.SIL} dir="down" top="20px" />
+          <Schedule line={LineType.SIL} dir="up" bottom="20px" />
         </Stop>
         <Stop stop={StopType.LET} coord={[1080, 1450]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.SIL} dir="down" disabled top="20px" />
-          <Schedule line={LineType.SIL} dir="up" disabled bottom="20px" />
+          <Schedule line={LineType.SIL} dir="down" top="20px" />
+          <Schedule line={LineType.SIL} dir="up" bottom="20px" />
         </Stop>
         <Stop stop={StopType.SOH} coord={[980, 1450]}>
           <Name top="45px" />
           <ArrowRight top="4" left="12" />
           <ArrowLeft bottom="4" left="12" />
-          <Schedule line={LineType.SIL} dir="down" disabled top="20px" />
-          <Schedule line={LineType.SIL} dir="up" disabled bottom="20px" />
+          <Schedule line={LineType.SIL} dir="down" top="20px" />
+          <Schedule line={LineType.SIL} dir="up" bottom="20px" />
         </Stop>
         <EndTip coord={[930, 1450]} line={LineType.SIL} />
         {/* DRL */}
@@ -993,7 +899,7 @@ export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
           transform="rotate(-90deg)"
         />
       </Wrapper>
-    </lineConfigsContext.Provider>
+    </mapContext.Provider>
   ) : (
     <></>
   )

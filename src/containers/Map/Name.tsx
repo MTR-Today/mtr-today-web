@@ -1,15 +1,13 @@
 import { Box, BoxProps } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import React, { memo, useContext, useMemo } from 'react'
+import React, { memo, useContext } from 'react'
+import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
-import { getStopConfig } from '../../services/getStopConfig'
 
 export const Name: React.FC<BoxProps> = memo(props => {
   const { stop, hovering } = useContext(stopContext)
-
-  const { data } = useQuery(['stop-config', stop], () =>
-    stop ? getStopConfig({ stop }) : null
-  )
+  const { stopConfigs } = useContext(mapContext)
+  const config = stop ? stopConfigs[stop] : undefined
 
   return (
     <Box position="absolute" textAlign="center" {...props}>
@@ -25,8 +23,8 @@ export const Name: React.FC<BoxProps> = memo(props => {
         _hover={{ opacity: 1 }}
         userSelect="none"
       >
-        <Box>{data?.nameZh}</Box>
-        <Box>{data?.nameEn}</Box>
+        <Box>{config?.nameZh}</Box>
+        <Box>{config?.nameEn}</Box>
       </Box>
     </Box>
   )

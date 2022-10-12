@@ -2,7 +2,13 @@ import { Line } from '../constants/line'
 import { Stop } from '../constants/stop'
 import { apiClient } from './apiClient'
 
-type Schedule = {
+export type Schedule = {
+  [key in Line]: {
+    [key in Stop]: StopSchedule
+  }
+}
+
+type ScheduleItem = {
   plat: number
   dest: Stop
   time: string
@@ -11,12 +17,9 @@ type Schedule = {
 export type StopSchedule = {
   currTime: string
   isDelay: boolean
-  schedule: { up?: Schedule[]; down?: Schedule[] }
+  schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] }
   sysTime: string
 }
 
-export const getStopSchedules = ({ line, stop }: { line: Line; stop: Stop }) =>
-  apiClient
-    .url(`/lines/${line}/stops/${stop}/schedules`)
-    .get()
-    .json<StopSchedule>()
+export const getSchedules = () =>
+  apiClient.url(`/schedules`).get().json<Schedule>()

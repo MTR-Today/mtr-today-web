@@ -1,12 +1,10 @@
-import { Box, BoxProps, Flex, Text, useColorMode } from '@chakra-ui/react'
+import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useQuery } from '@tanstack/react-query'
 import React, { memo, useCallback, useContext } from 'react'
 import { Line } from '../../constants/line'
-import { lineConfigsContext } from '../../contexts/lineConfigsContext'
+import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useTime } from '../../hooks/useTime'
-import { getStopSchedules } from '../../services/getStopSchedules'
 import dayjs from 'dayjs'
 
 export const Schedule: React.FC<
@@ -14,14 +12,8 @@ export const Schedule: React.FC<
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, lineConfigs, isDragging } =
-    useContext(lineConfigsContext)
-
-  const { data } = useQuery(
-    ['stop-schedule', line, stop],
-    () => (line && stop ? getStopSchedules({ line, stop }) : null),
-    { enabled: !disabled && !isDragging }
-  )
+  const { hoveringLine, lineConfigs, isDragging, schedules } =
+    useContext(mapContext)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -40,7 +32,9 @@ export const Schedule: React.FC<
     [now]
   )
 
-  const firstItem = data?.schedule?.[dir]?.[0]
+  const firstItem = stop
+    ? schedules?.[line]?.[stop]?.schedule?.[dir]?.[0]
+    : undefined
 
   return (
     <Box position="absolute" {...props}>

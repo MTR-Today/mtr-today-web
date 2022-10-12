@@ -3,13 +3,12 @@ import React, { memo, useCallback, useContext } from 'react'
 import { roundCorners } from 'svg-round-corners'
 import c from 'color'
 import { Line as LineType } from '../../constants/line'
-import { lineConfigsContext } from '../../contexts/lineConfigsContext'
+import { mapContext } from '../../contexts/mapContext'
 
 export const Line: React.FC<
   React.SVGProps<SVGPathElement> & { color?: string; line: LineType }
 > = memo(({ line, d, ...props }) => {
-  const { lineConfigs, hoveringLine, setHoveringLine } =
-    useContext(lineConfigsContext)
+  const { lineConfigs, hoveringLine, setHoveringLine } = useContext(mapContext)
   const { colorMode } = useColorMode()
   const color = lineConfigs[line]?.color
 
