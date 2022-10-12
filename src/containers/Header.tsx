@@ -1,7 +1,8 @@
-import { Box, Button, Flex, useColorMode } from '@chakra-ui/react'
+import { Box, Flex, IconButton, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React from 'react'
 import { useTime } from '../hooks/useTime'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 export const Header = () => {
   const now = useTime()
@@ -10,28 +11,34 @@ export const Header = () => {
   return (
     <Flex
       as="header"
-      position="sticky"
-      top="0"
-      bg="blackAlpha.700"
+      position="absolute"
+      top="16px"
+      left="16px"
+      right="16px"
+      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+      width="calc( 100% - 32px)"
       zIndex="overlay"
-      h="12"
+      borderRadius="md"
       alignItems="center"
+      borderWidth="2px"
+      boxShadow="sm"
     >
-      <Box w="full">
-        <Button onClick={toggleColorMode}>
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
-      </Box>
+      <Box w="full"></Box>
       <Clock
         flexShrink="0"
-        bg="blackAlpha.900"
-        h="full"
         alignItems="center"
         px="4"
-        color="white"
+        borderRightRadius="md"
+        fontSize="sm"
       >
         {now.format('YYYY-MM-DD HH:mm:ss')}
       </Clock>
+      <IconButton
+        aria-label="color-mode"
+        borderLeftRadius="0"
+        onClick={toggleColorMode}
+        icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+      ></IconButton>
     </Flex>
   )
 }

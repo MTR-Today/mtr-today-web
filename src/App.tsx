@@ -4,6 +4,7 @@ import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import { useCallback, useState } from 'react'
 import type { Coordinates } from '@dnd-kit/utilities'
 import { useWindowSize } from './hooks/useWindowSize'
+import { Header } from './containers/Header'
 
 export const App = () => {
   const { width, height } = useWindowSize()
@@ -39,6 +40,7 @@ export const App = () => {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
+      <Header />
       <Wrapper>
         <BG />
         <Map x={x} y={y} />
