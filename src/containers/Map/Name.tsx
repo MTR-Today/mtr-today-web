@@ -20,7 +20,7 @@ export const Name: React.FC<BoxProps> = memo(props => {
         lineHeight="3"
         fontSize="xs"
         minW="20"
-        opacity={hovering ? undefined : '.3'}
+        opacity={hovering ? undefined : '.5'}
         transition="opacity .3s"
         _hover={{ opacity: 1 }}
         userSelect="none"

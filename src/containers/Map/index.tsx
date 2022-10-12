@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import bg from '../../assets/system_map.png'
 import { Line } from './Line'
 import { Line as LineType } from '../../constants/line'
@@ -13,28 +13,27 @@ import { getLineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
-import { Animation } from './animation'
 import { BG } from './BG'
+import { Island } from './BG/Island'
 
 export const Map = () => {
   const [hoveringLine, setHoveringLine] = useState<LineType>()
-  const { data: lineConfigs = {} } = useQuery(['line-configs'], () =>
+  const { data: lineConfigs } = useQuery(['line-configs'], () =>
     getLineConfigs()
   )
-  const ref = useRef<HTMLCanvasElement>(null)
 
-  useEffect(() => {
-    new Animation(ref.current)
-  }, [])
-
-  return (
+  return lineConfigs ? (
     <lineConfigsContext.Provider
       value={{ lineConfigs, hoveringLine, setHoveringLine }}
     >
-      <Water ref={ref} />
       <Wrapper>
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <BG />
+        <BG />
+        <svg
+          width="100%"
+          height="100%"
+          style={{ position: 'absolute', top: 0 }}
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <Line
             d="M 250 500 L 250 240 L 400 240 L 400 530 L 1000 530 L 1000 750 L 1220 970 L 1265 1020 L 1520 1020 L 1665 876 L 1820 876 L 1950 750 L 1950 540 L 1596 540 L 1596 460 L 1820 460 L 1820 270 L 2430 270"
             line={LineType.TML}
@@ -960,6 +959,8 @@ export const Map = () => {
         />
       </Wrapper>
     </lineConfigsContext.Provider>
+  ) : (
+    <></>
   )
 }
 
@@ -967,15 +968,9 @@ const Wrapper = styled.div`
   width: 2800px;
   height: 1630px;
   position: relative;
+  z-index: 1;
   /* background-repeat: no-repeat;
   background-size: 2430px;
   background-position: right 250px top 80px;
   background-image: url(${bg}); */
-`
-
-const Water = styled.canvas`
-  width: 2800px;
-  height: 1630px;
-  position: absolute;
-  opacity: 0.1;
 `

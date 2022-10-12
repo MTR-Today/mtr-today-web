@@ -7,7 +7,7 @@ export class Animation {
     this.config = {
       // https://www.colourlovers.com/palette/577622/One_Sixty-Eight
       colorSchema: ['#2D3748', '#1A202C', '#000000'],
-      numOfLayers: 8,
+      numOfLayers: 10,
     }
 
     this.canvas = canvas
@@ -46,8 +46,6 @@ export class Animation {
     let currColorId = 0
 
     for (let lid = 0; lid <= this.config.numOfLayers; lid++) {
-      const colorAngle = Math.PI * 2 * (lid / this.config.numOfLayers)
-
       layers.push({
         id: lid, // used for noise offset
         progress: 1 - lid / this.config.numOfLayers,
@@ -114,8 +112,6 @@ export class Animation {
   }
 
   update(t) {
-    const prevTimestamp = this.timestamp * 5000
-
     if (t) {
       let shiftNeeded = false
       this.timestamp = t / 5000
