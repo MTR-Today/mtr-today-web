@@ -8,7 +8,9 @@ export const lineConfigsContext = createContext<{
   }
   hoveringLine?: Line
   setHoveringLine: (line: Line | undefined) => void
+  isDragging: boolean
 }>({
   lineConfigs: {},
   setHoveringLine: () => {},
+  isDragging: false,
 })

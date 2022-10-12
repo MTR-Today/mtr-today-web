@@ -14,12 +14,13 @@ export const Schedule: React.FC<
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, lineConfigs } = useContext(lineConfigsContext)
+  const { hoveringLine, lineConfigs, isDragging } =
+    useContext(lineConfigsContext)
 
   const { data } = useQuery(
     ['stop-schedule', line, stop],
     () => (line && stop ? getStopSchedules({ line, stop }) : null),
-    { enabled: !disabled }
+    { enabled: !disabled && !isDragging }
   )
 
   const getDisplayTime = useCallback(
@@ -55,7 +56,11 @@ export const Schedule: React.FC<
         onMouseLeave={() => {
           setHovering(false)
         }}
-        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+        opacity={
+          isDragging || (hoveringLine && hoveringLine !== line)
+            ? '.3'
+            : undefined
+        }
         style={{ transition: 'opacity .3s' }}
         userSelect="none"
       >
@@ -72,7 +77,9 @@ export const Schedule: React.FC<
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
         <Clock w="100%" textAlign="right">
-          {disabled || !firstItem ? '--:--' : getDisplayTime(firstItem.time)}
+          {isDragging || disabled || !firstItem
+            ? '--:--'
+            : getDisplayTime(firstItem.time)}
         </Clock>
       </Flex>
     </Box>
