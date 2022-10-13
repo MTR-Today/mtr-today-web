@@ -1,7 +1,7 @@
 import { Map, MAP_HEIGHT, MAP_WIDTH } from './containers/Map'
 import styled from '@emotion/styled'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Coordinates } from '@dnd-kit/utilities'
 import { useWindowSize } from './hooks/useWindowSize'
 import { Header } from './containers/Header'
@@ -10,19 +10,28 @@ import { getLineConfigs } from './services/getLineConfigs'
 
 export const App = () => {
   const { width, height } = useWindowSize()
+  const [scale, setScale] = useState(1)
   const { data: lineConfigs = {} } = useQuery(['line-configs'], () =>
     getLineConfigs()
   )
 
+  const { mapWidth, mapHight } = useMemo(
+    () => ({
+      mapWidth: MAP_WIDTH * scale,
+      mapHight: MAP_HEIGHT * scale,
+    }),
+    [scale]
+  )
+
   const [{ x, y }, setCoordinates] = useState<Coordinates>({
-    x: MAP_WIDTH > width ? -MAP_WIDTH / 2 / 2 : (width - MAP_WIDTH) / 2,
-    y: MAP_HEIGHT > height ? -MAP_HEIGHT / 2 / 2 : (height - MAP_HEIGHT) / 2,
+    x: mapWidth > width ? -mapWidth / 2 / 2 : (width - mapWidth) / 2,
+    y: mapHight > height ? -mapHight / 2 / 2 : (height - mapHight) / 2,
   })
 
   const handleDragEnd = useCallback(
     ({ delta }: DragEndEvent) => {
-      const maxHeight = -MAP_HEIGHT + height
-      const maxWidth = -MAP_WIDTH + width
+      const maxHeight = -mapHight + height
+      const maxWidth = -mapWidth + width
       setCoordinates(old => {
         const newX = old.x + delta.x
         const newY = old.y + delta.y
@@ -34,12 +43,22 @@ export const App = () => {
     [width, height]
   )
 
+  useEffect(() => {
+    addEventListener('wheel', ({ deltaY }) => {
+      if (deltaY > 0) {
+        setScale(prev => prev - 0.1)
+      } else {
+        setScale(prev => prev + 0.1)
+      }
+    })
+  }, [])
+
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <Header lineConfigs={lineConfigs} />
       <Wrapper>
         <BG />
-        <Map x={x} y={y} lineConfigs={lineConfigs} />
+        <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
       </Wrapper>
     </DndContext>
   )

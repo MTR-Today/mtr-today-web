@@ -26,7 +26,8 @@ export const Map: React.FC<{
   x: number
   y: number
   lineConfigs: Partial<LineConfigs>
-}> = ({ lineConfigs, x, y }) => {
+  scale: number
+}> = ({ lineConfigs, x, y, scale }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({
       id: 'map',
@@ -58,7 +59,13 @@ export const Map: React.FC<{
       <Wrapper
         ref={setNodeRef}
         style={{
-          transform: CSS.Translate.toString(transform),
+          transform: transform
+            ? ` ${CSS.Translate.toString({
+                ...transform,
+                scaleX: scale,
+                scaleY: scale,
+              })} scale(${scale})`
+            : `scale(${scale})`,
           top: y,
           left: x,
         }}

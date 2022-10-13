@@ -24,7 +24,7 @@ export const Header: React.FC<{ lineConfigs: Partial<LineConfigs> }> = ({
       left="16px"
       right="16px"
       bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
-      width="calc( 100% - 32px)"
+      width="calc(100% - 32px)"
       zIndex="overlay"
       borderRadius="md"
       alignItems="center"
