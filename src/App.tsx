@@ -8,9 +8,10 @@ import { Header } from './containers/Header'
 
 export const App = () => {
   const { width, height } = useWindowSize()
+
   const [{ x, y }, setCoordinates] = useState<Coordinates>({
-    x: -MAP_WIDTH / 2 / 2,
-    y: -MAP_HEIGHT / 2 / 2,
+    x: MAP_WIDTH > width ? -MAP_WIDTH / 2 / 2 : (width - MAP_WIDTH) / 2,
+    y: MAP_HEIGHT > height ? -MAP_HEIGHT / 2 / 2 : (height - MAP_HEIGHT) / 2,
   })
 
   const handleDragEnd = useCallback(
