@@ -5,9 +5,14 @@ import { useCallback, useState } from 'react'
 import type { Coordinates } from '@dnd-kit/utilities'
 import { useWindowSize } from './hooks/useWindowSize'
 import { Header } from './containers/Header'
+import { useQuery } from '@tanstack/react-query'
+import { getLineConfigs } from './services/getLineConfigs'
 
 export const App = () => {
   const { width, height } = useWindowSize()
+  const { data: lineConfigs = {} } = useQuery(['line-configs'], () =>
+    getLineConfigs()
+  )
 
   const [{ x, y }, setCoordinates] = useState<Coordinates>({
     x: MAP_WIDTH > width ? -MAP_WIDTH / 2 / 2 : (width - MAP_WIDTH) / 2,
@@ -16,24 +21,14 @@ export const App = () => {
 
   const handleDragEnd = useCallback(
     ({ delta }: DragEndEvent) => {
-      setCoordinates(({ x, y }) => {
-        const newX = x + delta.x
-        const newY = y + delta.y
-
-        return {
-          x:
-            newX > 0
-              ? 0
-              : newX < -MAP_WIDTH + width
-              ? -MAP_WIDTH + width
-              : newX,
-          y:
-            newY > 0
-              ? 0
-              : newY < -MAP_HEIGHT + height
-              ? -MAP_HEIGHT + height
-              : newY,
-        }
+      const maxHeight = -MAP_HEIGHT + height
+      const maxWidth = -MAP_WIDTH + width
+      setCoordinates(old => {
+        const newX = old.x + delta.x
+        const newY = old.y + delta.y
+        const x = newX > 0 ? 0 : newX < maxWidth ? maxWidth : newX
+        const y = newY > 0 ? 0 : newY < maxHeight ? maxHeight : newY
+        return { x, y }
       })
     },
     [width, height]
@@ -41,10 +36,10 @@ export const App = () => {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <Header />
+      <Header lineConfigs={lineConfigs} />
       <Wrapper>
         <BG />
-        <Map x={x} y={y} />
+        <Map x={x} y={y} lineConfigs={lineConfigs} />
       </Wrapper>
     </DndContext>
   )

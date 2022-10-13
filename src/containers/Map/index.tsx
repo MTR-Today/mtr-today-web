@@ -9,7 +9,7 @@ import { Name } from './Name'
 import { Stop as StopType } from '../../constants/stop'
 import { Schedule } from './Schedule'
 import { mapContext } from '../../contexts/mapContext'
-import { getLineConfigs } from '../../services/getLineConfigs'
+import { getLineConfigs, LineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
@@ -22,16 +22,17 @@ import { getStopConfigs } from '../../services/getStopConfig'
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
 
-export const Map: React.FC<{ x: number; y: number }> = ({ x, y }) => {
+export const Map: React.FC<{
+  x: number
+  y: number
+  lineConfigs: Partial<LineConfigs>
+}> = ({ lineConfigs, x, y }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({
       id: 'map',
     })
 
   const [hoveringLine, setHoveringLine] = useState<LineType>()
-  const { data: lineConfigs } = useQuery(['line-configs'], () =>
-    getLineConfigs()
-  )
 
   const { data: stopConfigs = {} } = useQuery(['stop-configs'], () =>
     getStopConfigs()
