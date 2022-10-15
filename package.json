@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0",
     "simplex-noise": "^4.0.0",
     "svg-round-corners": "^0.4.1",
-    "wretch": "^2.1.3"
+    "wretch": "2.1.5"
   },
   "devDependencies": {
     "@types/color": "^3.0.3",
