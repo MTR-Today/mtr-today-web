@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
-    "@chakra-ui/react": "^2.3.4",
+    "@chakra-ui/react": "2.3.6",
     "@dnd-kit/core": "^6.0.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
