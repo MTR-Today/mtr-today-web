@@ -14,7 +14,7 @@
     "@dnd-kit/core": "^6.0.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@tanstack/react-query": "^4.7.1",
+    "@tanstack/react-query": "4.13.0",
     "color": "^4.2.3",
     "constate": "^3.3.2",
     "dayjs": "^1.11.5",
