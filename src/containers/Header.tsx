@@ -3,16 +3,16 @@ import styled from '@emotion/styled'
 import React, { useMemo } from 'react'
 import { useTime } from '../hooks/useTime'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { LineConfigs } from '../services/getLineConfigs'
+import { LineConfig } from '../services/lineConfigApi'
 
-export const Header: React.FC<{ lineConfigs: Partial<LineConfigs> }> = ({
+export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
   lineConfigs,
 }) => {
   const now = useTime()
   const { colorMode, toggleColorMode } = useColorMode()
 
   const colors = useMemo(
-    () => Object.values(lineConfigs).map(({ color }) => color),
+    () => lineConfigs.map(({ color }) => color),
     [lineConfigs]
   )
 

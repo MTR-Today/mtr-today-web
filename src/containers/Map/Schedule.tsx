@@ -1,6 +1,6 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import React, { memo, useCallback, useContext } from 'react'
+import React, { memo, useCallback, useContext, useMemo } from 'react'
 import { Line } from '../../constants/line'
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
@@ -32,9 +32,16 @@ export const Schedule: React.FC<
     [now]
   )
 
-  const firstItem = stop
-    ? schedules?.[line]?.[stop]?.schedule?.[dir]?.[0]
-    : undefined
+  const config = useMemo(
+    () => lineConfigs.find(item => item.code === line),
+    [lineConfigs, line]
+  )
+
+  const firstItem = useMemo(() => {
+    const lineSchedules = schedules.find(item => item.code === line)
+    const stopSchedule = lineSchedules?.stops.find(item => item.code === stop)
+    return stopSchedule?.schedule?.[dir]?.[0]
+  }, [schedules, line, stop, dir])
 
   return (
     <Box position="absolute" {...props}>
@@ -66,7 +73,7 @@ export const Schedule: React.FC<
           borderRadius="100%"
           flexShrink="0"
           color="white"
-          bg={lineConfigs[line]?.color}
+          bg={config?.color}
         >
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>

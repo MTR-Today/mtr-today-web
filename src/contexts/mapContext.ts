@@ -1,20 +1,20 @@
 import { createContext } from 'react'
 import { Line } from '../constants/line'
-import { LineConfigs } from '../services/getLineConfigs'
-import { Schedule } from '../services/getSchedules'
-import { StopConfigs } from '../services/getStopConfig'
+import { Schedule } from '../services/scheduleApi'
+import { LineConfig } from '../services/lineConfigApi'
+import { StopConfig } from '../services/stopConfigApi'
 
 export const mapContext = createContext<{
-  lineConfigs: Partial<LineConfigs>
-  schedules: Partial<Schedule>
-  stopConfigs: Partial<StopConfigs>
+  lineConfigs: LineConfig[]
+  schedules: Schedule[]
+  stopConfigs: StopConfig[]
   hoveringLine?: Line
   setHoveringLine: (line: Line | undefined) => void
   isDragging: boolean
 }>({
-  lineConfigs: {},
-  schedules: {},
-  stopConfigs: {},
+  lineConfigs: [],
+  schedules: [],
+  stopConfigs: [],
   setHoveringLine: () => {},
   isDragging: false,
 })

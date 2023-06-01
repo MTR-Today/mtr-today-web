@@ -9,15 +9,15 @@ import { Name } from './Name'
 import { Stop as StopType } from '../../constants/stop'
 import { Schedule } from './Schedule'
 import { mapContext } from '../../contexts/mapContext'
-import { LineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import { Island } from './Island'
-import { getSchedules } from '../../services/getSchedules'
-import { getStopConfigs } from '../../services/getStopConfig'
+import { LineConfig } from '../../services/lineConfigApi'
+import { scheduleApi } from '../../services/scheduleApi'
+import { stopConfigApi } from '../../services/stopConfigApi'
 
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
@@ -25,7 +25,7 @@ export const MAP_HEIGHT = 1630
 export const Map: React.FC<{
   x: number
   y: number
-  lineConfigs: Partial<LineConfigs>
+  lineConfigs: LineConfig[]
   scale: number
 }> = ({ lineConfigs, x, y, scale }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
@@ -35,13 +35,13 @@ export const Map: React.FC<{
 
   const [hoveringLine, setHoveringLine] = useState<LineType>()
 
-  const { data: stopConfigs = {} } = useQuery(['stop-configs'], () =>
-    getStopConfigs()
+  const { data: stopConfigs = [] } = useQuery(['stop-configs'], () =>
+    stopConfigApi.list()
   )
 
-  const { data: schedules = {} } = useQuery(
+  const { data: schedules = [] } = useQuery(
     ['schedules'],
-    () => getSchedules(),
+    () => scheduleApi.list(),
     { refetchInterval: 10000, refetchOnMount: true }
   )
 

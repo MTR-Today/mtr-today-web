@@ -1,13 +1,16 @@
 import { Box, BoxProps } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import React, { memo, useContext } from 'react'
+import React, { memo, useContext, useMemo } from 'react'
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 
 export const Name: React.FC<BoxProps> = memo(props => {
   const { stop, hovering } = useContext(stopContext)
   const { stopConfigs } = useContext(mapContext)
-  const config = stop ? stopConfigs[stop] : undefined
+  const config = useMemo(
+    () => stopConfigs.find(item => item.code === stop),
+    [stopConfigs, stop]
+  )
 
   return (
     <Box position="absolute" textAlign="center" {...props}>

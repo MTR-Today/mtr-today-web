@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import React, { memo, useCallback, useContext } from 'react'
+import React, { memo, useCallback, useContext, useMemo } from 'react'
 import { roundCorners } from 'svg-round-corners'
 import c from 'color'
 import { Line as LineType } from '../../constants/line'
@@ -10,7 +10,11 @@ export const Line: React.FC<
 > = memo(({ line, d, ...props }) => {
   const { lineConfigs, hoveringLine, setHoveringLine } = useContext(mapContext)
   const { colorMode } = useColorMode()
-  const color = lineConfigs[line]?.color
+
+  const color = useMemo(
+    () => lineConfigs.find(item => item.code === line)?.color,
+    [lineConfigs, line]
+  )
 
   const handleMouseEnter = useCallback(() => {
     setHoveringLine(line)

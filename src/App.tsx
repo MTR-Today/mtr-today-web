@@ -6,14 +6,14 @@ import type { Coordinates } from '@dnd-kit/utilities'
 import { useWindowSize } from './hooks/useWindowSize'
 import { Header } from './containers/Header'
 import { useQuery } from '@tanstack/react-query'
-import { getLineConfigs } from './services/getLineConfigs'
 import { max, min } from 'ramda'
+import { lineConfigApi } from './services/lineConfigApi'
 
 export const App = () => {
   const { width, height } = useWindowSize()
   const [scale, setScale] = useState(1)
-  const { data: lineConfigs = {} } = useQuery(['line-configs'], () =>
-    getLineConfigs()
+  const { data: lineConfigs = [] } = useQuery(['line-configs'], () =>
+    lineConfigApi.list()
   )
 
   const { mapWidth, mapHight } = useMemo(
