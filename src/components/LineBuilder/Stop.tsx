@@ -16,7 +16,8 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const { colorMode } = useColorMode()
   const { stops, schedules, color } = useLine()
 
-  const { schedule } = schedules[stop] || {}
+  const { schedule } = schedules.find(item => item.code === stop) || {}
+  const config = stops.find(item => item.code === stop)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -44,8 +45,8 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
     >
       {namePosition === 'top' && (
         <Box position="absolute" bottom="12" w="20" textAlign="center">
-          <Text fontSize="xs">{stops[stop]?.nameZh}</Text>
-          <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
+          <Text fontSize="xs">{config?.nameZh}</Text>
+          <Text fontSize="xs">{config?.nameEn}</Text>
         </Box>
       )}
       <Box position="absolute" bottom="6" w="56px" textAlign="center">
@@ -106,8 +107,8 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
       </Box>
       {namePosition === 'bottom' && (
         <Box position="absolute" top="12" w="20" textAlign="center">
-          <Text fontSize="xs">{stops[stop]?.nameZh}</Text>
-          <Text fontSize="xs">{stops[stop]?.nameEn}</Text>
+          <Text fontSize="xs">{config?.nameZh}</Text>
+          <Text fontSize="xs">{config?.nameEn}</Text>
         </Box>
       )}
     </Flex>
