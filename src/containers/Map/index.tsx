@@ -9,7 +9,7 @@ import { Name } from './Name'
 import { Stop as StopType } from '../../constants/stop'
 import { Schedule } from './Schedule'
 import { mapContext } from '../../contexts/mapContext'
-import { getLineConfigs, LineConfigs } from '../../services/getLineConfigs'
+import { LineConfigs } from '../../services/getLineConfigs'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
@@ -42,7 +42,7 @@ export const Map: React.FC<{
   const { data: schedules = {} } = useQuery(
     ['schedules'],
     () => getSchedules(),
-    { refetchInterval: 10000 }
+    { refetchInterval: 10000, refetchOnMount: true }
   )
 
   return lineConfigs ? (
