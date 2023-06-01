@@ -7,6 +7,7 @@ import { useWindowSize } from './hooks/useWindowSize'
 import { Header } from './containers/Header'
 import { useQuery } from '@tanstack/react-query'
 import { getLineConfigs } from './services/getLineConfigs'
+import { max, min } from 'ramda'
 
 export const App = () => {
   const { width, height } = useWindowSize()
@@ -46,9 +47,9 @@ export const App = () => {
   useEffect(() => {
     addEventListener('wheel', ({ deltaY }) => {
       if (deltaY > 0) {
-        setScale(prev => prev - 0.1)
+        setScale(prev => max(prev - 0.1, 0.1))
       } else {
-        setScale(prev => prev + 0.1)
+        setScale(prev => min(prev + 0.1, 2))
       }
     })
   }, [])
