@@ -10,15 +10,15 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@chakra-ui/icons": "2.0.11",
-    "@chakra-ui/react": "2.3.4",
+    "@chakra-ui/icons": "2.0.19",
+    "@chakra-ui/react": "2.7.0",
     "@dnd-kit/core": "6.0.5",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@tanstack/react-query": "4.7.1",
     "color": "4.2.3",
     "constate": "3.3.2",
-    "dayjs": "1.11.5",
+    "dayjs": "1.11.7",
     "framer-motion": "7.5.1",
     "ramda": "0.29.0",
     "react": "18.2.0",
