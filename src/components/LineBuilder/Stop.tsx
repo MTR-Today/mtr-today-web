@@ -1,13 +1,13 @@
 import { Box, color, Flex, Text, useColorMode } from '@chakra-ui/react'
 import React, { useCallback, useContext } from 'react'
-import { Stop as StopType } from '../../constants/stop'
 import { useTime } from '../../hooks/useTime'
 import dayjs from 'dayjs'
 import styled from '@emotion/styled'
 import { useLine } from '../../hooks/useLine'
+import { StopCode } from 'mtr-kit'
 
 type Props = {
-  stop: StopType
+  stop: StopCode
   namePosition?: 'top' | 'bottom'
 }
 

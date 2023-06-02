@@ -1,14 +1,14 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React, { memo, useCallback, useContext, useMemo } from 'react'
-import { Line } from '../../constants/line'
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useTime } from '../../hooks/useTime'
 import dayjs from 'dayjs'
+import { LineCode } from 'mtr-kit'
 
 export const Schedule: React.FC<
-  BoxProps & { line: Line; disabled?: boolean; dir: 'up' | 'down' }
+  BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { stop, setHovering } = useContext(stopContext)

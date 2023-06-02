@@ -1,8 +1,8 @@
-import { Line } from '../constants/line'
+import { LineCode } from 'mtr-kit'
 import { apiClient } from './apiClient'
 import { LineSchedule } from './lineScheduleApi'
 
-export type Schedule = { code: Line; stops: LineSchedule[] }
+export type Schedule = { code: LineCode; stops: LineSchedule[] }
 
 export const list = () => apiClient.url(`/schedules`).get().json<Schedule[]>()
 

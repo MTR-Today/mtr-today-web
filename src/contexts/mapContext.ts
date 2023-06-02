@@ -1,15 +1,15 @@
 import { createContext } from 'react'
-import { Line } from '../constants/line'
 import { Schedule } from '../services/scheduleApi'
 import { LineConfig } from '../services/lineConfigApi'
 import { StopConfig } from '../services/stopConfigApi'
+import { LineCode } from 'mtr-kit'
 
 export const mapContext = createContext<{
   lineConfigs: LineConfig[]
   schedules: Schedule[]
   stopConfigs: StopConfig[]
-  hoveringLine?: Line
-  setHoveringLine: (line: Line | undefined) => void
+  hoveringLine?: LineCode
+  setHoveringLine: (line: LineCode | undefined) => void
   isDragging: boolean
 }>({
   lineConfigs: [],

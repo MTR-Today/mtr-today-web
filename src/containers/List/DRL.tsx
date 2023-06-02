@@ -5,13 +5,13 @@ import { Line } from '../../components/LineBuilder/Line'
 import { LineName } from '../../components/LineName'
 import { Start } from '../../components/LineBuilder/Start'
 import { Stop } from '../../components/LineBuilder/Stop'
-import { Line as LineType } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
+
 import { UseLineProvider } from '../../hooks/useLine'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const DRL: React.FC<{ disabled?: boolean }> = ({ disabled }) => {
   return (
-    <UseLineProvider line={LineType.DRL} disabled={disabled}>
+    <UseLineProvider line={LineCode.DRL} disabled={disabled}>
       <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
@@ -22,9 +22,9 @@ export const DRL: React.FC<{ disabled?: boolean }> = ({ disabled }) => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.SUN} />
+          <Stop stop={StopCode.SUN} />
           <Line />
-          <Stop stop={StopType.DIS} />
+          <Stop stop={StopCode.DIS} />
           <End />
         </Flex>
       </Flex>

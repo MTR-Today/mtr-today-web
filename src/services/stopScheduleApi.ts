@@ -1,10 +1,9 @@
-import { Line } from '../constants/line'
-import { Stop } from '../constants/stop'
+import { LineCode, StopCode } from 'mtr-kit'
 import { apiClient } from './apiClient'
 
 type ScheduleItem = {
   plat: number
-  dest: Stop
+  dest: StopCode
   time: string
 }
 
@@ -15,7 +14,7 @@ export type StopSchedule = {
   sysTime: string
 }
 
-export const get = ({ line, stop }: { line: Line; stop: Stop }) =>
+export const get = ({ line, stop }: { line: LineCode; stop: StopCode }) =>
   apiClient
     .url(`/lines/${line}/stops/${stop}/schedules`)
     .get()

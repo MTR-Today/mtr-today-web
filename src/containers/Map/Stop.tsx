@@ -1,18 +1,18 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
 import React, { memo, useContext, useMemo, useState } from 'react'
-import { Line } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
+
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const Stop: React.FC<
-  BoxProps & { coord: [x: number, y: number]; stop: StopType }
+  BoxProps & { coord: [x: number, y: number]; stop: StopCode }
 > = memo(({ children, stop, coord: [x, y], ...props }) => {
   const [stopHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
   const { hoveringLine } = useContext(mapContext)
 
-  const lineList = useMemo<Line[]>(() => {
+  const lineList = useMemo<LineCode[]>(() => {
     if (!Array.isArray(children)) return []
     return children
       .map(({ props }) => {

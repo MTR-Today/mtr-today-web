@@ -1,8 +1,8 @@
+import { StopCode } from 'mtr-kit'
 import { createContext } from 'react'
-import { Stop } from '../constants/stop'
 
 export const stopContext = createContext<{
-  stop?: Stop
+  stop?: StopCode
   hovering: boolean
   lineHovering: boolean
   setHovering: (value: boolean) => void

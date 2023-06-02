@@ -5,13 +5,13 @@ import { Line } from '../../components/LineBuilder/Line'
 import { LineName } from '../../components/LineName'
 import { Start } from '../../components/LineBuilder/Start'
 import { Stop } from '../../components/LineBuilder/Stop'
-import { Line as LineType } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
+
 import { UseLineProvider } from '../../hooks/useLine'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const TML: React.FC = () => {
   return (
-    <UseLineProvider line={LineType.TML}>
+    <UseLineProvider line={LineCode.TML}>
       <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
@@ -22,59 +22,59 @@ export const TML: React.FC = () => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.TUM} />
+          <Stop stop={StopCode.TUM} />
           <Line />
-          <Stop stop={StopType.SIH} />
+          <Stop stop={StopCode.SIH} />
           <Line />
-          <Stop stop={StopType.TIS} />
+          <Stop stop={StopCode.TIS} />
           <Line />
-          <Stop stop={StopType.LOP} />
+          <Stop stop={StopCode.LOP} />
           <Line />
-          <Stop stop={StopType.YUL} />
+          <Stop stop={StopCode.YUL} />
           <Line />
-          <Stop stop={StopType.KSR} />
+          <Stop stop={StopCode.KSR} />
           <Line />
-          <Stop stop={StopType.TWW} />
+          <Stop stop={StopCode.TWW} />
           <Line />
-          <Stop stop={StopType.MEF} />
+          <Stop stop={StopCode.MEF} />
           <Line />
-          <Stop stop={StopType.NAC} />
+          <Stop stop={StopCode.NAC} />
           <Line />
-          <Stop stop={StopType.AUS} />
+          <Stop stop={StopCode.AUS} />
           <Line />
-          <Stop stop={StopType.ETS} />
+          <Stop stop={StopCode.ETS} />
           <Line />
-          <Stop stop={StopType.HUH} />
+          <Stop stop={StopCode.HUH} />
           <Line />
-          <Stop stop={StopType.HOM} />
+          <Stop stop={StopCode.HOM} />
           <Line />
-          <Stop stop={StopType.TKW} />
+          <Stop stop={StopCode.TKW} />
           <Line />
-          <Stop stop={StopType.SUW} />
+          <Stop stop={StopCode.SUW} />
           <Line />
-          <Stop stop={StopType.KAT} />
+          <Stop stop={StopCode.KAT} />
           <Line />
-          <Stop stop={StopType.DIH} />
+          <Stop stop={StopCode.DIH} />
           <Line />
-          <Stop stop={StopType.HIK} />
+          <Stop stop={StopCode.HIK} />
           <Line />
-          <Stop stop={StopType.TAW} />
+          <Stop stop={StopCode.TAW} />
           <Line />
-          <Stop stop={StopType.CKT} />
+          <Stop stop={StopCode.CKT} />
           <Line />
-          <Stop stop={StopType.STW} />
+          <Stop stop={StopCode.STW} />
           <Line />
-          <Stop stop={StopType.CIO} />
+          <Stop stop={StopCode.CIO} />
           <Line />
-          <Stop stop={StopType.SHM} />
+          <Stop stop={StopCode.SHM} />
           <Line />
-          <Stop stop={StopType.TSH} />
+          <Stop stop={StopCode.TSH} />
           <Line />
-          <Stop stop={StopType.HEO} />
+          <Stop stop={StopCode.HEO} />
           <Line />
-          <Stop stop={StopType.MOS} />
+          <Stop stop={StopCode.MOS} />
           <Line />
-          <Stop stop={StopType.WKS} />
+          <Stop stop={StopCode.WKS} />
           <End />
         </Flex>
       </Flex>

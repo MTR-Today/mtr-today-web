@@ -3,17 +3,15 @@ import React from 'react'
 import { End } from '../../components/LineBuilder/End'
 import { Line } from '../../components/LineBuilder/Line'
 import { LineName } from '../../components/LineName'
-import { Split } from '../../components/LineBuilder/Split'
 import { Start } from '../../components/LineBuilder/Start'
 import { Stop } from '../../components/LineBuilder/Stop'
-import { Line as LineType } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
 import { UseLineProvider } from '../../hooks/useLine'
 import { Joint } from '../../components/LineBuilder/Joint'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const TKL: React.FC = () => {
   return (
-    <UseLineProvider line={LineType.TKL}>
+    <UseLineProvider line={LineCode.TKL}>
       <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
@@ -26,9 +24,9 @@ export const TKL: React.FC = () => {
           <Box>
             <Flex verticalAlign="center" alignItems="center" pb="56px">
               <Start />
-              <Stop stop={StopType.POA} namePosition="top" />
+              <Stop stop={StopCode.POA} namePosition="top" />
               <Line />
-              <Stop stop={StopType.HAH} namePosition="top" />
+              <Stop stop={StopCode.HAH} namePosition="top" />
               <Line />
             </Flex>
             <Flex
@@ -38,20 +36,20 @@ export const TKL: React.FC = () => {
             >
               <Start />
               <Line />
-              <Stop stop={StopType.LHP} />
+              <Stop stop={StopCode.LHP} />
               <Line />
             </Flex>
           </Box>
           <Joint />
-          <Stop stop={StopType.TKO} />
+          <Stop stop={StopCode.TKO} />
           <Line />
-          <Stop stop={StopType.TIK} />
+          <Stop stop={StopCode.TIK} />
           <Line />
-          <Stop stop={StopType.YAT} />
+          <Stop stop={StopCode.YAT} />
           <Line />
-          <Stop stop={StopType.QUB} />
+          <Stop stop={StopCode.QUB} />
           <Line />
-          <Stop stop={StopType.NOP} />
+          <Stop stop={StopCode.NOP} />
           <End />
         </Flex>
       </Flex>

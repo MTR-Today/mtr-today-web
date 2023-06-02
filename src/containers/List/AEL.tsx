@@ -5,13 +5,12 @@ import { Line } from '../../components/LineBuilder/Line'
 import { LineName } from '../../components/LineName'
 import { Start } from '../../components/LineBuilder/Start'
 import { Stop } from '../../components/LineBuilder/Stop'
-import { Line as LineType } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
 import { UseLineProvider } from '../../hooks/useLine'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const AEL: React.FC = () => {
   return (
-    <UseLineProvider line={LineType.AEL}>
+    <UseLineProvider line={LineCode.AEL}>
       <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
@@ -22,15 +21,15 @@ export const AEL: React.FC = () => {
           overflow="auto"
         >
           <Start />
-          <Stop stop={StopType.AWE} />
+          <Stop stop={StopCode.AWE} />
           <Line />
-          <Stop stop={StopType.AIR} />
+          <Stop stop={StopCode.AIR} />
           <Line />
-          <Stop stop={StopType.TSY} />
+          <Stop stop={StopCode.TSY} />
           <Line />
-          <Stop stop={StopType.KOW} />
+          <Stop stop={StopCode.KOW} />
           <Line />
-          <Stop stop={StopType.HOK} />
+          <Stop stop={StopCode.HOK} />
           <End />
         </Flex>
       </Flex>

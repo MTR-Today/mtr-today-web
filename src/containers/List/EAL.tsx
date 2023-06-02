@@ -4,16 +4,15 @@ import { End } from '../../components/LineBuilder/End'
 import { LineName } from '../../components/LineName'
 import { Start } from '../../components/LineBuilder/Start'
 import { Stop } from '../../components/LineBuilder/Stop'
-import { Line as LineType } from '../../constants/line'
-import { Stop as StopType } from '../../constants/stop'
 import { Line } from '../../components/LineBuilder/Line'
 import { Joint } from '../../components/LineBuilder/Joint'
 import { Split } from '../../components/LineBuilder/Split'
 import { UseLineProvider } from '../../hooks/useLine'
+import { LineCode, StopCode } from 'mtr-kit'
 
 export const EAL: React.FC = () => {
   return (
-    <UseLineProvider line={LineType.EAL}>
+    <UseLineProvider line={LineCode.EAL}>
       <Flex w="full" height="250" bg="blackAlpha.100">
         <LineName />
         <Flex
@@ -26,52 +25,52 @@ export const EAL: React.FC = () => {
           <Box>
             <Flex verticalAlign="center" alignItems="center" pb="56px">
               <Start />
-              <Stop stop={StopType.LMC} namePosition="top" />
+              <Stop stop={StopCode.LMC} namePosition="top" />
               <Line />
             </Flex>
             <Flex verticalAlign="center" alignItems="center">
               <Start />
-              <Stop stop={StopType.LOW} />
+              <Stop stop={StopCode.LOW} />
               <Line />
             </Flex>
           </Box>
           <Joint />
-          <Stop stop={StopType.SHS} />
+          <Stop stop={StopCode.SHS} />
           <Line />
-          <Stop stop={StopType.FAN} />
+          <Stop stop={StopCode.FAN} />
           <Line />
-          <Stop stop={StopType.TAW} />
+          <Stop stop={StopCode.TAW} />
           <Line />
-          <Stop stop={StopType.TAP} />
+          <Stop stop={StopCode.TAP} />
           <Line />
-          <Stop stop={StopType.UNI} />
+          <Stop stop={StopCode.UNI} />
           <Split />
           <Box>
             <Flex verticalAlign="center" alignItems="center" pb="56px">
               <Line />
-              <Stop stop={StopType.RAC} namePosition="top" />
+              <Stop stop={StopCode.RAC} namePosition="top" />
               <Line />
             </Flex>
             <Flex verticalAlign="center" alignItems="center">
               <Line />
-              <Stop stop={StopType.FOT} />
+              <Stop stop={StopCode.FOT} />
               <Line />
             </Flex>
           </Box>
           <Joint />
-          <Stop stop={StopType.SHT} />
+          <Stop stop={StopCode.SHT} />
           <Line />
-          <Stop stop={StopType.TAW} />
+          <Stop stop={StopCode.TAW} />
           <Line />
-          <Stop stop={StopType.KOT} />
+          <Stop stop={StopCode.KOT} />
           <Line />
-          <Stop stop={StopType.MKK} />
+          <Stop stop={StopCode.MKK} />
           <Line />
-          <Stop stop={StopType.HUH} />
+          <Stop stop={StopCode.HUH} />
           <Line />
-          <Stop stop={StopType.EXC} />
+          <Stop stop={StopCode.EXC} />
           <Line />
-          <Stop stop={StopType.ADM} />
+          <Stop stop={StopCode.ADM} />
           <End />
         </Flex>
       </Flex>
