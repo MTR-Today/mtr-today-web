@@ -17,6 +17,7 @@ import { LineConfig } from '../../services/lineConfigApi'
 import { scheduleApi } from '../../services/scheduleApi'
 import { stopConfigApi } from '../../services/stopConfigApi'
 import { LineCode, StopCode } from 'mtr-kit'
+import { Box } from '@chakra-ui/react'
 
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
@@ -56,6 +57,8 @@ export const Map: React.FC<{
       }}
     >
       <Wrapper
+        borderWidth="2px"
+        borderRadius="xl"
         ref={setNodeRef}
         style={{
           transform: transform
@@ -912,7 +915,7 @@ export const Map: React.FC<{
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled(Box)`
   width: ${MAP_WIDTH}px;
   height: ${MAP_HEIGHT}px;
   position: relative;

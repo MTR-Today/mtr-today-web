@@ -31,13 +31,11 @@ export const App = () => {
 
   const handleDragEnd = useCallback(
     ({ delta }: DragEndEvent) => {
-      const maxHeight = -mapHight + height
-      const maxWidth = -mapWidth + width
       setCoordinates(old => {
         const newX = old.x + delta.x
         const newY = old.y + delta.y
-        const x = newX > 0 ? 0 : newX < maxWidth ? maxWidth : newX
-        const y = newY > 0 ? 0 : newY < maxHeight ? maxHeight : newY
+        const x = newX
+        const y = newY
         return { x, y }
       })
     },
