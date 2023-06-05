@@ -9,18 +9,16 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react'
-import styled from '@emotion/styled'
 import React, { useMemo } from 'react'
-import { useTime } from '../hooks/useTime'
 import { HamburgerIcon, MoonIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
-import { LineConfig } from '../services/lineConfigApi'
-import { useConfig } from '../hooks/useConfig'
-import { TimeDisplay } from '../constants/timeDisplay'
+import { LineConfig } from '../../services/lineConfigApi'
+import { useConfig } from '../../hooks/useConfig'
+import { TimeDisplay } from '../../constants/timeDisplay'
+import { Clock } from './Clock'
 
 export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
   lineConfigs,
 }) => {
-  const now = useTime()
   const { colorMode, toggleColorMode } = useColorMode()
   const { timeDisplay, setTimeDisplay } = useConfig()
 
@@ -81,15 +79,7 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
           </Text>
         </Flex>
       </Flex>
-      <Clock
-        flexShrink="0"
-        alignItems="center"
-        px="4"
-        borderRightRadius="md"
-        fontSize="sm"
-      >
-        {now.format('YYYY-MM-DD HH:mm:ss')}
-      </Clock>
+      <Clock />
       <Menu strategy="fixed">
         <MenuButton
           as={IconButton}
@@ -123,7 +113,3 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
     </Flex>
   )
 }
-
-const Clock = styled(Flex)`
-  font-variant-numeric: tabular-nums;
-`
