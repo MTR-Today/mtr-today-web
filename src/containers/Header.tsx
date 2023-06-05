@@ -1,15 +1,28 @@
-import { Box, Flex, IconButton, Text, useColorMode } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React, { useMemo } from 'react'
 import { useTime } from '../hooks/useTime'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, MoonIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
 import { LineConfig } from '../services/lineConfigApi'
+import { useConfig } from '../hooks/useConfig'
+import { TimeDisplay } from '../constants/timeDisplay'
 
 export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
   lineConfigs,
 }) => {
   const now = useTime()
   const { colorMode, toggleColorMode } = useColorMode()
+  const { timeDisplay, setTimeDisplay } = useConfig()
 
   const colors = useMemo(
     () => lineConfigs.map(({ color }) => color),
@@ -77,12 +90,36 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
       >
         {now.format('YYYY-MM-DD HH:mm:ss')}
       </Clock>
-      <IconButton
-        aria-label="color-mode"
-        borderLeftRadius="0"
-        onClick={toggleColorMode}
-        icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
-      ></IconButton>
+      <Menu strategy="fixed">
+        <MenuButton
+          as={IconButton}
+          aria-label="Options"
+          icon={<HamburgerIcon />}
+          borderLeftRadius="0"
+        >
+          Actions
+        </MenuButton>
+        <MenuList>
+          <MenuItem
+            icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+            onClick={toggleColorMode}
+          >
+            Color Mode
+          </MenuItem>
+          <MenuItem
+            icon={<TimeIcon />}
+            onClick={() => {
+              setTimeDisplay(prev =>
+                prev === TimeDisplay.ABS ? TimeDisplay.REL : TimeDisplay.ABS
+              )
+            }}
+          >
+            {timeDisplay === TimeDisplay.ABS
+              ? 'Show Relative Time'
+              : 'Show Absolute Time'}
+          </MenuItem>
+        </MenuList>
+      </Menu>
     </Flex>
   )
 }

@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client'
 import { App } from './App'
 import { UseTimeProvider } from './hooks/useTime'
 import './utils/dayjs'
+import { UseConfigProvider } from './hooks/useConfig'
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { cacheTime: 0 } },
@@ -23,10 +24,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <UseTimeProvider>
-          <App />
-        </UseTimeProvider>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <UseConfigProvider>
+          <UseTimeProvider>
+            <App />
+          </UseTimeProvider>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        </UseConfigProvider>
       </ChakraProvider>
     </QueryClientProvider>
   </React.StrictMode>

@@ -6,11 +6,14 @@ import { stopContext } from '../../contexts/stopContext'
 import { useTime } from '../../hooks/useTime'
 import dayjs from 'dayjs'
 import { LineCode } from 'mtr-kit'
+import { useConfig } from '../../hooks/useConfig'
+import { TimeDisplay } from '../../constants/timeDisplay'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
+  const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
   const { hoveringLine, lineConfigs, isDragging, schedules } =
     useContext(mapContext)
@@ -18,6 +21,8 @@ export const Schedule: React.FC<
   const getDisplayTime = useCallback(
     (time: string) => {
       const timeDayJs = dayjs(time)
+
+      if (timeDisplay === TimeDisplay.ABS) return timeDayJs.format('H[:]mm')
 
       return timeDayJs.isAfter(now)
         ? dayjs
@@ -29,7 +34,7 @@ export const Schedule: React.FC<
             .format('-H[:]mm:ss')
             .replace(/^-0:/, '-')
     },
-    [now]
+    [now, timeDisplay]
   )
 
   const config = useMemo(
