@@ -73,6 +73,6 @@ const BG = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.05;
   background-color: #000000;
 `
