@@ -1,13 +1,14 @@
 {
-  "name": "mtr",
+  "name": "mtr-today-web",
   "private": true,
   "version": "0.0.0",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
-    "tsc": "tsc"
+    "test": "tsc"
   },
   "dependencies": {
     "@chakra-ui/icons": "2.0.19",
