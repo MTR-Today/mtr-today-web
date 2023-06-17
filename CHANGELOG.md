@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/mtr-today/mtr-today-web/compare/v1.0.0...v1.0.1) (2023-06-17)
+
+
+### Bug Fixes
+
+* missing dep ([e63c2c3](https://github.com/mtr-today/mtr-today-web/commit/e63c2c3b9a8171e97153deae6bceaf4280bb59f1))
+
 ## 1.0.0 (2023-06-17)
 
 
