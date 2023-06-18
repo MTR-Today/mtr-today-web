@@ -1,8 +1,9 @@
 {
   "name": "mtr-today-web",
-  "private": true,
   "version": "1.0.1",
-  "license": "UNLICENSED",
+  "repository": "https://github.com/mtr-today/mtr-today-web.git",
+  "author": "marklai1998 <marklai1998@gmail.com>",
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": "^20"
@@ -14,7 +15,7 @@
     "preview": "vite preview",
     "test": "tsc",
     "lint:js": "eslint src",
-    "pre-commit": "yarn lint-staged",
+    "pre-commit": "pnpm lint-staged",
     "pre-push": "tsc",
     "prepare": "husky install"
   },
