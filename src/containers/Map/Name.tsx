@@ -1,6 +1,6 @@
 import { Box, BoxProps } from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
 import React, { memo, useContext, useMemo } from 'react'
+
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 

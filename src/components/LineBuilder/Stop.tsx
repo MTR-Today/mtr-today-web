@@ -1,10 +1,11 @@
-import { Box, color, Flex, Text, useColorMode } from '@chakra-ui/react'
-import React, { useCallback, useContext } from 'react'
-import { useTime } from '../../hooks/useTime'
-import dayjs from 'dayjs'
+import { Box, Flex, Text, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useLine } from '../../hooks/useLine'
+import dayjs from 'dayjs'
 import { StopCode } from 'mtr-kit'
+import React, { useCallback } from 'react'
+
+import { useLine } from '../../hooks/useLine'
+import { useTime } from '../../hooks/useTime'
 
 type Props = {
   stop: StopCode
@@ -80,7 +81,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
         borderWidth="3px"
         borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
         borderRadius="100%"
-      ></Box>
+      />
       <Box position="absolute" top="6" w="56px" textAlign="center">
         {schedule?.down?.[0] ? (
           <Flex fontSize="xs">

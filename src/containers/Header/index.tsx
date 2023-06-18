@@ -1,3 +1,4 @@
+import { HamburgerIcon, MoonIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
 import {
   Box,
   Flex,
@@ -10,10 +11,10 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import { HamburgerIcon, MoonIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
-import { LineConfig } from '../../services/lineConfigApi'
-import { useConfig } from '../../hooks/useConfig'
+
 import { TimeDisplay } from '../../constants/timeDisplay'
+import { useConfig } from '../../hooks/useConfig'
+import { LineConfig } from '../../services/lineConfigApi'
 import { Clock } from './Clock'
 
 export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
@@ -47,6 +48,7 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
         <Box>
           {colors.map(color => (
             <Box
+              key={color}
               display="inline-block"
               bg={color}
               w="4px"

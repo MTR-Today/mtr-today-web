@@ -1,4 +1,5 @@
 import { LineCode } from 'mtr-kit'
+
 import { apiClient } from './apiClient'
 import { StopConfig } from './stopConfigApi'
 
@@ -10,7 +11,7 @@ export type LineConfig = {
   stops: StopConfig[]
 }
 
-const list = () => apiClient.url(`/lines`).get().json<LineConfig[]>()
+const list = () => apiClient.url('/lines').get().json<LineConfig[]>()
 
 const get = ({ line }: { line: LineCode }) =>
   apiClient.url(`/lines/${line}`).get().json<LineConfig>()

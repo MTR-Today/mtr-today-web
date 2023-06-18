@@ -1,0 +1,158 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "@spotify/eslint-config-base",
+    "@spotify/eslint-config-react",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier",
+    "react",
+    "@typescript-eslint",
+    "jsx-a11y",
+    "fp",
+    "@tanstack/query"
+  ],
+  "rules": {
+    "fp/no-mutation": "error",
+    "arrow-body-style": "warn",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    // conflict with ts path
+    "import/no-unresolved": "off",
+    // not useful for react fc
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+
+    // sometime need console for debugging
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    // styled component need to be at the bottom of file
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    // lot of api response not using camel case
+    "camelcase": "off",
+    "no-nested-ternary": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "consistent-return": "off",
+
+    // a11y rule
+    "jsx-a11y/no-onchange": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+
+    // use prettier for code style
+    "comma-dangle": "off",
+    "semi": "off",
+    "no-extra-semi": "off",
+    "indent": "off",
+    "@typescript-eslint/no-extra-semi": "off",
+    "no-spaced-func": "off",
+    "prettier/prettier": "error",
+    "comma-spacing": "off",
+
+    // use typescript-eslint rule instead
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+
+    // custom rules
+    "max-depth": ["error", 3],
+    // should use `String(var)` instead of `'' + var` for type convert
+    "no-implicit-coercion": "error",
+    "no-shadow-restricted-names": "error",
+    "prefer-arrow-callback": "error",
+    // do not use `let` unless need to reassign
+    "prefer-const": "error",
+    // must add new line between statement
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": [
+          "block",
+          "block-like",
+          "cjs-export",
+          "class",
+          "export",
+          "import",
+          "multiline-const",
+          "multiline-expression"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["export", "import"],
+        "next": ["export", "import"]
+      }
+    ],
+
+    // react rules
+    // force fc style
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
+    // avoid accidentally using default type=submit which will reload the page
+    "react/button-has-type": "error",
+    // avoid accidentally using default type=submit which will reload the page
+    "react/jsx-key": "error",
+    // must not use index as key
+    "react/no-array-index-key": "error",
+    // this.props and this.state may be updated asynchronously, you should not rely on their values for calculating the next state
+    // see https://medium.com/@wisecobbler/using-a-function-in-setstate-instead-of-an-object-1f5cfd6e55d1
+    "react/no-access-state-in-setstate": "error",
+    // must not use dangerouslySetInnerHTML
+    "react/no-danger": "error",
+    // no deprecated react features
+    "react/no-deprecated": "error",
+    "react/no-is-mounted": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    // never mutate state directly
+    "react/no-direct-mutation-state": "error",
+    // avoid typo on default static class properties and lifecycle methods
+    "react/no-typos": "error",
+    // do not allow using `this` in functional component
+    "react/no-this-in-sfc": "error",
+    // avoid typo
+    "react/no-unescaped-entities": "error",
+    // avoid typo on property name
+    "react/no-unknown-property": "error",
+    // should clean up unused props and states
+    "react/no-unused-prop-types": "error",
+    "react/no-unused-state": "error",
+    // enforce importing react when using jsx
+    "react/react-in-jsx-scope": "error",
+    // make sure render function return sth
+    "react/require-render-return": "error",
+    // sort lifecycle method for readability
+    "react/sort-comp": "error",
+    // avoid wrong html
+    "react/void-dom-elements-no-children": "error",
+    // prefer functional component if no lifecycle, state and event handlers
+    "react/prefer-stateless-function": [
+      "error",
+      { "ignorePureComponents": false }
+    ]
+  }
+}

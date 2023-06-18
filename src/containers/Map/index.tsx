@@ -1,23 +1,24 @@
-import styled from '@emotion/styled'
-import { useQuery } from '@tanstack/react-query'
-import React, { useState } from 'react'
-import bg from '../../assets/system_map.png'
-import { Line } from './Line'
-import { Stop } from './Stop'
-import { Name } from './Name'
-import { Schedule } from './Schedule'
-import { mapContext } from '../../contexts/mapContext'
-import { ArrowLeft } from './ArrowLeft'
-import { ArrowRight } from './ArrowRight'
-import { EndTip } from './EndTip'
+import { Box } from '@chakra-ui/react'
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
-import { Island } from './Island'
+import styled from '@emotion/styled'
+import { useQuery } from '@tanstack/react-query'
+import { LineCode, StopCode } from 'mtr-kit'
+import React, { useState } from 'react'
+
+import bg from '../../assets/system_map.png'
+import { mapContext } from '../../contexts/mapContext'
 import { LineConfig } from '../../services/lineConfigApi'
 import { scheduleApi } from '../../services/scheduleApi'
 import { stopConfigApi } from '../../services/stopConfigApi'
-import { LineCode, StopCode } from 'mtr-kit'
-import { Box } from '@chakra-ui/react'
+import { ArrowLeft } from './ArrowLeft'
+import { ArrowRight } from './ArrowRight'
+import { EndTip } from './EndTip'
+import { Island } from './Island'
+import { Line } from './Line'
+import { Name } from './Name'
+import { Schedule } from './Schedule'
+import { Stop } from './Stop'
 
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
@@ -35,15 +36,17 @@ export const Map: React.FC<{
 
   const [hoveringLine, setHoveringLine] = useState<LineCode>()
 
-  const { data: stopConfigs = [] } = useQuery(['stop-configs'], () =>
-    stopConfigApi.list()
-  )
+  const { data: stopConfigs = [] } = useQuery({
+    queryKey: ['stop-configs'],
+    queryFn: () => stopConfigApi.list(),
+  })
 
-  const { data: schedules = [] } = useQuery(
-    ['schedules'],
-    () => scheduleApi.list(),
-    { refetchInterval: 10000, refetchOnMount: true }
-  )
+  const { data: schedules = [] } = useQuery({
+    queryKey: ['schedules'],
+    queryFn: () => scheduleApi.list(),
+    refetchInterval: 10000,
+    refetchOnMount: true,
+  })
 
   return lineConfigs ? (
     <mapContext.Provider
