@@ -4,6 +4,9 @@
   "version": "1.0.1",
   "license": "UNLICENSED",
   "type": "module",
+  "engines": {
+    "node": "^20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
