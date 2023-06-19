@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/mtr-today/mtr-today-web/compare/v1.1.0...v1.2.0) (2023-06-19)
+
+
+### Features
+
+* chinese translation ([2a92594](https://github.com/mtr-today/mtr-today-web/commit/2a92594afe477b933952b6b7be0cc1a42489038e))
+* favicon ([232dd66](https://github.com/mtr-today/mtr-today-web/commit/232dd661f55c7bd5badc456c4308b417e0400310))
+* github link ([dbdd1ce](https://github.com/mtr-today/mtr-today-web/commit/dbdd1ceb2209e073df6a22f5c86021ded5596a3c))
+* google ads ([3ae733d](https://github.com/mtr-today/mtr-today-web/commit/3ae733d7b9dddec83861409ebf0a54760da9bdee))
+* logo ([c7ff64e](https://github.com/mtr-today/mtr-today-web/commit/c7ff64e9e3f0c4dd260878f537f24b37648bf949))
+* meta tag ([ddaa261](https://github.com/mtr-today/mtr-today-web/commit/ddaa261457e1304638c5bd899b88c8a5ffdb49cf))
+* update title ([30df689](https://github.com/mtr-today/mtr-today-web/commit/30df68927fe19d97b0e9a970d57f126e0060957c))
+
 ## [1.1.0](https://github.com/mtr-today/mtr-today-web/compare/v1.0.1...v1.1.0) (2023-06-19)
 
 
