@@ -83,15 +83,13 @@ export const Header: React.FC = () => {
           aria-label="Options"
           icon={<HamburgerIcon />}
           borderLeftRadius="0"
-        >
-          Actions
-        </MenuButton>
+        />
         <MenuList>
           <MenuItem
             icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
             onClick={toggleColorMode}
           >
-            Color Mode
+            {colorMode === 'light' ? '暗黑模式: 關' : '暗黑模式: 開'}
           </MenuItem>
           <MenuItem
             icon={<TimeIcon />}
@@ -101,9 +99,7 @@ export const Header: React.FC = () => {
               )
             }}
           >
-            {timeDisplay === TimeDisplay.ABS
-              ? 'Show Relative Time'
-              : 'Show Absolute Time'}
+            {timeDisplay === TimeDisplay.ABS ? '顯示相對時間' : '顯示絕對時間'}
           </MenuItem>
         </MenuList>
       </Menu>
