@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/mtr-today/mtr-today-web/compare/v1.2.0...v1.3.0) (2023-06-19)
+
+
+### Features
+
+* time display local storage ([d6f3cbc](https://github.com/mtr-today/mtr-today-web/commit/d6f3cbc50f6f8866b3619e3928f675af1ac2bcbf))
+* update meta ([a07f584](https://github.com/mtr-today/mtr-today-web/commit/a07f584e7645ab861abcfbe2007050374d04e732))
+
 ## [1.2.0](https://github.com/mtr-today/mtr-today-web/compare/v1.1.0...v1.2.0) (2023-06-19)
 
 
