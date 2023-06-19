@@ -1,16 +1,21 @@
+import { useColorMode } from '@chakra-ui/react'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import type { Coordinates } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
 import { max, min } from 'ramda'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { Helmet } from 'react-helmet'
 
+import faviconDark from './assets/faviconDark.svg'
+import faviconLight from './assets/faviconLight.svg'
 import { Header } from './containers/Header'
 import { MAP_HEIGHT, MAP_WIDTH, Map } from './containers/Map'
 import { useWindowSize } from './hooks/useWindowSize'
 import { lineConfigApi } from './services/lineConfigApi'
 
 export const App = () => {
+  const { colorMode } = useColorMode()
   const { width, height } = useWindowSize()
   const [scale, setScale] = useState(1)
   const { data: lineConfigs = [] } = useQuery({
@@ -55,7 +60,14 @@ export const App = () => {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <Header lineConfigs={lineConfigs} />
+      <Helmet>
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={colorMode === 'light' ? faviconLight : faviconDark}
+        />
+      </Helmet>
+      <Header />
       <Wrapper>
         <BG />
         <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
