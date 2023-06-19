@@ -92,7 +92,7 @@ devDependencies:
     specifier: 18.2.6
     version: 18.2.6
   '@types/react-helmet':
-    specifier: ^6.1.6
+    specifier: 6.1.6
     version: 6.1.6
   '@typescript-eslint/eslint-plugin':
     specifier: 5.60.0
