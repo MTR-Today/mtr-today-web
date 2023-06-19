@@ -4,8 +4,10 @@ import {
   Flex,
   IconButton,
   Img,
+  Link,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Text,
@@ -13,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { lines } from 'mtr-kit'
 import React from 'react'
+import { IoLogoGithub } from 'react-icons/io'
 
 import logoDark from '../../assets/logoDark.svg'
 import logoLight from '../../assets/logoLight.svg'
@@ -101,6 +104,10 @@ export const Header: React.FC = () => {
           >
             {timeDisplay === TimeDisplay.ABS ? '顯示相對時間' : '顯示絕對時間'}
           </MenuItem>
+          <MenuDivider />
+          <Link href="https://github.com/mtr-today">
+            <MenuItem icon={<IoLogoGithub />}>源代碼</MenuItem>
+          </Link>
         </MenuList>
       </Menu>
     </Flex>
