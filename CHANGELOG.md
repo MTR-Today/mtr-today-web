@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mtr-today/mtr-today-web/compare/v1.0.1...v1.1.0) (2023-06-19)
+
+
+### Features
+
+* prod env ([990dbaf](https://github.com/mtr-today/mtr-today-web/commit/990dbaf8d07b283e6f9a088d3aa8e665703e530f))
+
 ## [1.0.1](https://github.com/mtr-today/mtr-today-web/compare/v1.0.0...v1.0.1) (2023-06-17)
 
 
