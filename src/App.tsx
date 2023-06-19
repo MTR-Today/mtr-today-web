@@ -1,20 +1,22 @@
-import { Map, MAP_HEIGHT, MAP_WIDTH } from './containers/Map'
-import styled from '@emotion/styled'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
-import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Coordinates } from '@dnd-kit/utilities'
-import { useWindowSize } from './hooks/useWindowSize'
-import { Header } from './containers/Header'
+import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
 import { max, min } from 'ramda'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { Header } from './containers/Header'
+import { MAP_HEIGHT, MAP_WIDTH, Map } from './containers/Map'
+import { useWindowSize } from './hooks/useWindowSize'
 import { lineConfigApi } from './services/lineConfigApi'
 
 export const App = () => {
   const { width, height } = useWindowSize()
   const [scale, setScale] = useState(1)
-  const { data: lineConfigs = [] } = useQuery(['line-configs'], () =>
-    lineConfigApi.list()
-  )
+  const { data: lineConfigs = [] } = useQuery({
+    queryKey: ['line-configs'],
+    queryFn: () => lineConfigApi.list(),
+  })
 
   const { mapWidth, mapHight } = useMemo(
     () => ({
@@ -34,11 +36,10 @@ export const App = () => {
       setCoordinates(old => {
         const newX = old.x + delta.x
         const newY = old.y + delta.y
-        const x = newX
-        const y = newY
-        return { x, y }
+        return { x: newX, y: newY }
       })
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [width, height]
   )
 

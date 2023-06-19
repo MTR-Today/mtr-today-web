@@ -9,5 +9,6 @@ export const stopContext = createContext<{
 }>({
   hovering: false,
   lineHovering: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setHovering: () => {},
 })

@@ -1,6 +1,7 @@
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React from 'react'
+
 import { useLine } from '../hooks/useLine'
 
 export const LineName: React.FC = () => {
@@ -38,7 +39,7 @@ export const LineName: React.FC = () => {
           borderColor="gray.700"
           position="relative"
           zIndex="1"
-        ></Box>
+        />
         <Box
           width="full"
           h="1"
@@ -46,7 +47,7 @@ export const LineName: React.FC = () => {
           position="absolute"
           top="50%"
           transform="translateY(-50%)"
-        ></Box>
+        />
       </Flex>
     </Flex>
   )

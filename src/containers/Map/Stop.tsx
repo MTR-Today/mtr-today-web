@@ -1,9 +1,9 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
+import { LineCode, StopCode } from 'mtr-kit'
 import React, { memo, useContext, useMemo, useState } from 'react'
 
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
-import { LineCode, StopCode } from 'mtr-kit'
 
 export const Stop: React.FC<
   BoxProps & { coord: [x: number, y: number]; stop: StopCode }
@@ -14,12 +14,8 @@ export const Stop: React.FC<
 
   const lineList = useMemo<LineCode[]>(() => {
     if (!Array.isArray(children)) return []
-    return children
-      .map(({ props }) => {
-        return props.line
-      })
-      .filter(Boolean)
-  }, [])
+    return children.map(child => child.props.line).filter(Boolean)
+  }, [children])
 
   return (
     <stopContext.Provider

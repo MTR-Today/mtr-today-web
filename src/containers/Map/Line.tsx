@@ -1,9 +1,10 @@
 import { useColorMode } from '@chakra-ui/react'
+import c from 'color'
+import { LineCode } from 'mtr-kit'
 import React, { memo, useCallback, useContext, useMemo } from 'react'
 import { roundCorners } from 'svg-round-corners'
-import c from 'color'
+
 import { mapContext } from '../../contexts/mapContext'
-import { LineCode } from 'mtr-kit'
 
 export const Line: React.FC<
   React.SVGProps<SVGPathElement> & { color?: string; line: LineCode }
@@ -18,11 +19,11 @@ export const Line: React.FC<
 
   const handleMouseEnter = useCallback(() => {
     setHoveringLine(line)
-  }, [line])
+  }, [line, setHoveringLine])
 
   const handleMouseLeave = useCallback(() => {
     setHoveringLine(undefined)
-  }, [])
+  }, [setHoveringLine])
 
   return (
     <path
@@ -31,7 +32,7 @@ export const Line: React.FC<
         colorMode === 'dark' && color ? c(color).darken(0.3).hex() : color
       }
       fill="none"
-      stroke-linejoin="round"
+      strokeLinejoin="round"
       strokeWidth="6px"
       opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
       style={{ transition: 'opacity .3s' }}
