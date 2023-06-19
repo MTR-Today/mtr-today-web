@@ -3,6 +3,7 @@ import {
   Box,
   Flex,
   IconButton,
+  Img,
   Menu,
   MenuButton,
   MenuItem,
@@ -10,23 +11,18 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react'
-import React, { useMemo } from 'react'
+import { lines } from 'mtr-kit'
+import React from 'react'
 
+import logoDark from '../../assets/logoDark.svg'
+import logoLight from '../../assets/logoLight.svg'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
-import { LineConfig } from '../../services/lineConfigApi'
 import { Clock } from './Clock'
 
-export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
-  lineConfigs,
-}) => {
+export const Header: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { timeDisplay, setTimeDisplay } = useConfig()
-
-  const colors = useMemo(
-    () => lineConfigs.map(({ color }) => color),
-    [lineConfigs]
-  )
 
   return (
     <Flex
@@ -46,7 +42,7 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
     >
       <Flex w="full" h="40px" alignItems="center">
         <Box>
-          {colors.map(color => (
+          {lines.map(({ color }) => (
             <Box
               key={color}
               display="inline-block"
@@ -58,18 +54,17 @@ export const Header: React.FC<{ lineConfigs: LineConfig[] }> = ({
               top="4px"
               right="20px"
               transform="rotate(45deg)"
+              opacity={0.7}
             />
           ))}
         </Box>
-        <Box
+        <Img
+          src={colorMode === 'light' ? logoLight : logoDark}
           w="24px"
           h="24px"
-          borderWidth="3px"
-          borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
-          borderRadius="100%"
           position="absolute"
           left="3"
-          bg={colorMode === 'dark' ? 'gray.700' : 'white'}
+          borderRadius="md"
         />
         <Flex alignItems="end">
           <Text fontWeight="semibold">MTR</Text>
