@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 import { max, min } from 'ramda'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
+import { useTranslation } from 'react-i18next'
 
 import faviconDark from './assets/faviconDark.svg'
 import faviconLight from './assets/faviconLight.svg'
@@ -17,6 +18,8 @@ import { lineConfigApi } from './services/lineConfigApi'
 export const App = () => {
   const { colorMode } = useColorMode()
   const { width, height } = useWindowSize()
+  const { t } = useTranslation()
+
   const [scale, setScale] = useState(1)
   const { data: lineConfigs = [] } = useQuery({
     queryKey: ['line-configs'],
@@ -66,6 +69,7 @@ export const App = () => {
           type="image/svg+xml"
           href={colorMode === 'light' ? faviconLight : faviconDark}
         />
+        <title>{t('title')}</title>
       </Helmet>
       <Header />
       <Wrapper>

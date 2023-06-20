@@ -1,0 +1,16 @@
+{
+  "title": "MTR Today - 港鐵非官方實時到站時間",
+  "language": {
+    "en": "English",
+    "zh_hk": "中文"
+  },
+  "time_display": {
+    "abs": "絕對時間",
+    "rel": "相對時間"
+  },
+  "color_mode": {
+    "dark": "暗黑模式",
+    "light": "光亮模式"
+  },
+  "source_code": "源代碼"
+}
