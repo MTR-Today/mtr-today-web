@@ -31,7 +31,7 @@
     "@tanstack/query"
   ],
   "rules": {
-    "fp/no-mutation": "error",
+    "fp/no-mutation": ["error", { "allowThis": true }],
     "arrow-body-style": "warn",
     "import/newline-after-import": ["error", { "count": 1 }],
     // conflict with ts path

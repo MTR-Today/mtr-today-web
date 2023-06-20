@@ -1,16 +1,17 @@
-import { Box } from '@chakra-ui/react'
+import { Box, ColorMode, useColorMode } from '@chakra-ui/react'
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
 import { LineCode, StopCode } from 'mtr-kit'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import bg from '../../assets/system_map.png'
 import { mapContext } from '../../contexts/mapContext'
 import { LineConfig } from '../../services/lineConfigApi'
 import { scheduleApi } from '../../services/scheduleApi'
 import { stopConfigApi } from '../../services/stopConfigApi'
+import { Animation } from './animation'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
@@ -29,6 +30,7 @@ export const Map: React.FC<{
   lineConfigs: LineConfig[]
   scale: number
 }> = ({ lineConfigs, x, y, scale }) => {
+  const { colorMode } = useColorMode()
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({
       id: 'map',
@@ -48,6 +50,13 @@ export const Map: React.FC<{
     refetchOnMount: true,
   })
 
+  const ref = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    // eslint-disable-next-line no-new
+    if (ref.current) new Animation(ref.current, colorMode)
+  }, [colorMode])
+
   return lineConfigs ? (
     <mapContext.Provider
       value={{
@@ -61,6 +70,7 @@ export const Map: React.FC<{
     >
       <Wrapper
         borderWidth="2px"
+        boxShadow="md"
         borderRadius="xl"
         ref={setNodeRef}
         style={{
@@ -77,6 +87,7 @@ export const Map: React.FC<{
         {...listeners}
         {...attributes}
       >
+        <Water ref={ref} colorMode={colorMode} />
         <svg
           width="100%"
           height="100%"
@@ -927,4 +938,11 @@ const Wrapper = styled(Box)`
   background-size: 2430px;
   background-position: right 250px top 80px;
   background-image: url(${bg}); */
+`
+
+const Water = styled.canvas<{ colorMode: ColorMode }>`
+  width: 2800px;
+  height: 1630px;
+  position: absolute;
+  opacity: ${({ colorMode }) => (colorMode === 'light' ? '.5' : '.1')};
 `
