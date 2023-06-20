@@ -1,4 +1,4 @@
-import { HamburgerIcon, MoonIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
 import {
   Box,
   Flex,
@@ -15,17 +15,22 @@ import {
 } from '@chakra-ui/react'
 import { lines } from 'mtr-kit'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { IoLogoGithub } from 'react-icons/io'
+import { MdGTranslate } from 'react-icons/md'
 
 import logoDark from '../../assets/logoDark.svg'
 import logoLight from '../../assets/logoLight.svg'
+import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch'
+import { Language } from '../../constants/language'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
 import { Clock } from './Clock'
 
 export const Header: React.FC = () => {
+  const { t } = useTranslation()
   const { colorMode, toggleColorMode } = useColorMode()
-  const { timeDisplay, setTimeDisplay } = useConfig()
+  const { timeDisplay, setTimeDisplay, language, setLanguage } = useConfig()
 
   return (
     <Flex
@@ -88,25 +93,48 @@ export const Header: React.FC = () => {
           borderLeftRadius="0"
         />
         <MenuList>
-          <MenuItem
-            icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
-            onClick={toggleColorMode}
-          >
-            {colorMode === 'light' ? '暗黑模式: 關' : '暗黑模式: 開'}
+          <MenuItem>
+            <Box mr="3">
+              <MdGTranslate />
+            </Box>
+            <RadioSwitch value={language} onChange={setLanguage}>
+              <RadioSwitchItem value={Language['ZH-HK']}>
+                {t('language.zh_hk')}
+              </RadioSwitchItem>
+              <RadioSwitchItem value={Language.EN}>
+                {t('language.en')}
+              </RadioSwitchItem>
+            </RadioSwitch>
           </MenuItem>
-          <MenuItem
-            icon={<TimeIcon />}
-            onClick={() => {
-              setTimeDisplay(prev =>
-                prev === TimeDisplay.ABS ? TimeDisplay.REL : TimeDisplay.ABS
-              )
-            }}
-          >
-            {timeDisplay === TimeDisplay.ABS ? '顯示相對時間' : '顯示絕對時間'}
+          <MenuItem>
+            <Box mr="3">
+              <TimeIcon />
+            </Box>
+            <RadioSwitch value={timeDisplay} onChange={setTimeDisplay}>
+              <RadioSwitchItem value={TimeDisplay.ABS}>
+                {t('time_display.abs')}
+              </RadioSwitchItem>
+              <RadioSwitchItem value={TimeDisplay.REL}>
+                {t('time_display.rel')}
+              </RadioSwitchItem>
+            </RadioSwitch>
+          </MenuItem>
+          <MenuItem>
+            <Box mr="3">
+              <SunIcon />
+            </Box>
+            <RadioSwitch value={colorMode} onChange={toggleColorMode}>
+              <RadioSwitchItem value="light">
+                {t('color_mode.light')}
+              </RadioSwitchItem>
+              <RadioSwitchItem value="dark">
+                {t('color_mode.dark')}
+              </RadioSwitchItem>
+            </RadioSwitch>
           </MenuItem>
           <MenuDivider />
           <Link href="https://github.com/mtr-today">
-            <MenuItem icon={<IoLogoGithub />}>源代碼</MenuItem>
+            <MenuItem icon={<IoLogoGithub />}>{t('source_code')}</MenuItem>
           </Link>
         </MenuList>
       </Menu>

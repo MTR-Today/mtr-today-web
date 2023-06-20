@@ -1,0 +1,16 @@
+{
+  "title": "MTR Today - MTR Unofficial Train Arrival Time",
+  "language": {
+    "en": "English",
+    "zh_hk": "中文"
+  },
+  "time_display": {
+    "abs": "Absolute Time",
+    "rel": "Relative Time"
+  },
+  "color_mode": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "source_code": "Source Code"
+}
