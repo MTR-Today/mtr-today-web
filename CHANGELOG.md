@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/mtr-today/mtr-today-web/compare/v1.4.1...v1.5.0) (2023-06-20)
+
+
+### Features
+
+* animated background ([33456be](https://github.com/mtr-today/mtr-today-web/commit/33456bec7545b77b8ba3316c86b3025e8156b889))
+
 ## [1.4.1](https://github.com/mtr-today/mtr-today-web/compare/v1.4.0...v1.4.1) (2023-06-20)
 
 
