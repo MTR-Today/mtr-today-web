@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -15,7 +15,7 @@ dependencies:
     specifier: 6.0.8
     version: 6.0.8(react-dom@18.2.0)(react@18.2.0)
   '@dnd-kit/utilities':
-    specifier: ^3.2.1
+    specifier: 3.2.1
     version: 3.2.1(react@18.2.0)
   '@emotion/react':
     specifier: 11.11.1
@@ -24,7 +24,7 @@ dependencies:
     specifier: 11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.13)(react@18.2.0)
   '@react-hookz/web':
-    specifier: ^23.0.1
+    specifier: 23.0.1
     version: 23.0.1(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-query':
     specifier: 4.29.14
@@ -42,7 +42,7 @@ dependencies:
     specifier: 10.12.16
     version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
   i18next:
-    specifier: ^23.2.0
+    specifier: 23.2.0
     version: 23.2.0
   mtr-kit:
     specifier: 1.6.1
@@ -57,13 +57,13 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   react-helmet:
-    specifier: ^6.1.0
+    specifier: 6.1.0
     version: 6.1.0(react@18.2.0)
   react-i18next:
-    specifier: ^13.0.0
+    specifier: 13.0.0
     version: 13.0.0(i18next@23.2.0)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
-    specifier: ^4.9.0
+    specifier: 4.9.0
     version: 4.9.0(react@18.2.0)
   simplex-noise:
     specifier: 4.0.1
@@ -346,13 +346,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+    dev: false
 
   /@babel/runtime@7.22.5:
     resolution: {integrity: sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: false
 
   /@babel/template@7.21.9:
     resolution: {integrity: sha512-MK0X5k8NKOuWRamiEfc3KEJiHMTkGZNUjzMipqCGDDc6ijRl/B7RGSKVGncu4Ro/HdyzzY6cmoXuKI2Gffk7vQ==}
@@ -3712,7 +3712,7 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
     dependencies:
-      '@babel/runtime': 7.22.3
+      '@babel/runtime': 7.22.5
       aria-query: 5.2.1
       array-includes: 3.1.6
       array.prototype.flatmap: 1.3.1
