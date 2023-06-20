@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/mtr-today/mtr-today-web/compare/v1.3.0...v1.4.0) (2023-06-20)
+
+
+### Features
+
+* i18n ([17855f7](https://github.com/mtr-today/mtr-today-web/commit/17855f7400a719ea08c646777b4f76bec2c465d4))
+* og image ([59fe3df](https://github.com/mtr-today/mtr-today-web/commit/59fe3df81b5af1b72bfe88f38c08fb3617860955))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([801054e](https://github.com/mtr-today/mtr-today-web/commit/801054efbeca3bffa95f096bc6bd9d9e74236770))
+
 ## [1.3.0](https://github.com/mtr-today/mtr-today-web/compare/v1.2.0...v1.3.0) (2023-06-19)
 
 
