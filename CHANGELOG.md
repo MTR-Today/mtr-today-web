@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/mtr-today/mtr-today-web/compare/v1.4.0...v1.4.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* public image path ([c744f78](https://github.com/mtr-today/mtr-today-web/commit/c744f7866aa8367517aeeff68b0b8c2a86f5b1f8))
+
 ## [1.4.0](https://github.com/mtr-today/mtr-today-web/compare/v1.3.0...v1.4.0) (2023-06-20)
 
 
