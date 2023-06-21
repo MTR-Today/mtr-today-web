@@ -68,10 +68,16 @@ export const App = () => {
   }, [])
 
   useEffect(() => {
-    addEventListener('wheel', ({ deltaY }) => {
+    const handleScrollWheel = ({ deltaY }: WheelEvent) => {
       if (deltaY > 0) zoomOut()
       else zoomIn()
-    })
+    }
+
+    addEventListener('wheel', handleScrollWheel)
+
+    return () => {
+      removeEventListener('wheel', handleScrollWheel)
+    }
   }, [zoomIn, zoomOut])
 
   const fitScreen = useCallback(() => {
