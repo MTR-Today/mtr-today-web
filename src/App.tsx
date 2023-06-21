@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
+import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import type { Coordinates } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
@@ -8,6 +8,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 import { ImEnlarge } from 'react-icons/im'
+import { IoMdAdd, IoMdRemove } from 'react-icons/io'
 
 import faviconDark from './assets/faviconDark.svg'
 import faviconLight from './assets/faviconLight.svg'
@@ -58,15 +59,20 @@ export const App = () => {
     })
   }, [])
 
+  const zoomIn = useCallback(() => {
+    setScale(prev => min(prev + 0.1, 2))
+  }, [])
+
+  const zoomOut = useCallback(() => {
+    setScale(prev => max(prev - 0.1, 0.5))
+  }, [])
+
   useEffect(() => {
     addEventListener('wheel', ({ deltaY }) => {
-      if (deltaY > 0) {
-        setScale(prev => max(prev - 0.1, 0.1))
-      } else {
-        setScale(prev => min(prev + 0.1, 2))
-      }
+      if (deltaY > 0) zoomOut()
+      else zoomIn()
     })
-  }, [])
+  }, [zoomIn, zoomOut])
 
   const fitScreen = useCallback(() => {
     const fitScale = min(width / MAP_WIDTH, height / MAP_HEIGHT)
@@ -88,18 +94,48 @@ export const App = () => {
       <Wrapper>
         <Bg />
         <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
-        <Tooltip label={t('fit_screen')}>
-          <IconButton
-            variant="outline"
-            aria-label="dit-screen"
-            icon={<ImEnlarge />}
-            position="fixed"
-            zIndex="overlay"
-            bottom="16px"
-            left="16px"
-            onClick={fitScreen}
-          />
-        </Tooltip>
+        <Box
+          bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+          position="fixed"
+          zIndex="overlay"
+          bottom="16px"
+          left="16px"
+          borderWidth="2px"
+          boxShadow="sm"
+          borderRadius="md"
+        >
+          <Tooltip label={t('fit_screen')}>
+            <IconButton
+              variant="outline"
+              aria-label="dit-screen"
+              icon={<ImEnlarge />}
+              onClick={fitScreen}
+              borderWidth="0"
+              borderRightWidth="1px"
+              borderRadius="0"
+            />
+          </Tooltip>
+          <Tooltip label={t('zoom_in')}>
+            <IconButton
+              variant="outline"
+              aria-label="dit-screen"
+              icon={<IoMdAdd />}
+              onClick={zoomIn}
+              borderWidth="0"
+              borderRadius="0"
+            />
+          </Tooltip>
+          <Tooltip label={t('zoom_out')}>
+            <IconButton
+              variant="outline"
+              aria-label="dit-screen"
+              icon={<IoMdRemove />}
+              onClick={zoomOut}
+              borderWidth="0"
+              borderRadius="0"
+            />
+          </Tooltip>
+        </Box>
       </Wrapper>
     </DndContext>
   )

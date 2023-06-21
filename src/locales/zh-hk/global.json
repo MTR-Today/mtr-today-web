@@ -13,5 +13,7 @@
     "light": "光亮模式"
   },
   "source_code": "源代碼",
-  "fit_screen": "自動縮放"
+  "fit_screen": "自動縮放",
+  "zoom_in": "放大",
+  "zoom_out": "縮小"
 }
