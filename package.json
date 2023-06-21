@@ -50,7 +50,6 @@
     "@spotify/eslint-config": "15.0.0",
     "@tanstack/eslint-plugin-query": "4.29.9",
     "@types/color": "3.0.3",
-    "@types/debounce": "^1.2.1",
     "@types/ramda": "0.29.2",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
