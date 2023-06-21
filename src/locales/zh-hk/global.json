@@ -12,5 +12,8 @@
     "dark": "暗黑模式",
     "light": "光亮模式"
   },
-  "source_code": "源代碼"
+  "source_code": "源代碼",
+  "fit_screen": "自動縮放",
+  "zoom_in": "放大",
+  "zoom_out": "縮小"
 }
