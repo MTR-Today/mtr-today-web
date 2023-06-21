@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0](https://github.com/mtr-today/mtr-today-web/compare/v1.5.0...v1.6.0) (2023-06-21)
+
+
+### Features
+
+* auto scale ([a45c687](https://github.com/mtr-today/mtr-today-web/commit/a45c68712dee901f5232cbf8835c6c5a79a4b291))
+* enlarge map area ([be27a1a](https://github.com/mtr-today/mtr-today-web/commit/be27a1a15de8be666622f3837b6070125420101a))
+* zoom control ([76f2475](https://github.com/mtr-today/mtr-today-web/commit/76f24752f9f2b734dbc1979b5976b6c53ffd745a))
+
 ## [1.5.0](https://github.com/mtr-today/mtr-today-web/compare/v1.4.1...v1.5.0) (2023-06-20)
 
 
