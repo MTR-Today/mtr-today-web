@@ -1,5 +1,62 @@
 # Changelog
 
+## [1.6.0](https://github.com/mtr-today/mtr-today-web/compare/v1.5.0...v1.6.0) (2023-06-21)
+
+
+### Features
+
+* auto scale ([a45c687](https://github.com/mtr-today/mtr-today-web/commit/a45c68712dee901f5232cbf8835c6c5a79a4b291))
+* enlarge map area ([be27a1a](https://github.com/mtr-today/mtr-today-web/commit/be27a1a15de8be666622f3837b6070125420101a))
+* zoom control ([76f2475](https://github.com/mtr-today/mtr-today-web/commit/76f24752f9f2b734dbc1979b5976b6c53ffd745a))
+
+## [1.5.0](https://github.com/mtr-today/mtr-today-web/compare/v1.4.1...v1.5.0) (2023-06-20)
+
+
+### Features
+
+* animated background ([33456be](https://github.com/mtr-today/mtr-today-web/commit/33456bec7545b77b8ba3316c86b3025e8156b889))
+
+## [1.4.1](https://github.com/mtr-today/mtr-today-web/compare/v1.4.0...v1.4.1) (2023-06-20)
+
+
+### Bug Fixes
+
+* public image path ([c744f78](https://github.com/mtr-today/mtr-today-web/commit/c744f7866aa8367517aeeff68b0b8c2a86f5b1f8))
+
+## [1.4.0](https://github.com/mtr-today/mtr-today-web/compare/v1.3.0...v1.4.0) (2023-06-20)
+
+
+### Features
+
+* i18n ([17855f7](https://github.com/mtr-today/mtr-today-web/commit/17855f7400a719ea08c646777b4f76bec2c465d4))
+* og image ([59fe3df](https://github.com/mtr-today/mtr-today-web/commit/59fe3df81b5af1b72bfe88f38c08fb3617860955))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([801054e](https://github.com/mtr-today/mtr-today-web/commit/801054efbeca3bffa95f096bc6bd9d9e74236770))
+
+## [1.3.0](https://github.com/mtr-today/mtr-today-web/compare/v1.2.0...v1.3.0) (2023-06-19)
+
+
+### Features
+
+* time display local storage ([d6f3cbc](https://github.com/mtr-today/mtr-today-web/commit/d6f3cbc50f6f8866b3619e3928f675af1ac2bcbf))
+* update meta ([a07f584](https://github.com/mtr-today/mtr-today-web/commit/a07f584e7645ab861abcfbe2007050374d04e732))
+
+## [1.2.0](https://github.com/mtr-today/mtr-today-web/compare/v1.1.0...v1.2.0) (2023-06-19)
+
+
+### Features
+
+* chinese translation ([2a92594](https://github.com/mtr-today/mtr-today-web/commit/2a92594afe477b933952b6b7be0cc1a42489038e))
+* favicon ([232dd66](https://github.com/mtr-today/mtr-today-web/commit/232dd661f55c7bd5badc456c4308b417e0400310))
+* github link ([dbdd1ce](https://github.com/mtr-today/mtr-today-web/commit/dbdd1ceb2209e073df6a22f5c86021ded5596a3c))
+* google ads ([3ae733d](https://github.com/mtr-today/mtr-today-web/commit/3ae733d7b9dddec83861409ebf0a54760da9bdee))
+* logo ([c7ff64e](https://github.com/mtr-today/mtr-today-web/commit/c7ff64e9e3f0c4dd260878f537f24b37648bf949))
+* meta tag ([ddaa261](https://github.com/mtr-today/mtr-today-web/commit/ddaa261457e1304638c5bd899b88c8a5ffdb49cf))
+* update title ([30df689](https://github.com/mtr-today/mtr-today-web/commit/30df68927fe19d97b0e9a970d57f126e0060957c))
+
 ## [1.1.0](https://github.com/mtr-today/mtr-today-web/compare/v1.0.1...v1.1.0) (2023-06-19)
 
 
