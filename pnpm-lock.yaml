@@ -91,6 +91,9 @@ devDependencies:
   '@types/color':
     specifier: 3.0.3
     version: 3.0.3
+  '@types/debounce':
+    specifier: ^1.2.1
+    version: 1.2.1
   '@types/ramda':
     specifier: 0.29.2
     version: 0.29.2
@@ -2483,6 +2486,10 @@ packages:
     resolution: {integrity: sha512-X//qzJ3d3Zj82J9sC/C18ZY5f43utPbAJ6PhYt/M7uG6etcF6MRpKdN880KBy43B0BMzSfeT96MzrsNjFI3GbA==}
     dependencies:
       '@types/color-convert': 2.0.0
+    dev: true
+
+  /@types/debounce@1.2.1:
+    resolution: {integrity: sha512-epMsEE85fi4lfmJUH/89/iV/LI+F5CvNIvmgs5g5jYFPfhO2S/ae8WSsLOKWdwtoaZw9Q2IhJ4tQ5tFCcS/4HA==}
     dev: true
 
   /@types/glob@7.2.0:

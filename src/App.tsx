@@ -1,4 +1,4 @@
-import { useColorMode } from '@chakra-ui/react'
+import { IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import type { Coordinates } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
@@ -7,12 +7,19 @@ import { max, min } from 'ramda'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
+import { ImEnlarge } from 'react-icons/im'
 
 import faviconDark from './assets/faviconDark.svg'
 import faviconLight from './assets/faviconLight.svg'
 import { Bg } from './containers/Bg'
 import { Header } from './containers/Header'
-import { CONTAINER_HEIGHT, CONTAINER_WIDTH, Map } from './containers/Map'
+import {
+  CONTAINER_HEIGHT,
+  CONTAINER_WIDTH,
+  MAP_HEIGHT,
+  MAP_WIDTH,
+  Map,
+} from './containers/Map'
 import { useWindowSize } from './hooks/useWindowSize'
 import { lineConfigApi } from './services/lineConfigApi'
 
@@ -27,30 +34,29 @@ export const App = () => {
     queryFn: () => lineConfigApi.list(),
   })
 
-  const { mapWidth, mapHight } = useMemo(
+  const initCord = useMemo<Coordinates>(
     () => ({
-      mapWidth: CONTAINER_WIDTH * scale,
-      mapHight: CONTAINER_HEIGHT * scale,
+      x:
+        CONTAINER_WIDTH > width
+          ? -(CONTAINER_WIDTH / 2 - width / 2)
+          : (width - CONTAINER_WIDTH) / 2,
+      y:
+        CONTAINER_HEIGHT > height
+          ? -(CONTAINER_HEIGHT / 2 - height / 2)
+          : (height - CONTAINER_HEIGHT) / 2,
     }),
-    [scale]
+    [height, width]
   )
 
-  const [{ x, y }, setCoordinates] = useState<Coordinates>({
-    x: mapWidth > width ? -mapWidth / 2 / 1.5 : (width - mapWidth) / 2,
-    y: mapHight > height ? -mapHight / 2 / 1.5 : (height - mapHight) / 2,
-  })
+  const [{ x, y }, setCoordinates] = useState<Coordinates>(initCord)
 
-  const handleDragEnd = useCallback(
-    ({ delta }: DragEndEvent) => {
-      setCoordinates(old => {
-        const newX = old.x + delta.x
-        const newY = old.y + delta.y
-        return { x: newX, y: newY }
-      })
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [width, height]
-  )
+  const handleDragEnd = useCallback(({ delta }: DragEndEvent) => {
+    setCoordinates(old => {
+      const newX = old.x + delta.x
+      const newY = old.y + delta.y
+      return { x: newX, y: newY }
+    })
+  }, [])
 
   useEffect(() => {
     addEventListener('wheel', ({ deltaY }) => {
@@ -61,6 +67,12 @@ export const App = () => {
       }
     })
   }, [])
+
+  const fitScreen = useCallback(() => {
+    const fitScale = min(width / MAP_WIDTH, height / MAP_HEIGHT)
+    setScale(fitScale)
+    setCoordinates(initCord)
+  }, [height, initCord, width])
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
@@ -76,6 +88,18 @@ export const App = () => {
       <Wrapper>
         <Bg />
         <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
+        <Tooltip label={t('fit_screen')}>
+          <IconButton
+            variant="outline"
+            aria-label="dit-screen"
+            icon={<ImEnlarge />}
+            position="fixed"
+            zIndex="overlay"
+            bottom="16px"
+            left="16px"
+            onClick={fitScreen}
+          />
+        </Tooltip>
       </Wrapper>
     </DndContext>
   )
