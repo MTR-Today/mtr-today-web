@@ -10,8 +10,9 @@ import { useTranslation } from 'react-i18next'
 
 import faviconDark from './assets/faviconDark.svg'
 import faviconLight from './assets/faviconLight.svg'
+import { Bg } from './containers/Bg'
 import { Header } from './containers/Header'
-import { MAP_HEIGHT, MAP_WIDTH, Map } from './containers/Map'
+import { CONTAINER_HEIGHT, CONTAINER_WIDTH, Map } from './containers/Map'
 import { useWindowSize } from './hooks/useWindowSize'
 import { lineConfigApi } from './services/lineConfigApi'
 
@@ -28,15 +29,15 @@ export const App = () => {
 
   const { mapWidth, mapHight } = useMemo(
     () => ({
-      mapWidth: MAP_WIDTH * scale,
-      mapHight: MAP_HEIGHT * scale,
+      mapWidth: CONTAINER_WIDTH * scale,
+      mapHight: CONTAINER_HEIGHT * scale,
     }),
     [scale]
   )
 
   const [{ x, y }, setCoordinates] = useState<Coordinates>({
-    x: mapWidth > width ? -mapWidth / 2 / 2 : (width - mapWidth) / 2,
-    y: mapHight > height ? -mapHight / 2 / 2 : (height - mapHight) / 2,
+    x: mapWidth > width ? -mapWidth / 2 / 1.5 : (width - mapWidth) / 2,
+    y: mapHight > height ? -mapHight / 2 / 1.5 : (height - mapHight) / 2,
   })
 
   const handleDragEnd = useCallback(
@@ -73,7 +74,7 @@ export const App = () => {
       </Helmet>
       <Header />
       <Wrapper>
-        <BG />
+        <Bg />
         <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
       </Wrapper>
     </DndContext>
@@ -84,12 +85,4 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-`
-
-const BG = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0.05;
-  background-color: #000000;
 `

@@ -95,7 +95,7 @@ export class Animation {
     const segmentBaseSize = 20
     const segmentCount = Math.round(this.wHypot / segmentBaseSize)
     const segmentSize = this.wHypot / segmentCount
-    const waveAmplitude = segmentSize * 4
+    const waveAmplitude = segmentSize
     const noiseZoom = 0.03
 
     ctx.save()
