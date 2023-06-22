@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.7.0](https://github.com/mtr-today/mtr-today-web/compare/v1.6.0...v1.7.0) (2023-06-22)
+
+
+### Features
+
+* longer description ([151e4df](https://github.com/mtr-today/mtr-today-web/commit/151e4dff4bc802373121b5e22a21f87083d52296))
+* manifest ([b29907e](https://github.com/mtr-today/mtr-today-web/commit/b29907eba4a7fdd233d21a7b8744f42982eb57da))
+* pwa setup ([184bba3](https://github.com/mtr-today/mtr-today-web/commit/184bba375874bf009c2452cf9b684ff6667fd5d2))
+* turn off user scale ([a995934](https://github.com/mtr-today/mtr-today-web/commit/a995934b907cff8bbee23f803e62fcfe0de488f1))
+
+
+### Bug Fixes
+
+* **deps:** update dependency i18next to v23.2.2 ([07b8d06](https://github.com/mtr-today/mtr-today-web/commit/07b8d064d9b813be20b8782dbeb5b20b2ae45b69))
+* **deps:** update dependency mtr-kit to v1.7.1 ([a4f71b5](https://github.com/mtr-today/mtr-today-web/commit/a4f71b571933067af0693a1808a2f25f38a1930e))
+
 ## [1.6.0](https://github.com/mtr-today/mtr-today-web/compare/v1.5.0...v1.6.0) (2023-06-21)
 
 
