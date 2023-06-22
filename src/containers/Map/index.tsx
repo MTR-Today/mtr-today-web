@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
 import { LineCode, StopCode } from 'mtr-kit'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { mapContext } from '../../contexts/mapContext'
 import { LineConfig } from '../../services/lineConfigApi'

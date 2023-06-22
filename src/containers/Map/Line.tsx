@@ -1,7 +1,7 @@
 import { useColorMode } from '@chakra-ui/react'
 import c from 'color'
 import { LineCode } from 'mtr-kit'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
+import { memo, useCallback, useContext, useMemo } from 'react'
 import { roundCorners } from 'svg-round-corners'
 
 import { mapContext } from '../../contexts/mapContext'

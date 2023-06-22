@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { AEL } from './AEL'
 import { DRL } from './DRL'
 import { EAL } from './EAL'

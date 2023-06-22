@@ -7,7 +7,7 @@ import {
   useRadioGroup,
 } from '@chakra-ui/react'
 import { flatten } from 'ramda'
-import React, { cloneElement } from 'react'
+import { Fragment, cloneElement } from 'react'
 
 type ItemProps<T extends string> = {
   value: T
@@ -81,9 +81,9 @@ export const RadioSwitch = <T extends string>({
       {flatten(children).map(item => {
         const radio = getRadioProps({ value: item.props.value })
         return (
-          <React.Fragment key={item.props.value}>
+          <Fragment key={item.props.value}>
             {cloneElement(item, { ...radio, ...item.props })}
-          </React.Fragment>
+          </Fragment>
         )
       })}
     </HStack>

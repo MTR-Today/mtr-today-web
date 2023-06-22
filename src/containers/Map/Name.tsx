@@ -1,5 +1,5 @@
 import { Box, BoxProps } from '@chakra-ui/react'
-import React, { memo, useContext, useMemo } from 'react'
+import { memo, useContext, useMemo } from 'react'
 
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'

@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import React, { memo } from 'react'
+import { memo } from 'react'
 import { roundCorners } from 'svg-round-corners'
 
 export const Island: React.FC<React.SVGProps<SVGPathElement>> = memo(

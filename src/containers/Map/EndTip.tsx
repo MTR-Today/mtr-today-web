@@ -1,8 +1,9 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
-import React, { memo, useContext, useMemo } from 'react'
-import { mapContext } from '../../contexts/mapContext'
 import c from 'color'
 import { LineCode } from 'mtr-kit'
+import { memo, useContext, useMemo } from 'react'
+
+import { mapContext } from '../../contexts/mapContext'
 
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: LineCode; flip?: boolean }

@@ -4,7 +4,7 @@ import type { Coordinates } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
 import { useQuery } from '@tanstack/react-query'
 import { max, min } from 'ramda'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 

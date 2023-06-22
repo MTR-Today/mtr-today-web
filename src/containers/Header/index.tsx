@@ -14,7 +14,6 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import { lines } from 'mtr-kit'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { IoLogoGithub } from 'react-icons/io'
 import { MdGTranslate } from 'react-icons/md'

@@ -1,6 +1,5 @@
 import { Flex } from '@chakra-ui/react'
 import { LineCode, StopCode } from 'mtr-kit'
-import React from 'react'
 
 import { End } from '../../components/LineBuilder/End'
 import { Line } from '../../components/LineBuilder/Line'

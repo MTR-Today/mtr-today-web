@@ -1,6 +1,6 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
 import { LineCode, StopCode } from 'mtr-kit'
-import React, { memo, useContext, useMemo, useState } from 'react'
+import { memo, useContext, useMemo, useState } from 'react'
 
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'

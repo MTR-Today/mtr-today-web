@@ -1,5 +1,4 @@
 import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { ImEnlarge } from 'react-icons/im'
 import { IoMdAdd, IoMdRemove } from 'react-icons/io'

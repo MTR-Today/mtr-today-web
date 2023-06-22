@@ -1,13 +1,14 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
-import { mapContext } from '../../contexts/mapContext'
-import { stopContext } from '../../contexts/stopContext'
-import { useTime } from '../../hooks/useTime'
 import dayjs from 'dayjs'
 import { LineCode } from 'mtr-kit'
-import { useConfig } from '../../hooks/useConfig'
+import { memo, useCallback, useContext, useMemo } from 'react'
+
 import { TimeDisplay } from '../../constants/timeDisplay'
+import { mapContext } from '../../contexts/mapContext'
+import { stopContext } from '../../contexts/stopContext'
+import { useConfig } from '../../hooks/useConfig'
+import { useTime } from '../../hooks/useTime'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
