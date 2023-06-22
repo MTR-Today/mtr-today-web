@@ -1002,4 +1002,7 @@ const DragContainer = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // Prevent mobile scrolling
+  touch-action: none;
 `
