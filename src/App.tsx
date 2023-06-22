@@ -10,8 +10,6 @@ import { useTranslation } from 'react-i18next'
 import { ImEnlarge } from 'react-icons/im'
 import { IoMdAdd, IoMdRemove } from 'react-icons/io'
 
-import faviconDark from './assets/faviconDark.svg'
-import faviconLight from './assets/faviconLight.svg'
 import { Bg } from './containers/Bg'
 import { Header } from './containers/Header'
 import {
@@ -91,8 +89,9 @@ export const App = () => {
       <Helmet>
         <link
           rel="icon"
-          type="image/svg+xml"
-          href={colorMode === 'light' ? faviconLight : faviconDark}
+          href={
+            colorMode === 'light' ? '/faviconLight.png' : '/faviconDark.png'
+          }
         />
         <title>{t('title')}</title>
       </Helmet>
