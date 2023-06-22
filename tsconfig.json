@@ -14,7 +14,6 @@
     "noEmit": true,
 
     "strict": true,
-    "composite": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowUnreachableCode": false,
