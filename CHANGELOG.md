@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/mtr-today/mtr-today-web/compare/v1.7.0...v1.7.1) (2023-06-22)
+
+
+### Bug Fixes
+
+* pwa icon ([335bd53](https://github.com/mtr-today/mtr-today-web/commit/335bd533f0b69fbdbf352f72359a102588d374b3))
+
 ## [1.7.0](https://github.com/mtr-today/mtr-today-web/compare/v1.6.0...v1.7.0) (2023-06-22)
 
 
