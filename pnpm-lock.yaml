@@ -60,8 +60,8 @@ dependencies:
     specifier: 6.1.0
     version: 6.1.0(react@18.2.0)
   react-i18next:
-    specifier: 13.0.0
-    version: 13.0.0(i18next@23.2.3)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 13.0.1
+    version: 13.0.1(i18next@23.2.3)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: 4.9.0
     version: 4.9.0(react@18.2.0)
@@ -7543,10 +7543,10 @@ packages:
       react-side-effect: 2.1.2(react@18.2.0)
     dev: false
 
-  /react-i18next@13.0.0(i18next@23.2.3)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-qRFbrSgynsBSjfnSTb/Um3mw9uPjOfDi4Iq2rMCuzfsRsYGdkEdyCr0i+T0bR0bG6xwULvK4k1oRVLLd7ZDBVw==}
+  /react-i18next@13.0.1(i18next@23.2.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-gMO6N2GfSfuH7xlHSsZ/mZf+Py9bLm/+EDKIn5fNTuDTjcCcwmMU5UEuGCDk5mdfivbo7ySyYXBN7B9tbGUxiA==}
     peerDependencies:
-      i18next: '>= 23.0.1'
+      i18next: '>= 23.2.3'
       react: '>= 16.8.0'
       react-dom: '*'
       react-native: '*'
