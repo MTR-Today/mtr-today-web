@@ -1,4 +1,4 @@
-import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
+import { Box, useColorMode } from '@chakra-ui/react'
 import { DndContext, DragEndEvent } from '@dnd-kit/core'
 import type { Coordinates } from '@dnd-kit/utilities'
 import styled from '@emotion/styled'
@@ -7,8 +7,6 @@ import { max, min } from 'ramda'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
-import { ImEnlarge } from 'react-icons/im'
-import { IoMdAdd, IoMdRemove } from 'react-icons/io'
 
 import { Bg } from './containers/Bg'
 import { Header } from './containers/Header'
@@ -19,6 +17,7 @@ import {
   MAP_WIDTH,
   Map,
 } from './containers/Map'
+import { Toolbox } from './containers/Toolbox'
 import { useWindowSize } from './hooks/useWindowSize'
 import { lineConfigApi } from './services/lineConfigApi'
 
@@ -99,47 +98,12 @@ export const App = () => {
       <Wrapper>
         <Bg />
         <Map x={x} y={y} lineConfigs={lineConfigs} scale={scale} />
-        <Box
-          bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
-          position="fixed"
-          zIndex="overlay"
-          bottom="16px"
-          left="16px"
-          borderWidth="2px"
-          boxShadow="sm"
-          borderRadius="md"
-        >
-          <Tooltip label={t('fit_screen')}>
-            <IconButton
-              variant="outline"
-              aria-label="dit-screen"
-              icon={<ImEnlarge />}
-              onClick={fitScreen}
-              borderWidth="0"
-              borderRightWidth="1px"
-              borderRadius="0"
-            />
-          </Tooltip>
-          <Tooltip label={t('zoom_in')}>
-            <IconButton
-              variant="outline"
-              aria-label="dit-screen"
-              icon={<IoMdAdd />}
-              onClick={zoomIn}
-              borderWidth="0"
-              borderRadius="0"
-            />
-          </Tooltip>
-          <Tooltip label={t('zoom_out')}>
-            <IconButton
-              variant="outline"
-              aria-label="dit-screen"
-              icon={<IoMdRemove />}
-              onClick={zoomOut}
-              borderWidth="0"
-              borderRadius="0"
-            />
-          </Tooltip>
+        <Box position="fixed" zIndex="overlay" bottom="16px" left="16px">
+          <Toolbox
+            onFitScreenClick={fitScreen}
+            onZoomInClick={zoomIn}
+            onZoomOutClick={zoomOut}
+          />
         </Box>
       </Wrapper>
     </DndContext>
