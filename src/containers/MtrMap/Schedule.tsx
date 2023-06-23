@@ -1,7 +1,7 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
-import { LineCode } from 'mtr-kit'
+import { LineCode, lines } from 'mtr-kit'
 import { memo, useCallback, useContext, useMemo } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
@@ -16,8 +16,7 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, lineConfigs, isDragging, schedules } =
-    useContext(mapContext)
+  const { hoveringLine, isDragging, schedules } = useContext(mapContext)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -38,10 +37,7 @@ export const Schedule: React.FC<
     [now, timeDisplay]
   )
 
-  const config = useMemo(
-    () => lineConfigs.find(item => item.code === line),
-    [lineConfigs, line]
-  )
+  const config = useMemo(() => lines.find(item => item.code === line), [line])
 
   const firstItem = useMemo(() => {
     const lineSchedules = schedules.find(item => item.code === line)
