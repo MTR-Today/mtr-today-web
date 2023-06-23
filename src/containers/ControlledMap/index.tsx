@@ -13,8 +13,6 @@ import { Toolbox } from './Toolbox'
 export const ControlledMap: React.FC = () => {
   const { width, height } = useWindowSize()
 
-  const [scale, setScale] = useState(1)
-
   const initCord = useMemo<Coordinates>(
     () => ({
       x:
@@ -29,6 +27,12 @@ export const ControlledMap: React.FC = () => {
     [height, width]
   )
 
+  const fitScale = useMemo(
+    () => min(width / MAP_WIDTH, height / MAP_HEIGHT),
+    [height, width]
+  )
+
+  const [scale, setScale] = useState(1)
   const [{ x, y }, setCoordinates] = useState<Coordinates>(initCord)
 
   const handleDragEnd = useCallback(({ delta }: DragEndEvent) => {
@@ -44,8 +48,8 @@ export const ControlledMap: React.FC = () => {
   }, [])
 
   const zoomOut = useCallback(() => {
-    setScale(prev => max(prev - 0.1, 0.5))
-  }, [])
+    setScale(prev => max(prev - 0.1, fitScale))
+  }, [fitScale])
 
   useEffect(() => {
     const handleScrollWheel = ({ deltaY }: WheelEvent) => {
@@ -61,10 +65,9 @@ export const ControlledMap: React.FC = () => {
   }, [zoomIn, zoomOut])
 
   const fitScreen = useCallback(() => {
-    const fitScale = min(width / MAP_WIDTH, height / MAP_HEIGHT)
     setScale(fitScale)
     setCoordinates(initCord)
-  }, [height, initCord, width])
+  }, [fitScale, initCord])
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
