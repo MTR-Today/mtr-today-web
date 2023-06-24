@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.8.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.7.1...v1.8.0) (2023-06-24)
+
+
+### Features
+
+* add router ([7c57e23](https://github.com/MTR-Today/mtr-today-web/commit/7c57e23ee68a926917cfbd416df6781a7e73e5b2))
+* mobile zooom support ([780857f](https://github.com/MTR-Today/mtr-today-web/commit/780857fb80b598e711b45538f3ce032a913d4396))
+* prevent mobile scroll on drag ([7a97bca](https://github.com/MTR-Today/mtr-today-web/commit/7a97bcab173b78d15a0247df97ecfc1cd3556cc4))
+
+
+### Bug Fixes
+
+* bg zindex ([296cc96](https://github.com/MTR-Today/mtr-today-web/commit/296cc96bc6fb77208ce12e50f0651debda8229bb))
+* **deps:** pin dependencies ([4685ea4](https://github.com/MTR-Today/mtr-today-web/commit/4685ea4252ffc860a9ee1aabd402553db5fc5531))
+* **deps:** update dependency framer-motion to v10.12.17 ([6060b5b](https://github.com/MTR-Today/mtr-today-web/commit/6060b5bfffc17e7232e4292b62440da26d958c2c))
+* **deps:** update dependency i18next to v23.2.3 ([9fcf2ed](https://github.com/MTR-Today/mtr-today-web/commit/9fcf2ed8b34a4125ea230feceb1322d8a2105c8d))
+* **deps:** update dependency react-i18next to v13.0.1 ([7b2a138](https://github.com/MTR-Today/mtr-today-web/commit/7b2a1383a2b8914ea75602ff00c975e9b3bd11f4))
+* **deps:** update dependency react-icons to v4.10.1 ([cef51c0](https://github.com/MTR-Today/mtr-today-web/commit/cef51c0644cb2ffd4f2794d47dc4828ab9ed72b8))
+* ios detect condtion ([eda2cf6](https://github.com/MTR-Today/mtr-today-web/commit/eda2cf614380fd033d6c10471024f1bc4c724c84))
+* menu button display ([06bdecf](https://github.com/MTR-Today/mtr-today-web/commit/06bdecfc724be02c42c91e6f58016e7fbc0d1212))
+* missing bg ([ff92948](https://github.com/MTR-Today/mtr-today-web/commit/ff92948b3877af4da62f2e409fdff11ee035c91c))
+* prevent mobile scroll on dnd ([fc5c8d6](https://github.com/MTR-Today/mtr-today-web/commit/fc5c8d6cdd3846a52c0ad59bcead84ada6245f3c))
+* smallest map scale on small screen ([120b1e5](https://github.com/MTR-Today/mtr-today-web/commit/120b1e53b40cc2e59453222771b65437e472413a))
+
+## [1.7.1](https://github.com/mtr-today/mtr-today-web/compare/v1.7.0...v1.7.1) (2023-06-22)
+
+
+### Bug Fixes
+
+* pwa icon ([335bd53](https://github.com/mtr-today/mtr-today-web/commit/335bd533f0b69fbdbf352f72359a102588d374b3))
+
 ## [1.7.0](https://github.com/mtr-today/mtr-today-web/compare/v1.6.0...v1.7.0) (2023-06-22)
 
 
