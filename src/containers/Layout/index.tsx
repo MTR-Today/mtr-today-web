@@ -3,6 +3,7 @@ import { Outlet } from '@tanstack/router'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 
+import { ControlledMap } from '../ControlledMap'
 import { Header } from './Header'
 
 export const Layout = () => {
@@ -21,6 +22,7 @@ export const Layout = () => {
         <title>{t('title')}</title>
       </Helmet>
       <Header />
+      <ControlledMap />
       <Outlet />
     </>
   )

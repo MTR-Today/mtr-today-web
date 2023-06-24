@@ -1,6 +1,6 @@
 import { RootRoute, Route, Router, createHashHistory } from '@tanstack/router'
 
-import { ControlledMap } from './containers/ControlledMap'
+import { AboutUs } from './containers/AboutUs'
 import { Layout } from './containers/Layout'
 
 const rootRoute = new RootRoute({
@@ -10,10 +10,16 @@ const rootRoute = new RootRoute({
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/',
-  component: ControlledMap,
+  component: () => <></>,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute])
+const aboutUsRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: '/about-us',
+  component: AboutUs,
+})
+
+const routeTree = rootRoute.addChildren([indexRoute, aboutUsRoute])
 
 const hashHistory = createHashHistory()
 

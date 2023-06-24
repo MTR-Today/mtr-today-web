@@ -64,7 +64,7 @@ export const MtrMap: React.FC = () => {
           <Line
             d="M 1530 270 L 1680 270 L 1680 400 L 1590 400"
             line={LineCode.EAL}
-            stroke-dasharray="10,10"
+            strokeDasharray="10,10"
           />
           <Line
             d="M 950 270 L 1590 270 L 1590 958 L 1388 1162 1330 1162"

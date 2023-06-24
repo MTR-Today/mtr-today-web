@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.29.15
     version: 4.29.15(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
-    specifier: 0.0.1-beta.89
-    version: 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.86
+    version: 0.0.1-beta.86(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3546,36 +3546,36 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/react-store@0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-cSUKpB9acuvuVcrqDMddz/dRYCrt/gxefckX0C30hTTnwhonX+kcFXvhbazAROsJT1ZkBAJmJFvjXy8TLFQdUw==}
+  /@tanstack/react-store@0.0.1-beta.86(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jDz11No4r7mHyLMSqwremt8QaiSS3mMpcMZyWKQL3AH9hc9ygvnF+hTxgp1cZyfpE4vwNZDYf7eRX85TYo3Tyg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@tanstack/store': 0.0.1-beta.89
+      '@tanstack/store': 0.0.1-beta.86
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-HSQshMk1+keZ/veRKW5BzE3xXBG/Cdhxuu3D4FiVft71Q9Io++PyokGxcFmjSgmMmM070lQaIAY36CfKAesQgQ==}
+  /@tanstack/router@0.0.1-beta.86(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-OgPl/eY34cqTRbRbpn4/3A+b+c+QhYR2JlTv9G9HNmgY2fADs3ce1MWrq4ejX8O6uypavSgr+TP0kximGlQFpA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.22.5
-      '@tanstack/react-store': 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-store': 0.0.1-beta.86(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
     dev: false
 
-  /@tanstack/store@0.0.1-beta.89:
-    resolution: {integrity: sha512-YW2aAhsXI4QYLXRnxZzB7MgEah91itQcWAjN3GYg1HKHxPv/11T5bL1CUCSxFLTI0f+45uNRjsmof6eqsN3ECA==}
+  /@tanstack/store@0.0.1-beta.86:
+    resolution: {integrity: sha512-e49P3Lp44QyvB/1eNwDLmpl9LnfzbnDa6/8csylUgn8Yk0VJu5P7kyRwCwyX8/AoU74H1h0YaAqKl/gbbAE6nA==}
     engines: {node: '>=12'}
     dev: false
 
