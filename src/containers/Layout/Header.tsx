@@ -13,6 +13,7 @@ import {
   Text,
   useColorMode,
 } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 import { IoLogoGithub } from 'react-icons/io'
@@ -24,12 +25,13 @@ import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch'
 import { Language } from '../../constants/language'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
-import { Clock } from './Clock'
+import { useTime } from '../../hooks/useTime'
 
 export const Header: React.FC = () => {
   const { t } = useTranslation()
   const { colorMode, toggleColorMode } = useColorMode()
   const { timeDisplay, setTimeDisplay, language, setLanguage } = useConfig()
+  const now = useTime()
 
   return (
     <Flex
@@ -83,7 +85,15 @@ export const Header: React.FC = () => {
           </Text>
         </Flex>
       </Flex>
-      <Clock />
+      <Clock
+        flexShrink="0"
+        alignItems="center"
+        px="4"
+        borderRightRadius="md"
+        fontSize="sm"
+      >
+        {now.format('YYYY-MM-DD HH:mm:ss')}
+      </Clock>
       <Menu strategy="fixed">
         <MenuButton
           as={IconButton}
@@ -140,3 +150,7 @@ export const Header: React.FC = () => {
     </Flex>
   )
 }
+
+const Clock = styled(Flex)`
+  font-variant-numeric: tabular-nums;
+`

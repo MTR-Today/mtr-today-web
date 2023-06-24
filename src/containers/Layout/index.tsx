@@ -1,11 +1,11 @@
 import { useColorMode } from '@chakra-ui/react'
+import { Outlet } from '@tanstack/router'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 
-import { ControlledMap } from './containers/ControlledMap'
-import { Header } from './containers/Header'
+import { Header } from './Header'
 
-export const App = () => {
+export const Layout = () => {
   const { colorMode } = useColorMode()
   const { t } = useTranslation()
 
@@ -21,7 +21,7 @@ export const App = () => {
         <title>{t('title')}</title>
       </Helmet>
       <Header />
-      <ControlledMap />
+      <Outlet />
     </>
   )
 }
