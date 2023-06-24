@@ -38,14 +38,17 @@ export const ControlledMap: React.FC = () => {
         {({ zoomIn, zoomOut, centerView }) => (
           <>
             <TransformComponent
-              wrapperStyle={{ maxWidth: '100vw', maxHeight: '100vh' }}
+              wrapperStyle={{
+                maxWidth: '100vw',
+                maxHeight: '100vh',
+              }}
             >
               <DragContainer
                 width={`${containerWidth}px`}
                 height={`${containerHeight}px`}
               >
-                <MtrMap />
                 {!isSafari && <Bg />}
+                <MtrMap />
               </DragContainer>
             </TransformComponent>
             <Box position="fixed" bottom="16px" left="16px" zIndex="overlay">
