@@ -18,9 +18,7 @@ import { Stop } from './Stop'
 export const MAP_WIDTH = 2800
 export const MAP_HEIGHT = 1630
 
-export const MtrMap: React.FC<{
-  isDragging: boolean
-}> = ({ isDragging }) => {
+export const MtrMap: React.FC = () => {
   const [hoveringLine, setHoveringLine] = useState<LineCode>()
 
   const { data: schedules = [] } = useQuery({
@@ -34,9 +32,8 @@ export const MtrMap: React.FC<{
     <mapContext.Provider
       value={{
         schedules,
-        hoveringLine: isDragging ? undefined : hoveringLine,
+        hoveringLine,
         setHoveringLine,
-        isDragging,
       }}
     >
       <Wrapper>

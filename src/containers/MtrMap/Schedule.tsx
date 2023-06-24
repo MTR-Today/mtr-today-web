@@ -16,7 +16,7 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, isDragging, schedules } = useContext(mapContext)
+  const { hoveringLine, schedules } = useContext(mapContext)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -59,11 +59,7 @@ export const Schedule: React.FC<
         onMouseLeave={() => {
           setHovering(false)
         }}
-        opacity={
-          isDragging || (hoveringLine && hoveringLine !== line)
-            ? '.3'
-            : undefined
-        }
+        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
         style={{ transition: 'opacity .3s' }}
         userSelect="none"
       >
@@ -80,9 +76,7 @@ export const Schedule: React.FC<
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
         <Clock w="100%" textAlign="right">
-          {isDragging || disabled || !firstItem
-            ? '--:--'
-            : getDisplayTime(firstItem.time)}
+          {disabled || !firstItem ? '--:--' : getDisplayTime(firstItem.time)}
         </Clock>
       </Flex>
     </Box>

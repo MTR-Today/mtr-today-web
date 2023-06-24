@@ -19,6 +19,6 @@ export const Bg = () => {
 const Water = styled.canvas<{ colorMode: ColorMode }>`
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   opacity: ${({ colorMode }) => (colorMode === 'light' ? '.5' : '.1')};
 `

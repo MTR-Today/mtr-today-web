@@ -1,85 +1,72 @@
 import { Box } from '@chakra-ui/react'
-import { DndContext, DragEndEvent } from '@dnd-kit/core'
-import type { Coordinates } from '@dnd-kit/utilities'
-import { max, min } from 'ramda'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import styled from '@emotion/styled'
+import { min } from 'ramda'
+import { useMemo } from 'react'
+import { isSafari } from 'react-device-detect'
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 
 import { useWindowSize } from '../../hooks/useWindowSize'
-import { MAP_HEIGHT, MAP_WIDTH } from '../MtrMap'
+import { MAP_HEIGHT, MAP_WIDTH, MtrMap } from '../MtrMap'
 import { Bg } from './Bg'
-import { CONTAINER_HEIGHT, CONTAINER_WIDTH, DraggableMap } from './DraggableMap'
 import { Toolbox } from './Toolbox'
+
+export const CONTAINER_WIDTH = 2800 * 2
+export const CONTAINER_HEIGHT = 1630 * 2
 
 export const ControlledMap: React.FC = () => {
   const { width, height } = useWindowSize()
 
-  const initCord = useMemo<Coordinates>(
-    () => ({
-      x:
-        CONTAINER_WIDTH > width
-          ? -(CONTAINER_WIDTH / 2 - width / 2)
-          : (width - CONTAINER_WIDTH) / 2,
-      y:
-        CONTAINER_HEIGHT > height
-          ? -(CONTAINER_HEIGHT / 2 - height / 2)
-          : (height - CONTAINER_HEIGHT) / 2,
-    }),
-    [height, width]
-  )
-
-  const fitScale = useMemo(
-    () => min(width / MAP_WIDTH, height / MAP_HEIGHT),
-    [height, width]
-  )
-
-  const [scale, setScale] = useState(1)
-  const [{ x, y }, setCoordinates] = useState<Coordinates>(initCord)
-
-  const handleDragEnd = useCallback(({ delta }: DragEndEvent) => {
-    setCoordinates(old => {
-      const newX = old.x + delta.x
-      const newY = old.y + delta.y
-      return { x: newX, y: newY }
-    })
-  }, [])
-
-  const zoomIn = useCallback(() => {
-    setScale(prev => min(prev + 0.1, 2))
-  }, [])
-
-  const zoomOut = useCallback(() => {
-    setScale(prev => max(prev - 0.1, fitScale))
-  }, [fitScale])
-
-  useEffect(() => {
-    const handleScrollWheel = ({ deltaY }: WheelEvent) => {
-      if (deltaY > 0) zoomOut()
-      else zoomIn()
+  const { fitScale, containerWidth, containerHeight } = useMemo(() => {
+    const scale = min(width / MAP_WIDTH, height / MAP_HEIGHT)
+    return {
+      fitScale: scale,
+      containerWidth: width / scale,
+      containerHeight: height / scale,
     }
-
-    addEventListener('wheel', handleScrollWheel)
-
-    return () => {
-      removeEventListener('wheel', handleScrollWheel)
-    }
-  }, [zoomIn, zoomOut])
-
-  const fitScreen = useCallback(() => {
-    setScale(fitScale)
-    setCoordinates(initCord)
-  }, [fitScale, initCord])
+  }, [height, width])
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <Bg />
-      <DraggableMap x={x} y={y} scale={scale} />
-      <Box position="fixed" bottom="16px" left="16px" zIndex="overlay">
-        <Toolbox
-          onFitScreenClick={fitScreen}
-          onZoomInClick={zoomIn}
-          onZoomOutClick={zoomOut}
-        />
-      </Box>
-    </DndContext>
+    <>
+      {/* Scaling Canvas will crash IOS device */}
+      {isSafari && <Bg />}
+      <TransformWrapper
+        centerOnInit
+        minScale={fitScale}
+        alignmentAnimation={{ disabled: true, sizeX: 0, sizeY: 0 }}
+        centerZoomedOut
+      >
+        {({ zoomIn, zoomOut, centerView }) => (
+          <>
+            <TransformComponent
+              wrapperStyle={{ maxWidth: '100vw', maxHeight: '100vh' }}
+            >
+              <DragContainer
+                width={`${containerWidth}px`}
+                height={`${containerHeight}px`}
+              >
+                <MtrMap />
+                {!isSafari && <Bg />}
+              </DragContainer>
+            </TransformComponent>
+            <Box position="fixed" bottom="16px" left="16px" zIndex="overlay">
+              <Toolbox
+                onFitScreenClick={() => {
+                  centerView(fitScale)
+                }}
+                onZoomInClick={() => zoomIn()}
+                onZoomOutClick={() => zoomOut()}
+              />
+            </Box>
+          </>
+        )}
+      </TransformWrapper>
+    </>
   )
 }
+
+const DragContainer = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`
