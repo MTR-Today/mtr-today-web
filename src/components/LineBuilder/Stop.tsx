@@ -2,7 +2,7 @@ import { Box, Flex, Text, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import { StopCode } from 'mtr-kit'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 
 import { useLine } from '../../hooks/useLine'
 import { useTime } from '../../hooks/useTime'

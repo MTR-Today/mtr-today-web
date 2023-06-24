@@ -1,6 +1,6 @@
 import { ColorMode, useColorMode } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { Animation } from './animation'
 

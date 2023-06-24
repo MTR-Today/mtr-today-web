@@ -43,7 +43,7 @@ export class Animation {
     this.shadowCtx = this.shadowCanvas.getContext('2d')
 
     this.setUpVars()
-    this.setUpListeners()
+    // this.setUpListeners()
     this.update()
   }
 

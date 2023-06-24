@@ -106,6 +106,9 @@
     ],
 
     // react rules
+    // no longer needed in react 17 with td
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     // force fc style
     "react/function-component-definition": [
       "error",
@@ -141,8 +144,6 @@
     // should clean up unused props and states
     "react/no-unused-prop-types": "error",
     "react/no-unused-state": "error",
-    // enforce importing react when using jsx
-    "react/react-in-jsx-scope": "error",
     // make sure render function return sth
     "react/require-render-return": "error",
     // sort lifecycle method for readability

@@ -1,7 +1,7 @@
 import { useColorMode } from '@chakra-ui/react'
 import c from 'color'
-import { LineCode } from 'mtr-kit'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
+import { LineCode, lines } from 'mtr-kit'
+import { memo, useCallback, useContext, useMemo } from 'react'
 import { roundCorners } from 'svg-round-corners'
 
 import { mapContext } from '../../contexts/mapContext'
@@ -9,12 +9,12 @@ import { mapContext } from '../../contexts/mapContext'
 export const Line: React.FC<
   React.SVGProps<SVGPathElement> & { color?: string; line: LineCode }
 > = memo(({ line, d, ...props }) => {
-  const { lineConfigs, hoveringLine, setHoveringLine } = useContext(mapContext)
+  const { hoveringLine, setHoveringLine } = useContext(mapContext)
   const { colorMode } = useColorMode()
 
   const color = useMemo(
-    () => lineConfigs.find(item => item.code === line)?.color,
-    [lineConfigs, line]
+    () => lines.find(item => item.code === line)?.color,
+    [line]
   )
 
   const handleMouseEnter = useCallback(() => {

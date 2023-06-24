@@ -1,13 +1,14 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import React, { memo, useCallback, useContext, useMemo } from 'react'
+import dayjs from 'dayjs'
+import { LineCode, lines } from 'mtr-kit'
+import { memo, useCallback, useContext, useMemo } from 'react'
+
+import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
-import { useTime } from '../../hooks/useTime'
-import dayjs from 'dayjs'
-import { LineCode } from 'mtr-kit'
 import { useConfig } from '../../hooks/useConfig'
-import { TimeDisplay } from '../../constants/timeDisplay'
+import { useTime } from '../../hooks/useTime'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
@@ -15,8 +16,7 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, lineConfigs, isDragging, schedules } =
-    useContext(mapContext)
+  const { hoveringLine, schedules } = useContext(mapContext)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -37,10 +37,7 @@ export const Schedule: React.FC<
     [now, timeDisplay]
   )
 
-  const config = useMemo(
-    () => lineConfigs.find(item => item.code === line),
-    [lineConfigs, line]
-  )
+  const config = useMemo(() => lines.find(item => item.code === line), [line])
 
   const firstItem = useMemo(() => {
     const lineSchedules = schedules.find(item => item.code === line)
@@ -62,11 +59,7 @@ export const Schedule: React.FC<
         onMouseLeave={() => {
           setHovering(false)
         }}
-        opacity={
-          isDragging || (hoveringLine && hoveringLine !== line)
-            ? '.3'
-            : undefined
-        }
+        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
         style={{ transition: 'opacity .3s' }}
         userSelect="none"
       >
@@ -83,9 +76,7 @@ export const Schedule: React.FC<
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
         <Clock w="100%" textAlign="right">
-          {isDragging || disabled || !firstItem
-            ? '--:--'
-            : getDisplayTime(firstItem.time)}
+          {disabled || !firstItem ? '--:--' : getDisplayTime(firstItem.time)}
         </Clock>
       </Flex>
     </Box>

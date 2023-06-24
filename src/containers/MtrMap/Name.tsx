@@ -1,16 +1,12 @@
 import { Box, BoxProps } from '@chakra-ui/react'
-import React, { memo, useContext, useMemo } from 'react'
+import { stops } from 'mtr-kit'
+import { memo, useContext, useMemo } from 'react'
 
-import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 
 export const Name: React.FC<BoxProps> = memo(props => {
   const { stop, hovering } = useContext(stopContext)
-  const { stopConfigs } = useContext(mapContext)
-  const config = useMemo(
-    () => stopConfigs.find(item => item.code === stop),
-    [stopConfigs, stop]
-  )
+  const config = useMemo(() => stops.find(item => item.code === stop), [stop])
 
   return (
     <Box position="absolute" textAlign="center" {...props}>
