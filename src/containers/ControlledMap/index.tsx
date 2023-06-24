@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { min } from 'ramda'
 import { useMemo } from 'react'
-import { isSafari } from 'react-device-detect'
+import { isIOS } from 'react-device-detect'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 
 import { useWindowSize } from '../../hooks/useWindowSize'
@@ -28,7 +28,7 @@ export const ControlledMap: React.FC = () => {
   return (
     <>
       {/* Scaling Canvas will crash IOS device */}
-      {isSafari && <Bg />}
+      {isIOS && <Bg />}
       <TransformWrapper
         centerOnInit
         minScale={fitScale}
@@ -47,7 +47,7 @@ export const ControlledMap: React.FC = () => {
                 width={`${containerWidth}px`}
                 height={`${containerHeight}px`}
               >
-                {!isSafari && <Bg />}
+                {!isIOS && <Bg />}
                 <MtrMap />
               </DragContainer>
             </TransformComponent>
