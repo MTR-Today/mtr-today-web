@@ -99,7 +99,7 @@ export const Header: React.FC = () => {
           as={IconButton}
           aria-label="Options"
           icon={<HamburgerIcon />}
-          borderLeftRadius="0"
+          borderRadius="0"
         />
         <MenuList>
           <MenuItem>
