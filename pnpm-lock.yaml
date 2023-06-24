@@ -54,7 +54,7 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0
   react-device-detect:
-    specifier: ^2.2.3
+    specifier: 2.2.3
     version: 2.2.3(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
@@ -69,7 +69,7 @@ dependencies:
     specifier: 4.10.1
     version: 4.10.1(react@18.2.0)
   react-zoom-pan-pinch:
-    specifier: ^3.0.8
+    specifier: 3.0.8
     version: 3.0.8(react-dom@18.2.0)(react@18.2.0)
   simplex-noise:
     specifier: 4.0.1
