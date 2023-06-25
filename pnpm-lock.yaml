@@ -48,8 +48,8 @@ dependencies:
     specifier: 23.2.3
     version: 23.2.3
   mtr-kit:
-    specifier: 1.7.1
-    version: 1.7.1
+    specifier: 1.9.1
+    version: 1.9.1
   ramda:
     specifier: 0.29.0
     version: 0.29.0
@@ -7022,8 +7022,8 @@ packages:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
 
-  /mtr-kit@1.7.1:
-    resolution: {integrity: sha512-P9r5jKVSxSdVViU6RlC065NTgUHRlVMFNPRA4FZA/dBv3fVf7JZcxwrnR3vz8+CqRiREJH11J92cWsUf5QL1iw==}
+  /mtr-kit@1.9.1:
+    resolution: {integrity: sha512-SOdBv0dUIYVoE6yYV1UDLgNmGMUeEK+TKFu27DxUFHtwX3pM9WHd8ciGwPyAoxyWK8EWH/p4qeDr4b0Q8KppYQ==}
     engines: {node: '>=16.0.0 <21.0.0'}
     dependencies:
       wretch: 2.5.2
