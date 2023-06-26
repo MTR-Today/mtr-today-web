@@ -6,6 +6,7 @@ import { memo, useCallback, useContext, useMemo } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
+import { schedulesContext } from '../../contexts/schedulesContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
@@ -16,7 +17,8 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, schedules } = useContext(mapContext)
+  const { hoveringLine } = useContext(mapContext)
+  const schedules = useContext(schedulesContext)
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -40,8 +42,10 @@ export const Schedule: React.FC<
   const config = useMemo(() => lines.find(item => item.code === line), [line])
 
   const firstItem = useMemo(() => {
-    const lineSchedules = schedules.find(item => item.code === line)
-    const stopSchedule = lineSchedules?.stops.find(item => item.code === stop)
+    const stopSchedule = schedules.find(
+      item => item.line === line && item.stop === stop
+    )
+
     return stopSchedule?.schedule?.[dir]?.[0]
   }, [schedules, line, stop, dir])
 

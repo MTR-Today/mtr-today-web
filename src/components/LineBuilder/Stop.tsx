@@ -17,7 +17,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   const { colorMode } = useColorMode()
   const { stops, schedules, color } = useLine()
 
-  const { schedule } = schedules.find(item => item.code === stop) || {}
+  const { schedule } = schedules.find(item => item.stop === stop) || {}
   const config = stops.find(item => item.code === stop)
 
   const getDisplayTime = useCallback(
