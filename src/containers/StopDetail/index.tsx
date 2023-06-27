@@ -5,6 +5,8 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
+  DrawerProps,
+  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
 import { Outlet, useNavigate, useParams } from '@tanstack/router'
@@ -22,7 +24,17 @@ export const StopDetail: React.FC = () => {
 
   const stop = stopCode ? stopMap[stopCode as StopCode] : undefined
 
-  return (
+  const placement = useBreakpointValue<DrawerProps['placement']>(
+    {
+      base: 'bottom',
+      md: 'right',
+    },
+    {
+      fallback: 'bottom',
+    }
+  )
+
+  return placement ? (
     <Drawer
       isOpen={isOpen}
       onClose={onClose}
@@ -32,9 +44,11 @@ export const StopDetail: React.FC = () => {
       closeOnOverlayClick={false}
       size={{ md: 'md' }}
       variant="alwaysOpen"
+      placement={placement}
     >
       <DrawerContent
         marginTop="80px"
+        minH="60vh"
         borderRadius={{ md: 'lg' }}
         borderTopRadius="lg"
         marginBottom={{ md: '16px' }}
@@ -64,5 +78,7 @@ export const StopDetail: React.FC = () => {
         )}
       </DrawerContent>
     </Drawer>
+  ) : (
+    <></>
   )
 }
