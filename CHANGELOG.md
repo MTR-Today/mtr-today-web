@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.8.0...v1.9.0) (2023-06-27)
+
+
+### Features
+
+* about us ([76164a4](https://github.com/MTR-Today/mtr-today-web/commit/76164a4d94af80e19d56e081bd6421d68e8cb7b5))
+* stop detail mobile style ([ac20aa7](https://github.com/MTR-Today/mtr-today-web/commit/ac20aa79b3b2a2e8565a86964615b02b7cb929a0))
+* stop detail schedule ([bc17d1a](https://github.com/MTR-Today/mtr-today-web/commit/bc17d1accad93e8f097225c1af4c01e692c0ed22))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v4.29.17 ([55b2dbd](https://github.com/MTR-Today/mtr-today-web/commit/55b2dbd54d89d235ba9604704d5181b3faea2e90))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.89 ([daf6533](https://github.com/MTR-Today/mtr-today-web/commit/daf65330be7c2637b1bb5d48fd1f78bc6c11072e))
+* **deps:** update dependency mtr-kit to v1.9.1 ([c4e8fe0](https://github.com/MTR-Today/mtr-today-web/commit/c4e8fe04b2ae647d2256b4aa4b8d846ff315d988))
+
 ## [1.8.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.7.1...v1.8.0) (2023-06-24)
 
 
