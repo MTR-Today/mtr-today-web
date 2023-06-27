@@ -1,10 +1,14 @@
-import { HamburgerIcon, SunIcon, TimeIcon } from '@chakra-ui/icons'
+import {
+  HamburgerIcon,
+  InfoOutlineIcon,
+  SunIcon,
+  TimeIcon,
+} from '@chakra-ui/icons'
 import {
   Box,
   Flex,
   IconButton,
   Img,
-  Link,
   Menu,
   MenuButton,
   MenuDivider,
@@ -14,9 +18,9 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { Link as RouterLink } from '@tanstack/router'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
-import { IoLogoGithub } from 'react-icons/io'
 import { MdGTranslate } from 'react-icons/md'
 
 import logoDark from '../../assets/logoDark.svg'
@@ -142,9 +146,9 @@ export const Header: React.FC = () => {
             </RadioSwitch>
           </MenuItem>
           <MenuDivider />
-          <Link href="https://github.com/mtr-today">
-            <MenuItem icon={<IoLogoGithub />}>{t('source_code')}</MenuItem>
-          </Link>
+          <RouterLink to="/about-us">
+            <MenuItem icon={<InfoOutlineIcon />}>{t('about_us')}</MenuItem>
+          </RouterLink>
         </MenuList>
       </Menu>
     </Flex>

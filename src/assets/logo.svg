@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #61b4e4;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-2, .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 40px;
+      }
+
+      .cls-5 {
+        stroke: #f38b00;
+      }
+
+      .cls-6 {
+        stroke: #00af41;
+      }
+
+      .cls-7 {
+        stroke: #9a3820;
+      }
+
+      .cls-8, .cls-3 {
+        stroke: #2d3748;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-10 {
+        fill: #e2e8f0;
+      }
+
+      .cls-11 {
+        fill: #1a202c;
+      }
+
+      .cls-12 {
+        fill: #2d3748;
+      }
+
+      .cls-2 {
+        stroke: #e2231a;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="_圖層_1-2" data-name="圖層 1">
+    <rect class="cls-11" y="0" width="512" height="512"/>
+    <g class="cls-9">
+      <g>
+        <line class="cls-8" x1="-.38" y1="205.9" x2="173.24" y2="205.9"/>
+        <line class="cls-6" y1="451.63" x2="173.62" y2="451.63"/>
+        <line class="cls-5" x1="441" y1="381" x2="441" y2="564"/>
+        <path class="cls-3" d="M476.32-31.58c0,74.83-60.67,135.5-135.5,135.5-74.83,0-135.5-60.67-135.5-135.5"/>
+        <path class="cls-2" d="M393.2-156.89c69.06,28.84,101.66,108.2,72.82,177.25-28.84,69.06-108.2,101.66-177.25,72.82"/>
+        <line class="cls-8" x1="425.05" y1="241.36" x2="547.81" y2="364.13"/>
+        <line class="cls-7" x1="425.09" y1="241.09" x2="581.78" y2="84.4"/>
+        <line class="cls-4" y1="206.38" x2="156.69" y2="49.69"/>
+      </g>
+    </g>
+    <g>
+      <path class="cls-12" d="M144,355V160.1l97.45,97.45c3.91,3.91,9.02,5.86,14.14,5.86s10.24-1.95,14.14-5.86l97.45-97.45v194.9H144Z"/>
+      <path class="cls-10" d="M384.36,171.21h0m-37.18,37.18v126.61H164v-126.61l63.31,63.31c7.81,7.81,18.05,11.72,28.28,11.72s20.47-3.91,28.28-11.72l63.31-63.31m21.65-70.84c-4.48,0-9.04,1.66-12.75,5.37l-100.48,100.48-100.48-100.48c-3.71-3.71-8.28-5.37-12.75-5.37-9.37,0-18.35,7.28-18.35,18.26v200.97c0,10.06,8.16,18.22,18.22,18.22h226.74c10.06,0,18.22-8.16,18.22-18.22V155.81c0-10.98-8.99-18.26-18.35-18.26h0Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,11 +1,9 @@
 import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useQuery } from '@tanstack/react-query'
 import { LineCode, StopCode } from 'mtr-kit'
 import { useState } from 'react'
 
 import { mapContext } from '../../contexts/mapContext'
-import { scheduleApi } from '../../services/scheduleApi'
 import { ArrowLeft } from './ArrowLeft'
 import { ArrowRight } from './ArrowRight'
 import { EndTip } from './EndTip'
@@ -21,17 +19,9 @@ export const MAP_HEIGHT = 1630
 export const MtrMap: React.FC = () => {
   const [hoveringLine, setHoveringLine] = useState<LineCode>()
 
-  const { data: schedules = [] } = useQuery({
-    queryKey: ['schedules'],
-    queryFn: () => scheduleApi.list(),
-    refetchInterval: 10000,
-    refetchOnMount: true,
-  })
-
   return (
     <mapContext.Provider
       value={{
-        schedules,
         hoveringLine,
         setHoveringLine,
       }}
@@ -64,7 +54,7 @@ export const MtrMap: React.FC = () => {
           <Line
             d="M 1530 270 L 1680 270 L 1680 400 L 1590 400"
             line={LineCode.EAL}
-            stroke-dasharray="10,10"
+            strokeDasharray="10,10"
           />
           <Line
             d="M 950 270 L 1590 270 L 1590 958 L 1388 1162 1330 1162"

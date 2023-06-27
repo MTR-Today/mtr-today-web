@@ -22,6 +22,21 @@ const config = {
 
 const theme = extendTheme({
   config,
+  components: {
+    Drawer: {
+      variants: {
+        alwaysOpen: {
+          parts: ['dialog, dialogContainer'],
+          dialog: {
+            pointerEvents: 'auto',
+          },
+          dialogContainer: {
+            pointerEvents: 'none',
+          },
+        },
+      },
+    },
+  },
 })
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

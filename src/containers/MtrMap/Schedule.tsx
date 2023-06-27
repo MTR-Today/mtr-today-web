@@ -1,11 +1,12 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
-import { LineCode, lines } from 'mtr-kit'
+import { LineCode, lineMap } from 'mtr-kit'
 import { memo, useCallback, useContext, useMemo } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
+import { schedulesContext } from '../../contexts/schedulesContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
@@ -16,7 +17,9 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
-  const { hoveringLine, schedules } = useContext(mapContext)
+  const { hoveringLine } = useContext(mapContext)
+  const schedules = useContext(schedulesContext)
+  const config = lineMap[line]
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -37,11 +40,11 @@ export const Schedule: React.FC<
     [now, timeDisplay]
   )
 
-  const config = useMemo(() => lines.find(item => item.code === line), [line])
-
   const firstItem = useMemo(() => {
-    const lineSchedules = schedules.find(item => item.code === line)
-    const stopSchedule = lineSchedules?.stops.find(item => item.code === stop)
+    const stopSchedule = schedules.find(
+      item => item.line === line && item.stop === stop
+    )
+
     return stopSchedule?.schedule?.[dir]?.[0]
   }, [schedules, line, stop, dir])
 
@@ -71,7 +74,7 @@ export const Schedule: React.FC<
           borderRadius="100%"
           flexShrink="0"
           color="white"
-          bg={config?.color}
+          bg={config.color}
         >
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>
