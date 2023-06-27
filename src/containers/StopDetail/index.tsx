@@ -8,8 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { Outlet, useNavigate, useParams } from '@tanstack/router'
-import { stops } from 'mtr-kit'
-import { useMemo } from 'react'
+import { StopCode, stopMap } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 
 import { Language } from '../../constants/language'
@@ -20,10 +19,7 @@ export const StopDetail: React.FC = () => {
   const { stop: stopCode } = useParams()
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
 
-  const stop = useMemo(
-    () => stops.find(item => item.code === stopCode),
-    [stopCode]
-  )
+  const stop = stopCode ? stopMap[stopCode as StopCode] : undefined
 
   return (
     <Drawer

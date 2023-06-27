@@ -10,7 +10,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import { useParams } from '@tanstack/router'
-import { lines } from 'mtr-kit'
+import { lineMap } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -36,7 +36,7 @@ export const StopSchedules: React.FC = () => {
   ) : (
     <Accordion allowMultiple defaultIndex={range(0, stopSchedules.length + 1)}>
       {stopSchedules.map(schedule => {
-        const line = lines.find(item => item.code === schedule.line)
+        const line = lineMap[schedule.line]
         return (
           <AccordionItem border="0" key={schedule.line}>
             <AccordionButton bg="blackAlpha.200">
@@ -67,11 +67,11 @@ export const StopSchedules: React.FC = () => {
                     position="relative"
                     zIndex="1"
                   />
-                  <Box w="1" bg={line?.color} h="full" position="absolute" />
+                  <Box w="1" bg={line.color} h="full" position="absolute" />
                 </Box>
                 {i18n.language === Language['ZH-HK']
-                  ? line?.nameZh
-                  : line?.nameEn}
+                  ? line.nameZh
+                  : line.nameEn}
               </Heading>
               <AccordionIcon />
             </AccordionButton>
@@ -82,10 +82,9 @@ export const StopSchedules: React.FC = () => {
                     <Heading as="h2" size="sm" p="4" py="3" textAlign="center">
                       上行
                     </Heading>
-
                     <ScheduleList
                       schedules={schedule.schedule.up || []}
-                      color={line?.color}
+                      color={line.color}
                     />
                   </Box>
                 )}
@@ -96,7 +95,7 @@ export const StopSchedules: React.FC = () => {
                     </Heading>
                     <ScheduleList
                       schedules={schedule.schedule.down || []}
-                      color={line?.color}
+                      color={line.color}
                     />
                   </Box>
                 )}

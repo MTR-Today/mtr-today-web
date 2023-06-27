@@ -1,7 +1,7 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
-import { LineCode, lines } from 'mtr-kit'
+import { LineCode, lineMap } from 'mtr-kit'
 import { memo, useCallback, useContext, useMemo } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
@@ -19,6 +19,7 @@ export const Schedule: React.FC<
   const { stop, setHovering } = useContext(stopContext)
   const { hoveringLine } = useContext(mapContext)
   const schedules = useContext(schedulesContext)
+  const config = lineMap[line]
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -38,8 +39,6 @@ export const Schedule: React.FC<
     },
     [now, timeDisplay]
   )
-
-  const config = useMemo(() => lines.find(item => item.code === line), [line])
 
   const firstItem = useMemo(() => {
     const stopSchedule = schedules.find(
@@ -75,7 +74,7 @@ export const Schedule: React.FC<
           borderRadius="100%"
           flexShrink="0"
           color="white"
-          bg={config?.color}
+          bg={config.color}
         >
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>

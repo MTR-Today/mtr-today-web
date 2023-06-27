@@ -1,6 +1,6 @@
 import { Box, Flex, Stack } from '@chakra-ui/react'
 import dayjs from 'dayjs'
-import { stops } from 'mtr-kit'
+import { stopMap } from 'mtr-kit'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -42,7 +42,7 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
   return (
     <Stack gap="6" py="2">
       {schedules.map(({ plat, time, dest }) => {
-        const stop = stops.find(item => item.code === dest)
+        const stop = stopMap[dest]
         return (
           <Flex alignItems="center" px="4" key={time}>
             <Box
@@ -57,9 +57,7 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
               {plat}
             </Box>
             <Box mr="2" w="full">
-              {i18n.language === Language['ZH-HK']
-                ? stop?.nameZh
-                : stop?.nameEn}
+              {i18n.language === Language['ZH-HK'] ? stop.nameZh : stop.nameEn}
             </Box>
             {getDisplayTime(time)}
           </Flex>
