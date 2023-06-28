@@ -72,8 +72,8 @@ dependencies:
     specifier: 4.10.1
     version: 4.10.1(react@18.2.0)
   react-zoom-pan-pinch:
-    specifier: 3.0.8
-    version: 3.0.8(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.1.0
+    version: 3.1.0(react-dom@18.2.0)(react@18.2.0)
   simplex-noise:
     specifier: 4.0.1
     version: 4.0.1
@@ -7708,8 +7708,8 @@ packages:
       tslib: 2.5.2
     dev: false
 
-  /react-zoom-pan-pinch@3.0.8(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-z6O5SV5X+XBo/LLO59PgzNE2WT+tp8lw1w3M0y138jCXViwHWKK1MqorICbmSVSOOD5Fa2o6pcg1ppJj9vzqJA==}
+  /react-zoom-pan-pinch@3.1.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-a3LlP8QPgTikvteCNkZ3X6wIWC0lrg1geP5WkUJyx2MXXAhHQek3r17N1nT/esOiWGuPIECnsd9AGoK8jOeGcg==}
     engines: {node: '>=8', npm: '>=5'}
     peerDependencies:
       react: '*'
