@@ -81,8 +81,8 @@ dependencies:
     specifier: 0.4.1
     version: 0.4.1
   wretch:
-    specifier: 2.5.2
-    version: 2.5.2
+    specifier: 2.6.0
+    version: 2.6.0
 
 devDependencies:
   '@commitlint/cli':
@@ -7042,7 +7042,7 @@ packages:
     resolution: {integrity: sha512-ho1J2Ddic7BZhDxXB++zUoA3K83svlYQQsJiMzjAKP1jyjNNFSO8mt2x8a/HHde9QkPhRGQ62+Q+e71gbgt1kw==}
     engines: {node: '>=16.0.0 <21.0.0'}
     dependencies:
-      wretch: 2.5.2
+      wretch: 2.6.0
     dev: false
 
   /mute-stream@0.0.7:
@@ -9181,8 +9181,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /wretch@2.5.2:
-    resolution: {integrity: sha512-6Pd1GvoNYzf17WH1jggzsq8E00UQqiO0kJvLS1dmIEnX8IE0zBfd77Sid5IqTGYVKhad88ygTudbvHdsvPvmCA==}
+  /wretch@2.6.0:
+    resolution: {integrity: sha512-7A4TFHSX+cpxxO6Hd4f0ZE9f8wAgO9wRqX3JeOAtHlJy+kdYP+oPjkF1LYmnTSiTMhODR2YWOdMEc4hCCXEw2w==}
     engines: {node: '>=14'}
     dev: false
 
