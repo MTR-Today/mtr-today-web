@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.9.0...v1.9.1) (2023-06-28)
+
+
+### Bug Fixes
+
+* accordion not expand all ([c3980df](https://github.com/MTR-Today/mtr-today-web/commit/c3980df5e6a8a57cae8adec05d4f3a84582867f9))
+* drawer padding ([f716310](https://github.com/MTR-Today/mtr-today-web/commit/f7163105f7f48166ec4cafaa0235f617fc0110c0))
+
 ## [1.9.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.8.0...v1.9.0) (2023-06-27)
 
 
