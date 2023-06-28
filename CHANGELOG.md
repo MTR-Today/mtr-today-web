@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.9.1...v1.10.0) (2023-06-28)
+
+
+### Features
+
+* delay flag handling ([c229471](https://github.com/MTR-Today/mtr-today-web/commit/c229471bd752ebf46fa7bdbd70ad03d3e6a037a4))
+
 ## [1.9.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.9.0...v1.9.1) (2023-06-28)
 
 
