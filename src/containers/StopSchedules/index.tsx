@@ -38,6 +38,7 @@ export const StopSchedules: React.FC = () => {
       allowMultiple
       defaultIndex={range(0, stopSchedules.length + 1)}
       mb="8"
+      key={stopCode}
     >
       {stopSchedules.map(schedule => {
         const line = lineMap[schedule.line]
