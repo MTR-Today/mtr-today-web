@@ -34,7 +34,11 @@ export const StopSchedules: React.FC = () => {
   return isEmpty(stopSchedules) ? (
     <Empty />
   ) : (
-    <Accordion allowMultiple defaultIndex={range(0, stopSchedules.length + 1)}>
+    <Accordion
+      allowMultiple
+      defaultIndex={range(0, stopSchedules.length + 1)}
+      mb="8"
+    >
       {stopSchedules.map(schedule => {
         const line = lineMap[schedule.line]
         return (
