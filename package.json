@@ -45,7 +45,7 @@
     "react-zoom-pan-pinch": "3.1.0",
     "simplex-noise": "4.0.1",
     "svg-round-corners": "0.4.1",
-    "wretch": "2.5.2"
+    "wretch": "2.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
