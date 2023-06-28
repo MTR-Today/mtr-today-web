@@ -4,6 +4,9 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Alert,
+  AlertDescription,
+  AlertIcon,
   Box,
   Flex,
   Heading,
@@ -21,7 +24,7 @@ import { Empty } from './Empty'
 import { ScheduleList } from './ScheduleList'
 
 export const StopSchedules: React.FC = () => {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
   const schedules = useContext(schedulesContext)
@@ -35,13 +38,14 @@ export const StopSchedules: React.FC = () => {
     <Empty />
   ) : (
     <Accordion
+      key={stopCode}
+      mb="8"
       allowMultiple
       defaultIndex={range(0, stopSchedules.length + 1)}
-      mb="8"
-      key={stopCode}
     >
       {stopSchedules.map(schedule => {
         const line = lineMap[schedule.line]
+
         return (
           <AccordionItem key={schedule.line} border="0">
             <AccordionButton bg="blackAlpha.200">
@@ -76,6 +80,12 @@ export const StopSchedules: React.FC = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel p="0">
+              {schedule.isDelay && (
+                <Alert status="error">
+                  <AlertIcon />
+                  <AlertDescription>{t('is_delayed')}</AlertDescription>
+                </Alert>
+              )}
               <Flex>
                 {!isEmpty(schedule.schedule.up || []) && (
                   <Box w="full">
