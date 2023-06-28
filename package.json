@@ -27,7 +27,7 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@react-hookz/web": "23.0.1",
-    "@tanstack/react-query": "4.29.17",
+    "@tanstack/react-query": "4.29.19",
     "@tanstack/router": "0.0.1-beta.86",
     "color": "4.2.3",
     "constate": "3.3.2",
@@ -61,7 +61,7 @@
     "@typescript-eslint/parser": "5.60.1",
     "@vitejs/plugin-react": "4.0.1",
     "eslint": "8.43.0",
-    "eslint-plugin-chakra-ui": "^0.9.0",
+    "eslint-plugin-chakra-ui": "0.9.0",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "4.2.1",
@@ -72,7 +72,7 @@
     "import-sort-style-module": "6.0.0",
     "lint-staged": "13.2.2",
     "prettier": "2.8.8",
-    "typescript": "5.1.3",
+    "typescript": "5.1.5",
     "vite": "4.3.9",
     "vite-plugin-pwa": "0.16.4"
   }
