@@ -28,12 +28,12 @@ export const AboutUs: React.FC = () => {
 
   return (
     <Modal
+      isCentered
       isOpen={isOpen}
       onClose={onClose}
       onCloseComplete={() => {
         navigate({ to: '/' })
       }}
-      isCentered
       size="xs"
     >
       <ModalOverlay />
@@ -41,16 +41,16 @@ export const AboutUs: React.FC = () => {
         <ModalHeader>{t('about_us')}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Stack spacing={2} alignItems="center" mb="4">
-            <Box borderWidth="4px" borderRadius="lg" overflow="hidden">
-              <Img src={logo} w="128px" />
+          <Stack alignItems="center" mb="4" spacing={2}>
+            <Box overflow="hidden" borderWidth="4px" borderRadius="lg">
+              <Img w="128px" src={logo} />
             </Box>
             <Heading as="h1" fontSize="lg">
               MTR Today
             </Heading>
             <Box color="GrayText">v{packageJson.version}</Box>
             <Link href="https://github.com/mtr-today">
-              <Button size="sm" leftIcon={<IoLogoGithub />}>
+              <Button leftIcon={<IoLogoGithub />} size="sm">
                 {t('source_code')}
               </Button>
             </Link>

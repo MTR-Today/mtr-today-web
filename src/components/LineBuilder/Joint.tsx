@@ -6,9 +6,9 @@ export const Joint = () => {
   const { color } = useLine()
 
   return (
-    <Flex flexShrink="0" alignItems="center">
-      <Box h="80px" w="6px" bg={color} borderRightRadius="sm" />
-      <Box h="6px" w="32px" bg={color} />
+    <Flex align="center" flexShrink="0">
+      <Box w="6px" h="80px" bg={color} borderRightRadius="sm" />
+      <Box w="32px" h="6px" bg={color} />
     </Flex>
   )
 }

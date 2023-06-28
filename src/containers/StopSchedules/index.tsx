@@ -38,37 +38,32 @@ export const StopSchedules: React.FC = () => {
       {stopSchedules.map(schedule => {
         const line = lineMap[schedule.line]
         return (
-          <AccordionItem border="0" key={schedule.line}>
+          <AccordionItem key={schedule.line} border="0">
             <AccordionButton bg="blackAlpha.200">
               <Heading
                 as="h1"
-                size="md"
-                py="1"
-                flex="1"
-                textAlign="left"
-                display="flex"
+                pos="relative"
                 alignItems="center"
-                position="relative"
+                flex="1"
+                display="flex"
+                py="1"
+                textAlign="left"
+                size="md"
               >
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  mr="2"
-                >
+                <Flex align="center" justify="center" mr="2">
                   <Box
+                    pos="relative"
+                    zIndex="1"
                     w="18px"
                     h="18px"
+                    bg="Background"
                     borderWidth="3px"
                     borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
                     borderRadius="100%"
                     transition="transform .5s"
-                    bg="Background"
-                    position="relative"
-                    zIndex="1"
                   />
-                  <Box w="1" bg={line.color} h="full" position="absolute" />
-                </Box>
+                  <Box pos="absolute" w="1" h="full" bg={line.color} />
+                </Flex>
                 {i18n.language === Language['ZH-HK']
                   ? line.nameZh
                   : line.nameEn}
@@ -79,7 +74,7 @@ export const StopSchedules: React.FC = () => {
               <Flex>
                 {!isEmpty(schedule.schedule.up || []) && (
                   <Box w="full">
-                    <Heading as="h2" size="sm" p="4" py="3" textAlign="center">
+                    <Heading as="h2" p="4" py="3" textAlign="center" size="sm">
                       上行
                     </Heading>
                     <ScheduleList
@@ -90,7 +85,7 @@ export const StopSchedules: React.FC = () => {
                 )}
                 {!isEmpty(schedule.schedule.down || []) && (
                   <Box w="full">
-                    <Heading as="h2" size="sm" p="4" textAlign="center" py="3">
+                    <Heading as="h2" p="4" py="3" textAlign="center" size="sm">
                       下行
                     </Heading>
                     <ScheduleList

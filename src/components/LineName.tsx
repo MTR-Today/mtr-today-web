@@ -8,43 +8,37 @@ export const LineName: React.FC = () => {
 
   return (
     <Flex
-      bg={color}
-      w="120px"
+      align="center"
+      justify="center"
+      direction="column"
       flexShrink="0"
-      alignItems="center"
-      justifyContent="center"
-      flexDirection="column"
+      w="120px"
       color="white"
+      bg={color}
     >
       <StyledHeading mb="4" as="h4" size="md">
         {nameZh}
       </StyledHeading>
-      <Heading as="h4" size="xs" textAlign="center">
+      <Heading as="h4" textAlign="center" size="xs">
         {nameEn}
       </Heading>
-      <Flex
-        w="full"
-        mt="3"
-        position="relative"
-        flexDirection="column"
-        alignItems="center"
-      >
+      <Flex pos="relative" align="center" direction="column" w="full" mt="3">
         <Box
+          pos="relative"
+          zIndex="1"
           w="5"
           h="5"
-          borderRadius="100%"
           bg="white"
           borderWidth="4px"
           borderColor="gray.700"
-          position="relative"
-          zIndex="1"
+          borderRadius="100%"
         />
         <Box
-          width="full"
+          pos="absolute"
+          top="50%"
+          w="full"
           h="1"
           bg="white"
-          position="absolute"
-          top="50%"
           transform="translateY(-50%)"
         />
       </Flex>

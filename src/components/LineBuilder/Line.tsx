@@ -7,17 +7,12 @@ export const Line = () => {
   const { color } = useLine()
 
   return (
-    <Flex
-      position="relative"
-      flexDirection="column"
-      alignItems="center"
-      color={color}
-    >
-      <Text fontSize="xs" position="absolute" bottom="4">
+    <Flex pos="relative" align="center" direction="column" color={color}>
+      <Text pos="absolute" bottom="4" fontSize="xs">
         <ArrowLeftIcon />
       </Text>
-      <Box h="6px" w="80px" flexShrink="0" bg={color} />
-      <Text fontSize="xs" position="absolute" top="4">
+      <Box flexShrink="0" w="80px" h="6px" bg={color} />
+      <Text pos="absolute" top="4" fontSize="xs">
         <ArrowRightIcon />
       </Text>
     </Flex>

@@ -28,7 +28,8 @@
     "@typescript-eslint",
     "jsx-a11y",
     "fp",
-    "@tanstack/query"
+    "@tanstack/query",
+    "chakra-ui"
   ],
   "rules": {
     "fp/no-mutation": ["error", { "allowThis": true }],
@@ -154,6 +155,11 @@
     "react/prefer-stateless-function": [
       "error",
       { "ignorePureComponents": false }
-    ]
+    ],
+
+    // Chakra rules
+    "chakra-ui/props-order": "error",
+    "chakra-ui/props-shorthand": "error",
+    "chakra-ui/require-specific-component": "error"
   }
 }

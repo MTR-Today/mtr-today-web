@@ -49,32 +49,32 @@ export const Schedule: React.FC<
   }, [schedules, line, stop, dir])
 
   return (
-    <Box position="absolute" {...props}>
+    <Box pos="absolute" {...props}>
       <Flex
-        position="absolute"
-        transform="translateY(-50%) translateX(-50%)"
+        pos="absolute"
         w="56px"
-        textAlign="center"
         fontSize="xs"
+        textAlign="center"
+        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+        transform="translateY(-50%) translateX(-50%)"
+        userSelect="none"
         onMouseEnter={() => {
           setHovering(true)
         }}
         onMouseLeave={() => {
           setHovering(false)
         }}
-        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
         style={{ transition: 'opacity .3s' }}
-        userSelect="none"
       >
         <Box
+          flexShrink="0"
           display="inline-block"
           w="4"
           h="4"
-          textAlign="center"
-          borderRadius="100%"
-          flexShrink="0"
           color="white"
+          textAlign="center"
           bg={config.color}
+          borderRadius="100%"
         >
           {disabled || !firstItem ? '-' : firstItem.plat}
         </Box>

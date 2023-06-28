@@ -51,7 +51,7 @@ export const ControlledMap: React.FC = () => {
                 <MtrMap />
               </DragContainer>
             </TransformComponent>
-            <Box position="fixed" bottom="16px" left="16px" zIndex="overlay">
+            <Box pos="fixed" zIndex="overlay" bottom="16px" left="16px">
               <Toolbox
                 onFitScreenClick={() => {
                   centerView(fitScale)

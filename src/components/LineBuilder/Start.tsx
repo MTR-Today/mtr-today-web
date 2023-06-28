@@ -6,13 +6,13 @@ export const Start = () => {
   const { color } = useLine()
 
   return (
-    <Flex flexShrink="0" alignItems="center" position="relative">
-      <Text fontSize="xs" position="absolute" bottom="4" color={color}>
+    <Flex pos="relative" align="center" flexShrink="0">
+      <Text pos="absolute" bottom="4" color={color} fontSize="xs">
         上行
       </Text>
-      <Box h="20px" w="6px" bg={color} position="absolute" left="0" />
-      <Box h="6px" w="48px" bg={color} />
-      <Text fontSize="xs" position="absolute" top="4" color={color}>
+      <Box pos="absolute" left="0" w="6px" h="20px" bg={color} />
+      <Box w="48px" h="6px" bg={color} />
+      <Text pos="absolute" top="4" color={color} fontSize="xs">
         下行
       </Text>
     </Flex>

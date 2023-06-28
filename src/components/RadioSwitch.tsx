@@ -27,15 +27,15 @@ export const RadioSwitchItem = <T extends string>(
       <input {...input} />
       <Box
         {...checkbox}
-        cursor="pointer"
+        px={4}
+        py={0.5}
+        fontSize="sm"
         borderRadius="md"
         _checked={{
           bg: 'chakra-body-bg',
           boxShadow: 'sm',
         }}
-        px={4}
-        py={0.5}
-        fontSize="sm"
+        cursor="pointer"
       >
         {props.children}
       </Box>
@@ -72,11 +72,11 @@ export const RadioSwitch = <T extends string>({
     <HStack
       {...group}
       w="fit-content"
-      p={1}
       h="32px"
+      p={1}
+      bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
       borderWidth="1px"
       borderRadius="md"
-      bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
     >
       {flatten(children).map(item => {
         const radio = getRadioProps({ value: item.props.value })

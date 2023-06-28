@@ -36,34 +36,34 @@ export const StopDetail: React.FC = () => {
 
   return placement ? (
     <Drawer
+      closeOnOverlayClick={false}
       isOpen={isOpen}
       onClose={onClose}
       onCloseComplete={() => {
         navigate({ to: '/' })
       }}
-      closeOnOverlayClick={false}
+      placement={placement}
       size={{ md: 'md' }}
       variant="alwaysOpen"
-      placement={placement}
     >
       <DrawerContent
-        marginTop="80px"
         minH="60vh"
+        mt="80px"
+        mr={{ md: '16px' }}
+        mb={{ md: '16px' }}
+        ml={{ md: '16px' }}
         borderRadius={{ md: 'lg' }}
         borderTopRadius="lg"
-        marginBottom={{ md: '16px' }}
-        marginLeft={{ md: '16px' }}
-        marginRight={{ md: '16px' }}
       >
         <DrawerCloseButton color={stop?.textColor} />
         {stop ? (
           <>
             <DrawerHeader
+              py="2"
+              color={stop?.textColor}
               textAlign="center"
               bg={stop?.color}
-              color={stop?.textColor}
               borderTopRadius="lg"
-              py="2"
               transition="background-color 0.5s, color 0.5s"
             >
               {i18n.language === Language['ZH-HK'] ? stop.nameZh : stop.nameEn}

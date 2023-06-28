@@ -10,14 +10,14 @@ import { UseLineProvider } from '../../hooks/useLine'
 
 export const SIL: React.FC<{ disabled?: boolean }> = ({ disabled }) => (
   <UseLineProvider line={LineCode.SIL} disabled={disabled}>
-    <Flex w="full" height="250" bg="blackAlpha.100">
+    <Flex w="full" h="250" bg="blackAlpha.100">
       <LineName />
       <Flex
-        w="full"
+        align="center"
         verticalAlign="center"
-        alignItems="center"
-        px="20"
         overflow="auto"
+        w="full"
+        px="20"
       >
         <Start />
         <Stop stop={StopCode.SOH} />

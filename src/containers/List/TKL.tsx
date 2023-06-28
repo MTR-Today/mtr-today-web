@@ -11,28 +11,24 @@ import { UseLineProvider } from '../../hooks/useLine'
 
 export const TKL: React.FC = () => (
   <UseLineProvider line={LineCode.TKL}>
-    <Flex w="full" height="250" bg="blackAlpha.100">
+    <Flex w="full" h="250" bg="blackAlpha.100">
       <LineName />
       <Flex
-        w="full"
+        align="center"
         verticalAlign="center"
-        alignItems="center"
-        px="20"
         overflow="auto"
+        w="full"
+        px="20"
       >
         <Box>
-          <Flex verticalAlign="center" alignItems="center" pb="56px">
+          <Flex align="center" verticalAlign="center" pb="56px">
             <Start />
             <Stop stop={StopCode.POA} namePosition="top" />
             <Line />
             <Stop stop={StopCode.HAH} namePosition="top" />
             <Line />
           </Flex>
-          <Flex
-            verticalAlign="center"
-            justifyContent="flex-end"
-            alignItems="center"
-          >
+          <Flex align="center" justify="flex-end" verticalAlign="center">
             <Start />
             <Line />
             <Stop stop={StopCode.LHP} />

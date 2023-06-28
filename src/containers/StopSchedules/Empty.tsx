@@ -5,7 +5,7 @@ import { IoMdTrain } from 'react-icons/io'
 export const Empty = () => {
   const { t } = useTranslation()
   return (
-    <Stack minH="180px" justifyContent="center" alignItems="center">
+    <Stack alignItems="center" justifyContent="center" minH="180px">
       <Text fontSize="60">
         <IoMdTrain />
       </Text>

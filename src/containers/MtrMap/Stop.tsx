@@ -31,30 +31,30 @@ export const Stop: React.FC<
     >
       <Link to="/stops/$stop/schedules" params={{ stop }}>
         <Box
-          cursor="pointer"
-          position="absolute"
+          pos="absolute"
           top={`${y}px`}
           left={`${x}px`}
           fontSize="xs"
           opacity={
             hoveringLine && !lineList.includes(hoveringLine) ? '.3' : undefined
           }
+          cursor="pointer"
           style={{ transition: 'opacity .3s' }}
           {...props}
         >
           {children}
           <Box
+            pos="absolute"
             w="18px"
             h="18px"
+            bg="Background"
             borderWidth="3px"
             borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
             borderRadius="100%"
-            position="absolute"
             transform={`translateY(-50%) translateX(-50%) ${
               isHovering ? 'scale(1.2)' : ''
             }`}
             transition="transform .5s"
-            bg="Background"
             onMouseEnter={() => {
               setHovering(true)
             }}

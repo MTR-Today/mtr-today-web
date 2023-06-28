@@ -38,31 +38,26 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
   )
 
   return (
-    <Flex
-      flexShrink="0"
-      alignItems="center"
-      flexDirection="column"
-      position="relative"
-    >
+    <Flex pos="relative" align="center" direction="column" flexShrink="0">
       {namePosition === 'top' && (
-        <Box position="absolute" bottom="12" w="20" textAlign="center">
+        <Box pos="absolute" bottom="12" w="20" textAlign="center">
           <Text fontSize="xs">{config?.nameZh}</Text>
           <Text fontSize="xs">{config?.nameEn}</Text>
         </Box>
       )}
-      <Box position="absolute" bottom="6" w="56px" textAlign="center">
+      <Box pos="absolute" bottom="6" w="56px" textAlign="center">
         {schedule?.up?.[0] ? (
           <Flex fontSize="xs">
             <Box
-              fontSize="xs"
-              bg={color}
+              flexShrink="0"
               display="inline-block"
               w="4"
               h="4"
-              textAlign="center"
-              borderRadius="100%"
-              flexShrink="0"
               color="white"
+              fontSize="xs"
+              textAlign="center"
+              bg={color}
+              borderRadius="100%"
             >
               {schedule.up[0].plat}
             </Box>
@@ -82,19 +77,19 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
         borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
         borderRadius="100%"
       />
-      <Box position="absolute" top="6" w="56px" textAlign="center">
+      <Box pos="absolute" top="6" w="56px" textAlign="center">
         {schedule?.down?.[0] ? (
           <Flex fontSize="xs">
             <Box
-              fontSize="xs"
-              bg={color}
+              flexShrink="0"
               display="inline-block"
               w="4"
               h="4"
-              textAlign="center"
-              borderRadius="100%"
-              flexShrink="0"
               color="white"
+              fontSize="xs"
+              textAlign="center"
+              bg={color}
+              borderRadius="100%"
             >
               {schedule.down[0].plat}
             </Box>
@@ -107,7 +102,7 @@ export const Stop: React.FC<Props> = ({ stop, namePosition = 'bottom' }) => {
         )}
       </Box>
       {namePosition === 'bottom' && (
-        <Box position="absolute" top="12" w="20" textAlign="center">
+        <Box pos="absolute" top="12" w="20" textAlign="center">
           <Text fontSize="xs">{config?.nameZh}</Text>
           <Text fontSize="xs">{config?.nameEn}</Text>
         </Box>

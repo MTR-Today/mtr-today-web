@@ -14,7 +14,7 @@ export const EndTip: React.FC<
 
   return (
     <Box
-      position="absolute"
+      pos="absolute"
       top={`${y}px`}
       left={`${x}px`}
       fontSize="xs"
@@ -23,31 +23,31 @@ export const EndTip: React.FC<
       {...props}
     >
       <Box
-        fontSize="8px"
-        whiteSpace="nowrap"
-        position="absolute"
+        pos="absolute"
         bottom="2"
-        transform="translateX(-50%)"
+        fontSize="8px"
         opacity=".3"
+        transform="translateX(-50%)"
+        whiteSpace="nowrap"
       >
         {flip ? '下行' : '上行'}
       </Box>
       <Box
+        pos="absolute"
+        top="2"
         fontSize="8px"
         opacity=".3"
-        whiteSpace="nowrap"
-        position="absolute"
         transform="translateX(-50%)"
-        top="2"
+        whiteSpace="nowrap"
       >
         {flip ? '上行' : '下行'}
       </Box>
       <Box
+        pos="absolute"
         w="6px"
         h="16px"
-        position="absolute"
-        transform="translateY(-50%) translateX(-50%)"
         bg={colorMode === 'dark' && color ? c(color).darken(0.3).hex() : color}
+        transform="translateY(-50%) translateX(-50%)"
       />
     </Box>
   )

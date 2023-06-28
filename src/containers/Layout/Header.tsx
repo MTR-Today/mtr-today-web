@@ -40,50 +40,50 @@ export const Header: React.FC = () => {
   return (
     <Flex
       as="header"
-      position="absolute"
-      top="16px"
-      left="16px"
-      right="16px"
-      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
-      width="calc(100% - 32px)"
+      pos="absolute"
       zIndex="overlay"
-      borderRadius="md"
-      alignItems="center"
-      borderWidth="2px"
-      boxShadow="sm"
+      top="16px"
+      right="16px"
+      left="16px"
+      align="center"
       overflow="hidden"
+      w="calc(100% - 32px)"
+      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+      borderWidth="2px"
+      borderRadius="md"
+      shadow="sm"
     >
-      <Flex w="full" h="40px" alignItems="center">
+      <Flex align="center" w="full" h="40px">
         <Box>
           {lines.map(({ color }) => (
             <Box
               key={color}
+              pos="relative"
+              top="4px"
+              right="20px"
               display="inline-block"
-              bg={color}
               w="4px"
               h="64px"
               mx="0.5px"
-              position="relative"
-              top="4px"
-              right="20px"
-              transform="rotate(45deg)"
+              bg={color}
               opacity={0.7}
+              transform="rotate(45deg)"
             />
           ))}
         </Box>
         <Img
-          src={colorMode === 'light' ? logoLight : logoDark}
+          pos="absolute"
+          left="3"
           w="24px"
           h="24px"
-          position="absolute"
-          left="3"
           borderRadius="md"
+          src={colorMode === 'light' ? logoLight : logoDark}
         />
-        <Flex alignItems="end">
+        <Flex align="end">
           <Text fontWeight="semibold">MTR</Text>
           <Text
-            fontSize="xs"
             color={colorMode === 'dark' ? 'white' : 'gray.500'}
+            fontSize="xs"
           >
             .today
           </Text>
@@ -101,9 +101,9 @@ export const Header: React.FC = () => {
       <Menu strategy="fixed">
         <MenuButton
           as={IconButton}
+          borderRadius="0"
           aria-label="Options"
           icon={<HamburgerIcon />}
-          borderRadius="0"
         />
         <MenuList>
           <MenuItem>

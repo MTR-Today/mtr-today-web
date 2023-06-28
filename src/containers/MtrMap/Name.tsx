@@ -9,18 +9,18 @@ export const Name: React.FC<BoxProps> = memo(props => {
   const config = stop ? stopMap[stop] : undefined
 
   return (
-    <Box position="absolute" textAlign="center" {...props}>
+    <Box pos="absolute" textAlign="center" {...props}>
       <Box
-        position="absolute"
+        pos="absolute"
+        minW="20"
+        fontSize="xs"
+        lineHeight="3"
+        opacity={hovering ? undefined : '.5'}
+        _hover={{ opacity: 1 }}
         transform="translateY(-50%) translateX(-50%)"
         whiteSpace="nowrap"
-        lineHeight="3"
-        fontSize="xs"
-        minW="20"
-        opacity={hovering ? undefined : '.5'}
-        transition="opacity .3s"
-        _hover={{ opacity: 1 }}
         userSelect="none"
+        transition="opacity .3s"
       >
         <Box>{config?.nameZh}</Box>
         <Box>{config?.nameEn}</Box>

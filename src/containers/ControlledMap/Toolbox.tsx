@@ -20,38 +20,38 @@ export const Toolbox: React.FC<Props> = ({
     <Box
       bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
       borderWidth="2px"
-      boxShadow="sm"
       borderRadius="md"
+      shadow="sm"
     >
       <Tooltip label={t('fit_screen')}>
         <IconButton
-          variant="outline"
-          aria-label="dit-screen"
-          icon={<ImEnlarge />}
-          onClick={onFitScreenClick}
           borderWidth="0"
           borderRightWidth="1px"
           borderRadius="0"
+          aria-label="dit-screen"
+          icon={<ImEnlarge />}
+          onClick={onFitScreenClick}
+          variant="outline"
         />
       </Tooltip>
       <Tooltip label={t('zoom_in')}>
         <IconButton
-          variant="outline"
+          borderWidth="0"
+          borderRadius="0"
           aria-label="dit-screen"
           icon={<IoMdAdd />}
           onClick={onZoomInClick}
-          borderWidth="0"
-          borderRadius="0"
+          variant="outline"
         />
       </Tooltip>
       <Tooltip label={t('zoom_out')}>
         <IconButton
-          variant="outline"
+          borderWidth="0"
+          borderRadius="0"
           aria-label="dit-screen"
           icon={<IoMdRemove />}
           onClick={onZoomOutClick}
-          borderWidth="0"
-          borderRadius="0"
+          variant="outline"
         />
       </Tooltip>
     </Box>

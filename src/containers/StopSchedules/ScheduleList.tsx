@@ -44,19 +44,19 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
       {schedules.map(({ plat, time, dest }) => {
         const stop = stopMap[dest]
         return (
-          <Flex alignItems="center" px="4" key={time}>
+          <Flex key={time} align="center" px="4">
             <Box
-              width="6"
-              h="6"
-              textAlign="center"
-              borderRadius="full"
-              bg={color}
-              mr="4"
               flexShrink="0"
+              w="6"
+              h="6"
+              mr="4"
+              textAlign="center"
+              bg={color}
+              borderRadius="full"
             >
               {plat}
             </Box>
-            <Box mr="2" w="full">
+            <Box w="full" mr="2">
               {i18n.language === Language['ZH-HK'] ? stop.nameZh : stop.nameEn}
             </Box>
             {getDisplayTime(time)}

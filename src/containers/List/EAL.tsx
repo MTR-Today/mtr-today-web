@@ -12,22 +12,22 @@ import { UseLineProvider } from '../../hooks/useLine'
 
 export const EAL: React.FC = () => (
   <UseLineProvider line={LineCode.EAL}>
-    <Flex w="full" height="250" bg="blackAlpha.100">
+    <Flex w="full" h="250" bg="blackAlpha.100">
       <LineName />
       <Flex
-        w="full"
+        align="center"
         verticalAlign="center"
-        alignItems="center"
-        px="20"
         overflow="auto"
+        w="full"
+        px="20"
       >
         <Box>
-          <Flex verticalAlign="center" alignItems="center" pb="56px">
+          <Flex align="center" verticalAlign="center" pb="56px">
             <Start />
             <Stop stop={StopCode.LMC} namePosition="top" />
             <Line />
           </Flex>
-          <Flex verticalAlign="center" alignItems="center">
+          <Flex align="center" verticalAlign="center">
             <Start />
             <Stop stop={StopCode.LOW} />
             <Line />
@@ -45,12 +45,12 @@ export const EAL: React.FC = () => (
         <Stop stop={StopCode.UNI} />
         <Split />
         <Box>
-          <Flex verticalAlign="center" alignItems="center" pb="56px">
+          <Flex align="center" verticalAlign="center" pb="56px">
             <Line />
             <Stop stop={StopCode.RAC} namePosition="top" />
             <Line />
           </Flex>
-          <Flex verticalAlign="center" alignItems="center">
+          <Flex align="center" verticalAlign="center">
             <Line />
             <Stop stop={StopCode.FOT} />
             <Line />
