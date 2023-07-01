@@ -31,7 +31,7 @@
     "@tanstack/router": "0.0.1-beta.86",
     "color": "4.2.3",
     "constate": "3.3.2",
-    "dayjs": "1.11.8",
+    "dayjs": "1.11.9",
     "framer-motion": "10.12.18",
     "i18next": "23.2.6",
     "mtr-kit": "1.11.0",
