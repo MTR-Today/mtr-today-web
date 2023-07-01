@@ -34,7 +34,7 @@
     "dayjs": "1.11.9",
     "framer-motion": "10.12.18",
     "i18next": "23.2.6",
-    "mtr-kit": "1.11.0",
+    "mtr-kit": "1.11.1",
     "ramda": "0.29.0",
     "react": "18.2.0",
     "react-device-detect": "2.2.3",
