@@ -41,10 +41,10 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
 
   return (
     <Stack gap="6" py="2">
-      {schedules.map(({ plat, time, dest }) => {
-        const stop = stopMap[dest]
+      {schedules.map(({ platform, timestamp, destination }) => {
+        const stop = stopMap[destination]
         return (
-          <Flex key={time} align="center" px="4">
+          <Flex key={timestamp} align="center" px="4">
             <Box
               flexShrink="0"
               w="6"
@@ -54,12 +54,12 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
               bg={color}
               borderRadius="full"
             >
-              {plat}
+              {platform}
             </Box>
             <Box w="full" mr="2">
               {i18n.language === Language['ZH-HK'] ? stop.nameZh : stop.nameEn}
             </Box>
-            {getDisplayTime(time)}
+            {getDisplayTime(timestamp)}
           </Flex>
         )
       })}

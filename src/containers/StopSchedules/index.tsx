@@ -80,7 +80,7 @@ export const StopSchedules: React.FC = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel p="0">
-              {schedule.isDelay && (
+              {schedule.isDelayed && (
                 <Alert status="error">
                   <AlertIcon />
                   <AlertDescription>{t('is_delayed')}</AlertDescription>

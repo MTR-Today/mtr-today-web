@@ -76,10 +76,12 @@ export const Schedule: React.FC<
           bg={config.color}
           borderRadius="100%"
         >
-          {disabled || !firstItem ? '-' : firstItem.plat}
+          {disabled || !firstItem ? '-' : firstItem.platform}
         </Box>
         <Clock w="100%" textAlign="right">
-          {disabled || !firstItem ? '--:--' : getDisplayTime(firstItem.time)}
+          {disabled || !firstItem
+            ? '--:--'
+            : getDisplayTime(firstItem.timestamp)}
         </Clock>
       </Flex>
     </Box>

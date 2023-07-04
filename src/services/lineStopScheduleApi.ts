@@ -3,16 +3,16 @@ import { LineCode, StopCode } from 'mtr-kit'
 import { apiClient } from './apiClient'
 
 export type ScheduleItem = {
-  plat: number
-  dest: StopCode
-  time: string
+  platform: number
+  destination: StopCode
+  timestamp: string
 }
 
 export type LineStopSchedule = {
-  currTime: string
-  isDelay: boolean
+  currentTime: string
+  isDelayed: boolean
   schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] }
-  sysTime: string
+  systemTime: string
 }
 
 export const get = ({ line, stop }: { line: LineCode; stop: StopCode }) =>
