@@ -71,7 +71,7 @@
     "import-sort-parser-typescript": "6.0.0",
     "import-sort-style-module": "6.0.0",
     "lint-staged": "13.2.3",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "typescript": "5.1.6",
     "vite": "4.3.9",
     "vite-plugin-pwa": "0.16.4"
