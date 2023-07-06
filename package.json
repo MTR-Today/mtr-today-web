@@ -14,7 +14,7 @@
     "postinstall": "husky install",
     "preview": "vite preview",
     "test": "tsc",
-    "lint:js": "eslint src",
+    "lint": "eslint src",
     "pre-commit": "pnpm lint-staged",
     "pre-push": "tsc",
     "prepare": "husky install"
