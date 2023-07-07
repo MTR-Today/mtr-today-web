@@ -1,6 +1,7 @@
 import './locales'
 import './utils/dayjs'
 
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from '@tanstack/router'
@@ -10,6 +11,11 @@ import ReactDOM from 'react-dom/client'
 import { UseConfigProvider } from './hooks/useConfig'
 import { UseTimeProvider } from './hooks/useTime'
 import { router } from './Router'
+
+const apolloClient = new ApolloClient({
+  uri: `${import.meta.env.VITE_API_BASE_URL}/api/v1/graphql`,
+  cache: new InMemoryCache(),
+})
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { cacheTime: 10000 } },
@@ -41,15 +47,17 @@ const theme = extendTheme({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
-        <UseConfigProvider>
-          <UseTimeProvider>
-            <RouterProvider router={router} />
-          </UseTimeProvider>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        </UseConfigProvider>
-      </ChakraProvider>
-    </QueryClientProvider>
+    <ApolloProvider client={apolloClient}>
+      <QueryClientProvider client={queryClient}>
+        <ChakraProvider theme={theme}>
+          <UseConfigProvider>
+            <UseTimeProvider>
+              <RouterProvider router={router} />
+            </UseTimeProvider>
+            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          </UseConfigProvider>
+        </ChakraProvider>
+      </QueryClientProvider>
+    </ApolloProvider>
   </StrictMode>
 )

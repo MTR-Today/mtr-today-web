@@ -1,3 +1,4 @@
+import { useQuery } from '@apollo/client'
 import {
   Accordion,
   AccordionButton,
@@ -12,14 +13,13 @@ import {
   Heading,
   useColorMode,
 } from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
 import { useParams } from '@tanstack/router'
 import { lineMap } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useTranslation } from 'react-i18next'
 
 import { Language } from '../../constants/language'
-import { stopScheduleApi } from '../../services/stopScheduleApi'
+import { GET_STOP_SCHEDULES, StopSchedule } from '../../queries/stopSchedules'
 import { Empty } from './Empty'
 import { ScheduleList } from './ScheduleList'
 
@@ -28,14 +28,12 @@ export const StopSchedules: React.FC = () => {
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['schedules', stopCode],
-    queryFn: () => stopScheduleApi.list({ stop: stopCode }),
-    refetchInterval: 10000,
-    refetchOnMount: true,
+  const { loading, data } = useQuery<StopSchedule>(GET_STOP_SCHEDULES, {
+    pollInterval: 10000,
+    variables: { stop: stopCode },
   })
 
-  if (isLoading) return
+  if (loading) return
   return !data || isEmpty(data) ? (
     <Empty />
   ) : (
@@ -43,9 +41,9 @@ export const StopSchedules: React.FC = () => {
       key={stopCode}
       mb="8"
       allowMultiple
-      defaultIndex={range(0, data.length + 1)}
+      defaultIndex={range(0, data.stop.schedules.length + 1)}
     >
-      {data.map(schedule => {
+      {data.stop.schedules.map(schedule => {
         const line = lineMap[schedule.line]
 
         return (

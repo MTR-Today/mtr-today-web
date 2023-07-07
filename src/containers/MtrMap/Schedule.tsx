@@ -1,16 +1,15 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { LineCode, lineMap } from 'mtr-kit'
 import { memo, useCallback, useContext } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
+import { schedulesContext } from '../../contexts/schedulesContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
-import { stopScheduleApi } from '../../services/stopScheduleApi'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
@@ -19,18 +18,12 @@ export const Schedule: React.FC<
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
   const { hoveringLine } = useContext(mapContext)
+  const schedules = useContext(schedulesContext)
   const config = lineMap[line]
 
-  const { data: schedules = [] } = useQuery({
-    queryKey: ['schedules', stop],
-    queryFn: () => stopScheduleApi.list({ stop }),
-    refetchInterval: 10000,
-    refetchOnMount: true,
-  })
-
-  const schedule = schedules.find(item => item.line === line)?.schedule?.[
-    dir
-  ]?.[0]
+  const schedule = schedules.find(
+    item => item.line === line && item.stop === stop
+  )?.schedule?.[dir]?.[0]
 
   const getDisplayTime = useCallback(
     (time: string) => {

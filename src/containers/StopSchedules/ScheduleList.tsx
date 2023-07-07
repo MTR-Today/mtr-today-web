@@ -8,7 +8,7 @@ import { Language } from '../../constants/language'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
-import { ScheduleItem } from '../../services/lineStopScheduleApi'
+import { ScheduleItem } from '../../queries/stopSchedules'
 
 type Props = {
   schedules: ScheduleItem[]
