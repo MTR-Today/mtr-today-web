@@ -12,7 +12,7 @@ import { UseTimeProvider } from './hooks/useTime'
 import { router } from './Router'
 
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { cacheTime: 0 } },
+  defaultOptions: { queries: { cacheTime: 10000 } },
 })
 
 const config = {
