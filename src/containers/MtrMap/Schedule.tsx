@@ -10,7 +10,7 @@ import { mapContext } from '../../contexts/mapContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
-import { lineStopScheduleApi } from '../../services/lineStopScheduleApi'
+import { stopScheduleApi } from '../../services/stopScheduleApi'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
@@ -22,13 +22,15 @@ export const Schedule: React.FC<
   const config = lineMap[line]
 
   const { data: schedules = [] } = useQuery({
-    queryKey: ['schedules', line, stop],
-    queryFn: () => lineStopScheduleApi.list({ line, stop }),
+    queryKey: ['schedules', stop],
+    queryFn: () => stopScheduleApi.list({ stop }),
     refetchInterval: 10000,
     refetchOnMount: true,
   })
 
-  const schedule = schedules[0]?.schedule?.[dir]?.[0]
+  const schedule = schedules.find(item => item.line === line)?.schedule?.[
+    dir
+  ]?.[0]
 
   const getDisplayTime = useCallback(
     (time: string) => {
