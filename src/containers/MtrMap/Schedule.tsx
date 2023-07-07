@@ -1,15 +1,16 @@
 import { Box, BoxProps, Flex } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { LineCode, lineMap } from 'mtr-kit'
-import { memo, useCallback, useContext, useMemo } from 'react'
+import { memo, useCallback, useContext } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
-import { schedulesContext } from '../../contexts/schedulesContext'
 import { stopContext } from '../../contexts/stopContext'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
+import { lineStopScheduleApi } from '../../services/lineStopScheduleApi'
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
@@ -18,8 +19,16 @@ export const Schedule: React.FC<
   const { timeDisplay } = useConfig()
   const { stop, setHovering } = useContext(stopContext)
   const { hoveringLine } = useContext(mapContext)
-  const schedules = useContext(schedulesContext)
   const config = lineMap[line]
+
+  const { data: schedules = [] } = useQuery({
+    queryKey: ['schedules', line, stop],
+    queryFn: () => lineStopScheduleApi.list({ line, stop }),
+    refetchInterval: 10000,
+    refetchOnMount: true,
+  })
+
+  const schedule = schedules[0]?.schedule?.[dir]?.[0]
 
   const getDisplayTime = useCallback(
     (time: string) => {
@@ -39,14 +48,6 @@ export const Schedule: React.FC<
     },
     [now, timeDisplay]
   )
-
-  const firstItem = useMemo(() => {
-    const stopSchedule = schedules.find(
-      item => item.line === line && item.stop === stop
-    )
-
-    return stopSchedule?.schedule?.[dir]?.[0]
-  }, [schedules, line, stop, dir])
 
   return (
     <Box pos="absolute" {...props}>
@@ -76,12 +77,10 @@ export const Schedule: React.FC<
           bg={config.color}
           borderRadius="100%"
         >
-          {disabled || !firstItem ? '-' : firstItem.platform}
+          {disabled || !schedule ? '-' : schedule.platform}
         </Box>
         <Clock w="100%" textAlign="right">
-          {disabled || !firstItem
-            ? '--:--'
-            : getDisplayTime(firstItem.timestamp)}
+          {disabled || !schedule ? '--:--' : getDisplayTime(schedule.timestamp)}
         </Clock>
       </Flex>
     </Box>

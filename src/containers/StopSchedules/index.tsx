@@ -12,14 +12,14 @@ import {
   Heading,
   useColorMode,
 } from '@chakra-ui/react'
+import { useQuery } from '@tanstack/react-query'
 import { useParams } from '@tanstack/router'
 import { lineMap } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
-import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Language } from '../../constants/language'
-import { schedulesContext } from '../../contexts/schedulesContext'
+import { stopScheduleApi } from '../../services/stopScheduleApi'
 import { Empty } from './Empty'
 import { ScheduleList } from './ScheduleList'
 
@@ -27,23 +27,25 @@ export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation()
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
-  const schedules = useContext(schedulesContext)
 
-  const stopSchedules = useMemo(
-    () => schedules.filter(schedule => schedule.stop === stopCode),
-    [schedules, stopCode]
-  )
+  const { data, isLoading } = useQuery({
+    queryKey: ['schedules', stopCode],
+    queryFn: () => stopScheduleApi.list({ stop: stopCode }),
+    refetchInterval: 10000,
+    refetchOnMount: true,
+  })
 
-  return isEmpty(stopSchedules) ? (
+  if (isLoading) return
+  return !data || isEmpty(data) ? (
     <Empty />
   ) : (
     <Accordion
       key={stopCode}
       mb="8"
       allowMultiple
-      defaultIndex={range(0, stopSchedules.length + 1)}
+      defaultIndex={range(0, data.length + 1)}
     >
-      {stopSchedules.map(schedule => {
+      {data.map(schedule => {
         const line = lineMap[schedule.line]
 
         return (

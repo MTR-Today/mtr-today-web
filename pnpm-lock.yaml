@@ -91,6 +91,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 17.6.6
     version: 17.6.6
+  '@esbuild-plugins/node-globals-polyfill':
+    specifier: ^0.2.3
+    version: 0.2.3(esbuild@0.18.11)
   '@spotify/eslint-config':
     specifier: 15.0.0
     version: 15.0.0(eslint@8.44.0)(typescript@5.1.6)
@@ -2924,6 +2927,14 @@ packages:
   /@emotion/weak-memoize@0.3.1:
     resolution: {integrity: sha512-EsBwpc7hBUJWAsNPBmJy4hxWx12v6bshQsldrVmjxJoc3isbxhOrF2IcCpaXxfvq03NwkI7sbsOLXbYuqF/8Ww==}
     dev: false
+
+  /@esbuild-plugins/node-globals-polyfill@0.2.3(esbuild@0.18.11):
+    resolution: {integrity: sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==}
+    peerDependencies:
+      esbuild: '*'
+    dependencies:
+      esbuild: 0.18.11
+    dev: true
 
   /@esbuild/android-arm64@0.18.11:
     resolution: {integrity: sha512-snieiq75Z1z5LJX9cduSAjUr7vEI1OdlzFPMw0HH5YI7qQHDd3qs+WZoMrWYDsfRJSq36lIA6mfZBkvL46KoIw==}

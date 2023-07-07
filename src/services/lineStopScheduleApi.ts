@@ -8,17 +8,19 @@ export type ScheduleItem = {
   timestamp: string
 }
 
-export type LineStopSchedule = {
+export type Schedule = {
+  line: LineCode
+  stop: StopCode
   currentTime: string
   isDelayed: boolean
   schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] }
   systemTime: string
 }
 
-export const get = ({ line, stop }: { line: LineCode; stop: StopCode }) =>
+export const list = ({ line, stop }: { line: LineCode; stop: StopCode }) =>
   apiClient
     .url(`/lines/${line}/stops/${stop}/schedules`)
     .get()
-    .json<LineStopSchedule>()
+    .json<Schedule[]>()
 
-export const lineStopScheduleApi = { get }
+export const lineStopScheduleApi = { list }
