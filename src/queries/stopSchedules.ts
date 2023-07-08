@@ -1,20 +1,7 @@
 import { gql } from '@apollo/client'
-import { LineCode, StopCode } from 'mtr-kit'
+import { StopCode } from 'mtr-kit'
 
-export type ScheduleItem = {
-  platform: number
-  destination: StopCode
-  timestamp: string
-}
-
-export type Schedule = {
-  line: LineCode
-  stop: StopCode
-  currentTime: string
-  isDelayed: boolean
-  schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] }
-  systemTime: string
-}
+import { Schedule } from './schedules'
 
 export type StopSchedule = { stop: { stop: StopCode; schedules: Schedule[] } }
 

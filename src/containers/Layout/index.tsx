@@ -1,33 +1,20 @@
 import { useQuery } from '@apollo/client'
 import { useColorMode } from '@chakra-ui/react'
 import { Outlet } from '@tanstack/router'
-import { flatten, pluck } from 'ramda'
-import { useMemo } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 
 import { schedulesContext } from '../../contexts/schedulesContext'
-import {
-  LIST_LINE_STOP_SCHEDULES,
-  LineStopSchedule,
-} from '../../queries/lineStopSchedules'
+import { LIST_SCHEDULES, Schedules } from '../../queries/schedules'
 import { ControlledMap } from '../ControlledMap'
 import { Header } from './Header'
 
 export const Layout = () => {
   const { colorMode } = useColorMode()
   const { t } = useTranslation()
-  const { data = { lines: [] } } = useQuery<LineStopSchedule>(
-    LIST_LINE_STOP_SCHEDULES,
-    {
-      pollInterval: 10000,
-    }
-  )
-
-  const schedules = useMemo(() => {
-    const stopsSchedules = flatten(pluck('stops', data.lines))
-    return flatten(pluck('schedules', stopsSchedules))
-  }, [data])
+  const { data = { schedules: [] } } = useQuery<Schedules>(LIST_SCHEDULES, {
+    pollInterval: 10000,
+  })
 
   return (
     <>
@@ -41,7 +28,7 @@ export const Layout = () => {
         <title>{t('title')}</title>
       </Helmet>
       <Header />
-      <schedulesContext.Provider value={schedules}>
+      <schedulesContext.Provider value={data.schedules}>
         <ControlledMap />
         <Outlet />
       </schedulesContext.Provider>
