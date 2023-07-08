@@ -20,7 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@apollo/client": "3.7.16",
+    "@apollo/client": "3.7.17",
     "@chakra-ui/icons": "2.0.19",
     "@chakra-ui/react": "2.7.1",
     "@dnd-kit/core": "6.0.8",
