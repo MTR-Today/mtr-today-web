@@ -28,13 +28,14 @@ export const StopSchedules: React.FC = () => {
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
 
-  const { loading, data } = useQuery<StopSchedule>(GET_STOP_SCHEDULES, {
-    pollInterval: 10000,
-    variables: { stop: stopCode },
-  })
+  const { loading, data = { stop: { schedules: [] } } } =
+    useQuery<StopSchedule>(GET_STOP_SCHEDULES, {
+      pollInterval: 10000,
+      variables: { stop: stopCode },
+    })
 
   if (loading) return
-  return !data || isEmpty(data) ? (
+  return isEmpty(data.stop.schedules) ? (
     <Empty />
   ) : (
     <Accordion
