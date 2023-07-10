@@ -60,3 +60,10 @@ const routeTree = rootRoute.addChildren([
 const hashHistory = createHashHistory()
 
 export const router = new Router({ routeTree, history: hashHistory })
+
+// Quick fix: https://github.com/TanStack/router/issues/555
+declare module '@tanstack/router' {
+  interface RegisterRouter {
+    router: typeof router
+  }
+}
