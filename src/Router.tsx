@@ -6,7 +6,7 @@ import { Layout } from './containers/Layout'
 import { StopDetail } from './containers/StopDetail'
 import { StopSchedules } from './containers/StopSchedules'
 
-const rootRoute = RootRoute.withRouterContext<any>()({
+const rootRoute = new RootRoute({
   component: Layout,
 })
 

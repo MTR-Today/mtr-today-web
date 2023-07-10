@@ -218,7 +218,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.PRE} coord={[1393, 690]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -239,7 +239,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.MOK} coord={[1393, 760]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -258,7 +258,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.YMT} coord={[1393, 830]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -276,7 +276,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.JOR} coord={[1390, 900]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -303,7 +303,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         {/* KTL */}
         <Stop stop={StopCode.LAT} coord={[2240, 830]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -315,7 +315,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.KWT} coord={[2240, 760]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -327,7 +327,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.NTK} coord={[2240, 690]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -453,7 +453,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.WHA} coord={[1780, 950]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -546,7 +546,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.FOT} coord={[1590, 330]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -560,7 +560,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.SHT} coord={[1590, 430]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -570,7 +570,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.TAW} coord={[1593, 500]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -591,7 +591,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.MKK} coord={[1590, 760]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -609,7 +609,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         />
         <Stop stop={StopCode.TUM} coord={[250, 450]}>
           <Name
-            {...(isSchedule ? { right: '65px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '65px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -620,7 +620,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.SIH} coord={[250, 380]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -643,7 +643,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.LOP} coord={[400, 310]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -655,7 +655,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.YUL} coord={[400, 380]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -667,7 +667,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.KSR} coord={[400, 450]}>
           <Name
-            {...(isSchedule ? { left: '130px' } : { left: '75px' })}
+            {...(isSchedule ? { left: '130px' } : { left: '80px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -688,7 +688,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.NAC} coord={[997, 730]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -705,7 +705,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.AUS} coord={[1220, 970]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -797,7 +797,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.KAT} coord={[1950, 700]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -826,7 +826,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.STW} coord={[1820, 360]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1042,7 +1042,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.CHW} coord={[2500, 1250]}>
           <Name
-            {...(isSchedule ? { right: '65px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '65px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1089,7 +1089,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.HAH} coord={[2600, 830]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1101,7 +1101,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.POA} coord={[2600, 760]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1112,7 +1112,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.LHP} coord={[2600, 990]}>
           <Name
-            {...(isSchedule ? { right: '65px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '65px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1184,7 +1184,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.OLY} coord={[994, 870]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1196,7 +1196,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         </Stop>
         <Stop stop={StopCode.KOW} coord={[991, 970]}>
           <Name
-            {...(isSchedule ? { right: '120px' } : { right: '65px' })}
+            {...(isSchedule ? { right: '120px' } : { right: '70px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1265,7 +1265,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         {/* SIL */}
         <Stop stop={StopCode.OCP} coord={[1400, 1290]}>
           <Name
-            {...(isSchedule ? { left: '120px' } : { left: '65px' })}
+            {...(isSchedule ? { left: '120px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>

@@ -96,7 +96,7 @@ export const Stop: React.FC<
           <Box
             pos="absolute"
             overflow="hidden"
-            w={shouldDisplayFare ? '35px' : '18px'}
+            w={shouldDisplayFare ? '45px' : '18px'}
             h={shouldDisplayFare ? '' : '18px'}
             fontSize="xs"
             textAlign="center"
@@ -118,7 +118,7 @@ export const Stop: React.FC<
               ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
               : { bg: 'chakra-body-bg' })}
           >
-            {shouldDisplayFare && (fareValue || '-')}
+            {shouldDisplayFare && `$ ${fareValue || '-'}`}
           </Box>
         </Box>
       </Link>
