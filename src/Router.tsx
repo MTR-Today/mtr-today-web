@@ -6,7 +6,7 @@ import { Layout } from './containers/Layout'
 import { StopDetail } from './containers/StopDetail'
 import { StopSchedules } from './containers/StopSchedules'
 
-const rootRoute = new RootRoute({
+const rootRoute = RootRoute.withRouterContext<any>()({
   component: Layout,
 })
 
@@ -18,7 +18,7 @@ const indexRoute = new Route({
 
 const faresRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: '/fares',
+  path: 'fares',
   component: () => <Fares />,
 })
 
@@ -32,13 +32,13 @@ faresRoute.addChildren([faresDetailRoute])
 
 const aboutUsRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: '/about-us',
+  path: 'about-us',
   component: AboutUs,
 })
 
 const stopDetailRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: '/stops/$stop',
+  path: 'stops/$stop',
   component: StopDetail,
 })
 
@@ -60,10 +60,3 @@ const routeTree = rootRoute.addChildren([
 const hashHistory = createHashHistory()
 
 export const router = new Router({ routeTree, history: hashHistory })
-
-// Quick fix: https://github.com/TanStack/router/issues/555
-declare module '@tanstack/router' {
-  interface RegisterRouter {
-    router: typeof router
-  }
-}

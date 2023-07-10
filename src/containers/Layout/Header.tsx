@@ -95,28 +95,31 @@ export const Header: React.FC = () => {
       <HStack w="full" px="4">
         {menuMap(t).map(({ name, path }) => (
           <Link to={path} key={name}>
-            {({ isActive }) => (
-              <Button
-                h="32px"
-                px="4"
-                fontSize="sm"
-                lineHeight="32px"
-                _hover={{ textDecoration: 'none' }}
-                transition="background-color 1s"
-                variant="link"
-                {...(isActive
-                  ? {
-                      color: 'chakra-body-text',
-                      fontWeight: 'semibold',
-                      bg: colorMode === 'dark' ? 'whiteAlpha.50' : 'white',
-                      borderRadius: 'md',
-                      shadow: 'xs',
-                    }
-                  : {})}
-              >
-                {name}
-              </Button>
-            )}
+            {
+              (({ isActive }: { isActive: boolean }) => (
+                <Button
+                  h="32px"
+                  px="4"
+                  fontSize="sm"
+                  lineHeight="32px"
+                  _hover={{ textDecoration: 'none' }}
+                  transition="background-color 1s"
+                  variant="link"
+                  {...(isActive
+                    ? {
+                        color: 'chakra-body-text',
+                        fontWeight: 'semibold',
+                        bg: colorMode === 'dark' ? 'whiteAlpha.50' : 'white',
+                        borderRadius: 'md',
+                        shadow: 'xs',
+                      }
+                    : {})}
+                >
+                  {name}
+                </Button>
+                // https://github.com/i18next/react-i18next/issues/1543
+              )) as unknown as React.ReactNode
+            }
           </Link>
         ))}
       </HStack>
@@ -141,7 +144,10 @@ export const Header: React.FC = () => {
             <Box mr="3">
               <MdGTranslate />
             </Box>
-            <RadioSwitch value={language} onChange={setLanguage}>
+            <RadioSwitch
+              value={language}
+              onChange={value => setLanguage(value)}
+            >
               <RadioSwitchItem value={Language['ZH-HK']}>
                 {t('language.zh_hk')}
               </RadioSwitchItem>
@@ -154,7 +160,10 @@ export const Header: React.FC = () => {
             <Box mr="3">
               <TimeIcon />
             </Box>
-            <RadioSwitch value={timeDisplay} onChange={setTimeDisplay}>
+            <RadioSwitch
+              value={timeDisplay}
+              onChange={value => setTimeDisplay(value)}
+            >
               <RadioSwitchItem value={TimeDisplay.ABS}>
                 {t('time_display.abs')}
               </RadioSwitchItem>
