@@ -1,20 +1,25 @@
-import { useQuery } from '@apollo/client'
 import { useColorMode } from '@chakra-ui/react'
-import { Outlet } from '@tanstack/router'
+import { Outlet, useRouterContext } from '@tanstack/router'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 
-import { schedulesContext } from '../../contexts/schedulesContext'
-import { LIST_SCHEDULES, Schedules } from '../../queries/schedules'
-import { ControlledMap } from '../ControlledMap'
+import { Bg } from '../../components/Bg/Bg'
+import { MapMode } from '../../constants/mapMode'
+import { DragContainer } from '../DragContainer'
+import { MAP_HEIGHT, MAP_WIDTH, MtrMap } from '../MtrMap'
 import { Header } from './Header'
 
 export const Layout = () => {
   const { colorMode } = useColorMode()
   const { t } = useTranslation()
-  const { data = { schedules: [] } } = useQuery<Schedules>(LIST_SCHEDULES, {
-    pollInterval: 10000,
-  })
+
+  const routeMatch = useRouterContext()
+
+  const currentMode = routeMatch.state.currentLocation.pathname.startsWith(
+    '/fares'
+  )
+    ? MapMode.FARES
+    : MapMode.SCHEDULES
 
   return (
     <>
@@ -28,10 +33,14 @@ export const Layout = () => {
         <title>{t('title')}</title>
       </Helmet>
       <Header />
-      <schedulesContext.Provider value={data.schedules}>
-        <ControlledMap />
-        <Outlet />
-      </schedulesContext.Provider>
+      <DragContainer
+        bg={<Bg />}
+        childHeight={MAP_HEIGHT}
+        childWidth={MAP_WIDTH}
+      >
+        <MtrMap mode={currentMode} />
+      </DragContainer>
+      <Outlet />
     </>
   )
 }

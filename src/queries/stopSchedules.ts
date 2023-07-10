@@ -1,11 +1,12 @@
-import { gql } from '@apollo/client'
+import { gql } from 'graphql-request'
 import { StopCode } from 'mtr-kit'
 
 import { Schedule } from './schedules'
+import { apiClient } from '.'
 
 export type StopSchedule = { stop: { stop: StopCode; schedules: Schedule[] } }
 
-export const GET_STOP_SCHEDULES = gql`
+const query = gql`
   query GetStopSchedules($stop: StopCode!) {
     stop(stop: $stop) {
       stop
@@ -31,3 +32,6 @@ export const GET_STOP_SCHEDULES = gql`
     }
   }
 `
+
+export const listStopSchedules = ({ stop }: { stop: StopCode }) =>
+  apiClient.request<StopSchedule>(query, { stop })

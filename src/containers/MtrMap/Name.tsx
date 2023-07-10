@@ -9,7 +9,7 @@ export const Name: React.FC<BoxProps> = memo(props => {
   const config = stop ? stopMap[stop] : undefined
 
   return (
-    <Box pos="absolute" textAlign="center" {...props}>
+    <Box pos="absolute" textAlign="center" transition="all .3s" {...props}>
       <Box
         pos="absolute"
         minW="20"

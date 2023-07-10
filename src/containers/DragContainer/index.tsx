@@ -6,29 +6,39 @@ import { isIOS } from 'react-device-detect'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 
 import { useWindowSize } from '../../hooks/useWindowSize'
-import { MAP_HEIGHT, MAP_WIDTH, MtrMap } from '../MtrMap'
-import { Bg } from './Bg'
 import { Toolbox } from './Toolbox'
 
 export const CONTAINER_WIDTH = 2800 * 2
 export const CONTAINER_HEIGHT = 1630 * 2
 
-export const ControlledMap: React.FC = () => {
+type Props = {
+  childWidth: number
+  childHeight: number
+  children: React.ReactNode
+  bg: React.ReactNode
+}
+
+export const DragContainer: React.FC<Props> = ({
+  childHeight,
+  childWidth,
+  children,
+  bg,
+}) => {
   const { width, height } = useWindowSize()
 
   const { fitScale, containerWidth, containerHeight } = useMemo(() => {
-    const scale = min(width / MAP_WIDTH, height / MAP_HEIGHT)
+    const scale = min(width / childWidth, height / childHeight)
     return {
       fitScale: scale,
       containerWidth: width / scale,
       containerHeight: height / scale,
     }
-  }, [height, width])
+  }, [childHeight, childWidth, height, width])
 
   return (
     <>
       {/* Scaling Canvas will crash IOS device */}
-      {isIOS && <Bg />}
+      {isIOS && bg}
       <TransformWrapper
         centerOnInit
         minScale={fitScale}
@@ -43,13 +53,14 @@ export const ControlledMap: React.FC = () => {
                 maxHeight: '100vh',
               }}
             >
-              <DragContainer
+              <DragWrapper
                 width={`${containerWidth}px`}
                 height={`${containerHeight}px`}
               >
-                {!isIOS && <Bg />}
-                <MtrMap />
-              </DragContainer>
+                {/* Scaling Canvas will crash IOS device */}
+                {!isIOS && bg}
+                {children}
+              </DragWrapper>
             </TransformComponent>
             <Box pos="fixed" zIndex="overlay" bottom="16px" left="16px">
               <Toolbox
@@ -67,7 +78,7 @@ export const ControlledMap: React.FC = () => {
   )
 }
 
-const DragContainer = styled(Box)`
+const DragWrapper = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;

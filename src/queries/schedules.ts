@@ -1,5 +1,7 @@
-import { gql } from '@apollo/client'
+import { gql } from 'graphql-request'
 import { LineCode, StopCode } from 'mtr-kit'
+
+import { apiClient } from '.'
 
 export type ScheduleItem = {
   platform: number
@@ -20,7 +22,7 @@ export type Schedules = {
   schedules: Schedule[]
 }
 
-export const LIST_SCHEDULES = gql`
+const query = gql`
   query ListSchedules {
     schedules {
       line
@@ -43,3 +45,5 @@ export const LIST_SCHEDULES = gql`
     }
   }
 `
+
+export const listSchedules = () => apiClient.request<Schedules>(query)

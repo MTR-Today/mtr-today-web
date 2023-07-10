@@ -50,6 +50,7 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
               w="6"
               h="6"
               mr="4"
+              color="white"
               textAlign="center"
               bg={color}
               borderRadius="full"

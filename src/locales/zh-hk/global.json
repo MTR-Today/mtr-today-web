@@ -1,5 +1,6 @@
 {
   "title": "MTR Today - 港鐵非官方實時到站時間",
+  "menu": { "arrival": "到站時間", "fares": "票價" },
   "language": {
     "en": "English",
     "zh_hk": "中文"
@@ -18,5 +19,23 @@
   "zoom_out": "縮小",
   "about_us": "關於我們",
   "no_schedule": "沒有班次",
-  "is_delayed": "行車時間延誤，詳情請參閱官方公告"
+  "is_delayed": "行車時間延誤，詳情請參閱官方公告",
+  "ticket_type": {
+    "label": "類型",
+    "option": {
+      "octopus_card": "八達通卡",
+      "single_journey_ticket": "單程車票"
+    }
+  },
+  "passenger_type": {
+    "label": "乘客類別",
+    "option": {
+      "child": "小童 (特惠)",
+      "adult": "成人",
+      "student": "學生",
+      "elderly": "長者 (特惠) / 悠樂卡 (65歲或以上)",
+      "joyYou": "悠樂卡 (60-64歲)",
+      "pwd": "殘疾人士"
+    }
+  }
 }

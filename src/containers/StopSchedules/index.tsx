@@ -1,4 +1,3 @@
-import { useQuery } from '@apollo/client'
 import {
   Accordion,
   AccordionButton,
@@ -13,13 +12,14 @@ import {
   Heading,
   useColorMode,
 } from '@chakra-ui/react'
+import { useQuery } from '@tanstack/react-query'
 import { useParams } from '@tanstack/router'
 import { lineMap } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useTranslation } from 'react-i18next'
 
 import { Language } from '../../constants/language'
-import { GET_STOP_SCHEDULES, StopSchedule } from '../../queries/stopSchedules'
+import { listStopSchedules } from '../../queries/stopSchedules'
 import { Empty } from './Empty'
 import { ScheduleList } from './ScheduleList'
 
@@ -28,14 +28,15 @@ export const StopSchedules: React.FC = () => {
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
 
-  const { loading, data = { stop: { schedules: [] } } } =
-    useQuery<StopSchedule>(GET_STOP_SCHEDULES, {
-      pollInterval: 10000,
-      variables: { stop: stopCode },
-    })
+  const { data, isLoading } = useQuery({
+    queryKey: ['schedules', stopCode],
+    queryFn: () => listStopSchedules({ stop: stopCode }),
+    refetchInterval: 10000,
+    refetchOnMount: true,
+  })
 
-  if (loading) return
-  return isEmpty(data.stop.schedules) ? (
+  if (isLoading) return
+  return !data || isEmpty(data.stop.schedules) ? (
     <Empty />
   ) : (
     <Accordion
