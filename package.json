@@ -74,6 +74,7 @@
     "import-sort-style-module": "6.0.0",
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
+    "sitemap": "^7.1.1",
     "typescript": "5.1.6",
     "vite": "4.4.2",
     "vite-plugin-pwa": "0.16.4"
