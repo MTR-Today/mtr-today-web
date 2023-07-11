@@ -70,58 +70,62 @@ export const Stop: React.FC<
         setHovering,
       }}
     >
-      <Link
-        to={
-          mode === MapMode.SCHEDULES
-            ? '/stops/$stop/schedules'
-            : mode === MapMode.FARES
-            ? '/fares/$stop'
-            : ''
+      <Box
+        pos="absolute"
+        top={`${y}px`}
+        left={`${x}px`}
+        fontSize="xs"
+        opacity={
+          hoveringLine && !lineList.includes(hoveringLine) ? '.3' : undefined
         }
-        params={{ stop }}
+        style={{ transition: 'opacity .3s' }}
+        {...props}
       >
+        {children}
         <Box
           pos="absolute"
-          top={`${y}px`}
-          left={`${x}px`}
-          fontSize="xs"
-          opacity={
-            hoveringLine && !lineList.includes(hoveringLine) ? '.3' : undefined
-          }
+          transform={`translateY(-50%) translateX(-50%) ${
+            isHovering || isSelected ? 'scale(1.2)' : ''
+          }`}
           cursor="pointer"
-          style={{ transition: 'opacity .3s' }}
-          {...props}
+          transition="all .5s"
         >
-          {children}
-          <Box
-            pos="absolute"
-            overflow="hidden"
-            w={shouldDisplayFare ? '45px' : '18px'}
-            h={shouldDisplayFare ? '' : '18px'}
-            fontSize="xs"
-            textAlign="center"
-            borderWidth="3px"
-            borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
-            borderRadius={shouldDisplayFare ? 'lg' : '100%'}
-            transform={`translateY(-50%) translateX(-50%) ${
-              isHovering || isSelected ? 'scale(1.2)' : ''
-            }`}
-            whiteSpace="nowrap"
-            transition="all .5s"
-            onMouseEnter={() => {
-              setHovering(true)
-            }}
-            onMouseLeave={() => {
-              setHovering(false)
-            }}
-            {...(isSelected
-              ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
-              : { bg: 'chakra-body-bg' })}
+          <Link
+            to={
+              mode === MapMode.SCHEDULES
+                ? '/stops/$stop/schedules'
+                : mode === MapMode.FARES
+                ? '/fares/$stop'
+                : ''
+            }
+            params={{ stop }}
           >
-            {shouldDisplayFare && `$ ${fareValue || '-'}`}
-          </Box>
+            <Box
+              overflow="hidden"
+              w={shouldDisplayFare ? '45px' : '18px'}
+              h={shouldDisplayFare ? '' : '18px'}
+              fontSize="xs"
+              textAlign="center"
+              borderWidth="3px"
+              borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
+              borderRadius={shouldDisplayFare ? 'lg' : '100%'}
+              whiteSpace="nowrap"
+              transition="all .5s"
+              onMouseEnter={() => {
+                setHovering(true)
+              }}
+              onMouseLeave={() => {
+                setHovering(false)
+              }}
+              {...(isSelected
+                ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
+                : { bg: 'chakra-body-bg' })}
+            >
+              {shouldDisplayFare && `$ ${fareValue || '-'}`}
+            </Box>
+          </Link>
         </Box>
-      </Link>
+      </Box>
     </stopContext.Provider>
   )
 })

@@ -15,7 +15,7 @@ export const Schedule: React.FC<
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { timeDisplay } = useConfig()
-  const { stop, setHovering } = useContext(stopContext)
+  const { stop } = useContext(stopContext)
   const { hoveringLine, schedules } = useContext(mapContext)
   const config = lineMap[line]
 
@@ -52,12 +52,6 @@ export const Schedule: React.FC<
         opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
         transform="translateY(-50%) translateX(-50%)"
         userSelect="none"
-        onMouseEnter={() => {
-          setHovering(true)
-        }}
-        onMouseLeave={() => {
-          setHovering(false)
-        }}
         style={{ transition: 'opacity .3s' }}
       >
         <Box
