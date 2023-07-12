@@ -9,14 +9,13 @@ export const Name: React.FC<BoxProps> = memo(props => {
   const config = stop ? stopMap[stop] : undefined
 
   return (
-    <Box pos="absolute" textAlign="center" {...props}>
+    <Box pos="absolute" textAlign="center" transition="all .3s" {...props}>
       <Box
         pos="absolute"
         minW="20"
         fontSize="xs"
         lineHeight="3"
         opacity={hovering ? undefined : '.5'}
-        _hover={{ opacity: 1 }}
         transform="translateY(-50%) translateX(-50%)"
         whiteSpace="nowrap"
         userSelect="none"

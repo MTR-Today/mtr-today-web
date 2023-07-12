@@ -6,7 +6,9 @@ import {
 } from '@chakra-ui/icons'
 import {
   Box,
+  Button,
   Flex,
+  HStack,
   IconButton,
   Img,
   Menu,
@@ -18,7 +20,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { Link as RouterLink } from '@tanstack/router'
+import { Link } from '@tanstack/router'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 import { MdGTranslate } from 'react-icons/md'
@@ -27,6 +29,7 @@ import logoDark from '../../assets/logoDark.svg'
 import logoLight from '../../assets/logoLight.svg'
 import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch'
 import { Language } from '../../constants/language'
+import { menuMap } from '../../constants/menuMap'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
@@ -53,7 +56,7 @@ export const Header: React.FC = () => {
       borderRadius="md"
       shadow="sm"
     >
-      <Flex align="center" w="full" h="40px">
+      <Flex align="center" flexShrink="0" h="40px">
         <Box>
           {lines.map(({ color }) => (
             <Box
@@ -89,6 +92,34 @@ export const Header: React.FC = () => {
           </Text>
         </Flex>
       </Flex>
+      <HStack w="full" px="4">
+        {menuMap(t).map(({ name, path }) => (
+          <Link to={path} key={name}>
+            {({ isActive }: { isActive: boolean }) => (
+              <Button
+                h="32px"
+                px="4"
+                fontSize="sm"
+                lineHeight="32px"
+                _hover={{ textDecoration: 'none' }}
+                transition="background-color 1s"
+                variant="link"
+                {...(isActive
+                  ? {
+                      color: 'chakra-body-text',
+                      fontWeight: 'semibold',
+                      bg: colorMode === 'dark' ? 'whiteAlpha.50' : 'white',
+                      borderRadius: 'md',
+                      shadow: 'xs',
+                    }
+                  : {})}
+              >
+                {name}
+              </Button>
+            )}
+          </Link>
+        ))}
+      </HStack>
       <Clock
         flexShrink="0"
         alignItems="center"
@@ -110,7 +141,10 @@ export const Header: React.FC = () => {
             <Box mr="3">
               <MdGTranslate />
             </Box>
-            <RadioSwitch value={language} onChange={setLanguage}>
+            <RadioSwitch
+              value={language}
+              onChange={value => setLanguage(value)}
+            >
               <RadioSwitchItem value={Language['ZH-HK']}>
                 {t('language.zh_hk')}
               </RadioSwitchItem>
@@ -123,7 +157,10 @@ export const Header: React.FC = () => {
             <Box mr="3">
               <TimeIcon />
             </Box>
-            <RadioSwitch value={timeDisplay} onChange={setTimeDisplay}>
+            <RadioSwitch
+              value={timeDisplay}
+              onChange={value => setTimeDisplay(value)}
+            >
               <RadioSwitchItem value={TimeDisplay.ABS}>
                 {t('time_display.abs')}
               </RadioSwitchItem>
@@ -146,9 +183,9 @@ export const Header: React.FC = () => {
             </RadioSwitch>
           </MenuItem>
           <MenuDivider />
-          <RouterLink to="/about-us">
+          <Link to="/about-us">
             <MenuItem icon={<InfoOutlineIcon />}>{t('about_us')}</MenuItem>
-          </RouterLink>
+          </Link>
         </MenuList>
       </Menu>
     </Flex>

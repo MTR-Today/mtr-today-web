@@ -9,20 +9,14 @@ import { TimeDisplay } from '../constants/timeDisplay'
 
 export const [UseConfigProvider, useConfig] = constate(() => {
   const { value: timeDisplay = TimeDisplay.REL, set: setTimeDisplay } =
-    useLocalStorageValue<TimeDisplay, TimeDisplay, boolean | undefined>(
-      LocalStorageKey.TIME_DISPLAY,
-      {
-        defaultValue: TimeDisplay.REL,
-      }
-    )
+    useLocalStorageValue<TimeDisplay>(LocalStorageKey.TIME_DISPLAY, {
+      defaultValue: TimeDisplay.REL,
+    })
 
   const { value: language = Language['ZH-HK'], set: setLanguage } =
-    useLocalStorageValue<Language, Language, boolean | undefined>(
-      LocalStorageKey.LANGUAGE,
-      {
-        defaultValue: Language['ZH-HK'],
-      }
-    )
+    useLocalStorageValue<Language>(LocalStorageKey.LANGUAGE, {
+      defaultValue: Language['ZH-HK'],
+    })
 
   const { i18n } = useTranslation()
 

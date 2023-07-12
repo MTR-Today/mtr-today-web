@@ -11,9 +11,7 @@ import { UseConfigProvider } from './hooks/useConfig'
 import { UseTimeProvider } from './hooks/useTime'
 import { router } from './Router'
 
-const queryClient = new QueryClient({
-  defaultOptions: { queries: { cacheTime: 0 } },
-})
+const queryClient = new QueryClient()
 
 const config = {
   initialColorMode: 'auto',

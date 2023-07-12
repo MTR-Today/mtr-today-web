@@ -1,5 +1,6 @@
 {
   "title": "MTR Today - MTR Unofficial Train Arrival Time",
+  "menu": { "arrival": "Arrivals", "fares": "Fares" },
   "language": {
     "en": "English",
     "zh_hk": "中文"
@@ -18,5 +19,24 @@
   "zoom_out": "Zoom Out",
   "about_us": "About Us",
   "no_schedule": "No Schedule",
-  "is_delayed": "Train Delayed, please refer to official announcement"
+  "is_delayed": "Train Delayed, please refer to official announcement",
+  "ticket_type": {
+    "label": "Type",
+    "option": {
+      "octopus_card": "Octopus Card",
+      "single_journey_ticket": "Single Journey Ticket"
+    }
+  },
+  "passenger_type": {
+    "label": "Passenger Type",
+    "option": {
+      "child": "Child (Concessionary)",
+      "adult": "Adult",
+      "student": "Student",
+      "elderly": "Elderly (Concessionary) / JoyYou Card (Aged 65 or Above)",
+      "joyYou": "JoyYou Card (Aged 60-64)",
+      "pwd": "Person with disabilities"
+    }
+  },
+  "please_select_start_stop": "Please Select Start Stop"
 }

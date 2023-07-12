@@ -8,7 +8,7 @@ import { Language } from '../../constants/language'
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { useConfig } from '../../hooks/useConfig'
 import { useTime } from '../../hooks/useTime'
-import { ScheduleItem } from '../../services/lineStopScheduleApi'
+import { ScheduleItem } from '../../queries/schedules'
 
 type Props = {
   schedules: ScheduleItem[]
@@ -41,25 +41,26 @@ export const ScheduleList: React.FC<Props> = ({ schedules, color }) => {
 
   return (
     <Stack gap="6" py="2">
-      {schedules.map(({ plat, time, dest }) => {
-        const stop = stopMap[dest]
+      {schedules.map(({ platform, timestamp, destination }) => {
+        const stop = stopMap[destination]
         return (
-          <Flex key={time} align="center" px="4">
+          <Flex key={timestamp} align="center" px="4">
             <Box
               flexShrink="0"
               w="6"
               h="6"
               mr="4"
+              color="white"
               textAlign="center"
               bg={color}
               borderRadius="full"
             >
-              {plat}
+              {platform}
             </Box>
             <Box w="full" mr="2">
               {i18n.language === Language['ZH-HK'] ? stop.nameZh : stop.nameEn}
             </Box>
-            {getDisplayTime(time)}
+            {getDisplayTime(timestamp)}
           </Flex>
         )
       })}
