@@ -12,10 +12,14 @@ export const mapContext = createContext<{
   selectedStop?: StopCode
   schedules: Schedule[]
   fares: Fare[]
+  isFaresLoading: boolean
+  isScheduleLoading: boolean
 }>({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setHoveringLine: () => {},
   mode: MapMode.SCHEDULES,
   schedules: [],
   fares: [],
+  isFaresLoading: true,
+  isScheduleLoading: true,
 })

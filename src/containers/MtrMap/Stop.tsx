@@ -1,4 +1,4 @@
-import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
+import { Box, BoxProps, Skeleton, useColorMode } from '@chakra-ui/react'
 import { useLocalStorageValue } from '@react-hookz/web'
 import { Link } from '@tanstack/router'
 import { LineCode, StopCode } from 'mtr-kit'
@@ -18,7 +18,9 @@ export const Stop: React.FC<
 > = memo(({ children, stop, coord: [x, y], ...props }) => {
   const [isHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
-  const { hoveringLine, mode, selectedStop, fares } = useContext(mapContext)
+  const { hoveringLine, mode, selectedStop, fares, isFaresLoading } =
+    useContext(mapContext)
+
   const isSelected = selectedStop === stop
 
   const { value: faresType } = useLocalStorageValue<FaresType>(
@@ -122,7 +124,13 @@ export const Stop: React.FC<
                 ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
                 : { bg: 'chakra-body-bg' })}
             >
-              {shouldDisplayFare && `$ ${fareValue || '-'}`}
+              <Skeleton
+                height="20px"
+                lineHeight="20px"
+                isLoaded={!isFaresLoading}
+              >
+                {shouldDisplayFare && `$ ${fareValue || '-'}`}
+              </Skeleton>
             </Box>
           </Link>
         </Box>

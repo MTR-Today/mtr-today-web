@@ -1,4 +1,4 @@
-import { Box, BoxProps, Flex } from '@chakra-ui/react'
+import { Box, BoxProps, Flex, HStack, Skeleton } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import { LineCode, lineMap } from 'mtr-kit'
@@ -16,7 +16,7 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop } = useContext(stopContext)
-  const { hoveringLine, schedules } = useContext(mapContext)
+  const { hoveringLine, schedules, isScheduleLoading } = useContext(mapContext)
   const config = lineMap[line]
 
   const schedule = schedules.find(
@@ -54,21 +54,31 @@ export const Schedule: React.FC<
         userSelect="none"
         style={{ transition: 'opacity .3s' }}
       >
-        <Box
-          flexShrink="0"
-          display="inline-block"
-          w="4"
-          h="4"
-          color="white"
-          textAlign="center"
-          bg={config.color}
-          borderRadius="100%"
+        <Skeleton
+          height="16px"
+          w="84px"
+          as={HStack}
+          gap="0"
+          isLoaded={!isScheduleLoading}
         >
-          {disabled || !schedule ? '-' : schedule.platform}
-        </Box>
-        <Clock w="100%" textAlign="right">
-          {disabled || !schedule ? '--:--' : getDisplayTime(schedule.timestamp)}
-        </Clock>
+          <Box
+            flexShrink="0"
+            display="inline-block"
+            w="4"
+            h="4"
+            color="white"
+            textAlign="center"
+            bg={config.color}
+            borderRadius="100%"
+          >
+            {disabled || !schedule ? '-' : schedule.platform}
+          </Box>
+          <Clock w="100%" textAlign="right">
+            {disabled || !schedule
+              ? '--:--'
+              : getDisplayTime(schedule.timestamp)}
+          </Clock>
+        </Skeleton>
       </Flex>
     </Box>
   )
