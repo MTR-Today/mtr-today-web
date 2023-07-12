@@ -124,11 +124,13 @@ export const Stop: React.FC<
                 ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
                 : { bg: 'chakra-body-bg' })}
             >
-              {isFaresLoading ? (
-                <Skeleton height="20px" />
-              ) : (
-                shouldDisplayFare && `$ ${fareValue || '-'}`
-              )}
+              <Skeleton
+                height="20px"
+                lineHeight="20px"
+                isLoaded={!isFaresLoading}
+              >
+                {shouldDisplayFare && `$ ${fareValue || '-'}`}
+              </Skeleton>
             </Box>
           </Link>
         </Box>
