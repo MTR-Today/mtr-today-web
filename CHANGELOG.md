@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.11.0...v1.12.0) (2023-07-12)
+
+
+### Features
+
+* map loading skeleton ([9fd61a7](https://github.com/MTR-Today/mtr-today-web/commit/9fd61a74274e2929de39de60fa7cf3c59365862b))
+* skeleton fade in animation ([a50c803](https://github.com/MTR-Today/mtr-today-web/commit/a50c8033cdb5a1c63ead7161d1595953a6a5e3d4))
+
 ## [1.11.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.10.0...v1.11.0) (2023-07-12)
 
 
