@@ -37,8 +37,9 @@ export const Stop: React.FC<
     if (!Array.isArray(children)) return []
     let lines: LineCode[] = []
     deepForEach(children, child => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if ((child as any)?.props?.line) {
-        // eslint-disable-next-line fp/no-mutation
+        // eslint-disable-next-line fp/no-mutation, @typescript-eslint/no-explicit-any
         lines = [...lines, (child as any)?.props?.line]
       }
     })
