@@ -33,18 +33,20 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
 
   const isSchedule = mode === MapMode.SCHEDULES
 
-  const { data: schedulesData } = useQuery({
+  const isScheduleEnabled = mode === MapMode.SCHEDULES
+  const { data: schedulesData, isLoading: isScheduleLoading } = useQuery({
     queryKey: ['schedules'],
     queryFn: () => listSchedules(),
     refetchInterval: 10000,
     refetchOnMount: true,
-    enabled: mode === MapMode.SCHEDULES,
+    enabled: isScheduleEnabled,
   })
 
-  const { data: faresData } = useQuery({
+  const isFareEnabled = mode === MapMode.FARES && !isNil(selectedStop)
+  const { data: faresData, isLoading: isFareLoading } = useQuery({
     queryKey: ['fares', selectedStop],
     queryFn: () => listFares({ stop: selectedStop }),
-    enabled: mode === MapMode.FARES && !isNil(selectedStop),
+    enabled: isFareEnabled,
   })
 
   return (
@@ -56,6 +58,8 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
         selectedStop,
         schedules: schedulesData?.schedules || [],
         fares: faresData?.fares || [],
+        isFaresLoading: isFareEnabled && isFareLoading,
+        isScheduleLoading: isScheduleEnabled && isScheduleLoading,
       }}
     >
       <Wrapper>
