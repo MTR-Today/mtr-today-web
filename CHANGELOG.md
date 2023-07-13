@@ -1,5 +1,74 @@
 # Changelog
 
+## [1.12.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.11.0...v1.12.0) (2023-07-12)
+
+
+### Features
+
+* map loading skeleton ([9fd61a7](https://github.com/MTR-Today/mtr-today-web/commit/9fd61a74274e2929de39de60fa7cf3c59365862b))
+* skeleton fade in animation ([a50c803](https://github.com/MTR-Today/mtr-today-web/commit/a50c8033cdb5a1c63ead7161d1595953a6a5e3d4))
+
+## [1.11.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.10.0...v1.11.0) (2023-07-12)
+
+
+### Features
+
+* add dollar sign to fares ([89de819](https://github.com/MTR-Today/mtr-today-web/commit/89de8193ed2b1b0fa67d05021be6886e8f8bae26))
+* fares ([a9c99b4](https://github.com/MTR-Today/mtr-today-web/commit/a9c99b434f8f241454239cd943e4ed51eff16be1))
+* query client cache time ([1cc50ad](https://github.com/MTR-Today/mtr-today-web/commit/1cc50ad5842514bcf61605087f8f9739a973fecf))
+* select stop notification ([2a4ab86](https://github.com/MTR-Today/mtr-today-web/commit/2a4ab86e71f2d95d99c462f229d2066d7e7a4f95))
+* sitemap ([96d3649](https://github.com/MTR-Today/mtr-today-web/commit/96d3649c95b353b98e642d4a6a2cdeb46f3e37bf))
+* update api key ([fd7b9ba](https://github.com/MTR-Today/mtr-today-web/commit/fd7b9ba835890b8b68219b21d9b14372f54826c2))
+* update meta ([2a6155e](https://github.com/MTR-Today/mtr-today-web/commit/2a6155e74d31acdec0f83b75658b4747c9a7f74e))
+* use graphql api ([a32eead](https://github.com/MTR-Today/mtr-today-web/commit/a32eeadfbccb375ef24d6a4423a33baa7815b46c))
+* use graphql api ([2b7de0f](https://github.com/MTR-Today/mtr-today-web/commit/2b7de0ff341a2db04c1e15ef5206954bc98666e5))
+* use new api ([f682b9a](https://github.com/MTR-Today/mtr-today-web/commit/f682b9a74de0c2e40afb0136bfa8670b23b9ef20))
+* use schedule listing ([6ce87a9](https://github.com/MTR-Today/mtr-today-web/commit/6ce87a90c3c1ccb6edd914bf185a574d89762d48))
+* use schedule listing ([579865b](https://github.com/MTR-Today/mtr-today-web/commit/579865b0a06f6cb4e90d24ad08c224388e2d0b80))
+
+
+### Bug Fixes
+
+* **deps:** pin dependency @apollo/client to 3.7.16 ([f09a81d](https://github.com/MTR-Today/mtr-today-web/commit/f09a81d08b19ded28d271ab5424ee7279dd3f86d))
+* **deps:** pin dependency graphql-request to 6.1.0 ([a031e92](https://github.com/MTR-Today/mtr-today-web/commit/a031e92daad33e67dfe72669d3cfc85e1e19fd2b))
+* **deps:** update dependency @apollo/client to v3.7.17 ([a10f89b](https://github.com/MTR-Today/mtr-today-web/commit/a10f89b894a777ce9f972eb9150924ff8f0fe048))
+* **deps:** update dependency @react-hookz/web to v23.1.0 ([1e217a4](https://github.com/MTR-Today/mtr-today-web/commit/1e217a4d87d5965fa23c54343aa70b59f7f2366d))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.100 ([fdbd779](https://github.com/MTR-Today/mtr-today-web/commit/fdbd77903cb04de5988ec900775aa0c184335eae))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.104 ([0b192ea](https://github.com/MTR-Today/mtr-today-web/commit/0b192ea1325b7071654854b5fb2f0ed60f2361a9))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.92 ([1608421](https://github.com/MTR-Today/mtr-today-web/commit/1608421cb168f863b9eb066d7adcae7b13f50286))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.93 ([27fd436](https://github.com/MTR-Today/mtr-today-web/commit/27fd4369cf8ee515c69fd98e40d4d68b91ea94b1))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.97 ([d13ea44](https://github.com/MTR-Today/mtr-today-web/commit/d13ea445a6fd20de9b30522fa82ae406389deda8))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.99 ([6eb7bfa](https://github.com/MTR-Today/mtr-today-web/commit/6eb7bfa8c71a01d30700061e00a1d72dff67b838))
+* **deps:** update dependency dayjs to v1.11.9 ([62aa74c](https://github.com/MTR-Today/mtr-today-web/commit/62aa74c08dfe9487f2d4e6bab8a94075025c592f))
+* **deps:** update dependency framer-motion to v10.12.18 ([1a8a7dd](https://github.com/MTR-Today/mtr-today-web/commit/1a8a7dd730f73a11231bd6af53011c38304972ac))
+* **deps:** update dependency i18next to v23.2.5 ([120358f](https://github.com/MTR-Today/mtr-today-web/commit/120358f96fd1d46dde70cba7357f93ebf6622f86))
+* **deps:** update dependency i18next to v23.2.6 ([430cd45](https://github.com/MTR-Today/mtr-today-web/commit/430cd45cad5a13d0ca04410f81de99a4ad0b7cce))
+* **deps:** update dependency i18next to v23.2.7 ([41ed71b](https://github.com/MTR-Today/mtr-today-web/commit/41ed71b420eb99bd1407f295ea0967c1c65e322a))
+* **deps:** update dependency i18next to v23.2.8 ([8fed110](https://github.com/MTR-Today/mtr-today-web/commit/8fed110108d550ddfe35a63af1b628e320210356))
+* **deps:** update dependency i18next to v23.2.8 ([dd88197](https://github.com/MTR-Today/mtr-today-web/commit/dd881978631466aabb494c986bd2e113ffc69799))
+* **deps:** update dependency i18next to v23.2.9 ([9dc3d9e](https://github.com/MTR-Today/mtr-today-web/commit/9dc3d9e5f43757df9e3158e7087adb9e67407e9e))
+* **deps:** update dependency mtr-kit to v1.11.0 ([65ce16b](https://github.com/MTR-Today/mtr-today-web/commit/65ce16b01f888147c55b0c2fb06216448e793e78))
+* **deps:** update dependency mtr-kit to v1.11.1 ([1f15db7](https://github.com/MTR-Today/mtr-today-web/commit/1f15db74f73118287396e15d1cbb2f4310a74bf7))
+* **deps:** update dependency mtr-kit to v1.13.1 ([609faa1](https://github.com/MTR-Today/mtr-today-web/commit/609faa1b263bb782f08135382272d17bd7eee336))
+* **deps:** update dependency mtr-kit to v1.13.2 ([d923ecf](https://github.com/MTR-Today/mtr-today-web/commit/d923ecfa451d2c8f997f7d93537a3d37665ded27))
+* **deps:** update dependency react-i18next to v13.0.2 ([9082f69](https://github.com/MTR-Today/mtr-today-web/commit/9082f6985c9b0f5ac5d55958136498e733980c23))
+* **deps:** update dependency react-zoom-pan-pinch to v3.1.0 ([0f02b35](https://github.com/MTR-Today/mtr-today-web/commit/0f02b3560c779416379db5ed22034b30f86c8241))
+* **deps:** update dependency wretch to v2.6.0 ([f9b881d](https://github.com/MTR-Today/mtr-today-web/commit/f9b881d10029a093a5a80d5279549ee241c91231))
+* empty schedule display ([bdb4865](https://github.com/MTR-Today/mtr-today-web/commit/bdb48659463c82f390c07a3b3224784c46fe4ef9))
+* stop hitbox ([ed12abe](https://github.com/MTR-Today/mtr-today-web/commit/ed12abe6384e9763331a029aa3659a369f3c44fa))
+
+
+### Performance Improvements
+
+* use stop api ([4cb531f](https://github.com/MTR-Today/mtr-today-web/commit/4cb531faffb2e0f73622daea8ae32b549a59e47a))
+
+## [1.10.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.9.1...v1.10.0) (2023-06-28)
+
+
+### Features
+
+* delay flag handling ([c229471](https://github.com/MTR-Today/mtr-today-web/commit/c229471bd752ebf46fa7bdbd70ad03d3e6a037a4))
+
 ## [1.9.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.9.0...v1.9.1) (2023-06-28)
 
 
