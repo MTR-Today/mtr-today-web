@@ -10,11 +10,12 @@ import {
   Box,
   Flex,
   Heading,
+  Skeleton,
   useColorMode,
 } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from '@tanstack/router'
-import { lineMap } from 'mtr-kit'
+import { lines } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useTranslation } from 'react-i18next'
 
@@ -27,6 +28,9 @@ export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation()
   const { colorMode } = useColorMode()
   const { stop: stopCode } = useParams()
+  const stopLines = lines.filter(({ stops }) =>
+    stops.some(item => item.stop === stopCode)
+  )
 
   const { data, isLoading } = useQuery({
     queryKey: ['schedules', stopCode],
@@ -35,21 +39,20 @@ export const StopSchedules: React.FC = () => {
     refetchOnMount: true,
   })
 
-  if (isLoading) return
-  return !data || isEmpty(data.stop.schedules) ? (
-    <Empty />
-  ) : (
+  return (
     <Accordion
       key={stopCode}
       mb="8"
       allowMultiple
-      defaultIndex={range(0, data.stop.schedules.length + 1)}
+      defaultIndex={range(0, stopLines.length + 1)}
     >
-      {data.stop.schedules.map(schedule => {
-        const line = lineMap[schedule.line]
+      {stopLines.map(line => {
+        const schedule = data?.stop.schedules.find(
+          item => item.line === line.line
+        )
 
         return (
-          <AccordionItem key={schedule.line} border="0">
+          <AccordionItem key={line.line} border="0">
             <AccordionButton bg="blackAlpha.200">
               <Heading
                 as="h1"
@@ -82,36 +85,56 @@ export const StopSchedules: React.FC = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel p="0">
-              {schedule.isDelayed && (
-                <Alert status="error">
-                  <AlertIcon />
-                  <AlertDescription>{t('is_delayed')}</AlertDescription>
-                </Alert>
-              )}
-              <Flex>
-                {!isEmpty(schedule.schedule.up || []) && (
-                  <Box w="full">
-                    <Heading as="h2" p="4" py="3" textAlign="center" size="sm">
-                      上行
-                    </Heading>
-                    <ScheduleList
-                      schedules={schedule.schedule.up || []}
-                      color={line.color}
-                    />
-                  </Box>
-                )}
-                {!isEmpty(schedule.schedule.down || []) && (
-                  <Box w="full">
-                    <Heading as="h2" p="4" py="3" textAlign="center" size="sm">
-                      下行
-                    </Heading>
-                    <ScheduleList
-                      schedules={schedule.schedule.down || []}
-                      color={line.color}
-                    />
-                  </Box>
-                )}
-              </Flex>
+              <Skeleton minH="230px" isLoaded={!isLoading}>
+                {!schedule ? (
+                  <Empty />
+                ) : (
+                  <>
+                    {schedule.isDelayed && (
+                      <Alert status="error">
+                        <AlertIcon />
+                        <AlertDescription>{t('is_delayed')}</AlertDescription>
+                      </Alert>
+                    )}
+                    <Flex>
+                      {!isEmpty(schedule.schedule.up || []) && (
+                        <Box w="full">
+                          <Heading
+                            as="h2"
+                            p="4"
+                            py="3"
+                            textAlign="center"
+                            size="sm"
+                          >
+                            上行
+                          </Heading>
+                          <ScheduleList
+                            schedules={schedule.schedule.up || []}
+                            color={line.color}
+                          />
+                        </Box>
+                      )}
+                      {!isEmpty(schedule.schedule.down || []) && (
+                        <Box w="full">
+                          <Heading
+                            as="h2"
+                            p="4"
+                            py="3"
+                            textAlign="center"
+                            size="sm"
+                          >
+                            下行
+                          </Heading>
+                          <ScheduleList
+                            schedules={schedule.schedule.down || []}
+                            color={line.color}
+                          />
+                        </Box>
+                      )}
+                    </Flex>
+                  </>
+                )}{' '}
+              </Skeleton>
             </AccordionPanel>
           </AccordionItem>
         )
