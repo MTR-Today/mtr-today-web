@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.13.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.12.0...v1.13.0) (2023-07-13)
+
+
+### Features
+
+* stop schedule loading skeleton ([49370db](https://github.com/MTR-Today/mtr-today-web/commit/49370db58a81100dd499fe1bfe1465b62132578d))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.107 ([52aaa26](https://github.com/MTR-Today/mtr-today-web/commit/52aaa26170834d4f3b4e241b060dd88392d2bb91))
+* **deps:** update dependency i18next to v23.2.10 ([a7b4636](https://github.com/MTR-Today/mtr-today-web/commit/a7b463678f1e7c46da3a27edb3b04b53a462eab8))
+* **deps:** update dependency i18next to v23.2.11 ([37cbec0](https://github.com/MTR-Today/mtr-today-web/commit/37cbec05526daf8688318237c8008f274c257653))
+
 ## [1.12.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.11.0...v1.12.0) (2023-07-12)
 
 
