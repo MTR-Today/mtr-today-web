@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@chakra-ui/icons':
     specifier: 2.1.0
-    version: 2.1.0(@chakra-ui/system@2.5.8)(react@18.2.0)
+    version: 2.1.0(@chakra-ui/system@2.6.0)(react@18.2.0)
   '@chakra-ui/react':
     specifier: 2.8.0
     version: 2.8.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(framer-motion@10.12.22)(react-dom@18.2.0)(react@18.2.0)
@@ -92,11 +92,11 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 17.6.6
-    version: 17.6.6
+    specifier: 17.6.7
+    version: 17.6.7
   '@commitlint/config-conventional':
-    specifier: 17.6.6
-    version: 17.6.6
+    specifier: 17.6.7
+    version: 17.6.7
   '@spotify/eslint-config':
     specifier: 15.0.0
     version: 15.0.0(eslint@8.45.0)(typescript@5.1.6)
@@ -1531,10 +1531,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/anatomy@2.1.2:
-    resolution: {integrity: sha512-pKfOS/mztc4sUXHNc8ypJ1gPWSolWT770jrgVRfolVbYlki8y5Y+As996zMF6k5lewTu6j9DQequ7Cc9a69IVQ==}
-    dev: false
-
   /@chakra-ui/anatomy@2.2.0:
     resolution: {integrity: sha512-cD8Ms5C8+dFda0LrORMdxiFhAZwOIY1BSlCadz6/mHUIgNdQy13AHPrXiq6qWdMslqVHq10k5zH7xMPLt6kjFg==}
     dev: false
@@ -1636,15 +1632,6 @@ packages:
     dependencies:
       '@chakra-ui/icon': 3.1.0(@chakra-ui/system@2.6.0)(react@18.2.0)
       '@chakra-ui/system': 2.6.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
-
-  /@chakra-ui/color-mode@2.1.12(react@18.2.0):
-    resolution: {integrity: sha512-sYyfJGDoJSLYO+V2hxV9r033qhte5Nw/wAn5yRGGZnEEN1dKPEdWQ3XZvglWSDTNd0w9zkoH2w6vP4FBBYb/iw==}
-    peerDependencies:
-      react: '>=18'
-    dependencies:
-      '@chakra-ui/react-use-safe-layout-effect': 2.0.5(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -1764,17 +1751,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/icon@3.1.0(@chakra-ui/system@2.5.8)(react@18.2.0):
-    resolution: {integrity: sha512-t6v0lGCXRbwUJycN8A/nDTuLktMP+LRjKbYJnd2oL6Pm2vOl99XwEQ5cAEyEa4XoseYNEgXiLR+2TfvgfNFvcw==}
-    peerDependencies:
-      '@chakra-ui/system': '>=2.0.0'
-      react: '>=18'
-    dependencies:
-      '@chakra-ui/shared-utils': 2.0.5
-      '@chakra-ui/system': 2.5.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
-
   /@chakra-ui/icon@3.1.0(@chakra-ui/system@2.6.0)(react@18.2.0):
     resolution: {integrity: sha512-t6v0lGCXRbwUJycN8A/nDTuLktMP+LRjKbYJnd2oL6Pm2vOl99XwEQ5cAEyEa4XoseYNEgXiLR+2TfvgfNFvcw==}
     peerDependencies:
@@ -1786,14 +1762,14 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/icons@2.1.0(@chakra-ui/system@2.5.8)(react@18.2.0):
+  /@chakra-ui/icons@2.1.0(@chakra-ui/system@2.6.0)(react@18.2.0):
     resolution: {integrity: sha512-pGFxFfQ/P5VnSRnTzK8zGAJxoxkxpHo/Br9ohRZdOpuhnIHSW7va0P53UoycEO5/vNJ/7BN0oDY0k9qurChcew==}
     peerDependencies:
       '@chakra-ui/system': '>=2.0.0'
       react: '>=18'
     dependencies:
-      '@chakra-ui/icon': 3.1.0(@chakra-ui/system@2.5.8)(react@18.2.0)
-      '@chakra-ui/system': 2.5.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
+      '@chakra-ui/icon': 3.1.0(@chakra-ui/system@2.6.0)(react@18.2.0)
+      '@chakra-ui/system': 2.6.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -2208,14 +2184,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/react-use-safe-layout-effect@2.0.5(react@18.2.0):
-    resolution: {integrity: sha512-MwAQBz3VxoeFLaesaSEN87reVNVbjcQBDex2WGexAg6hUB6n4gc1OWYH/iXp4tzp4kuggBNhEHkk9BMYXWfhJQ==}
-    peerDependencies:
-      react: '>=18'
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /@chakra-ui/react-use-safe-layout-effect@2.1.0(react@18.2.0):
     resolution: {integrity: sha512-Knbrrx/bcPwVS1TorFdzrK/zWA8yuU/eaXDkNj24IrKoRlQrSBFarcgAEzlCHtzuhufP3OULPkELTzz91b0tCw==}
     peerDependencies:
@@ -2448,25 +2416,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/system@2.5.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0):
-    resolution: {integrity: sha512-Vy8UUaCxikOzOGE54IP8tKouvU38rEYU1HCSquU9+oe7Jd70HaiLa4vmUKvHyMUmxkOzDHIkgZLbVQCubSnN5w==}
-    peerDependencies:
-      '@emotion/react': ^11.0.0
-      '@emotion/styled': ^11.0.0
-      react: '>=18'
-    dependencies:
-      '@chakra-ui/color-mode': 2.1.12(react@18.2.0)
-      '@chakra-ui/object-utils': 2.1.0
-      '@chakra-ui/react-utils': 2.0.12(react@18.2.0)
-      '@chakra-ui/styled-system': 2.9.1
-      '@chakra-ui/theme-utils': 2.0.18
-      '@chakra-ui/utils': 2.0.15
-      '@emotion/react': 11.11.1(@types/react@18.2.15)(react@18.2.0)
-      '@emotion/styled': 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.15)(react@18.2.0)
-      react: 18.2.0
-      react-fast-compare: 3.2.1
-    dev: false
-
   /@chakra-ui/system@2.6.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0):
     resolution: {integrity: sha512-MgAFRz9V1pW0dplwWsB99hx49LCC+LsrkMala7KXcP0OvWdrkjw+iu+voBksO3626+glzgIwlZW113Eja+7JEQ==}
     peerDependencies:
@@ -2541,17 +2490,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/theme-tools@2.0.18(@chakra-ui/styled-system@2.9.1):
-    resolution: {integrity: sha512-MbiRuXb2tb41FbnW41zhsYYAU0znlpfYZnu0mxCf8U2otCwPekJCfESUGYypjq4JnydQ7TDOk+Kz/Wi974l4mw==}
-    peerDependencies:
-      '@chakra-ui/styled-system': '>=2.0.0'
-    dependencies:
-      '@chakra-ui/anatomy': 2.1.2
-      '@chakra-ui/shared-utils': 2.0.5
-      '@chakra-ui/styled-system': 2.9.1
-      color2k: 2.0.2
-    dev: false
-
   /@chakra-ui/theme-tools@2.1.0(@chakra-ui/styled-system@2.9.1):
     resolution: {integrity: sha512-TKv4trAY8q8+DWdZrpSabTd3SZtZrnzFDwUdzhbWBhFEDEVR3fAkRTPpnPDtf1X9w1YErWn3QAcMACVFz4+vkw==}
     peerDependencies:
@@ -2563,15 +2501,6 @@ packages:
       color2k: 2.0.2
     dev: false
 
-  /@chakra-ui/theme-utils@2.0.18:
-    resolution: {integrity: sha512-aSbkUUiFpc1NHC7lQdA6uYlr6EcZFXz6b4aJ7VRDpqTiywvqYnvfGzhmsB0z94vgtS9qXc6HoIwBp25jYGV2MA==}
-    dependencies:
-      '@chakra-ui/shared-utils': 2.0.5
-      '@chakra-ui/styled-system': 2.9.1
-      '@chakra-ui/theme': 3.1.2(@chakra-ui/styled-system@2.9.1)
-      lodash.mergewith: 4.6.2
-    dev: false
-
   /@chakra-ui/theme-utils@2.0.19:
     resolution: {integrity: sha512-UQ+KvozTN86+0oA80rdQd1a++4rm4ulo+DEabkgwNpkK3yaWsucOxkDQpi2sMIMvw5X0oaWvNBZJuVyK7HdOXg==}
     dependencies:
@@ -2579,17 +2508,6 @@ packages:
       '@chakra-ui/styled-system': 2.9.1
       '@chakra-ui/theme': 3.2.0(@chakra-ui/styled-system@2.9.1)
       lodash.mergewith: 4.6.2
-    dev: false
-
-  /@chakra-ui/theme@3.1.2(@chakra-ui/styled-system@2.9.1):
-    resolution: {integrity: sha512-ebUXMS3LZw2OZxEQNYaFw3/XuA3jpyprhS/frjHMvZKSOaCjMW+c9z25S0jp1NnpQff08VGI8EWbyVZECXU1QA==}
-    peerDependencies:
-      '@chakra-ui/styled-system': '>=2.8.0'
-    dependencies:
-      '@chakra-ui/anatomy': 2.1.2
-      '@chakra-ui/shared-utils': 2.0.5
-      '@chakra-ui/styled-system': 2.9.1
-      '@chakra-ui/theme-tools': 2.0.18(@chakra-ui/styled-system@2.9.1)
     dev: false
 
   /@chakra-ui/theme@3.2.0(@chakra-ui/styled-system@2.9.1):
@@ -2678,14 +2596,14 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@commitlint/cli@17.6.6:
-    resolution: {integrity: sha512-sTKpr2i/Fjs9OmhU+beBxjPavpnLSqZaO6CzwKVq2Tc4UYVTMFgpKOslDhUBVlfAUBfjVO8ParxC/MXkIOevEA==}
+  /@commitlint/cli@17.6.7:
+    resolution: {integrity: sha512-nzZmfO5KIOupYppn1MsnYX/80I+KDlxiwkks3CJT0XT+t34UgqGi3eSyEuzgcIjPlORk5/GMaAEiys78iLfGMg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
-      '@commitlint/lint': 17.6.6
-      '@commitlint/load': 17.5.0
+      '@commitlint/lint': 17.6.7
+      '@commitlint/load': 17.6.7
       '@commitlint/read': 17.5.1
       '@commitlint/types': 17.4.4
       execa: 5.1.1
@@ -2698,23 +2616,23 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.6:
-    resolution: {integrity: sha512-phqPz3BDhfj49FUYuuZIuDiw+7T6gNAEy7Yew1IBHqSohVUCWOK2FXMSAExzS2/9X+ET93g0Uz83KjiHDOOFag==}
+  /@commitlint/config-conventional@17.6.7:
+    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
     dev: true
 
-  /@commitlint/config-validator@17.4.4:
-    resolution: {integrity: sha512-bi0+TstqMiqoBAQDvdEP4AFh0GaKyLFlPPEObgI29utoKEYoPQTvF0EYqIwYYLEoJYhj5GfMIhPHJkTJhagfeg==}
+  /@commitlint/config-validator@17.6.7:
+    resolution: {integrity: sha512-vJSncmnzwMvpr3lIcm0I8YVVDJTzyjy7NZAeXbTXy+MPUdAr9pKyyg7Tx/ebOQ9kqzE6O9WT6jg2164br5UdsQ==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
       ajv: 8.12.0
     dev: true
 
-  /@commitlint/ensure@17.4.4:
-    resolution: {integrity: sha512-AHsFCNh8hbhJiuZ2qHv/m59W/GRE9UeOXbkOqxYMNNg9pJ7qELnFcwj5oYpa6vzTSHtPGKf3C2yUFNy1GGHq6g==}
+  /@commitlint/ensure@17.6.7:
+    resolution: {integrity: sha512-mfDJOd1/O/eIb/h4qwXzUxkmskXDL9vNPnZ4AKYKiZALz4vHzwMxBSYtyL2mUIDeU9DRSpEUins8SeKtFkYHSw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
@@ -2738,31 +2656,31 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@commitlint/is-ignored@17.6.6:
-    resolution: {integrity: sha512-4Fw875faAKO+2nILC04yW/2Vy/wlV3BOYCSQ4CEFzriPEprc1Td2LILmqmft6PDEK5Sr14dT9tEzeaZj0V56Gg==}
+  /@commitlint/is-ignored@17.6.7:
+    resolution: {integrity: sha512-vqyNRqtbq72P2JadaoWiuoLtXIs9SaAWDqdtef6G2zsoXqKFc7vqj1f+thzVgosXG3X/5K9jNp+iYijmvOfc/g==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
       semver: 7.5.2
     dev: true
 
-  /@commitlint/lint@17.6.6:
-    resolution: {integrity: sha512-5bN+dnHcRLkTvwCHYMS7Xpbr+9uNi0Kq5NR3v4+oPNx6pYXt8ACuw9luhM/yMgHYwW0ajIR20wkPAFkZLEMGmg==}
+  /@commitlint/lint@17.6.7:
+    resolution: {integrity: sha512-TW+AozfuOFMrHn+jdwtz0IWu8REKFp0eryOvoBp2r8IXNc4KihKB1spAiUB6SFyHD6hVVeolz12aHnJ3Mb+xVQ==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/is-ignored': 17.6.6
-      '@commitlint/parse': 17.6.5
-      '@commitlint/rules': 17.6.5
+      '@commitlint/is-ignored': 17.6.7
+      '@commitlint/parse': 17.6.7
+      '@commitlint/rules': 17.6.7
       '@commitlint/types': 17.4.4
     dev: true
 
-  /@commitlint/load@17.5.0:
-    resolution: {integrity: sha512-l+4W8Sx4CD5rYFsrhHH8HP01/8jEP7kKf33Xlx2Uk2out/UKoKPYMOIRcDH5ppT8UXLMV+x6Wm5osdRKKgaD1Q==}
+  /@commitlint/load@17.6.7:
+    resolution: {integrity: sha512-QZ2rJTbX55BQdYrCm/p6+hh/pFBgC9nTJxfsrK6xRPe2thiQzHN0AQDBqBwAirn6gIkHrjIbCbtAE6kiDYLjrw==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/config-validator': 17.4.4
+      '@commitlint/config-validator': 17.6.7
       '@commitlint/execute-rule': 17.4.0
-      '@commitlint/resolve-extends': 17.4.4
+      '@commitlint/resolve-extends': 17.6.7
       '@commitlint/types': 17.4.4
       '@types/node': 20.3.1
       chalk: 4.1.2
@@ -2784,8 +2702,8 @@ packages:
     engines: {node: '>=v14'}
     dev: true
 
-  /@commitlint/parse@17.6.5:
-    resolution: {integrity: sha512-0zle3bcn1Hevw5Jqpz/FzEWNo2KIzUbc1XyGg6WrWEoa6GH3A1pbqNF6MvE6rjuy6OY23c8stWnb4ETRZyN+Yw==}
+  /@commitlint/parse@17.6.7:
+    resolution: {integrity: sha512-ibO03BgEns+JJpohpBZYD49mCdSNMg6fTv7vA5yqzEFWkBQk5NWhEBw2yG+Z1UClStIRkMkAYyI2HzoQG9tCQQ==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
@@ -2804,11 +2722,11 @@ packages:
       minimist: 1.2.8
     dev: true
 
-  /@commitlint/resolve-extends@17.4.4:
-    resolution: {integrity: sha512-znXr1S0Rr8adInptHw0JeLgumS11lWbk5xAWFVno+HUFVN45875kUtqjrI6AppmD3JI+4s0uZlqqlkepjJd99A==}
+  /@commitlint/resolve-extends@17.6.7:
+    resolution: {integrity: sha512-PfeoAwLHtbOaC9bGn/FADN156CqkFz6ZKiVDMjuC2N5N0740Ke56rKU7Wxdwya8R8xzLK9vZzHgNbuGhaOVKIg==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/config-validator': 17.4.4
+      '@commitlint/config-validator': 17.6.7
       '@commitlint/types': 17.4.4
       import-fresh: 3.3.0
       lodash.mergewith: 4.6.2
@@ -2816,11 +2734,11 @@ packages:
       resolve-global: 1.0.0
     dev: true
 
-  /@commitlint/rules@17.6.5:
-    resolution: {integrity: sha512-uTB3zSmnPyW2qQQH+Dbq2rekjlWRtyrjDo4aLFe63uteandgkI+cc0NhhbBAzcXShzVk0qqp8SlkQMu0mgHg/A==}
+  /@commitlint/rules@17.6.7:
+    resolution: {integrity: sha512-x/SDwDTN3w3Gr5xkhrIORu96rlKCc8ZLYEMXRqi9+MB33st2mKcGvKa5uJuigHlbl3xm75bAAubATrodVrjguQ==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/ensure': 17.4.4
+      '@commitlint/ensure': 17.6.7
       '@commitlint/message': 17.4.2
       '@commitlint/to-lines': 17.4.0
       '@commitlint/types': 17.4.4
@@ -3761,7 +3679,7 @@ packages:
       graphemer: 1.4.0
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
-      semver: 7.5.2
+      semver: 7.5.4
       tsutils: 3.21.0(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
@@ -3919,7 +3837,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.2
+      semver: 7.5.4
       tsutils: 3.21.0(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
@@ -3961,7 +3879,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.1.6)
       eslint: 8.45.0
       eslint-scope: 5.1.1
-      semver: 7.5.2
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -7375,7 +7293,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.1
-      semver: 7.5.2
+      semver: 7.5.4
       validate-npm-package-license: 3.0.4
     dev: true
 
