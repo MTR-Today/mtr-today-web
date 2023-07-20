@@ -7,6 +7,7 @@ import {
 import {
   Box,
   Button,
+  Link as ExternalLink,
   Flex,
   HStack,
   IconButton,
@@ -24,6 +25,8 @@ import styled from '@emotion/styled'
 import { Link } from '@tanstack/router'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
+import { AiTwotoneApi } from 'react-icons/ai'
+import { IoLogoGithub } from 'react-icons/io'
 import { MdGTranslate } from 'react-icons/md'
 
 import logoDark from '../../assets/logoDark.svg'
@@ -187,6 +190,13 @@ export const Header: React.FC = () => {
               </RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
+          <MenuDivider />
+          <ExternalLink href="https://github.com/mtr-today">
+            <MenuItem icon={<IoLogoGithub />}>{t('source_code')}</MenuItem>
+          </ExternalLink>
+          <ExternalLink href="https://github.com/MTR-Today/mtr-today-api#-api-documentation">
+            <MenuItem icon={<AiTwotoneApi />}>{t('api')}</MenuItem>
+          </ExternalLink>
           <MenuDivider />
           <Link to="/about-us">
             <MenuItem icon={<InfoOutlineIcon />}>{t('about_us')}</MenuItem>
