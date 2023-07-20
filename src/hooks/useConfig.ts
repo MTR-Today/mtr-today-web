@@ -18,6 +18,11 @@ export const [UseConfigProvider, useConfig] = constate(() => {
       defaultValue: Language['ZH-HK'],
     })
 
+  const { value: animatedBg = Language['ZH-HK'], set: setAnimatedBg } =
+    useLocalStorageValue<boolean>(LocalStorageKey.ANIMATED_BG, {
+      defaultValue: false,
+    })
+
   const { i18n } = useTranslation()
 
   useEffect(() => {
@@ -29,5 +34,7 @@ export const [UseConfigProvider, useConfig] = constate(() => {
     setTimeDisplay,
     language,
     setLanguage,
+    animatedBg,
+    setAnimatedBg,
   }
 })

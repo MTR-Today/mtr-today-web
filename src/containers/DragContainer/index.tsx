@@ -15,7 +15,7 @@ type Props = {
   childWidth: number
   childHeight: number
   children: React.ReactNode
-  bg: React.ReactNode
+  bg?: React.ReactNode
 }
 
 export const DragContainer: React.FC<Props> = ({

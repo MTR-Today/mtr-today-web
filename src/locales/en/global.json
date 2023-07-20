@@ -13,6 +13,10 @@
     "dark": "Dark Mode",
     "light": "Light Mode"
   },
+  "bg": {
+    "animated": "Animated Background",
+    "static": "Static Background"
+  },
   "source_code": "Source Code",
   "api": "Open API",
   "fit_screen": "Fit Screen",
