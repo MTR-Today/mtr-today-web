@@ -5,9 +5,16 @@ import { MapMode } from '../constants/mapMode'
 import { Fare } from '../queries/fares'
 import { Schedule } from '../queries/schedules'
 
-export const mapContext = createContext<{
+export const lineContext = createContext<{
   hoveringLine?: LineCode
   setHoveringLine: (line: LineCode | undefined) => void
+}>({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setHoveringLine: () => {},
+})
+
+export const mapContext = createContext<{
+  hoveringLine?: LineCode
   mode: MapMode
   selectedStop?: StopCode
   schedules: Schedule[]
@@ -15,8 +22,6 @@ export const mapContext = createContext<{
   isFaresLoading: boolean
   isScheduleLoading: boolean
 }>({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setHoveringLine: () => {},
   mode: MapMode.SCHEDULES,
   schedules: [],
   fares: [],

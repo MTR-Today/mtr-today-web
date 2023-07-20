@@ -4,12 +4,12 @@ import { LineCode, lineMap } from 'mtr-kit'
 import { memo, useCallback, useContext } from 'react'
 import { roundCorners } from 'svg-round-corners'
 
-import { mapContext } from '../../contexts/mapContext'
+import { lineContext } from '../../contexts/mapContext'
 
 export const Line: React.FC<
   React.SVGProps<SVGPathElement> & { color?: string; line: LineCode }
 > = memo(({ line, d, ...props }) => {
-  const { hoveringLine, setHoveringLine } = useContext(mapContext)
+  const { hoveringLine, setHoveringLine } = useContext(lineContext)
   const { colorMode } = useColorMode()
 
   const color = lineMap[line].color
