@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.3](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.2...v1.15.3) (2023-07-20)
+
+
+### Bug Fixes
+
+* missing end tip ([7c112ef](https://github.com/MTR-Today/mtr-today-web/commit/7c112ef11156e4ca20cfcb2e47798590f7e6f340))
+
 ## [1.15.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.1...v1.15.2) (2023-07-20)
 
 
