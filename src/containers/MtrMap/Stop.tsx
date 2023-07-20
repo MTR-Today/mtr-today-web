@@ -3,7 +3,7 @@ import { useLocalStorageValue } from '@react-hookz/web'
 import { Link } from '@tanstack/router'
 import { LineCode, StopCode } from 'mtr-kit'
 import { path } from 'ramda'
-import { memo, useContext, useMemo, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import { deepForEach } from 'react-children-utilities'
 
 import { FaresPassengerType } from '../../constants/faresPassengerType'
@@ -15,7 +15,7 @@ import { stopContext } from '../../contexts/stopContext'
 
 export const Stop: React.FC<
   BoxProps & { coord: [x: number, y: number]; stop: StopCode }
-> = memo(({ children, stop, coord: [x, y], ...props }) => {
+> = ({ children, stop, coord: [x, y], ...props }) => {
   const [isHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
   const { hoveringLine, mode, selectedStop, fares, isFaresLoading } =
@@ -24,7 +24,10 @@ export const Stop: React.FC<
   const isSelected = selectedStop === stop
 
   const { value: faresType } = useLocalStorageValue<FaresType>(
-    LocalStorageKey.FARES_TYPE
+    LocalStorageKey.FARES_TYPE,
+    {
+      defaultValue: FaresType.OCTOPUS_CARD,
+    }
   )
 
   const { value: faresPassengerType } =
@@ -137,4 +140,4 @@ export const Stop: React.FC<
       </Box>
     </stopContext.Provider>
   )
-})
+}
