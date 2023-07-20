@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.1...v1.14.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* header title ([8667038](https://github.com/MTR-Today/mtr-today-web/commit/8667038b01944957c69723397fe745ccab1b81c1))
+
 ## [1.14.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.0...v1.14.1) (2023-07-20)
 
 
