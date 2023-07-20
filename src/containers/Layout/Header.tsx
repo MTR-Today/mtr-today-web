@@ -27,7 +27,7 @@ import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 import { AiTwotoneApi } from 'react-icons/ai'
 import { IoLogoGithub } from 'react-icons/io'
-import { MdGTranslate } from 'react-icons/md'
+import { MdGTranslate, MdImage } from 'react-icons/md'
 
 import logoDark from '../../assets/logoDark.svg'
 import logoLight from '../../assets/logoLight.svg'
@@ -41,7 +41,15 @@ import { useTime } from '../../hooks/useTime'
 export const Header: React.FC = () => {
   const { t } = useTranslation()
   const { colorMode, toggleColorMode } = useColorMode()
-  const { timeDisplay, setTimeDisplay, language, setLanguage } = useConfig()
+  const {
+    timeDisplay,
+    setTimeDisplay,
+    language,
+    setLanguage,
+    animatedBg,
+    setAnimatedBg,
+  } = useConfig()
+
   const now = useTime()
 
   return (
@@ -159,6 +167,18 @@ export const Header: React.FC = () => {
               <RadioSwitchItem value={Language.EN}>
                 {t('language.en')}
               </RadioSwitchItem>
+            </RadioSwitch>
+          </MenuItem>
+          <MenuItem>
+            <Box mr="3">
+              <MdImage />
+            </Box>
+            <RadioSwitch
+              value={animatedBg ? 'true' : 'false'}
+              onChange={value => setAnimatedBg(value === 'true')}
+            >
+              <RadioSwitchItem value="true">{t('bg.animated')}</RadioSwitchItem>
+              <RadioSwitchItem value="false">{t('bg.static')}</RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
           <MenuItem>

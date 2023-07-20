@@ -13,6 +13,10 @@
     "dark": "暗黑模式",
     "light": "光亮模式"
   },
+  "bg": {
+    "animated": "動態背景",
+    "static": "靜態背景"
+  },
   "source_code": "源代碼",
   "api": "應用程式接口",
   "fit_screen": "自動縮放",

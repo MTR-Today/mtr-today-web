@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Bg } from '../../components/Bg/Bg'
 import { MapMode } from '../../constants/mapMode'
+import { useConfig } from '../../hooks/useConfig'
 import { DragContainer } from '../DragContainer'
 import { MAP_HEIGHT, MAP_WIDTH, MtrMap } from '../MtrMap'
 import { Header } from './Header'
@@ -14,6 +15,7 @@ export const Layout = () => {
   const { t } = useTranslation()
 
   const routeMatch = useRouterContext()
+  const { animatedBg } = useConfig()
 
   const currentMode = routeMatch.state.currentLocation.pathname.startsWith(
     '/fares'
@@ -34,7 +36,7 @@ export const Layout = () => {
       </Helmet>
       <Header />
       <DragContainer
-        bg={<Bg />}
+        bg={animatedBg && <Bg />}
         childHeight={MAP_HEIGHT}
         childWidth={MAP_WIDTH}
       >
