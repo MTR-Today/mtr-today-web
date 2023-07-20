@@ -7,6 +7,7 @@ import {
 import {
   Box,
   Button,
+  Link as ExternalLink,
   Flex,
   HStack,
   IconButton,
@@ -16,6 +17,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Show,
   Text,
   useColorMode,
 } from '@chakra-ui/react'
@@ -23,6 +25,8 @@ import styled from '@emotion/styled'
 import { Link } from '@tanstack/router'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
+import { AiTwotoneApi } from 'react-icons/ai'
+import { IoLogoGithub } from 'react-icons/io'
 import { MdGTranslate } from 'react-icons/md'
 
 import logoDark from '../../assets/logoDark.svg'
@@ -82,15 +86,17 @@ export const Header: React.FC = () => {
           borderRadius="md"
           src={colorMode === 'light' ? logoLight : logoDark}
         />
-        <Flex align="end">
-          <Text fontWeight="semibold">MTR</Text>
-          <Text
-            color={colorMode === 'dark' ? 'white' : 'gray.500'}
-            fontSize="xs"
-          >
-            .today
-          </Text>
-        </Flex>
+        <Show above="md">
+          <Flex align="end">
+            <Text fontWeight="semibold">MTR</Text>
+            <Text
+              color={colorMode === 'dark' ? 'white' : 'gray.500'}
+              fontSize="xs"
+            >
+              .today
+            </Text>
+          </Flex>
+        </Show>
       </Flex>
       <HStack w="full" px="4">
         {menuMap(t).map(({ name, path }) => (
@@ -120,15 +126,17 @@ export const Header: React.FC = () => {
           </Link>
         ))}
       </HStack>
-      <Clock
-        flexShrink="0"
-        alignItems="center"
-        px="4"
-        borderRightRadius="md"
-        fontSize="sm"
-      >
-        {now.format('YYYY-MM-DD HH:mm:ss')}
-      </Clock>
+      <Show above="md">
+        <Clock
+          flexShrink="0"
+          alignItems="center"
+          px="4"
+          borderRightRadius="md"
+          fontSize="sm"
+        >
+          {now.format('YYYY-MM-DD HH:mm:ss')}
+        </Clock>
+      </Show>
       <Menu strategy="fixed">
         <MenuButton
           as={IconButton}
@@ -182,6 +190,13 @@ export const Header: React.FC = () => {
               </RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
+          <MenuDivider />
+          <ExternalLink href="https://github.com/mtr-today">
+            <MenuItem icon={<IoLogoGithub />}>{t('source_code')}</MenuItem>
+          </ExternalLink>
+          <ExternalLink href="https://github.com/MTR-Today/mtr-today-api#-api-documentation">
+            <MenuItem icon={<AiTwotoneApi />}>{t('api')}</MenuItem>
+          </ExternalLink>
           <MenuDivider />
           <Link to="/about-us">
             <MenuItem icon={<InfoOutlineIcon />}>{t('about_us')}</MenuItem>
