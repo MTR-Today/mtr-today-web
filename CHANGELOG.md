@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.2...v1.15.0) (2023-07-20)
+
+
+### Features
+
+* default turn off animated bg ([f212adf](https://github.com/MTR-Today/mtr-today-web/commit/f212adf40f60c1350e48bdb412bd7a55a6b7e543))
+
 ## [1.14.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.1...v1.14.2) (2023-07-20)
 
 
