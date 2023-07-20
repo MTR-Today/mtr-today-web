@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.1...v1.15.2) (2023-07-20)
+
+
+### Performance Improvements
+
+* improve map rendering ([75ab179](https://github.com/MTR-Today/mtr-today-web/commit/75ab179b93a6ccae657fd757da6d8ff6468ca143))
+
 ## [1.15.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.0...v1.15.1) (2023-07-20)
 
 
