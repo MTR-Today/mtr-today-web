@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useParams } from '@tanstack/router'
 import { LineCode, StopCode } from 'mtr-kit'
 import { isNil } from 'ramda'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 
 import { MapMode } from '../../constants/mapMode'
 import { mapContext } from '../../contexts/mapContext'
@@ -26,7 +26,7 @@ type Props = {
   mode: MapMode
 }
 
-export const MtrMap: React.FC<Props> = ({ mode }) => {
+export const MtrMap: React.FC<Props> = memo(({ mode }) => {
   const { stop: selectedStop } = useParams()
 
   const [hoveringLine, setHoveringLine] = useState<LineCode>()
@@ -1331,7 +1331,7 @@ export const MtrMap: React.FC<Props> = ({ mode }) => {
       </Wrapper>
     </mapContext.Provider>
   )
-}
+})
 
 const Wrapper = styled(Box)`
   width: ${MAP_WIDTH}px;
