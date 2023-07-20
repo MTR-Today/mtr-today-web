@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.0...v1.15.1) (2023-07-20)
+
+
+### Performance Improvements
+
+* memo stop ([ea3ea08](https://github.com/MTR-Today/mtr-today-web/commit/ea3ea084a8ad72f22a90281442c5d209ef1c640d))
+
 ## [1.15.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.2...v1.15.0) (2023-07-20)
 
 
