@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.14.0...v1.14.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* lock file ([5b49091](https://github.com/MTR-Today/mtr-today-web/commit/5b49091fc45c58b1c9202b1aa1e8575ab694064b))
+
 ## [1.14.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.13.0...v1.14.0) (2023-07-20)
 
 
