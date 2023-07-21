@@ -70,10 +70,11 @@ export const Schedule: React.FC<
             textAlign="center"
             bg={config.color}
             borderRadius="100%"
+            opacity={schedule ? 1 : 0.3}
           >
             {disabled || !schedule ? '-' : schedule.platform}
           </Box>
-          <Clock w="100%" textAlign="right">
+          <Clock w="100%" textAlign="right" opacity={schedule ? 1 : 0.3}>
             {disabled || !schedule
               ? '--:--'
               : getDisplayTime(schedule.timestamp)}
