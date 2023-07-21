@@ -3,12 +3,12 @@ import c from 'color'
 import { LineCode, lineMap } from 'mtr-kit'
 import { memo, useContext } from 'react'
 
-import { mapContext } from '../../contexts/mapContext'
+import { lineContext } from '../../contexts/mapContext'
 
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: LineCode; flip?: boolean }
 > = memo(({ coord: [x, y], line, flip = false, ...props }) => {
-  const { hoveringLine } = useContext(mapContext)
+  const { hoveringLine } = useContext(lineContext)
   const { colorMode } = useColorMode()
   const color = lineMap[line].color
 
