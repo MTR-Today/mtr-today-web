@@ -92,11 +92,11 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 17.6.6
-    version: 17.6.6
+    specifier: 17.6.7
+    version: 17.6.7
   '@commitlint/config-conventional':
-    specifier: 17.6.6
-    version: 17.6.6
+    specifier: 17.6.7
+    version: 17.6.7
   '@spotify/eslint-config':
     specifier: 15.0.0
     version: 15.0.0(eslint@8.44.0)(typescript@5.1.6)
@@ -2678,8 +2678,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@commitlint/cli@17.6.6:
-    resolution: {integrity: sha512-sTKpr2i/Fjs9OmhU+beBxjPavpnLSqZaO6CzwKVq2Tc4UYVTMFgpKOslDhUBVlfAUBfjVO8ParxC/MXkIOevEA==}
+  /@commitlint/cli@17.6.7:
+    resolution: {integrity: sha512-nzZmfO5KIOupYppn1MsnYX/80I+KDlxiwkks3CJT0XT+t34UgqGi3eSyEuzgcIjPlORk5/GMaAEiys78iLfGMg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
@@ -2698,8 +2698,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.6:
-    resolution: {integrity: sha512-phqPz3BDhfj49FUYuuZIuDiw+7T6gNAEy7Yew1IBHqSohVUCWOK2FXMSAExzS2/9X+ET93g0Uz83KjiHDOOFag==}
+  /@commitlint/config-conventional@17.6.7:
+    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
