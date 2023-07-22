@@ -1,16 +1,22 @@
 import { Box, BoxProps, useColorMode } from '@chakra-ui/react'
 import c from 'color'
 import { LineCode, lineMap } from 'mtr-kit'
+import { isEmpty } from 'ramda'
 import { memo, useContext } from 'react'
 
+import { MapMode } from '../../constants/mapMode'
 import { lineContext } from '../../contexts/mapContext'
 
 export const EndTip: React.FC<
   BoxProps & { coord: [x: number, y: number]; line: LineCode; flip?: boolean }
 > = memo(({ coord: [x, y], line, flip = false, ...props }) => {
-  const { hoveringLine } = useContext(lineContext)
+  const { selectedLines, mode } = useContext(lineContext)
   const { colorMode } = useColorMode()
   const color = lineMap[line].color
+  const isSelected =
+    mode === MapMode.FARES ||
+    isEmpty(selectedLines) ||
+    selectedLines.includes(line)
 
   return (
     <Box
@@ -18,7 +24,7 @@ export const EndTip: React.FC<
       top={`${y}px`}
       left={`${x}px`}
       fontSize="xs"
-      opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+      opacity={!isSelected ? '.3' : undefined}
       style={{ transition: 'opacity .3s' }}
       {...props}
     >

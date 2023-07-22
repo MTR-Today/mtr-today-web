@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useParams } from '@tanstack/router'
-import { LineCode } from 'mtr-kit'
-import { memo, useState } from 'react'
+import { lines } from 'mtr-kit'
+import { memo, useMemo } from 'react'
 
 import { MapMode } from '../../constants/mapMode'
 import { Islands } from './Islands'
@@ -19,16 +19,21 @@ type Props = {
 export const MtrMap: React.FC<Props> = memo(({ mode }) => {
   const { stop: selectedStop } = useParams()
 
-  const [hoveringLine, setHoveringLine] = useState<LineCode>()
+  const selectedLines = useMemo(() => {
+    if (!selectedStop) return undefined
+    return lines
+      .filter(({ stops }) => stops.some(({ stop }) => stop === selectedStop))
+      .map(item => item.line)
+  }, [selectedStop])
 
   return (
     <Wrapper>
       <Islands />
-      <Lines hoveringLine={hoveringLine} setHoveringLine={setHoveringLine} />
+      <Lines mode={mode} selectedLines={selectedLines} />
       <Stops
         mode={mode}
         selectedStop={selectedStop}
-        hoveringLine={hoveringLine}
+        selectedLines={selectedLines}
       />
     </Wrapper>
   )

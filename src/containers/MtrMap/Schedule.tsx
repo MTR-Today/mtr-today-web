@@ -15,8 +15,8 @@ export const Schedule: React.FC<
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { timeDisplay } = useConfig()
-  const { stop } = useContext(stopContext)
-  const { hoveringLine, schedules, isScheduleLoading } = useContext(mapContext)
+  const { stop, isSelected } = useContext(stopContext)
+  const { schedules, isScheduleLoading } = useContext(mapContext)
   const config = lineMap[line]
 
   const schedule = schedules.find(
@@ -49,7 +49,7 @@ export const Schedule: React.FC<
         w="56px"
         fontSize="xs"
         textAlign="center"
-        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
+        opacity={!isSelected ? '.3' : undefined}
         transform="translateY(-50%) translateX(-50%)"
         userSelect="none"
         style={{ transition: 'opacity .3s' }}

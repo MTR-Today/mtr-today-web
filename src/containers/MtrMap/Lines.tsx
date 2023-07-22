@@ -1,21 +1,22 @@
 import { LineCode } from 'mtr-kit'
-import { Dispatch, SetStateAction, memo } from 'react'
+import { memo } from 'react'
 
+import { MapMode } from '../../constants/mapMode'
 import { lineContext } from '../../contexts/mapContext'
 import { EndTip } from './EndTip'
 import { Line } from './Line'
 import { MAP_HEIGHT, MAP_WIDTH } from '.'
 
 type Props = {
-  hoveringLine?: LineCode
-  setHoveringLine: Dispatch<SetStateAction<LineCode | undefined>>
+  selectedLines?: LineCode[]
+  mode: MapMode
 }
 
-export const Lines = memo(({ hoveringLine, setHoveringLine }: Props) => (
+export const Lines = memo(({ selectedLines = [], mode }: Props) => (
   <lineContext.Provider
     value={{
-      hoveringLine,
-      setHoveringLine,
+      selectedLines,
+      mode,
     }}
   >
     <EndTip coord={[250, 500]} line={LineCode.TML} transform="rotate(-90deg)" />
