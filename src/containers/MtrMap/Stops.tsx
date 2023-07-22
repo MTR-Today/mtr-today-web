@@ -809,7 +809,6 @@ export const Stops = memo(
             <ArrowRight top="4" left="12" />
             <ArrowLeft bottom="4" left="12" />
             <Schedule line={LineCode.ISL} dir="up" top="20px" />
-            <Schedule line={LineCode.ISL} dir="down" bottom="20px" />
           </Fade>
         </Stop>
         <Stop stop={StopCode.HKU} coord={[930, 1156]}>
@@ -1053,7 +1052,6 @@ export const Stops = memo(
           <Fade in={isSchedule} unmountOnExit>
             <ArrowRight bottom="4" left="30px" transform="rotate(-45deg)" />
             <ArrowLeft bottom="10" right="4px" transform="rotate(-45deg)" />
-            <Schedule line={LineCode.DRL} dir="up" bottom="30px" right="48px" />
             <Schedule line={LineCode.TCL} dir="up" bottom="10px" right="48px" />
             <Schedule line={LineCode.TCL} dir="down" top="20px" left="30px" />
             <Schedule line={LineCode.DRL} dir="down" top="40px" left="30px" />
@@ -1185,7 +1183,6 @@ export const Stops = memo(
           <Fade in={isSchedule} unmountOnExit>
             <ArrowRight top="4" left="12" />
             <ArrowLeft bottom="4" left="12" />
-            <Schedule line={LineCode.SIL} dir="down" top="20px" />
             <Schedule line={LineCode.SIL} dir="up" bottom="20px" />
           </Fade>
         </Stop>
@@ -1201,7 +1198,6 @@ export const Stops = memo(
             <ArrowRight bottom="9" right="3" transform="rotate(90deg)" />
             <ArrowLeft bottom="9" left="3" transform="rotate(90deg)" />
             <Schedule line={LineCode.DRL} dir="up" left="40px" />
-            <Schedule line={LineCode.DRL} dir="down" right="45px" />
           </Fade>
         </Stop>
       </mapContext.Provider>
