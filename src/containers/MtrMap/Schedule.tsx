@@ -60,17 +60,19 @@ export const Schedule: React.FC<
           as={HStack}
           gap="0"
           isLoaded={!isScheduleLoading}
+          verticalAlign="center"
         >
           <Box
             flexShrink="0"
             display="inline-block"
-            w="4"
-            h="4"
             color="white"
-            textAlign="center"
             bg={config.color}
             borderRadius="100%"
             opacity={schedule ? 1 : 0.3}
+            w="4"
+            h="4"
+            lineHeight="4"
+            textAlign="center"
           >
             {disabled || !schedule ? '-' : schedule.platform}
           </Box>
