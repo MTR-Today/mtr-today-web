@@ -15,7 +15,7 @@ export const Schedule: React.FC<
 > = memo(({ line, disabled = false, dir, ...props }) => {
   const now = useTime()
   const { timeDisplay } = useConfig()
-  const { stop, isSelected } = useContext(stopContext)
+  const { stop } = useContext(stopContext)
   const { schedules, isScheduleLoading } = useContext(mapContext)
   const config = lineMap[line]
 
@@ -49,7 +49,6 @@ export const Schedule: React.FC<
         w="56px"
         fontSize="xs"
         textAlign="center"
-        opacity={!isSelected ? '.3' : undefined}
         transform="translateY(-50%) translateX(-50%)"
         userSelect="none"
         style={{ transition: 'opacity .3s' }}
