@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.32.0
     version: 4.32.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
-    specifier: 0.0.1-beta.109
-    version: 0.0.1-beta.109(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.111
+    version: 0.0.1-beta.111(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3166,6 +3166,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@gisatcz/cross-package-react-context@0.2.0(react@18.2.0):
+    resolution: {integrity: sha512-E7aR/o1ArpXETO8bQi+Hltj3duHeZiLjR+x1VZrCDs3jplSLGoy+oqCcqNNE1BamTBa0YQTs8Go1Q1dtt3LEUg==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.2 || ^18.1.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /@graphql-typed-document-node/core@3.2.0(graphql@16.7.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
@@ -3495,14 +3503,15 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.109(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-W4QPb/Fyygu49aJZ6lEGljiiiN/BOUu4wKA/YtjPCRBP+CXH3K5wbUHr9JT6ay3HMSDYfHUB4czk554/YBhCnQ==}
+  /@tanstack/router@0.0.1-beta.111(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Sb5C5hVIPgVfw3D0y/6HJ63E8Xt71XFfwH2Hc0FKMD/kbdv4v/NMEPNMebogq/JCDsI+Kao5Dd1O3HqaFtO/CA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.22.5
+      '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
       '@tanstack/react-store': 0.0.1-beta.90(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
