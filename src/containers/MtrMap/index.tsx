@@ -5,8 +5,7 @@ import { lines } from 'mtr-kit'
 import { memo, useMemo } from 'react'
 
 import { MapMode } from '../../constants/mapMode'
-import { Islands } from './Islands'
-import { Lines } from './Lines'
+import { Map } from './Map'
 import { Stops } from './Stops'
 
 export const MAP_WIDTH = 2800
@@ -20,16 +19,15 @@ export const MtrMap: React.FC<Props> = memo(({ mode }) => {
   const { stop: selectedStop } = useParams()
 
   const selectedLines = useMemo(() => {
-    if (!selectedStop) return undefined
+    if (!selectedStop || mode === MapMode.FARES) return undefined
     return lines
       .filter(({ stops }) => stops.some(({ stop }) => stop === selectedStop))
       .map(item => item.line)
-  }, [selectedStop])
+  }, [selectedStop, mode])
 
   return (
     <Wrapper>
-      <Islands />
-      <Lines mode={mode} selectedLines={selectedLines} />
+      <Map selectedLines={selectedLines} />
       <Stops
         mode={mode}
         selectedStop={selectedStop}

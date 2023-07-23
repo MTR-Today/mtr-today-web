@@ -7,10 +7,8 @@ import { Schedule } from '../queries/schedules'
 
 export const lineContext = createContext<{
   selectedLines: LineCode[]
-  mode: MapMode
 }>({
   selectedLines: [],
-  mode: MapMode.SCHEDULES,
 })
 
 export const mapContext = createContext<{
