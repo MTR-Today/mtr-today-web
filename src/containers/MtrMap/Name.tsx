@@ -5,7 +5,7 @@ import { memo, useContext } from 'react'
 import { stopContext } from '../../contexts/stopContext'
 
 export const Name: React.FC<BoxProps> = memo(props => {
-  const { stop, hovering } = useContext(stopContext)
+  const { stop } = useContext(stopContext)
   const config = stop ? stopMap[stop] : undefined
 
   return (
@@ -15,7 +15,6 @@ export const Name: React.FC<BoxProps> = memo(props => {
         minW="20"
         fontSize="xs"
         lineHeight="3"
-        opacity={hovering ? undefined : '.5'}
         transform="translateY(-50%) translateX(-50%)"
         whiteSpace="nowrap"
         userSelect="none"

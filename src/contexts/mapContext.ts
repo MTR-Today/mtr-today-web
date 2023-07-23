@@ -6,15 +6,13 @@ import { Fare } from '../queries/fares'
 import { Schedule } from '../queries/schedules'
 
 export const lineContext = createContext<{
-  hoveringLine?: LineCode
-  setHoveringLine: (line: LineCode | undefined) => void
+  selectedLines: LineCode[]
 }>({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setHoveringLine: () => {},
+  selectedLines: [],
 })
 
 export const mapContext = createContext<{
-  hoveringLine?: LineCode
+  selectedLines: LineCode[]
   mode: MapMode
   selectedStop?: StopCode
   schedules: Schedule[]
@@ -22,6 +20,7 @@ export const mapContext = createContext<{
   isFaresLoading: boolean
   isScheduleLoading: boolean
 }>({
+  selectedLines: [],
   mode: MapMode.SCHEDULES,
   schedules: [],
   fares: [],

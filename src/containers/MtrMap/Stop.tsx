@@ -2,7 +2,7 @@ import { Box, BoxProps, Skeleton, useColorMode } from '@chakra-ui/react'
 import { useLocalStorageValue } from '@react-hookz/web'
 import { Link } from '@tanstack/router'
 import { LineCode, StopCode } from 'mtr-kit'
-import { path } from 'ramda'
+import { isEmpty, path } from 'ramda'
 import { memo, useContext, useMemo, useState } from 'react'
 import { deepForEach } from 'react-children-utilities'
 
@@ -18,7 +18,7 @@ export const Stop: React.FC<
 > = memo(({ children, stop, coord: [x, y], ...props }) => {
   const [isHovering, setHovering] = useState(false)
   const { colorMode } = useColorMode()
-  const { hoveringLine, mode, selectedStop, fares, isFaresLoading } =
+  const { selectedLines, mode, selectedStop, fares, isFaresLoading } =
     useContext(mapContext)
 
   const isSelected = selectedStop === stop
@@ -65,14 +65,17 @@ export const Stop: React.FC<
   const shouldDisplayFare =
     selectedStop && mode === MapMode.FARES && selectedStop !== stop
 
+  const isLineSelected =
+    isEmpty(selectedLines) ||
+    lineList.some(line => selectedLines.includes(line))
+
   return (
     <stopContext.Provider
       value={{
         stop,
-        hovering: Boolean(
-          isHovering || (hoveringLine && lineList.includes(hoveringLine))
+        isSelected: Boolean(
+          mode === MapMode.FARES || isHovering || isLineSelected
         ),
-        lineHovering: Boolean(hoveringLine && lineList.includes(hoveringLine)),
         setHovering,
       }}
     >
@@ -82,7 +85,9 @@ export const Stop: React.FC<
         left={`${x}px`}
         fontSize="xs"
         opacity={
-          hoveringLine && !lineList.includes(hoveringLine) ? '.3' : undefined
+          mode === MapMode.FARES || isHovering || isLineSelected
+            ? undefined
+            : '.3'
         }
         style={{ transition: 'opacity .3s' }}
         {...props}

@@ -3,13 +3,11 @@ import { createContext } from 'react'
 
 export const stopContext = createContext<{
   stop: StopCode
-  hovering: boolean
-  lineHovering: boolean
+  isSelected: boolean
   setHovering: (value: boolean) => void
 }>({
   stop: '' as StopCode,
-  hovering: false,
-  lineHovering: false,
+  isSelected: false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setHovering: () => {},
 })

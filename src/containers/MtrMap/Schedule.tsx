@@ -16,7 +16,7 @@ export const Schedule: React.FC<
   const now = useTime()
   const { timeDisplay } = useConfig()
   const { stop } = useContext(stopContext)
-  const { hoveringLine, schedules, isScheduleLoading } = useContext(mapContext)
+  const { schedules, isScheduleLoading } = useContext(mapContext)
   const config = lineMap[line]
 
   const schedule = schedules.find(
@@ -49,7 +49,6 @@ export const Schedule: React.FC<
         w="56px"
         fontSize="xs"
         textAlign="center"
-        opacity={hoveringLine && hoveringLine !== line ? '.3' : undefined}
         transform="translateY(-50%) translateX(-50%)"
         userSelect="none"
         style={{ transition: 'opacity .3s' }}
@@ -60,20 +59,23 @@ export const Schedule: React.FC<
           as={HStack}
           gap="0"
           isLoaded={!isScheduleLoading}
+          verticalAlign="center"
         >
           <Box
             flexShrink="0"
             display="inline-block"
-            w="4"
-            h="4"
             color="white"
-            textAlign="center"
             bg={config.color}
             borderRadius="100%"
+            opacity={schedule ? 1 : 0.3}
+            w="4"
+            h="4"
+            lineHeight="4"
+            textAlign="center"
           >
             {disabled || !schedule ? '-' : schedule.platform}
           </Box>
-          <Clock w="100%" textAlign="right">
+          <Clock w="100%" textAlign="right" opacity={schedule ? 1 : 0.3}>
             {disabled || !schedule
               ? '--:--'
               : getDisplayTime(schedule.timestamp)}
