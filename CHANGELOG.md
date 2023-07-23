@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.0...v1.16.1) (2023-07-23)
+
+
+### Performance Improvements
+
+* simplify stop handling ([9993328](https://github.com/MTR-Today/mtr-today-web/commit/99933288fecb02721906207f0a89288fec5d9cf0))
+
 ## [1.16.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.3...v1.16.0) (2023-07-23)
 
 
