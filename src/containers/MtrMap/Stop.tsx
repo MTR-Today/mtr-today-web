@@ -1,10 +1,9 @@
 import { Box, BoxProps, Skeleton, useColorMode } from '@chakra-ui/react'
 import { useLocalStorageValue } from '@react-hookz/web'
 import { Link } from '@tanstack/router'
-import { LineCode, StopCode } from 'mtr-kit'
+import { StopCode, lines } from 'mtr-kit'
 import { isEmpty, path } from 'ramda'
 import { memo, useContext, useMemo, useState } from 'react'
-import { deepForEach } from 'react-children-utilities'
 
 import { FaresPassengerType } from '../../constants/faresPassengerType'
 import { FaresType } from '../../constants/faresType'
@@ -21,8 +20,6 @@ export const Stop: React.FC<
   const { selectedLines, mode, selectedStop, fares, isFaresLoading } =
     useContext(mapContext)
 
-  const isSelected = selectedStop === stop
-
   const { value: faresType } = useLocalStorageValue<FaresType>(
     LocalStorageKey.FARES_TYPE,
     {
@@ -38,45 +35,32 @@ export const Stop: React.FC<
       }
     )
 
-  const lineList = useMemo<LineCode[]>(() => {
-    if (!Array.isArray(children)) return []
-    let lines: LineCode[] = []
-    deepForEach(children, child => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if ((child as any)?.props?.line) {
-        // eslint-disable-next-line fp/no-mutation, @typescript-eslint/no-explicit-any
-        lines = [...lines, (child as any)?.props?.line]
-      }
-    })
-
-    return lines
-  }, [children])
-
-  const fareItem = useMemo(
-    () => fares.find(item => item.to === stop),
-    [fares, stop]
-  )
-
-  const fareValue =
-    faresType && faresPassengerType
-      ? path<number>([faresType, faresPassengerType], fareItem)
-      : undefined
-
+  const isSelected = selectedStop === stop
   const shouldDisplayFare =
-    selectedStop && mode === MapMode.FARES && selectedStop !== stop
+    mode === MapMode.FARES && selectedStop && !isSelected
 
-  const isLineSelected =
-    isEmpty(selectedLines) ||
-    lineList.some(line => selectedLines.includes(line))
+  const isLineSelected = useMemo(() => {
+    const stopLines = lines.filter(({ stops }) =>
+      stops.some(item => item.stop === stop)
+    )
+
+    return (
+      isEmpty(selectedLines) ||
+      stopLines.some(line => selectedLines.includes(line.line))
+    )
+  }, [selectedLines, stop])
+
+  const fareValue = useMemo(() => {
+    if (!faresType || !faresPassengerType) return undefined
+    const fareItem = fares.find(item => item.to === stop)
+    return path<number>([faresType, faresPassengerType], fareItem)
+  }, [fares, faresPassengerType, faresType, stop])
 
   return (
     <stopContext.Provider
       value={{
         stop,
-        isSelected: Boolean(
-          mode === MapMode.FARES || isHovering || isLineSelected
-        ),
-        setHovering,
+        isSelected: isSelected || isHovering,
       }}
     >
       <Box
@@ -85,7 +69,7 @@ export const Stop: React.FC<
         left={`${x}px`}
         fontSize="xs"
         opacity={
-          mode === MapMode.FARES || isHovering || isLineSelected
+          mode === MapMode.FARES || isSelected || isHovering || isLineSelected
             ? undefined
             : '.3'
         }

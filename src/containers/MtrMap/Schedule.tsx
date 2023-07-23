@@ -2,7 +2,7 @@ import { Box, BoxProps, Flex, HStack, Skeleton } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import { LineCode, lineMap } from 'mtr-kit'
-import { memo, useCallback, useContext } from 'react'
+import { memo, useCallback, useContext, useMemo } from 'react'
 
 import { TimeDisplay } from '../../constants/timeDisplay'
 import { mapContext } from '../../contexts/mapContext'
@@ -19,9 +19,12 @@ export const Schedule: React.FC<
   const { schedules, isScheduleLoading } = useContext(mapContext)
   const config = lineMap[line]
 
-  const schedule = schedules.find(
-    item => item.line === line && item.stop === stop
-  )?.schedule?.[dir]?.[0]
+  const schedule = useMemo(
+    () =>
+      schedules.find(item => item.line === line && item.stop === stop)
+        ?.schedule?.[dir]?.[0],
+    [dir, line, schedules, stop]
+  )
 
   const getDisplayTime = useCallback(
     (time: string) => {
