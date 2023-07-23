@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.16.0](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.3...v1.16.0) (2023-07-23)
+
+
+### Features
+
+* hide empty schedule ([45e3315](https://github.com/MTR-Today/mtr-today-web/commit/45e33157a5b788bb9328964839918a61d98e6145))
+* new opacity behavior ([3d9df32](https://github.com/MTR-Today/mtr-today-web/commit/3d9df32b8ee38fff5d371f57e8343fd419816f65))
+
+
+### Bug Fixes
+
+* **deps:** update chakra-ui monorepo ([3238ebf](https://github.com/MTR-Today/mtr-today-web/commit/3238ebf9ab569c92d144ebba00c9c7d067af37a2))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.108 ([fc6cc03](https://github.com/MTR-Today/mtr-today-web/commit/fc6cc03f83c62320fb8dd2f3909b8360920843cb))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.109 ([543426a](https://github.com/MTR-Today/mtr-today-web/commit/543426a75ae7affaba4ef2f73bc754f9844f1eaf))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.111 ([149450a](https://github.com/MTR-Today/mtr-today-web/commit/149450a5ff12b2f15f00a4c70fb921ee5405a183))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.112 ([6376d52](https://github.com/MTR-Today/mtr-today-web/commit/6376d52243ee9d5409198abd30ad2f119b7380fd))
+* **deps:** update dependency framer-motion to v10.13.0 ([6a1d5f0](https://github.com/MTR-Today/mtr-today-web/commit/6a1d5f0ee7e4de579d97e25d2b701a748a209712))
+* double opacity setting ([7af8268](https://github.com/MTR-Today/mtr-today-web/commit/7af8268e713a09ebdcbbaad7a0b86e56df6974a9))
+* extra sechdule on end stop ([870c9cd](https://github.com/MTR-Today/mtr-today-web/commit/870c9cd8957956cba361f67131f0eda29ddae115))
+* platform text display ([6a1d030](https://github.com/MTR-Today/mtr-today-web/commit/6a1d030d4f75890e74ca06963c1cf4914918af07))
+
+
+### Performance Improvements
+
+* scope line provider ([a305473](https://github.com/MTR-Today/mtr-today-web/commit/a30547375606fb0476f9cf9b497350fbfa530a26))
+* svg end tip ([dbbac8f](https://github.com/MTR-Today/mtr-today-web/commit/dbbac8f0ccf3cefeddd7704e0764164d0460f4c3))
+
 ## [1.15.3](https://github.com/MTR-Today/mtr-today-web/compare/v1.15.2...v1.15.3) (2023-07-20)
 
 
