@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.3](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.2...v1.16.3) (2023-07-24)
+
+
+### Bug Fixes
+
+* disney stop direction ([ba2b42d](https://github.com/MTR-Today/mtr-today-web/commit/ba2b42de5cc4333081d2bb3ad951bbcb2504789a))
+
 ## [1.16.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.1...v1.16.2) (2023-07-24)
 
 
