@@ -46,7 +46,7 @@ export const Schedule: React.FC<
   )
 
   return (
-    <Box pos="absolute" {...props}>
+    <Box pos="absolute" transform="scale(.8)" {...props}>
       <Flex
         pos="absolute"
         w="56px"
