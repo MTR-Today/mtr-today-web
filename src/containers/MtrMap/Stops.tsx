@@ -102,8 +102,8 @@ export const Stops = memo(
         <Stop stop={StopCode.MEF} coord={[1000, 630]}>
           <Name
             {...(isSchedule
-              ? { bottom: '40px', left: '60px' }
-              : { bottom: '30px', left: '60px' })}
+              ? { bottom: '40px', left: '70px' }
+              : { bottom: '30px', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -156,7 +156,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.PRE} coord={[1393, 690]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -172,7 +172,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.MOK} coord={[1393, 760]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -186,7 +186,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.YMT} coord={[1393, 830]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -199,7 +199,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.JOR} coord={[1390, 900]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -212,8 +212,8 @@ export const Stops = memo(
         <Stop stop={StopCode.TST} coord={[1390, 970]}>
           <Name
             {...(isSchedule
-              ? { right: '60px', bottom: '24px' }
-              : { right: '60px', bottom: '0' })}
+              ? { right: '65px', bottom: '24px' }
+              : { right: '65px', bottom: '0' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -226,7 +226,7 @@ export const Stops = memo(
         {/* KTL */}
         <Stop stop={StopCode.LAT} coord={[2240, 830]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -238,7 +238,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.KWT} coord={[2240, 760]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -250,7 +250,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.NTK} coord={[2240, 690]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -279,8 +279,8 @@ export const Stops = memo(
         <Stop stop={StopCode.DIH} coord={[1950, 630]}>
           <Name
             {...(isSchedule
-              ? { bottom: '40px', left: '60px' }
-              : { bottom: '30px', left: '60px' })}
+              ? { bottom: '40px', left: '70px' }
+              : { bottom: '30px', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -366,7 +366,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.WHA} coord={[1780, 950]}>
           <Name
-            {...(isSchedule ? { left: '60px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '70px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -438,8 +438,8 @@ export const Stops = memo(
         <Stop stop={StopCode.RAC} coord={[1680, 360]}>
           <Name
             {...(isSchedule
-              ? { bottom: '30px', left: '60px' }
-              : { bottom: '0', left: '60px' })}
+              ? { bottom: '30px', left: '70px' }
+              : { bottom: '0', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -451,7 +451,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.FOT} coord={[1590, 330]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -465,7 +465,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.SHT} coord={[1590, 430]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -475,7 +475,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.TAW} coord={[1593, 500]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -496,7 +496,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.MKK} coord={[1590, 760]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -509,7 +509,7 @@ export const Stops = memo(
         {/* TML */}
         <Stop stop={StopCode.TUM} coord={[250, 450]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -520,7 +520,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.SIH} coord={[250, 380]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -543,7 +543,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.LOP} coord={[400, 310]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -555,7 +555,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.YUL} coord={[400, 380]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -567,7 +567,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.KSR} coord={[400, 450]}>
           <Name
-            {...(isSchedule ? { left: '115px' } : { left: '70px' })}
+            {...(isSchedule ? { left: '115px' } : { left: '80px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -588,7 +588,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.NAC} coord={[997, 730]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -600,7 +600,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.AUS} coord={[1220, 970]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -628,7 +628,7 @@ export const Stops = memo(
           <Name
             {...(isSchedule
               ? { top: '30px', left: '105px' }
-              : { top: '30px', left: '60px' })}
+              : { top: '30px', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -660,7 +660,7 @@ export const Stops = memo(
         <Stop stop={StopCode.TKW} coord={[1850, 850]}>
           <Name
             {...(isSchedule
-              ? { top: '40px', left: '60px' }
+              ? { top: '40px', left: '70px' }
               : { top: '30px', left: '55px' })}
             textAlign="left"
           />
@@ -679,7 +679,7 @@ export const Stops = memo(
         <Stop stop={StopCode.SUW} coord={[1910, 790]}>
           <Name
             {...(isSchedule
-              ? { top: '40px', left: '60px' }
+              ? { top: '40px', left: '70px' }
               : { top: '30px', left: '55px' })}
             textAlign="left"
           />
@@ -697,7 +697,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.KAT} coord={[1950, 700]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -716,7 +716,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.CKT} coord={[1820, 430]}>
           <Name
-            {...(isSchedule ? { left: '115px' } : { left: '70px' })}
+            {...(isSchedule ? { left: '115px' } : { left: '80px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -726,7 +726,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.STW} coord={[1820, 360]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -939,7 +939,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.CHW} coord={[2500, 1250]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -981,7 +981,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.HAH} coord={[2600, 830]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -993,7 +993,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.POA} coord={[2600, 760]}>
           <Name
-            {...(isSchedule ? { right: '60px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '65px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1004,7 +1004,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.LHP} coord={[2600, 990]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1016,7 +1016,7 @@ export const Stops = memo(
         {/* TCL */}
         <Stop stop={StopCode.TUC} coord={[526, 940]}>
           <Name
-            {...(isSchedule ? { left: '80px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '80px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1029,7 +1029,7 @@ export const Stops = memo(
           <Name
             {...(isSchedule
               ? { bottom: '5px', left: '80px' }
-              : { bottom: '0', left: '60px' })}
+              : { bottom: '0', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1054,7 +1054,7 @@ export const Stops = memo(
           <Name
             {...(isSchedule
               ? { bottom: '5px', left: '80px' }
-              : { bottom: '0', left: '60px' })}
+              : { bottom: '0', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1078,7 +1078,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.OLY} coord={[994, 870]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1090,7 +1090,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.KOW} coord={[991, 970]}>
           <Name
-            {...(isSchedule ? { right: '105px' } : { right: '60px' })}
+            {...(isSchedule ? { right: '105px' } : { right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1119,8 +1119,8 @@ export const Stops = memo(
         <Stop stop={StopCode.AIR} coord={[470, 845]}>
           <Name
             {...(isSchedule
-              ? { top: '10px', right: '60px' }
-              : { top: '0', right: '60px' })}
+              ? { top: '10px', right: '65px' }
+              : { top: '0', right: '65px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1133,7 +1133,7 @@ export const Stops = memo(
         {/* SIL */}
         <Stop stop={StopCode.OCP} coord={[1400, 1290]}>
           <Name
-            {...(isSchedule ? { left: '105px' } : { left: '60px' })}
+            {...(isSchedule ? { left: '105px' } : { left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -1171,7 +1171,7 @@ export const Stops = memo(
         </Stop>
         {/* DRL */}
         <Stop stop={StopCode.DIS} coord={[730, 920]}>
-          <Name left="70px" textAlign="left" />
+          <Name left="80px" textAlign="left" />
           <Fade in={isSchedule} unmountOnExit>
             <ArrowLeft bottom="9" right="3" transform="rotate(90deg)" />
             <ArrowRight bottom="9" left="3" transform="rotate(90deg)" />
