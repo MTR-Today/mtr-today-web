@@ -613,8 +613,8 @@ export const Stops = memo(
         <Stop stop={StopCode.ETS} coord={[1455, 1020]}>
           <Name
             {...(isSchedule
-              ? { top: '30px', right: '90px' }
-              : { top: '30px', right: '45px' })}
+              ? { top: '25px', right: '80px' }
+              : { top: '25px', right: '45px' })}
             textAlign="right"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -627,8 +627,8 @@ export const Stops = memo(
         <Stop stop={StopCode.HUH} coord={[1560, 984]}>
           <Name
             {...(isSchedule
-              ? { top: '30px', left: '105px' }
-              : { top: '30px', left: '70px' })}
+              ? { top: '20px', left: '100px' }
+              : { top: '20px', left: '70px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
@@ -647,7 +647,7 @@ export const Stops = memo(
         </Stop>
         <Stop stop={StopCode.EXC} coord={[1455, 1095]}>
           <Name
-            {...(isSchedule ? { left: '125px' } : { left: '85px' })}
+            {...(isSchedule ? { left: '110px' } : { left: '80px' })}
             textAlign="left"
           />
           <Fade in={isSchedule} unmountOnExit>
