@@ -840,8 +840,8 @@ export const Stops = memo(
             <Schedule line={LineCode.EAL} dir="up" bottom="50px" />
             <Schedule line={LineCode.ISL} dir="down" top="20px" />
             <Schedule line={LineCode.ISL} dir="up" bottom="20px" />
-            <Schedule line={LineCode.TWL} dir="up" bottom="30px" />
-            <Schedule line={LineCode.SIL} dir="up" bottom="60px" />
+            <Schedule line={LineCode.TWL} dir="up" bottom="35px" />
+            <Schedule line={LineCode.SIL} dir="up" bottom="65px" />
           </Fade>
         </Stop>
         <Stop stop={StopCode.WAC} coord={[1460, 1156]}>
