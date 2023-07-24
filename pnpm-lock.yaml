@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.32.0
     version: 4.32.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
-    specifier: 0.0.1-beta.115
-    version: 0.0.1-beta.115(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.117
+    version: 0.0.1-beta.117(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -2848,6 +2848,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -3503,8 +3504,8 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.115(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-hcdQ0qOfLUjbMEbvtr0RPTxu0oG4sKuXzgmLipCPd+Dd16R+uP3VM8yHV4RUNKSs08W/CPPcNQo71llQR1StgA==}
+  /@tanstack/router@0.0.1-beta.117(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qqNqiEe93T6rvwOQQP1NHwkTmhWpiyl6jldDrxzCnMFSXL4zVmqkZxsyJCYSwnpDH3MfMQv5xUB7rWEjtdNJAA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
