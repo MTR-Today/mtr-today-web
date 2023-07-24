@@ -1175,7 +1175,7 @@ export const Stops = memo(
           <Fade in={isSchedule} unmountOnExit>
             <ArrowLeft bottom="9" right="3" transform="rotate(90deg)" />
             <ArrowRight bottom="9" left="3" transform="rotate(90deg)" />
-            <Schedule line={LineCode.DRL} dir="down" right="35px" />
+            <Schedule line={LineCode.DRL} dir="up" right="35px" />
           </Fade>
         </Stop>
       </mapContext.Provider>
