@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.32.0
     version: 4.32.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
-    specifier: 0.0.1-beta.112
-    version: 0.0.1-beta.112(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.115
+    version: 0.0.1-beta.115(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3490,21 +3490,21 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/react-store@0.0.1-beta.90(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-JoTVt7h1agu6DhFwB3VKbxzW55oAls+A4gK6JHp1WptSWuAYOoY6ZhBcLhZjb5hEAJOQh/CwbPVrjUU0rSVo6g==}
+  /@tanstack/react-store@0.0.1-beta.113(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7qe2oxx/OEl5PuloLXLEJZWAOHr60abA0Ko6kGR4euvkSu1kfLrV0NV9IE6v6bceNPp+KMnBhH+nvdtHFvbDsw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@tanstack/store': 0.0.1-beta.90
+      '@tanstack/store': 0.0.1-beta.113
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.112(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-5rWeDFAMfQSkxsKoXaByYb5r7sgsrLep3OuTxajgjB1VZc6edgzXM47eKFUryG1ckQglbI1ClG0MkzwWoGyedg==}
+  /@tanstack/router@0.0.1-beta.115(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hcdQ0qOfLUjbMEbvtr0RPTxu0oG4sKuXzgmLipCPd+Dd16R+uP3VM8yHV4RUNKSs08W/CPPcNQo71llQR1StgA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
@@ -3512,15 +3512,15 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.5
       '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
-      '@tanstack/react-store': 0.0.1-beta.90(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-store': 0.0.1-beta.113(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
     dev: false
 
-  /@tanstack/store@0.0.1-beta.90:
-    resolution: {integrity: sha512-L7ub4yiqdsANkGWOmpdY4kEkFge+v/aNeG3rGVQs68FyHr1Q5kaYKsbf+vzWBeYYc4Fo6uLMfh/uCf3C7eGhRw==}
+  /@tanstack/store@0.0.1-beta.113:
+    resolution: {integrity: sha512-2QACMdO/bE5gQckQtrbLYp3EOQd/gA1LXjUxbDTvBZ0gzeQ75OSdq0RSiibkD1f3pqtEILTvn8fK0zOuZOH+Vw==}
     engines: {node: '>=12'}
     dev: false
 
