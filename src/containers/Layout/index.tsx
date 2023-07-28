@@ -17,9 +17,7 @@ export const Layout = () => {
   const routeMatch = useRouterContext()
   const { animatedBg } = useConfig()
 
-  const currentMode = routeMatch.state.currentLocation.pathname.startsWith(
-    '/fares'
-  )
+  const currentMode = routeMatch.state.location.pathname.startsWith('/fares')
     ? MapMode.FARES
     : MapMode.SCHEDULES
 
