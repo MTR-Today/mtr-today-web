@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.16.3](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.2...v1.16.3) (2023-07-24)
+
+
+### Bug Fixes
+
+* disney stop direction ([ba2b42d](https://github.com/MTR-Today/mtr-today-web/commit/ba2b42de5cc4333081d2bb3ad951bbcb2504789a))
+
+## [1.16.2](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.1...v1.16.2) (2023-07-24)
+
+
+### Bug Fixes
+
+* adm schedule placement ([cb6f3fe](https://github.com/MTR-Today/mtr-today-web/commit/cb6f3fe2da3b56851881e09b839ee3ddb2a26565))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.115 ([97422dd](https://github.com/MTR-Today/mtr-today-web/commit/97422dd29d16633550eba9bd70c5d6d687a3ef4b))
+* **deps:** update dependency @tanstack/router to v0.0.1-beta.117 ([89a802e](https://github.com/MTR-Today/mtr-today-web/commit/89a802ecf10ecc2e3ceb52aa4734a5e1a2b25f08))
+* schedule up down fliped ([11b1218](https://github.com/MTR-Today/mtr-today-web/commit/11b12187758b72b34b72b1f25dd11608f4298e08))
+* stop name placement ([2f794f1](https://github.com/MTR-Today/mtr-today-web/commit/2f794f134fcb9a7fa7f942e7abf5538c15b1f7d5))
+* stop name too close ([74f9e9b](https://github.com/MTR-Today/mtr-today-web/commit/74f9e9bf844224c6d000b912b9d826e80566486e))
+
 ## [1.16.1](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.0...v1.16.1) (2023-07-23)
 
 
