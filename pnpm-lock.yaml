@@ -30,8 +30,8 @@ dependencies:
     specifier: 4.32.1
     version: 4.32.1(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
-    specifier: 0.0.1-beta.132
-    version: 0.0.1-beta.132(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.133
+    version: 0.0.1-beta.133(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3569,8 +3569,8 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.132(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-O/ZvwD7+GT9tQW3ZAZebwBAr+Oijqqggw1ucdgOOPpsNb5eXfbJawMnThvKjVU8siFXAjhhb8Alz1C16NjMd2A==}
+  /@tanstack/router@0.0.1-beta.133(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-T/A+KxWj1TAf5x0R6zEC4hOKI7m6QXBt/k9d734wVtgiP5acap+Oofp4SGnW/cZWZUmgPx3Cm+aK0Cv6HwOtjw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
