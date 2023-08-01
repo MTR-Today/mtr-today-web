@@ -27,8 +27,8 @@ dependencies:
     specifier: 23.1.0
     version: 23.1.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-query':
-    specifier: 4.32.0
-    version: 4.32.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 4.32.1
+    version: 4.32.1(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/router':
     specifier: 0.0.1-beta.132
     version: 0.0.1-beta.132(react-dom@18.2.0)(react@18.2.0)
@@ -101,8 +101,8 @@ devDependencies:
     specifier: 15.0.0
     version: 15.0.0(eslint@8.46.0)(typescript@5.1.6)
   '@tanstack/eslint-plugin-query':
-    specifier: 4.29.25
-    version: 4.29.25
+    specifier: 4.32.1
+    version: 4.32.1
   '@types/color':
     specifier: 3.0.3
     version: 3.0.3
@@ -3530,16 +3530,16 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /@tanstack/eslint-plugin-query@4.29.25:
-    resolution: {integrity: sha512-wn+My+vBVTH/BZouf5syhUiUrCYiuAwRdepO/gjn6BBwYyN7XQ8cS/ooO0h2ut0h1G3UO52q26An8jYJCjR29w==}
+  /@tanstack/eslint-plugin-query@4.32.1:
+    resolution: {integrity: sha512-29oveq5n7momN+/d0SheNccnp1qws4JRG/PdeiPHwWAVQ9HxwtZTFxhFJxvMzVk7UsY3LsQB0keIajC+K9ZJ7w==}
     dev: true
 
-  /@tanstack/query-core@4.32.0:
-    resolution: {integrity: sha512-ei4IYwL2kmlKSlCw9WgvV7PpXi0MiswVwfQRxawhJA690zWO3dU49igaQ/UMTl+Jy9jj9dK5IKAYvbX7kUvviQ==}
+  /@tanstack/query-core@4.32.1:
+    resolution: {integrity: sha512-VEAGHboOFWN/bvf/7cCoeLQfld0AA8n0V/kfc77W+FvxnnSwJufEh6gfjqpX5bRE/DEYfYDYdNtuL3KM+lIs8Q==}
     dev: false
 
-  /@tanstack/react-query@4.32.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-B8WUMcByYAH9500ENejDCATOmEZhqjtS9wsfiQ3BNa+s+yAynY8SESI8WWHhSqUmjd0pmCSFRP6BOUGSda3QXA==}
+  /@tanstack/react-query@4.32.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-lPTfOq6bR6DorPaS018gTMd3zs8r06tlERiVY6BRP9SnDkkl4ckqeANava/jPLWrSZP+EA15loQUTmvZs6k2GA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3550,7 +3550,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.32.0
+      '@tanstack/query-core': 4.32.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
