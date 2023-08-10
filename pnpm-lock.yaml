@@ -75,8 +75,8 @@ dependencies:
     specifier: 6.1.0
     version: 6.1.0(react@18.2.0)
   react-i18next:
-    specifier: 13.0.3
-    version: 13.0.3(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 13.1.0
+    version: 13.1.0(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: 4.10.1
     version: 4.10.1(react@18.2.0)
@@ -3717,7 +3717,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 20.3.1
+      '@types/node': 20.4.7
     dev: true
 
   /@types/sax@1.2.4:
@@ -6826,7 +6826,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.3.1
+      '@types/node': 20.4.7
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -7937,8 +7937,8 @@ packages:
       react-side-effect: 2.1.2(react@18.2.0)
     dev: false
 
-  /react-i18next@13.0.3(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/t4kt4Y2o+21hbvx+o9zpVnmoiud7KLDncyZFGN0U6TGAWYaXdTsp/ytAHFcKKSAODg4noIMaOO3X7bMgCqLHw==}
+  /react-i18next@13.1.0(i18next@23.4.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TlDz4761vJe810o5nEzRkblfS0FQz+k9R5BLOPVhn0Ds6WMDcwGSMbU5fne9WSd4/vLgKg7fEJ7/JboWdmsHOw==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'
