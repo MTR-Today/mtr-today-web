@@ -71,7 +71,7 @@
     "import-sort-parser-babylon": "6.0.0",
     "import-sort-parser-typescript": "6.0.0",
     "import-sort-style-module": "6.0.0",
-    "lint-staged": "14.0.0",
+    "lint-staged": "14.0.1",
     "prettier": "3.0.2",
     "sitemap": "7.1.1",
     "typescript": "5.1.6",
