@@ -1,6 +1,6 @@
 import { Box, BoxProps, Skeleton, useColorMode } from '@chakra-ui/react'
 import { useLocalStorageValue } from '@react-hookz/web'
-import { Link } from '@tanstack/router'
+import { Link } from '@tanstack/react-router'
 import { StopCode, lines } from 'mtr-kit'
 import { isEmpty, path } from 'ramda'
 import { memo, useContext, useMemo, useState } from 'react'

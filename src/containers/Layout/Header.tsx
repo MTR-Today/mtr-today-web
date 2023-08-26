@@ -22,7 +22,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { Link } from '@tanstack/router'
+import { Link } from '@tanstack/react-router'
 import { lines } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 import { AiTwotoneApi } from 'react-icons/ai'
