@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import { Outlet, useRouterState } from '@tanstack/router'
+import { Outlet, useRouterState } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 

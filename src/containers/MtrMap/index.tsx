@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useParams } from '@tanstack/router'
+import { useParams } from '@tanstack/react-router'
 import { lines } from 'mtr-kit'
 import { memo, useMemo } from 'react'
 

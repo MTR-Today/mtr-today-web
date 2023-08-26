@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Outlet, useNavigate, useParams } from '@tanstack/router'
+import { Outlet, useNavigate, useParams } from '@tanstack/react-router'
 import { StopCode, stopMap } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 

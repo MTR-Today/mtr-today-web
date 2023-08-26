@@ -13,7 +13,7 @@ import {
   Stack,
   useDisclosure,
 } from '@chakra-ui/react'
-import { useNavigate } from '@tanstack/router'
+import { useNavigate } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 import { IoLogoGithub } from 'react-icons/io'
 

@@ -1,4 +1,9 @@
-import { RootRoute, Route, Router, createHashHistory } from '@tanstack/router'
+import {
+  RootRoute,
+  Route,
+  Router,
+  createHashHistory,
+} from '@tanstack/react-router'
 
 import { AboutUs } from './containers/AboutUs'
 import { Fares } from './containers/Fares'

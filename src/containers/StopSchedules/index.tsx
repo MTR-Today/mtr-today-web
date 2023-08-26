@@ -14,7 +14,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from '@tanstack/router'
+import { useParams } from '@tanstack/react-router'
 import { lines } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useTranslation } from 'react-i18next'
