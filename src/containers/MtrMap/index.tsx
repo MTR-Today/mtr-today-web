@@ -16,7 +16,7 @@ type Props = {
 }
 
 export const MtrMap: React.FC<Props> = memo(({ mode }) => {
-  const { stop: selectedStop } = useParams()
+  const { stop: selectedStop } = useParams({ strict: false })
 
   const selectedLines = useMemo(() => {
     if (!selectedStop || mode === MapMode.FARES) return undefined

@@ -27,7 +27,7 @@ import { ScheduleList } from './ScheduleList'
 export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation()
   const { colorMode } = useColorMode()
-  const { stop: stopCode } = useParams()
+  const { stop: stopCode } = useParams({ strict: false })
   const stopLines = lines.filter(({ stops }) =>
     stops.some(item => item.stop === stopCode)
   )
