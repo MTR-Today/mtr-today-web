@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Outlet, useNavigate, useParams } from '@tanstack/router'
+import { Outlet, useNavigate, useParams } from '@tanstack/react-router'
 import { StopCode, stopMap } from 'mtr-kit'
 import { useTranslation } from 'react-i18next'
 
@@ -19,7 +19,7 @@ import { Empty } from '../StopSchedules/Empty'
 export const StopDetail: React.FC = () => {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
-  const { stop: stopCode } = useParams()
+  const { stop: stopCode } = useParams({ strict: false })
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
 
   const stop = stopCode ? stopMap[stopCode as StopCode] : undefined

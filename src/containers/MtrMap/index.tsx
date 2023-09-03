@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { useParams } from '@tanstack/router'
+import { useParams } from '@tanstack/react-router'
 import { lines } from 'mtr-kit'
 import { memo, useMemo } from 'react'
 
@@ -16,7 +16,7 @@ type Props = {
 }
 
 export const MtrMap: React.FC<Props> = memo(({ mode }) => {
-  const { stop: selectedStop } = useParams()
+  const { stop: selectedStop } = useParams({ strict: false })
 
   const selectedLines = useMemo(() => {
     if (!selectedStop || mode === MapMode.FARES) return undefined

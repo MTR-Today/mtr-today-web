@@ -1,12 +1,12 @@
 import { Box, Slide, useColorMode } from '@chakra-ui/react'
-import { useParams } from '@tanstack/router'
+import { useParams } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
 import { Toolbox } from './ToolBox'
 
 export const Fares = () => {
   const { colorMode } = useColorMode()
-  const { stop: selectedStop } = useParams()
+  const { stop: selectedStop } = useParams({ strict: false })
   const { t } = useTranslation()
 
   return (

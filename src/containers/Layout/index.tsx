@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import { Outlet, useRouterContext } from '@tanstack/router'
+import { Outlet, useRouterState } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 
@@ -14,12 +14,10 @@ export const Layout = () => {
   const { colorMode } = useColorMode()
   const { t } = useTranslation()
 
-  const routeMatch = useRouterContext()
+  const routeState = useRouterState()
   const { animatedBg } = useConfig()
 
-  const currentMode = routeMatch.state.currentLocation.pathname.startsWith(
-    '/fares'
-  )
+  const currentMode = routeState.location.pathname.startsWith('/fares')
     ? MapMode.FARES
     : MapMode.SCHEDULES
 

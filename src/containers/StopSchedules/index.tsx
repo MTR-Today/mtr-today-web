@@ -14,7 +14,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from '@tanstack/router'
+import { useParams } from '@tanstack/react-router'
 import { lines } from 'mtr-kit'
 import { isEmpty, range } from 'ramda'
 import { useTranslation } from 'react-i18next'
@@ -27,7 +27,7 @@ import { ScheduleList } from './ScheduleList'
 export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation()
   const { colorMode } = useColorMode()
-  const { stop: stopCode } = useParams()
+  const { stop: stopCode } = useParams({ strict: false })
   const stopLines = lines.filter(({ stops }) =>
     stops.some(item => item.stop === stopCode)
   )
