@@ -6,7 +6,7 @@ import { Toolbox } from './ToolBox'
 
 export const Fares = () => {
   const { colorMode } = useColorMode()
-  const { stop: selectedStop } = useParams()
+  const { stop: selectedStop } = useParams({ strict: false })
   const { t } = useTranslation()
 
   return (
