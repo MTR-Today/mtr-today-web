@@ -55,7 +55,7 @@
     "@spotify/eslint-config": "15.0.0",
     "@tanstack/eslint-plugin-query": "4.34.1",
     "@types/color": "3.0.4",
-    "@types/ramda": "0.29.4",
+    "@types/ramda": "0.29.5",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@types/react-helmet": "6.1.6",
