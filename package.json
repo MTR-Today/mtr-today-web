@@ -50,8 +50,8 @@
     "svg-round-corners": "0.4.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.2",
-    "@commitlint/config-conventional": "17.7.0",
+    "@commitlint/cli": "17.8.0",
+    "@commitlint/config-conventional": "17.8.0",
     "@spotify/eslint-config": "15.0.0",
     "@tanstack/eslint-plugin-query": "4.36.1",
     "@types/color": "3.0.4",
