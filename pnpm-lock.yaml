@@ -104,8 +104,8 @@ devDependencies:
     specifier: 4.36.1
     version: 4.36.1(eslint@8.51.0)
   '@types/color':
-    specifier: 3.0.4
-    version: 3.0.4
+    specifier: 3.0.5
+    version: 3.0.5
   '@types/ramda':
     specifier: 0.29.6
     version: 0.29.6
@@ -3706,8 +3706,8 @@ packages:
     resolution: {integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==}
     dev: true
 
-  /@types/color@3.0.4:
-    resolution: {integrity: sha512-OpisS4bqJJwbkkQRrMvURf3DOxBoAg9mysHYI7WgrWpSYHqHGKYBULHdz4ih77SILcLDo/zyHGFyfIl9yb8NZQ==}
+  /@types/color@3.0.5:
+    resolution: {integrity: sha512-T9yHCNtd8ap9L/r8KEESu5RDMLkoWXHo7dTureNoI1dbp25NsCN054vOu09iniIjR21MXUL+LU9bkIWrbyg8gg==}
     dependencies:
       '@types/color-convert': 2.0.0
     dev: true
