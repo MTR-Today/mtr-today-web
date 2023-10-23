@@ -81,8 +81,8 @@ dependencies:
     specifier: 4.11.0
     version: 4.11.0(react@18.2.0)
   react-zoom-pan-pinch:
-    specifier: 3.2.0
-    version: 3.2.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.3.0
+    version: 3.3.0(react-dom@18.2.0)(react@18.2.0)
   simplex-noise:
     specifier: 4.0.1
     version: 4.0.1
@@ -366,7 +366,7 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
-      resolve: 1.22.3
+      resolve: 1.22.8
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -3445,7 +3445,7 @@ packages:
       builtin-modules: 3.3.0
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.3
+      resolve: 1.22.8
       rollup: 2.79.1
     dev: true
 
@@ -8247,8 +8247,8 @@ packages:
       tslib: 2.6.0
     dev: false
 
-  /react-zoom-pan-pinch@3.2.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-7MS0wYWoXjr6PrmpgHOVpVyNQr9gj7LEr4xIvq6lBy62nuNwjdI1r+XxahQ0SDHhWrLuSF11e2PTL/YLengYyg==}
+  /react-zoom-pan-pinch@3.3.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-vy1h8aenDzXye+HRqANZaSA8IPHoqOiuDPFBkswoyPUH8uMfsmbeH6gFI4r4BhEJa0xIlcA+FbvhidRWKGUrOg==}
     engines: {node: '>=8', npm: '>=5'}
     peerDependencies:
       react: '*'
