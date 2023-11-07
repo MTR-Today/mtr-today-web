@@ -116,8 +116,8 @@ devDependencies:
     specifier: 18.2.15
     version: 18.2.15
   '@types/react-helmet':
-    specifier: 6.1.8
-    version: 6.1.8
+    specifier: 6.1.9
+    version: 6.1.9
   '@typescript-eslint/eslint-plugin':
     specifier: 6.10.0
     version: 6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.53.0)(typescript@5.2.2)
@@ -3759,8 +3759,8 @@ packages:
       '@types/react': 18.2.37
     dev: true
 
-  /@types/react-helmet@6.1.8:
-    resolution: {integrity: sha512-UyJFvbGWO8xKvfCPFTt/DG/vsgkMqyXbUQAa1pSPco1Whw85Z3ypMEqoHtCDfoW4Qu8XgJp63jyXEhOa4te5Kw==}
+  /@types/react-helmet@6.1.9:
+    resolution: {integrity: sha512-nuOeTefP4yPTWHvjGksCBKb/4hsgJxSX7aSTjTIDFXJIkZ6Wo2Y4/cmE1FO9OlYBrHjKOer/0zLwY7s4qiQBtw==}
     dependencies:
       '@types/react': 18.2.37
     dev: true
