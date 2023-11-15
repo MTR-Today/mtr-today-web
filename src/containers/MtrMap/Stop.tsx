@@ -90,8 +90,8 @@ export const Stop: React.FC<
               mode === MapMode.SCHEDULES
                 ? '/stops/$stop/schedules'
                 : mode === MapMode.FARES
-                ? '/fares/$stop'
-                : ''
+                  ? '/fares/$stop'
+                  : ''
             }
             params={{ stop }}
           >
