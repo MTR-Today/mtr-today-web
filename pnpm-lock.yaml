@@ -27,8 +27,8 @@ dependencies:
     specifier: 23.1.0
     version: 23.1.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-query':
-    specifier: 5.8.3
-    version: 5.8.3(react-dom@18.2.0)(react@18.2.0)
+    specifier: 5.8.4
+    version: 5.8.4(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-router':
     specifier: 0.0.1-beta.211
     version: 0.0.1-beta.211(react-dom@18.2.0)(react@18.2.0)
@@ -101,8 +101,8 @@ devDependencies:
     specifier: 15.0.0
     version: 15.0.0(eslint@8.53.0)(typescript@5.2.2)
   '@tanstack/eslint-plugin-query':
-    specifier: 5.8.3
-    version: 5.8.3(eslint@8.53.0)(typescript@5.2.2)
+    specifier: 5.8.4
+    version: 5.8.4(eslint@8.53.0)(typescript@5.2.2)
   '@types/color':
     specifier: 3.0.6
     version: 3.0.6
@@ -3470,8 +3470,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /@tanstack/eslint-plugin-query@5.8.3(eslint@8.53.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-xq6TqtyTfXXAYeWPRir1Phvt30m2sXk0nJ6m30ejA6WrRW0XpCVnJRMUFhCxUxjLJAhGxJHZmeJ3vkzaXrzHIA==}
+  /@tanstack/eslint-plugin-query@5.8.4(eslint@8.53.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-KVgcMc+Bn1qbwkxYVWQoiVSNEIN4IAiLj3cUH/SAHT8m8E59Y97o8ON1syp0Rcw094ItG8pEVZFyQuOaH6PDgQ==}
     peerDependencies:
       eslint: ^8.0.0
     dependencies:
@@ -3491,8 +3491,8 @@ packages:
     resolution: {integrity: sha512-SWFMFtcHfttLYif6pevnnMYnBvxKf3C+MHMH7bevyYfpXpTMsLB9O6nNGBdWSoPwnZRXFNyNeVZOw25Wmdasow==}
     dev: false
 
-  /@tanstack/react-query@5.8.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-EDRrsMgUtKM+SjVmhDYBd4jwWWyHAw3kCaurKLIO90OfPQr/UhpwcqM2l/eQOaUYon9lfDB2ejQi1edHK7zEdA==}
+  /@tanstack/react-query@5.8.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CD+AkXzg8J72JrE6ocmuBEJfGzEzu/bzkD6sFXFDDB5yji9N20JofXZlN6n0+CaPJuIi+e4YLCbGsyPFKkfNQA==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
