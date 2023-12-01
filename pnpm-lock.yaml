@@ -27,8 +27,8 @@ dependencies:
     specifier: 23.1.0
     version: 23.1.0(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-query':
-    specifier: 5.10.0
-    version: 5.10.0(react@18.2.0)
+    specifier: 5.12.0
+    version: 5.12.0(react@18.2.0)
   '@tanstack/react-router':
     specifier: 0.0.1-beta.222
     version: 0.0.1-beta.222(react-dom@18.2.0)(react@18.2.0)
@@ -101,8 +101,8 @@ devDependencies:
     specifier: 15.0.0
     version: 15.0.0(eslint@8.54.0)(typescript@5.3.2)
   '@tanstack/eslint-plugin-query':
-    specifier: 5.10.0
-    version: 5.10.0(eslint@8.54.0)(typescript@5.3.2)
+    specifier: 5.12.0
+    version: 5.12.0(eslint@8.54.0)(typescript@5.3.2)
   '@types/color':
     specifier: 3.0.6
     version: 3.0.6
@@ -3566,8 +3566,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /@tanstack/eslint-plugin-query@5.10.0(eslint@8.54.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-gbvdw5qGfk3/eNUPKq+akR/JUqI6rfEILulUWx2utiMHXmPSRmExCbK7YLGy9yrfK4Mi5njT7UshVX3awlrQbw==}
+  /@tanstack/eslint-plugin-query@5.12.0(eslint@8.54.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-M0HuqntYXnh5yjXDeMwUr2cUNHDdKUOuX0qZXR03Q3wGw8wsTqU8ShyplhtPr6X4tOWHIGFL0hvrWbEnxDdPtw==}
     peerDependencies:
       eslint: ^8.0.0
     dependencies:
@@ -3583,16 +3583,16 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /@tanstack/query-core@5.10.0:
-    resolution: {integrity: sha512-wlw/l2E+U70iABaJnOtZIJN/5VMhuj4RPViafwUYiIGoqw1VqqqaxBnBL90qLhWswoOaK8RAj3+NiG0duk+cRg==}
+  /@tanstack/query-core@5.12.0:
+    resolution: {integrity: sha512-e8v+tHu76ZYWT3i9zjYoWP2yqonKJnjoLaZGGkMs4w7D9lFJjGBHcr/+ttOX07ordyVQlxXOZ0LAmE7vxDqo5Q==}
     dev: false
 
-  /@tanstack/react-query@5.10.0(react@18.2.0):
-    resolution: {integrity: sha512-LeJsyXUvhq1TBsEbt3SSEaxP2Att1sv/qW588GL/bvjxPxsLUBWKGuFJ5Z1YP+/nJqVmcXJE8AtvZaaxE9rsKQ==}
+  /@tanstack/react-query@5.12.0(react@18.2.0):
+    resolution: {integrity: sha512-30xBd7z8QD84sr50THKOV/OHl26X048KHe2uors9prVec5uqAaUoCu2lhHLtpddKRlLqqw63zxa12DRew0qjTw==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
-      '@tanstack/query-core': 5.10.0
+      '@tanstack/query-core': 5.12.0
       react: 18.2.0
     dev: false
 
