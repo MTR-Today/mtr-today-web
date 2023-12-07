@@ -30,8 +30,8 @@ dependencies:
     specifier: 5.12.2
     version: 5.12.2(react@18.2.0)
   '@tanstack/react-router':
-    specifier: 0.0.1-beta.230
-    version: 0.0.1-beta.230(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.185
+    version: 0.0.1-beta.185(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3254,6 +3254,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@gisatcz/cross-package-react-context@0.2.0(react@18.2.0):
+    resolution: {integrity: sha512-E7aR/o1ArpXETO8bQi+Hltj3duHeZiLjR+x1VZrCDs3jplSLGoy+oqCcqNNE1BamTBa0YQTs8Go1Q1dtt3LEUg==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.2 || ^18.1.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
@@ -3645,11 +3653,6 @@ packages:
       - typescript
     dev: true
 
-  /@tanstack/history@0.0.1-beta.230:
-    resolution: {integrity: sha512-1xqbUIMQD3tUjfJh52oTxuIAblBEeL29OhE9MZrmBWl42ReObYI/VQiV98a1XfQHDGuiSOOvaiIPqLQlDX6l/A==}
-    engines: {node: '>=12'}
-    dev: false
-
   /@tanstack/query-core@5.12.1:
     resolution: {integrity: sha512-WbZztNmKq0t6QjdNmHzezbi/uifYo9j6e2GLJkodsYaYUlzMbAp91RDyeHkIZrm7EfO4wa6Sm5sxJZm5SPlh6w==}
     dev: false
@@ -3663,19 +3666,55 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@tanstack/react-router@0.0.1-beta.230(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-VcxJPrLNhmDIzAsAXHfOfV6K18FZuMjGPhn6Y/sTTz5cRri9zS30YqlmkyKoR2CCpATw7SxvF+XPBoAGwgpG+g==}
+  /@tanstack/react-router@0.0.1-beta.185(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9MYwtdSlSv0D3B7UvjchjfSHju+wL0TSJf2oNVyMqaOE1X9Q0b+jWG8PG0S1nwQ/dPp0zRk9tQiNlFYNAA4ubA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.23.2
-      '@tanstack/history': 0.0.1-beta.230
+      '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
+      '@tanstack/react-store': 0.0.1(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/router-core': 0.0.1-beta.185(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
+    dev: false
+
+  /@tanstack/react-store@0.0.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UMAHrm1FjehpfnSCi5Uel7fdoYM8fk2ovyHmoTBv4SPS66hLLEEVPQhALrIkJ0OSi1h+p96HapCFNqlavZADIA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@tanstack/store': 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/router-core@0.0.1-beta.185(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Dhdh12CB2MqQRPtQ00YI60As1obZTj39Ru9VQhyBAoPNn4cyw1/HtYh8DDLaqmjbBTPAM5OchuhfXkB15EmL6g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@babel/runtime': 7.23.2
+      '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
+      '@tanstack/store': 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tiny-invariant: 1.3.1
+      tiny-warning: 1.0.3
+    dev: false
+
+  /@tanstack/store@0.0.1:
+    resolution: {integrity: sha512-Hq5mwC9oPD1HVRIsgxASYtJQAv5x7k42SMXBq2b/fMYrtMf7WMkOArOMs/ExoNED214Ql94Ft4zVWr0u2D6a6w==}
+    engines: {node: '>=12'}
     dev: false
 
   /@types/babel__core@7.20.5:
@@ -9553,6 +9592,14 @@ packages:
       detect-node-es: 1.1.0
       react: 18.2.0
       tslib: 2.6.0
+    dev: false
+
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /use@3.1.1:
