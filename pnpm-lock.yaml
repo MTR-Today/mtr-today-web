@@ -30,8 +30,8 @@ dependencies:
     specifier: 5.17.9
     version: 5.17.9(react@18.2.0)
   '@tanstack/react-router':
-    specifier: 1.3.0
-    version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 1.3.2
+    version: 1.3.2(react-dom@18.2.0)(react@18.2.0)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3648,8 +3648,8 @@ packages:
       - typescript
     dev: true
 
-  /@tanstack/history@1.3.0:
-    resolution: {integrity: sha512-TheyyZVI1Nyis3onsvZjfqvF63wcq7C723Wvm+8oyFy1nLzST7A3YfN3kGhe33MRPDFFa8vUuDWs/S+b84hAKw==}
+  /@tanstack/history@1.3.2:
+    resolution: {integrity: sha512-Grvx4G9UXgnxFPXHJdBHnp2roVKT+VaNg6NZaUaxvnxTIngcl/C0Q6xIx0vpZxOAleRSsBdaZQ7n2s8W86gr/w==}
     engines: {node: '>=12'}
     dev: false
 
@@ -3666,15 +3666,15 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@tanstack/react-router@1.3.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-aAN8bSGvIMM4sRMJoFpw8NRPsysmBxPLrJTMsDUE8uGpIPM+3Tbmyyd9ozAJAVel44h7PvUk0CtAwbHNM9Zqqg==}
+  /@tanstack/react-router@1.3.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-z7+Sd2EnrcTWbCzryDzAtufvWs3B4kTO6f5DHjU3Z360/VLe2XXhXrwGQ1wjivku5LhV1Va0xdtF8QbppdQv4g==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.23.2
-      '@tanstack/history': 1.3.0
+      '@tanstack/history': 1.3.2
       '@tanstack/react-store': 0.2.1(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/store': 0.1.3
       react: 18.2.0
