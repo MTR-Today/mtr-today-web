@@ -53,7 +53,7 @@
     "@commitlint/cli": "18.4.4",
     "@commitlint/config-conventional": "18.4.4",
     "@spotify/eslint-config": "15.0.0",
-    "@tanstack/eslint-plugin-query": "5.17.7",
+    "@tanstack/eslint-plugin-query": "5.17.20",
     "@types/color": "3.0.6",
     "@types/ramda": "0.29.9",
     "@types/react": "18.2.48",
