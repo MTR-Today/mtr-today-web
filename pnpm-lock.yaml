@@ -75,8 +75,8 @@ dependencies:
     specifier: 6.1.0
     version: 6.1.0(react@18.2.0)
   react-i18next:
-    specifier: 14.0.4
-    version: 14.0.4(i18next@23.8.2)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 14.0.5
+    version: 14.0.5(i18next@23.8.2)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: 5.0.1
     version: 5.0.1(react@18.2.0)
@@ -8187,8 +8187,8 @@ packages:
       react-side-effect: 2.1.2(react@18.2.0)
     dev: false
 
-  /react-i18next@14.0.4(i18next@23.8.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-8a20OOCOcUiuM+FVfgOGVrgG6FdoRRzZvdPFdMJ0LX792myAfzZTbRoHchoSNZiXF488gOxaif19etlu71eAKg==}
+  /react-i18next@14.0.5(i18next@23.8.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5+bQSeEtgJrMBABBL5lO7jPdSNAbeAZ+MlFWDw//7FnVacuVu3l9EeWFzBQvZsKy+cihkbThWOAThEdH8YjGEw==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'
