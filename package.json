@@ -55,7 +55,7 @@
     "@tanstack/eslint-plugin-query": "5.20.1",
     "@types/color": "3.0.6",
     "@types/ramda": "0.29.10",
-    "@types/react": "18.2.57",
+    "@types/react": "18.2.58",
     "@types/react-dom": "18.2.19",
     "@types/react-helmet": "6.1.11",
     "@typescript-eslint/eslint-plugin": "7.0.2",
