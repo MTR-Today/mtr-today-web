@@ -56,7 +56,7 @@
     "@types/color": "3.0.6",
     "@types/ramda": "0.29.11",
     "@types/react": "18.2.63",
-    "@types/react-dom": "18.2.19",
+    "@types/react-dom": "18.2.20",
     "@types/react-helmet": "6.1.11",
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
