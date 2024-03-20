@@ -74,7 +74,7 @@
     "prettier": "3.2.5",
     "sitemap": "7.1.1",
     "typescript": "5.4.2",
-    "vite": "5.1.6",
+    "vite": "5.2.2",
     "vite-plugin-pwa": "0.19.5"
   }
 }
