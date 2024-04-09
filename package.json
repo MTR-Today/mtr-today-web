@@ -34,7 +34,7 @@
     "framer-motion": "11.0.25",
     "graphql": "16.8.1",
     "graphql-request": "6.1.0",
-    "i18next": "23.10.1",
+    "i18next": "23.11.0",
     "mtr-kit": "1.13.5",
     "ramda": "0.29.1",
     "react": "18.2.0",
