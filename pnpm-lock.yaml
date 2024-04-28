@@ -39,8 +39,8 @@ dependencies:
     specifier: 3.3.2
     version: 3.3.2(react@18.3.1)
   dayjs:
-    specifier: 1.11.10
-    version: 1.11.10
+    specifier: 1.11.11
+    version: 1.11.11
   framer-motion:
     specifier: 11.1.7
     version: 11.1.7(react-dom@18.3.1)(react@18.3.1)
@@ -5054,8 +5054,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+  /dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
     dev: false
 
   /debug@2.6.9:
