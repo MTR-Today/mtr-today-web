@@ -30,8 +30,8 @@ dependencies:
     specifier: 5.35.5
     version: 5.35.5(react@18.3.1)
   '@tanstack/react-router':
-    specifier: 1.31.29
-    version: 1.31.29(react-dom@18.3.1)(react@18.3.1)
+    specifier: 1.32.0
+    version: 1.32.0(react-dom@18.3.1)(react@18.3.1)
   color:
     specifier: 4.2.3
     version: 4.2.3
@@ -3875,8 +3875,8 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@tanstack/react-router@1.31.29(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-BNnJktSCKb06kadfaVm6BmgAZG1mlOEV41sGuqF0pRrmXRQDXvuWQBbQEkzwvDB8xMNy525HzhPO+Mo+kGG+8Q==}
+  /@tanstack/react-router@1.32.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-RrNLtU0DCNRNZ2H3aNccArH8+1A5Codasd7PpOixipbDWsCUobQqKiKnZLkhgDUZOvqNJvRjPT0TK+B/N0GV5A==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16.8'
