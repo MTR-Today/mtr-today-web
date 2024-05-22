@@ -60,7 +60,7 @@
     "@types/react-helmet": "6.1.11",
     "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "7.9.0",
-    "@vitejs/plugin-react": "4.2.1",
+    "@vitejs/plugin-react": "4.3.0",
     "eslint": "8.57.0",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.29.1",
