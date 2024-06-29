@@ -6,12 +6,12 @@ export const [UseTimeProvider, useTime] = constate(() => {
   const [time, setTime] = useState(dayjs())
 
   useEffect(() => {
-    const interval = global.setInterval(() => {
+    const interval = window.setInterval(() => {
       setTime(dayjs())
     }, 1000)
 
     return () => {
-      global.clearInterval(interval)
+      window.clearInterval(interval)
     }
   }, [])
 
