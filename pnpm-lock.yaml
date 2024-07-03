@@ -103,8 +103,8 @@ importers:
         specifier: 15.0.0
         version: 15.0.0(eslint@8.57.0)(typescript@5.5.3)
       '@tanstack/eslint-plugin-query':
-        specifier: 5.49.1
-        version: 5.49.1(eslint@8.57.0)(typescript@5.5.3)
+        specifier: 5.50.0
+        version: 5.50.0(eslint@8.57.0)(typescript@5.5.3)
       '@types/color':
         specifier: 3.0.6
         version: 3.0.6
@@ -1817,8 +1817,8 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
-  '@tanstack/eslint-plugin-query@5.49.1':
-    resolution: {integrity: sha512-pTaEvG3HC1y7BOsFJtZmi8dhWwML97zEBq4qLM6BaUSzZ4WlFyhmtG2sBVO0H+lP1WgnLpQclRQ+nFikTqoUfQ==}
+  '@tanstack/eslint-plugin-query@5.50.0':
+    resolution: {integrity: sha512-XUgagiakpReYMHNo22sUuNvuhfqKogkYZkeLhbWkDqrwP3doVvG35L3098GPX6MwdV9EKfBjRA7umjpyEJZV0A==}
     peerDependencies:
       eslint: ^8 || ^9
 
@@ -7318,7 +7318,7 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.8
 
-  '@tanstack/eslint-plugin-query@5.49.1(eslint@8.57.0)(typescript@5.5.3)':
+  '@tanstack/eslint-plugin-query@5.50.0(eslint@8.57.0)(typescript@5.5.3)':
     dependencies:
       '@typescript-eslint/utils': 8.0.0-alpha.30(eslint@8.57.0)(typescript@5.5.3)
       eslint: 8.57.0
