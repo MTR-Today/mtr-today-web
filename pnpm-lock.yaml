@@ -33,8 +33,8 @@ importers:
         specifier: 5.50.1
         version: 5.50.1(react@18.3.1)
       '@tanstack/react-router':
-        specifier: 1.44.1
-        version: 1.44.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.44.2
+        version: 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       color:
         specifier: 4.2.3
         version: 4.2.3
@@ -1822,8 +1822,8 @@ packages:
     peerDependencies:
       eslint: ^8 || ^9
 
-  '@tanstack/history@1.43.14':
-    resolution: {integrity: sha512-Tr3WNthMbyKLWlMQetDPhmW7nKunJIZxdvn/kwUhmK7/lDKqNFy0GA77fpcO4LUguI20VZYwwjesOC2FOgMlkw==}
+  '@tanstack/history@1.44.2':
+    resolution: {integrity: sha512-jT+YoNzcmbyh5u2+MqqsxPTeGa8RsmaZsYQByBZhAYNxyCfhY3sUXWBV31LB9L+l2jcz1cEVN4KKYUUZhOLU3g==}
     engines: {node: '>=12'}
 
   '@tanstack/query-core@5.50.1':
@@ -1834,8 +1834,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@tanstack/react-router@1.44.1':
-    resolution: {integrity: sha512-YGCwPdCEIzZNjw7GHnYyYD8jJPNyPZY2HVMTyYrFS3tOkMsWPohAki+ZrayRTtObavKeT60vsW274wEcVKMMhw==}
+  '@tanstack/react-router@1.44.2':
+    resolution: {integrity: sha512-zs4/WiIx6xlrF3ELxDvA3AImpupUGht+eCN7p8Fvl6vBgg/CTI0eBYOfp8vcMSvz6VpXOsNqzU9h7DHfizSehQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18'
@@ -4829,9 +4829,6 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
-  tiny-invariant@1.3.1:
-    resolution: {integrity: sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==}
-
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
@@ -7332,7 +7329,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tanstack/history@1.43.14': {}
+  '@tanstack/history@1.44.2': {}
 
   '@tanstack/query-core@5.50.1': {}
 
@@ -7341,9 +7338,9 @@ snapshots:
       '@tanstack/query-core': 5.50.1
       react: 18.3.1
 
-  '@tanstack/react-router@1.44.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/history': 1.43.14
+      '@tanstack/history': 1.44.2
       '@tanstack/react-store': 0.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -8184,7 +8181,7 @@ snapshots:
 
   css-box-model@1.2.1:
     dependencies:
-      tiny-invariant: 1.3.1
+      tiny-invariant: 1.3.3
 
   csstype@3.1.2: {}
 
@@ -10653,8 +10650,6 @@ snapshots:
   text-table@0.2.0: {}
 
   through@2.3.8: {}
-
-  tiny-invariant@1.3.1: {}
 
   tiny-invariant@1.3.3: {}
 
