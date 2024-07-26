@@ -30,8 +30,8 @@ importers:
         specifier: 24.0.4
         version: 24.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
-        specifier: 5.51.11
-        version: 5.51.11(react@18.3.1)
+        specifier: 5.51.15
+        version: 5.51.15(react@18.3.1)
       '@tanstack/react-router':
         specifier: 1.45.11
         version: 1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -103,8 +103,8 @@ importers:
         specifier: 15.0.0
         version: 15.0.0(eslint@8.57.0)(typescript@5.5.4)
       '@tanstack/eslint-plugin-query':
-        specifier: 5.51.13
-        version: 5.51.13(eslint@8.57.0)(typescript@5.5.4)
+        specifier: 5.51.15
+        version: 5.51.15(eslint@8.57.0)(typescript@5.5.4)
       '@types/color':
         specifier: 3.0.6
         version: 3.0.6
@@ -1818,8 +1818,8 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
-  '@tanstack/eslint-plugin-query@5.51.13':
-    resolution: {integrity: sha512-5Xe+Ye0rEwPTQ8EMv76LWbGX4m2P3ipUl2+NYWYN9z8fafEhqI5d/1JK1C+FYY7YUnqo8WvBL7E0f7jfy3XTvw==}
+  '@tanstack/eslint-plugin-query@5.51.15':
+    resolution: {integrity: sha512-btX03EOGvNxTGJDqHMmQwfSt/hp93Z8I4FNBijoyEdDnjGi4jVjpGP7nEi9LaMnHFsylucptVGb6GQngWs07bA==}
     peerDependencies:
       eslint: ^8 || ^9
 
@@ -1827,11 +1827,11 @@ packages:
     resolution: {integrity: sha512-n4XXInV9irIq0obRvINIkESkGk280Q+xkIIbswmM0z9nAu2wsIRZNvlmPrtYh6bgNWtItOWWoihFUjLTW8g6Jg==}
     engines: {node: '>=12'}
 
-  '@tanstack/query-core@5.51.9':
-    resolution: {integrity: sha512-HsAwaY5J19MD18ykZDS3aVVh+bAt0i7m6uQlFC2b77DLV9djo+xEN7MWQAQQTR8IM+7r/zbozTQ7P0xr0bHuew==}
+  '@tanstack/query-core@5.51.15':
+    resolution: {integrity: sha512-xyobHDJ0yhPE3+UkSQ2/4X1fLSg7ICJI5J1JyU9yf7F3deQfEwSImCDrB1WSRrauJkMtXW7YIEcC0oA6ZZWt5A==}
 
-  '@tanstack/react-query@5.51.11':
-    resolution: {integrity: sha512-4Kq2x0XpDlpvSnaLG+8pHNH60zEc3mBvb3B2tOMDjcPCi/o+Du3p/9qpPLwJOTliVxxPJAP27fuIhLrsRdCr7A==}
+  '@tanstack/react-query@5.51.15':
+    resolution: {integrity: sha512-UgFg23SrdIYrmfTSxAUn9g+J64VQy11pb9/EefoY/u2+zWuNMeqEOnvpJhf52XQy0yztQoyM9p6x8PFyTNaxXg==}
     peerDependencies:
       react: ^18.0.0
 
@@ -7240,7 +7240,7 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.8
 
-  '@tanstack/eslint-plugin-query@5.51.13(eslint@8.57.0)(typescript@5.5.4)':
+  '@tanstack/eslint-plugin-query@5.51.15(eslint@8.57.0)(typescript@5.5.4)':
     dependencies:
       '@typescript-eslint/utils': 8.0.0-alpha.30(eslint@8.57.0)(typescript@5.5.4)
       eslint: 8.57.0
@@ -7250,11 +7250,11 @@ snapshots:
 
   '@tanstack/history@1.45.3': {}
 
-  '@tanstack/query-core@5.51.9': {}
+  '@tanstack/query-core@5.51.15': {}
 
-  '@tanstack/react-query@5.51.11(react@18.3.1)':
+  '@tanstack/react-query@5.51.15(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.51.9
+      '@tanstack/query-core': 5.51.15
       react: 18.3.1
 
   '@tanstack/react-router@1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
