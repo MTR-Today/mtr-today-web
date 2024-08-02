@@ -27,7 +27,7 @@
     "@emotion/styled": "11.13.0",
     "@react-hookz/web": "24.0.4",
     "@tanstack/react-query": "5.51.18",
-    "@tanstack/react-router": "1.46.0",
+    "@tanstack/react-router": "1.46.2",
     "color": "4.2.3",
     "constate": "3.3.2",
     "dayjs": "1.11.12",
