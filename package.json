@@ -30,7 +30,7 @@
     "@tanstack/react-router": "1.48.4",
     "color": "4.2.3",
     "constate": "3.3.2",
-    "dayjs": "1.11.12",
+    "dayjs": "1.11.13",
     "framer-motion": "11.3.28",
     "graphql": "16.9.0",
     "graphql-request": "7.1.0",
