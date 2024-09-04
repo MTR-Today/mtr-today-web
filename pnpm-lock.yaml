@@ -172,8 +172,8 @@ importers:
         specifier: 5.3.5
         version: 5.3.5(@types/node@20.5.1)(terser@5.18.1)
       vite-plugin-pwa:
-        specifier: 0.20.4
-        version: 0.20.4(vite@5.3.5(@types/node@20.5.1)(terser@5.18.1))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+        specifier: 0.20.5
+        version: 0.20.5(vite@5.3.5(@types/node@20.5.1)(terser@5.18.1))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
 
 packages:
 
@@ -5168,8 +5168,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vite-plugin-pwa@0.20.4:
-    resolution: {integrity: sha512-AreLrlstKCn56bzfIIhg5P4p12QNsYmHfKiSlrVk9FK8028IfBFeMvhQNSumBgQmb4RaHLm0SaOLvh/rzOImvw==}
+  vite-plugin-pwa@0.20.5:
+    resolution: {integrity: sha512-aweuI/6G6n4C5Inn0vwHumElU/UEpNuO+9iZzwPZGTCH87TeZ6YFMrEY6ZUBQdIHHlhTsbMDryFARcSuOdsz9Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^0.2.6
@@ -11183,7 +11183,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-pwa@0.20.4(vite@5.3.5(@types/node@20.5.1)(terser@5.18.1))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0):
+  vite-plugin-pwa@0.20.5(vite@5.3.5(@types/node@20.5.1)(terser@5.18.1))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
       debug: 4.3.6
       pretty-bytes: 6.1.1
