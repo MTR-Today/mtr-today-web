@@ -33,8 +33,8 @@ importers:
         specifier: 5.55.4
         version: 5.55.4(react@18.3.1)
       '@tanstack/react-router':
-        specifier: 1.56.5
-        version: 1.56.5(@tanstack/router-generator@1.56.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.57.6
+        version: 1.57.6(@tanstack/router-generator@1.56.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       color:
         specifier: 4.2.3
         version: 4.2.3
@@ -1976,8 +1976,8 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
 
-  '@tanstack/history@1.51.7':
-    resolution: {integrity: sha512-y25aH3NDbdUp5Gk6Fnb77LsHTT2JrzVgI44ZiyEOf8i2j14Ma3oJ80fCw7rT/iV4xa4IN2Yex9flAsZQdh1i4A==}
+  '@tanstack/history@1.57.6':
+    resolution: {integrity: sha512-ppAJbnUaHdHmccVmplcd1ivX4GMPHxhStSquuuz0TSAEPEpz0iOVBur4iKfvIuMKm24c40nhvaEwZbKGVfbrGg==}
     engines: {node: '>=12'}
 
   '@tanstack/query-core@5.55.4':
@@ -1988,12 +1988,12 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tanstack/react-router@1.56.5':
-    resolution: {integrity: sha512-qCmBgplLlqOSW1eLlKglTTFMv9zlsL8CJZWN0J0+YLkHSmbsdTKQhfA4bFveXL+EwjrJgFT+/GgIfB8fZEp8PQ==}
+  '@tanstack/react-router@1.57.6':
+    resolution: {integrity: sha512-m5L77MzPFpIMqzD4JWFVkietTDS+Q19IRaCTArRVZqoCF1CARd9HC6tjIrCrMsJbM+wLiB3XeqQbtIowRpOMjQ==}
     engines: {node: '>=12'}
     peerDependencies:
       '@tanstack/react-generator': '*'
-      '@tanstack/router-generator': 1.56.4
+      '@tanstack/router-generator': 1.57.6
       react: '>=18'
       react-dom: '>=18'
     peerDependenciesMeta:
@@ -7693,7 +7693,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tanstack/history@1.51.7': {}
+  '@tanstack/history@1.57.6': {}
 
   '@tanstack/query-core@5.55.4': {}
 
@@ -7702,9 +7702,9 @@ snapshots:
       '@tanstack/query-core': 5.55.4
       react: 18.3.1
 
-  '@tanstack/react-router@1.56.5(@tanstack/router-generator@1.56.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.57.6(@tanstack/router-generator@1.56.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/history': 1.51.7
+      '@tanstack/history': 1.57.6
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.56.2
       react: 18.3.1
