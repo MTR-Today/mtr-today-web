@@ -19,8 +19,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@chakra-ui/icons": "2.1.1",
-    "@chakra-ui/react": "2.8.2",
+    "@chakra-ui/icons": "2.2.1",
+    "@chakra-ui/react": "2.9.1",
     "@dnd-kit/core": "6.1.0",
     "@dnd-kit/utilities": "3.2.2",
     "@emotion/react": "11.13.3",
