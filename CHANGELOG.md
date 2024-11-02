@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.16.8 (2024-11-02)
+
+
+### Bug Fixes
+
+* try fix release ([06ee25a](https://github.com/MTR-Today/mtr-today-web/commit/06ee25a68be960218cebbcbd7919db70d309dc8a))
+
 ## [1.16.7](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.6...v1.16.7) (2023-12-07)
 
 
