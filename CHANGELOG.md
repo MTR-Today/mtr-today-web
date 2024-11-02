@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.7](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.6...v1.16.7) (2023-12-07)
+
+
+### Bug Fixes
+
+* downgrade tenstack router ([5b33a06](https://github.com/MTR-Today/mtr-today-web/commit/5b33a06d8118011e0a69500332ac243aa535bbe4))
+
 ## [1.16.6](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.5...v1.16.6) (2023-12-05)
 
 
