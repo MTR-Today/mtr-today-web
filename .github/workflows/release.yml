@@ -18,14 +18,12 @@ jobs:
           node-version-file: '.node-version'
       - uses: pnpm/action-setup@v4
         name: Install pnpm
-      - uses: google-github-actions/release-please-action@v3
+      - uses: google-github-actions/release-please-action@v4
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release-type: node
-          release-as: 1.16.8
-          last-release-sha: ef72c45e5ff267b929c7d61d86061e5becdfa3f9
       - run: pnpm install --frozen-lockfile
         if: ${{ steps.release.outputs.release_created }}
       - run: pnpm build
