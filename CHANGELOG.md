@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.9](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.8...v1.16.9) (2024-11-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mtr-kit to v1.13.6 ([0348599](https://github.com/MTR-Today/mtr-today-web/commit/0348599a8df4227826a1a795b5d3ebd6618d2ef0))
+
 ## 1.16.8 (2024-11-02)
 
 
