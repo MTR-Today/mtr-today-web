@@ -115,8 +115,8 @@ importers:
         specifier: 18.3.14
         version: 18.3.14
       '@types/react-dom':
-        specifier: 18.3.2
-        version: 18.3.2
+        specifier: 18.3.3
+        version: 18.3.3(@types/react@18.3.14)
       '@types/react-helmet':
         specifier: 6.1.11
         version: 6.1.11
@@ -1405,8 +1405,10 @@ packages:
   '@types/ramda@0.30.2':
     resolution: {integrity: sha512-PyzHvjCalm2BRYjAU6nIB3TprYwMNOUY/7P/N8bSzp9W/yM2YrtGtAnnVtaCNSeOZ8DzKyFDvaqQs7LnWwwmBA==}
 
-  '@types/react-dom@18.3.2':
-    resolution: {integrity: sha512-Fqp+rcvem9wEnGr3RY8dYNvSQ8PoLqjZ9HLgaPUOjJJD120uDyOxOjc/39M4Kddp9JQCxpGQbnhVQF0C0ncYVg==}
+  '@types/react-dom@18.3.3':
+    resolution: {integrity: sha512-uTYkxTLkYp41nq/ULXyXMtkNT1vu5fXJoqad6uTNCOGat5t9cLgF4vMNLBXsTOXpdOI44XzKPY1M5RRm0bQHuw==}
+    peerDependencies:
+      '@types/react': ^18.0.0
 
   '@types/react-helmet@6.1.11':
     resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
@@ -6038,7 +6040,7 @@ snapshots:
     dependencies:
       types-ramda: 0.30.1
 
-  '@types/react-dom@18.3.2':
+  '@types/react-dom@18.3.3(@types/react@18.3.14)':
     dependencies:
       '@types/react': 18.3.14
 
