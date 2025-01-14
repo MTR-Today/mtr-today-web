@@ -31,7 +31,7 @@
     "color": "4.2.3",
     "constate": "3.3.2",
     "dayjs": "1.11.13",
-    "framer-motion": "11.17.0",
+    "framer-motion": "11.18.0",
     "graphql": "16.10.0",
     "graphql-request": "7.1.2",
     "i18next": "24.2.1",
