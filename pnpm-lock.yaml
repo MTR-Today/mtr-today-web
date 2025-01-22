@@ -33,8 +33,8 @@ importers:
         specifier: 5.64.2
         version: 5.64.2(react@19.0.0)
       '@tanstack/react-router':
-        specifier: 1.97.3
-        version: 1.97.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.97.8
+        version: 1.97.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       color:
         specifier: 4.2.3
         version: 4.2.3
@@ -1311,8 +1311,8 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
 
-  '@tanstack/history@1.97.0':
-    resolution: {integrity: sha512-xFdpGJqwSLUJW5TYRNjRO5T41KjGkJeHWyhANZsNJ1KDm7uCVNkfLxNXeCI1XhIFbpzJmk13vo/mY0WJDe0A5g==}
+  '@tanstack/history@1.97.8':
+    resolution: {integrity: sha512-+0R1Xe2lRLeK4htiLRCv0fyxDnrCQbK/ltrJ9rofUwMdh/jQ5+tjGBPzOlyUQzTZg7Rzv8NzVzQWuyxjQYga2g==}
     engines: {node: '>=12'}
 
   '@tanstack/query-core@5.64.2':
@@ -1323,8 +1323,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tanstack/react-router@1.97.3':
-    resolution: {integrity: sha512-pTQZ27IAd9LTjc2O6V0VIS+E9hAKSraKYcMPYABzV/3maMUt39DKmqpBFFxWgAJ3bW++oYvHaDEJ7ZI71mezZQ==}
+  '@tanstack/react-router@1.97.8':
+    resolution: {integrity: sha512-fMNpyX3SdFQVIuoEBd9XvLxM7K9lsvzaOCdUopLrHwv10GDQBBhvTuAaBFPuQRma0u30DaIblOCj+Yij4jMK2A==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18'
@@ -5966,7 +5966,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tanstack/history@1.97.0': {}
+  '@tanstack/history@1.97.8': {}
 
   '@tanstack/query-core@5.64.2': {}
 
@@ -5975,9 +5975,9 @@ snapshots:
       '@tanstack/query-core': 5.64.2
       react: 19.0.0
 
-  '@tanstack/react-router@1.97.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@tanstack/react-router@1.97.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@tanstack/history': 1.97.0
+      '@tanstack/history': 1.97.8
       '@tanstack/react-store': 0.7.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       jsesc: 3.0.2
       react: 19.0.0
