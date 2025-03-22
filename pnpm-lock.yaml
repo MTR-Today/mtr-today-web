@@ -172,8 +172,8 @@ importers:
         specifier: 6.2.2
         version: 6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0)
       vite-plugin-pwa:
-        specifier: 0.21.1
-        version: 0.21.1(vite@6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+        specifier: 0.21.2
+        version: 0.21.2(vite@6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
 
 packages:
 
@@ -4484,8 +4484,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vite-plugin-pwa@0.21.1:
-    resolution: {integrity: sha512-rkTbKFbd232WdiRJ9R3u+hZmf5SfQljX1b45NF6oLA6DSktEKpYllgTo1l2lkiZWMWV78pABJtFjNXfBef3/3Q==}
+  vite-plugin-pwa@0.21.2:
+    resolution: {integrity: sha512-vFhH6Waw8itNu37hWUJxL50q+CBbNcMVzsKaYHQVrfxTt3ihk3PeLO22SbiP1UNWzcEPaTQv+YVxe4G0KOjAkg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^0.2.6
@@ -9436,9 +9436,9 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-pwa@0.21.1(vite@6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0):
+  vite-plugin-pwa@0.21.2(vite@6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0))(workbox-build@7.1.0(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.10
       vite: 6.2.2(@types/node@22.8.6)(jiti@2.4.1)(terser@5.36.0)(yaml@2.7.0)
