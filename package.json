@@ -75,7 +75,7 @@
     "sitemap": "8.0.0",
     "typescript": "5.8.2",
     "vite": "6.2.2",
-    "vite-plugin-pwa": "0.21.1"
+    "vite-plugin-pwa": "0.21.2"
   },
   "packageManager": "pnpm@10.6.5"
 }
