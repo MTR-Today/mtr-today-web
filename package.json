@@ -77,5 +77,5 @@
     "vite": "6.2.3",
     "vite-plugin-pwa": "0.21.2"
   },
-  "packageManager": "pnpm@10.6.5"
+  "packageManager": "pnpm@10.7.0"
 }
