@@ -29,7 +29,7 @@
     "color": "5.0.0",
     "constate": "3.3.2",
     "dayjs": "1.11.13",
-    "framer-motion": "11.18.2",
+    "framer-motion": "12.6.2",
     "graphql": "16.10.0",
     "graphql-request": "7.1.2",
     "i18next": "24.2.3",
