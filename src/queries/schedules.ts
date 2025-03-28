@@ -1,26 +1,26 @@
-import { gql } from 'graphql-request'
-import { LineCode, StopCode } from 'mtr-kit'
+import { gql } from 'graphql-request';
+import type { LineCode, StopCode } from 'mtr-kit';
 
-import { apiClient } from '.'
+import { apiClient } from '.';
 
 export type ScheduleItem = {
-  platform: number
-  destination: StopCode
-  timestamp: string
-}
+  platform: number;
+  destination: StopCode;
+  timestamp: string;
+};
 
 export type Schedule = {
-  line: LineCode
-  stop: StopCode
-  currentTime: string
-  isDelayed: boolean
-  schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] }
-  systemTime: string
-}
+  line: LineCode;
+  stop: StopCode;
+  currentTime: string;
+  isDelayed: boolean;
+  schedule: { up?: ScheduleItem[]; down?: ScheduleItem[] };
+  systemTime: string;
+};
 
 export type Schedules = {
-  schedules: Schedule[]
-}
+  schedules: Schedule[];
+};
 
 const query = gql`
   query ListSchedules {
@@ -44,6 +44,6 @@ const query = gql`
       }
     }
   }
-`
+`;
 
-export const listSchedules = () => apiClient.request<Schedules>(query)
+export const listSchedules = () => apiClient.request<Schedules>(query);

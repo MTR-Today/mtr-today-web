@@ -5,24 +5,24 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
-  DrawerProps,
+  type DrawerProps,
   useBreakpointValue,
   useDisclosure,
-} from '@chakra-ui/react'
-import { Outlet, useNavigate, useParams } from '@tanstack/react-router'
-import { StopCode, stopMap } from 'mtr-kit'
-import { useTranslation } from 'react-i18next'
+} from '@chakra-ui/react';
+import { Outlet, useNavigate, useParams } from '@tanstack/react-router';
+import { type StopCode, stopMap } from 'mtr-kit';
+import { useTranslation } from 'react-i18next';
 
-import { Language } from '../../constants/language'
-import { Empty } from '../StopSchedules/Empty'
+import { Language } from '../../constants/language';
+import { Empty } from '../StopSchedules/Empty';
 
 export const StopDetail: React.FC = () => {
-  const navigate = useNavigate()
-  const { i18n } = useTranslation()
-  const { stop: stopCode } = useParams({ strict: false })
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
+  const navigate = useNavigate();
+  const { i18n } = useTranslation();
+  const { stop: stopCode } = useParams({ strict: false });
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
-  const stop = stopCode ? stopMap[stopCode as StopCode] : undefined
+  const stop = stopCode ? stopMap[stopCode as StopCode] : undefined;
 
   const placement = useBreakpointValue<DrawerProps['placement']>(
     {
@@ -31,8 +31,8 @@ export const StopDetail: React.FC = () => {
     },
     {
       fallback: 'bottom',
-    }
-  )
+    },
+  );
 
   return placement ? (
     <Drawer
@@ -40,7 +40,7 @@ export const StopDetail: React.FC = () => {
       isOpen={isOpen}
       onClose={onClose}
       onCloseComplete={() => {
-        navigate({ to: '/' })
+        navigate({ to: '/' });
       }}
       placement={placement}
       size={{ md: 'md' }}
@@ -80,5 +80,5 @@ export const StopDetail: React.FC = () => {
     </Drawer>
   ) : (
     <></>
-  )
-}
+  );
+};

@@ -12,19 +12,19 @@ import {
   ModalOverlay,
   Stack,
   useDisclosure,
-} from '@chakra-ui/react'
-import { useNavigate } from '@tanstack/react-router'
-import { useTranslation } from 'react-i18next'
-import { IoLogoGithub } from 'react-icons/io'
+} from '@chakra-ui/react';
+import { useNavigate } from '@tanstack/react-router';
+import { useTranslation } from 'react-i18next';
+import { IoLogoGithub } from 'react-icons/io';
 
-import packageJson from '../../../package.json'
-import logo from '../../assets/logo.svg'
+import packageJson from '../../../package.json';
+import logo from '../../assets/logo.svg';
 
 export const AboutUs: React.FC = () => {
-  const navigate = useNavigate()
-  const { t } = useTranslation()
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return (
     <Modal
@@ -32,7 +32,7 @@ export const AboutUs: React.FC = () => {
       isOpen={isOpen}
       onClose={onClose}
       onCloseComplete={() => {
-        navigate({ to: '/' })
+        navigate({ to: '/' });
       }}
       size="xs"
     >
@@ -58,5 +58,5 @@ export const AboutUs: React.FC = () => {
         </ModalBody>
       </ModalContent>
     </Modal>
-  )
-}
+  );
+};

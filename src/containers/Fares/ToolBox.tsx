@@ -1,28 +1,28 @@
-import { HStack, Select, useColorMode } from '@chakra-ui/react'
-import { useLocalStorageValue } from '@react-hookz/web'
-import { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { HStack, Select, useColorMode } from '@chakra-ui/react';
+import { useLocalStorageValue } from '@react-hookz/web';
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { FaresPassengerType } from '../../constants/faresPassengerType'
-import { FaresType } from '../../constants/faresType'
-import { LocalStorageKey } from '../../constants/localStorageKey'
+import { FaresPassengerType } from '../../constants/faresPassengerType';
+import { FaresType } from '../../constants/faresType';
+import { LocalStorageKey } from '../../constants/localStorageKey';
 
 export const Toolbox = () => {
-  const { colorMode } = useColorMode()
-  const { t } = useTranslation()
+  const { colorMode } = useColorMode();
+  const { t } = useTranslation();
 
   const { value: faresType, set: setFaresType } =
     useLocalStorageValue<FaresType>(LocalStorageKey.FARES_TYPE, {
       defaultValue: FaresType.OCTOPUS_CARD,
-    })
+    });
 
   const { value: faresPassengerType, set: setPassengerType } =
     useLocalStorageValue<FaresPassengerType>(
       LocalStorageKey.FARES_PASSENGER_TYPE,
       {
         defaultValue: FaresPassengerType.ADULT,
-      }
-    )
+      },
+    );
 
   const faresTypeOptions = useMemo(
     () => [
@@ -35,8 +35,8 @@ export const Toolbox = () => {
         label: t('ticket_type.option.single_journey_ticket'),
       },
     ],
-    [t]
-  )
+    [t],
+  );
 
   const faresPassengerTypeOptions = useMemo(
     () =>
@@ -77,8 +77,8 @@ export const Toolbox = () => {
               label: t('passenger_type.option.adult'),
             },
           ],
-    [faresType, t]
-  )
+    [faresType, t],
+  );
 
   return (
     <HStack
@@ -98,8 +98,8 @@ export const Toolbox = () => {
           !faresType ||
           !faresTypeOptions.some(({ value }) => value === faresType)
         }
-        onChange={e => {
-          setFaresType(e.target.value as FaresType)
+        onChange={(e) => {
+          setFaresType(e.target.value as FaresType);
         }}
         placeholder={t('ticket_type.label')}
         size="sm"
@@ -120,11 +120,11 @@ export const Toolbox = () => {
         isInvalid={
           !faresPassengerType ||
           !faresPassengerTypeOptions.some(
-            ({ value }) => value === faresPassengerType
+            ({ value }) => value === faresPassengerType,
           )
         }
-        onChange={e => {
-          setPassengerType(e.target.value as FaresPassengerType)
+        onChange={(e) => {
+          setPassengerType(e.target.value as FaresPassengerType);
         }}
         placeholder={t('passenger_type.label')}
         size="sm"
@@ -137,5 +137,5 @@ export const Toolbox = () => {
         ))}
       </Select>
     </HStack>
-  )
-}
+  );
+};

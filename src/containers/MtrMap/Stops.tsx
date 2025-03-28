@@ -1,30 +1,30 @@
-import { Fade } from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
-import { LineCode, StopCode } from 'mtr-kit'
-import { isNil } from 'ramda'
-import { memo } from 'react'
+import { Fade } from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
+import { LineCode, StopCode } from 'mtr-kit';
+import { isNil } from 'ramda';
+import { memo } from 'react';
 
-import { MapMode } from '../../constants/mapMode'
-import { mapContext } from '../../contexts/mapContext'
-import { listFares } from '../../queries/fares'
-import { listSchedules } from '../../queries/schedules'
-import { ArrowLeft } from './ArrowLeft'
-import { ArrowRight } from './ArrowRight'
-import { Name } from './Name'
-import { Schedule } from './Schedule'
-import { Stop } from './Stop'
+import { MapMode } from '../../constants/mapMode';
+import { mapContext } from '../../contexts/mapContext';
+import { listFares } from '../../queries/fares';
+import { listSchedules } from '../../queries/schedules';
+import { ArrowLeft } from './ArrowLeft';
+import { ArrowRight } from './ArrowRight';
+import { Name } from './Name';
+import { Schedule } from './Schedule';
+import { Stop } from './Stop';
 
 type Props = {
-  mode: MapMode
-  selectedStop: StopCode
-  selectedLines?: LineCode[]
-}
+  mode: MapMode;
+  selectedStop: StopCode;
+  selectedLines?: LineCode[];
+};
 
 export const Stops = memo(
   ({ mode, selectedStop, selectedLines = [] }: Props) => {
-    const isSchedule = mode === MapMode.SCHEDULES
-    const isFareEnabled = mode === MapMode.FARES && !isNil(selectedStop)
-    const isScheduleEnabled = mode === MapMode.SCHEDULES
+    const isSchedule = mode === MapMode.SCHEDULES;
+    const isFareEnabled = mode === MapMode.FARES && !isNil(selectedStop);
+    const isScheduleEnabled = mode === MapMode.SCHEDULES;
 
     const { data: schedulesData, isLoading: isScheduleLoading } = useQuery({
       queryKey: ['schedules'],
@@ -32,13 +32,13 @@ export const Stops = memo(
       refetchInterval: 10000,
       refetchOnMount: true,
       enabled: isScheduleEnabled,
-    })
+    });
 
     const { data: faresData, isLoading: isFareLoading } = useQuery({
       queryKey: ['fares', selectedStop],
       queryFn: () => listFares({ stop: selectedStop }),
       enabled: isFareEnabled,
-    })
+    });
 
     return (
       <mapContext.Provider
@@ -1179,6 +1179,6 @@ export const Stops = memo(
           </Fade>
         </Stop>
       </mapContext.Provider>
-    )
-  }
-)
+    );
+  },
+);

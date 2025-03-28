@@ -1,12 +1,12 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import { VitePWA as pwa } from 'vite-plugin-pwa'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import { VitePWA as pwa } from 'vite-plugin-pwa';
 
-import { generateSiteMap } from './scripts/sitemap.js'
+import { generateSiteMap } from './scripts/sitemap.js';
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
-  await generateSiteMap()
+  await generateSiteMap();
   return {
     plugins: [
       react(),
@@ -73,5 +73,5 @@ export default defineConfig(async () => {
     server: {
       host: 'dev.mtr.today',
     },
-  }
-})
+  };
+});

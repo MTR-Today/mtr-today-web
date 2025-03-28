@@ -1,21 +1,21 @@
-import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react'
-import { useTranslation } from 'react-i18next'
-import { ImEnlarge } from 'react-icons/im'
-import { IoMdAdd, IoMdRemove } from 'react-icons/io'
+import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
+import { ImEnlarge } from 'react-icons/im';
+import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 
 type Props = {
-  onFitScreenClick: () => void
-  onZoomInClick: () => void
-  onZoomOutClick: () => void
-}
+  onFitScreenClick: () => void;
+  onZoomInClick: () => void;
+  onZoomOutClick: () => void;
+};
 
 export const Toolbox: React.FC<Props> = ({
   onFitScreenClick,
   onZoomInClick,
   onZoomOutClick,
 }) => {
-  const { t } = useTranslation()
-  const { colorMode } = useColorMode()
+  const { t } = useTranslation();
+  const { colorMode } = useColorMode();
   return (
     <Box
       bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
@@ -55,5 +55,5 @@ export const Toolbox: React.FC<Props> = ({
         />
       </Tooltip>
     </Box>
-  )
-}
+  );
+};

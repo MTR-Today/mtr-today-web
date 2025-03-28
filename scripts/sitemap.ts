@@ -1,9 +1,9 @@
-import fs from 'fs'
-import { Readable } from 'stream'
+import fs from 'node:fs';
+import { Readable } from 'node:stream';
 
-import dayjs from 'dayjs'
-import { stops } from 'mtr-kit'
-import { SitemapStream, streamToPromise } from 'sitemap'
+import dayjs from 'dayjs';
+import { stops } from 'mtr-kit';
+import { SitemapStream, streamToPromise } from 'sitemap';
 
 export const generateSiteMap = async () => {
   // An array with your links
@@ -38,13 +38,13 @@ export const generateSiteMap = async () => {
       priority: 0.5,
       lastmod: dayjs().format('YYYY-MM-DD'),
     })),
-  ]
+  ];
 
   // Create a stream to write to
-  const stream = new SitemapStream({ hostname: 'https://mtr.today' })
+  const stream = new SitemapStream({ hostname: 'https://mtr.today' });
 
   // Return a promise that resolves with your XML string
-  const res = await streamToPromise(Readable.from(links).pipe(stream))
+  const res = await streamToPromise(Readable.from(links).pipe(stream));
 
-  fs.writeFileSync('./public/sitemap.xml', res.toString())
-}
+  fs.writeFileSync('./public/sitemap.xml', res.toString());
+};

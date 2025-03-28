@@ -12,32 +12,32 @@ import {
   Heading,
   Skeleton,
   useColorMode,
-} from '@chakra-ui/react'
-import { useQuery } from '@tanstack/react-query'
-import { useParams } from '@tanstack/react-router'
-import { lines } from 'mtr-kit'
-import { isEmpty, range } from 'ramda'
-import { useTranslation } from 'react-i18next'
+} from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from '@tanstack/react-router';
+import { lines } from 'mtr-kit';
+import { isEmpty, range } from 'ramda';
+import { useTranslation } from 'react-i18next';
 
-import { Language } from '../../constants/language'
-import { listStopSchedules } from '../../queries/stopSchedules'
-import { Empty } from './Empty'
-import { ScheduleList } from './ScheduleList'
+import { Language } from '../../constants/language';
+import { listStopSchedules } from '../../queries/stopSchedules';
+import { Empty } from './Empty';
+import { ScheduleList } from './ScheduleList';
 
 export const StopSchedules: React.FC = () => {
-  const { i18n, t } = useTranslation()
-  const { colorMode } = useColorMode()
-  const { stop: stopCode } = useParams({ strict: false })
+  const { i18n, t } = useTranslation();
+  const { colorMode } = useColorMode();
+  const { stop: stopCode } = useParams({ strict: false });
   const stopLines = lines.filter(({ stops }) =>
-    stops.some(item => item.stop === stopCode)
-  )
+    stops.some((item) => item.stop === stopCode),
+  );
 
   const { data, isLoading } = useQuery({
     queryKey: ['schedules', stopCode],
     queryFn: () => listStopSchedules({ stop: stopCode }),
     refetchInterval: 10000,
     refetchOnMount: true,
-  })
+  });
 
   return (
     <Accordion
@@ -46,10 +46,10 @@ export const StopSchedules: React.FC = () => {
       allowMultiple
       defaultIndex={range(0, stopLines.length + 1)}
     >
-      {stopLines.map(line => {
+      {stopLines.map((line) => {
         const schedule = data?.stop.schedules.find(
-          item => item.line === line.line
-        )
+          (item) => item.line === line.line,
+        );
 
         return (
           <AccordionItem key={line.line} border="0">
@@ -137,8 +137,8 @@ export const StopSchedules: React.FC = () => {
               </Skeleton>
             </AccordionPanel>
           </AccordionItem>
-        )
+        );
       })}
     </Accordion>
-  )
-}
+  );
+};

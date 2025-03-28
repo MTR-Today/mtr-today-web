@@ -1,9 +1,9 @@
-import { use } from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { use } from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
-import { Language } from '../constants/language'
-import english from './en'
-import traditionalChinese from './zh-hk'
+import { Language } from '../constants/language';
+import english from './en';
+import traditionalChinese from './zh-hk';
 
 use(initReactI18next) // passes i18n down to react-i18next
   .init({
@@ -18,4 +18,4 @@ use(initReactI18next) // passes i18n down to react-i18next
     },
     debug: true,
     fallbackNS: 'global',
-  })
+  });

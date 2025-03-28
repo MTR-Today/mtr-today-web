@@ -3,7 +3,7 @@ import {
   InfoOutlineIcon,
   SunIcon,
   TimeIcon,
-} from '@chakra-ui/icons'
+} from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -20,27 +20,27 @@ import {
   Show,
   Text,
   useColorMode,
-} from '@chakra-ui/react'
-import styled from '@emotion/styled'
-import { Link } from '@tanstack/react-router'
-import { lines } from 'mtr-kit'
-import { useTranslation } from 'react-i18next'
-import { AiTwotoneApi } from 'react-icons/ai'
-import { IoLogoGithub } from 'react-icons/io'
-import { MdGTranslate, MdImage } from 'react-icons/md'
+} from '@chakra-ui/react';
+import styled from '@emotion/styled';
+import { Link } from '@tanstack/react-router';
+import { lines } from 'mtr-kit';
+import { useTranslation } from 'react-i18next';
+import { AiTwotoneApi } from 'react-icons/ai';
+import { IoLogoGithub } from 'react-icons/io';
+import { MdGTranslate, MdImage } from 'react-icons/md';
 
-import logoDark from '../../assets/logoDark.svg'
-import logoLight from '../../assets/logoLight.svg'
-import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch'
-import { Language } from '../../constants/language'
-import { menuMap } from '../../constants/menuMap'
-import { TimeDisplay } from '../../constants/timeDisplay'
-import { useConfig } from '../../hooks/useConfig'
-import { useTime } from '../../hooks/useTime'
+import logoDark from '../../assets/logoDark.svg';
+import logoLight from '../../assets/logoLight.svg';
+import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch';
+import { Language } from '../../constants/language';
+import { menuMap } from '../../constants/menuMap';
+import { TimeDisplay } from '../../constants/timeDisplay';
+import { useConfig } from '../../hooks/useConfig';
+import { useTime } from '../../hooks/useTime';
 
 export const Header: React.FC = () => {
-  const { t } = useTranslation()
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { t } = useTranslation();
+  const { colorMode, toggleColorMode } = useColorMode();
   const {
     timeDisplay,
     setTimeDisplay,
@@ -48,9 +48,9 @@ export const Header: React.FC = () => {
     setLanguage,
     animatedBg,
     setAnimatedBg,
-  } = useConfig()
+  } = useConfig();
 
-  const now = useTime()
+  const now = useTime();
 
   return (
     <Flex
@@ -159,7 +159,7 @@ export const Header: React.FC = () => {
             </Box>
             <RadioSwitch
               value={language}
-              onChange={value => setLanguage(value)}
+              onChange={(value) => setLanguage(value)}
             >
               <RadioSwitchItem value={Language['ZH-HK']}>
                 {t('language.zh_hk')}
@@ -175,7 +175,7 @@ export const Header: React.FC = () => {
             </Box>
             <RadioSwitch
               value={animatedBg ? 'true' : 'false'}
-              onChange={value => setAnimatedBg(value === 'true')}
+              onChange={(value) => setAnimatedBg(value === 'true')}
             >
               <RadioSwitchItem value="true">{t('bg.animated')}</RadioSwitchItem>
               <RadioSwitchItem value="false">{t('bg.static')}</RadioSwitchItem>
@@ -187,7 +187,7 @@ export const Header: React.FC = () => {
             </Box>
             <RadioSwitch
               value={timeDisplay}
-              onChange={value => setTimeDisplay(value)}
+              onChange={(value) => setTimeDisplay(value)}
             >
               <RadioSwitchItem value={TimeDisplay.ABS}>
                 {t('time_display.abs')}
@@ -224,9 +224,9 @@ export const Header: React.FC = () => {
         </MenuList>
       </Menu>
     </Flex>
-  )
-}
+  );
+};
 
 const Clock = styled(Flex)`
   font-variant-numeric: tabular-nums;
-`
+`;

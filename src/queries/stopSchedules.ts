@@ -1,10 +1,10 @@
-import { gql } from 'graphql-request'
-import { StopCode } from 'mtr-kit'
+import { gql } from 'graphql-request';
+import type { StopCode } from 'mtr-kit';
 
-import { Schedule } from './schedules'
-import { apiClient } from '.'
+import { apiClient } from '.';
+import type { Schedule } from './schedules';
 
-export type StopSchedule = { stop: { stop: StopCode; schedules: Schedule[] } }
+export type StopSchedule = { stop: { stop: StopCode; schedules: Schedule[] } };
 
 const query = gql`
   query GetStopSchedules($stop: StopCode!) {
@@ -31,7 +31,7 @@ const query = gql`
       }
     }
   }
-`
+`;
 
 export const listStopSchedules = ({ stop }: { stop: StopCode }) =>
-  apiClient.request<StopSchedule>(query, { stop })
+  apiClient.request<StopSchedule>(query, { stop });

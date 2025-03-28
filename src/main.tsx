@@ -1,22 +1,22 @@
-import './locales'
-import './utils/dayjs'
+import './locales';
+import './utils/dayjs';
 
-import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { RouterProvider } from '@tanstack/react-router'
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider } from '@tanstack/react-router';
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 
-import { UseConfigProvider } from './hooks/useConfig'
-import { UseTimeProvider } from './hooks/useTime'
-import { router } from './Router'
+import { router } from './Router';
+import { UseConfigProvider } from './hooks/useConfig';
+import { UseTimeProvider } from './hooks/useTime';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 const config = {
   initialColorMode: 'auto',
   useSystemColorMode: false,
-}
+};
 
 const theme = extendTheme({
   config,
@@ -35,7 +35,7 @@ const theme = extendTheme({
       },
     },
   },
-})
+});
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
@@ -49,5 +49,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </UseConfigProvider>
       </ChakraProvider>
     </QueryClientProvider>
-  </StrictMode>
-)
+  </StrictMode>,
+);

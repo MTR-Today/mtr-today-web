@@ -1,12 +1,12 @@
-import { Box, BoxProps } from '@chakra-ui/react'
-import { stopMap } from 'mtr-kit'
-import { memo, useContext } from 'react'
+import { Box, type BoxProps } from '@chakra-ui/react';
+import { stopMap } from 'mtr-kit';
+import { memo, useContext } from 'react';
 
-import { stopContext } from '../../contexts/stopContext'
+import { stopContext } from '../../contexts/stopContext';
 
-export const Name: React.FC<BoxProps> = memo(props => {
-  const { stop, isSelected } = useContext(stopContext)
-  const config = stop ? stopMap[stop] : undefined
+export const Name: React.FC<BoxProps> = memo((props) => {
+  const { stop, isSelected } = useContext(stopContext);
+  const config = stop ? stopMap[stop] : undefined;
 
   return (
     <Box pos="absolute" textAlign="center" transition="all .3s" {...props}>
@@ -25,5 +25,5 @@ export const Name: React.FC<BoxProps> = memo(props => {
         <Box>{config?.nameEn}</Box>
       </Box>
     </Box>
-  )
-})
+  );
+});

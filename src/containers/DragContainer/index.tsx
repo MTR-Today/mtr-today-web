@@ -1,22 +1,22 @@
-import { Box } from '@chakra-ui/react'
-import styled from '@emotion/styled'
-import { min } from 'ramda'
-import { useMemo } from 'react'
-import { isIOS } from 'react-device-detect'
-import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
+import { Box } from '@chakra-ui/react';
+import styled from '@emotion/styled';
+import { min } from 'ramda';
+import { useMemo } from 'react';
+import { isIOS } from 'react-device-detect';
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
-import { useWindowSize } from '../../hooks/useWindowSize'
-import { Toolbox } from './Toolbox'
+import { useWindowSize } from '../../hooks/useWindowSize';
+import { Toolbox } from './Toolbox';
 
-export const CONTAINER_WIDTH = 2800 * 2
-export const CONTAINER_HEIGHT = 1630 * 2
+export const CONTAINER_WIDTH = 2800 * 2;
+export const CONTAINER_HEIGHT = 1630 * 2;
 
 type Props = {
-  childWidth: number
-  childHeight: number
-  children: React.ReactNode
-  bg?: React.ReactNode
-}
+  childWidth: number;
+  childHeight: number;
+  children: React.ReactNode;
+  bg?: React.ReactNode;
+};
 
 export const DragContainer: React.FC<Props> = ({
   childHeight,
@@ -24,16 +24,16 @@ export const DragContainer: React.FC<Props> = ({
   children,
   bg,
 }) => {
-  const { width, height } = useWindowSize()
+  const { width, height } = useWindowSize();
 
   const { fitScale, containerWidth, containerHeight } = useMemo(() => {
-    const scale = min(width / childWidth, height / childHeight)
+    const scale = min(width / childWidth, height / childHeight);
     return {
       fitScale: scale,
       containerWidth: width / scale,
       containerHeight: height / scale,
-    }
-  }, [childHeight, childWidth, height, width])
+    };
+  }, [childHeight, childWidth, height, width]);
 
   return (
     <>
@@ -65,7 +65,7 @@ export const DragContainer: React.FC<Props> = ({
             <Box pos="fixed" zIndex="overlay" bottom="16px" left="16px">
               <Toolbox
                 onFitScreenClick={() => {
-                  centerView(fitScale)
+                  centerView(fitScale);
                 }}
                 onZoomInClick={() => zoomIn()}
                 onZoomOutClick={() => zoomOut()}
@@ -75,12 +75,12 @@ export const DragContainer: React.FC<Props> = ({
         )}
       </TransformWrapper>
     </>
-  )
-}
+  );
+};
 
 const DragWrapper = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-`
+`;

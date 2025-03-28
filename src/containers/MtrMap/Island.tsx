@@ -1,10 +1,10 @@
-import { useColorMode } from '@chakra-ui/react'
-import { memo } from 'react'
-import { roundCorners } from 'svg-round-corners'
+import { useColorMode } from '@chakra-ui/react';
+import { memo } from 'react';
+import { roundCorners } from 'svg-round-corners';
 
 export const Island: React.FC<React.SVGProps<SVGPathElement>> = memo(
   ({ d = '', ...rest }) => {
-    const { colorMode } = useColorMode()
+    const { colorMode } = useColorMode();
 
     return (
       <path
@@ -14,6 +14,6 @@ export const Island: React.FC<React.SVGProps<SVGPathElement>> = memo(
         strokeWidth="1"
         {...rest}
       />
-    )
-  }
-)
+    );
+  },
+);

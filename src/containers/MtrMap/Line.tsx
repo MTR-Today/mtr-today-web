@@ -1,27 +1,27 @@
-import { useColorMode } from '@chakra-ui/react'
-import c from 'color'
-import { LineCode, lineMap } from 'mtr-kit'
-import { isEmpty } from 'ramda'
-import { memo, useContext } from 'react'
-import { roundCorners } from 'svg-round-corners'
+import { useColorMode } from '@chakra-ui/react';
+import c from 'color';
+import { type LineCode, lineMap } from 'mtr-kit';
+import { isEmpty } from 'ramda';
+import { memo, useContext } from 'react';
+import { roundCorners } from 'svg-round-corners';
 
-import { lineContext } from '../../contexts/mapContext'
+import { lineContext } from '../../contexts/mapContext';
 
 export const Line: React.FC<
   React.SVGProps<SVGPathElement> & {
-    color?: string
-    line: LineCode
-    startTip?: boolean
-    endTip?: boolean
-    flipTip?: boolean
+    color?: string;
+    line: LineCode;
+    startTip?: boolean;
+    endTip?: boolean;
+    flipTip?: boolean;
   }
 > = memo(
   ({ line, d, startTip = true, endTip = true, flipTip = false, ...props }) => {
-    const { selectedLines } = useContext(lineContext)
-    const { colorMode } = useColorMode()
+    const { selectedLines } = useContext(lineContext);
+    const { colorMode } = useColorMode();
 
-    const color = lineMap[line].color
-    const isSelected = isEmpty(selectedLines) || selectedLines.includes(line)
+    const color = lineMap[line].color;
+    const isSelected = isEmpty(selectedLines) || selectedLines.includes(line);
 
     return (
       <>
@@ -87,6 +87,6 @@ export const Line: React.FC<
           {...props}
         />
       </>
-    )
-  }
-)
+    );
+  },
+);

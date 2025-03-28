@@ -1,29 +1,29 @@
-import { gql } from 'graphql-request'
-import { StopCode } from 'mtr-kit'
+import { gql } from 'graphql-request';
+import type { StopCode } from 'mtr-kit';
 
-import { apiClient } from '.'
+import { apiClient } from '.';
 
 export type Fare = {
-  from?: StopCode
-  to?: StopCode
+  from?: StopCode;
+  to?: StopCode;
   octopusCard: {
-    child: number
-    adult: number
-    student: number
-    elderly: number
-    joyYou: number
-    pwd: number
-  }
+    child: number;
+    adult: number;
+    student: number;
+    elderly: number;
+    joyYou: number;
+    pwd: number;
+  };
   singleJourneyTicket: {
-    child: number
-    adult: number
-    elderly: number
-  }
-}
+    child: number;
+    adult: number;
+    elderly: number;
+  };
+};
 
 export type Fares = {
-  fares: Fare[]
-}
+  fares: Fare[];
+};
 
 const query = gql`
   query ListFares($from: StopCode!) {
@@ -45,7 +45,7 @@ const query = gql`
       }
     }
   }
-`
+`;
 
 export const listFares = ({ stop }: { stop: StopCode }) =>
-  apiClient.request<Fares>(query, { from: stop })
+  apiClient.request<Fares>(query, { from: stop });

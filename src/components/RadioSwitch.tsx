@@ -1,26 +1,26 @@
 import {
   Box,
   HStack,
-  UseRadioProps,
+  type UseRadioProps,
   useColorMode,
   useRadio,
   useRadioGroup,
-} from '@chakra-ui/react'
-import { flatten } from 'ramda'
-import { Fragment, cloneElement } from 'react'
+} from '@chakra-ui/react';
+import { flatten } from 'ramda';
+import { Fragment, cloneElement } from 'react';
 
 type ItemProps<T extends string> = {
-  value: T
-  children?: React.ReactNode
-}
+  value: T;
+  children?: React.ReactNode;
+};
 
 export const RadioSwitchItem = <T extends string>(
-  props: UseRadioProps & ItemProps<T>
+  props: UseRadioProps & ItemProps<T>,
 ) => {
-  const { getInputProps, getRadioProps } = useRadio(props)
+  const { getInputProps, getRadioProps } = useRadio(props);
 
-  const input = getInputProps()
-  const checkbox = getRadioProps()
+  const input = getInputProps();
+  const checkbox = getRadioProps();
 
   return (
     <Box as="label">
@@ -40,33 +40,33 @@ export const RadioSwitchItem = <T extends string>(
         {props.children}
       </Box>
     </Box>
-  )
-}
+  );
+};
 
 type Props<T extends string> = {
-  value?: T
-  onChange?: (newValue: T) => void
+  value?: T;
+  onChange?: (newValue: T) => void;
   children: (
     | React.ReactElement<ItemProps<T>>
     | React.ReactElement<ItemProps<T>>[]
-  )[]
-}
+  )[];
+};
 
 export const RadioSwitch = <T extends string>({
   children,
   onChange,
   value,
 }: Props<T>) => {
-  const { colorMode } = useColorMode()
+  const { colorMode } = useColorMode();
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'framework',
     defaultValue: 'react',
     onChange,
     value,
-  })
+  });
 
-  const group = getRootProps()
+  const group = getRootProps();
 
   return (
     <HStack
@@ -78,14 +78,14 @@ export const RadioSwitch = <T extends string>({
       borderWidth="1px"
       borderRadius="md"
     >
-      {flatten(children).map(item => {
-        const radio = getRadioProps({ value: item.props.value })
+      {flatten(children).map((item) => {
+        const radio = getRadioProps({ value: item.props.value });
         return (
           <Fragment key={item.props.value}>
             {cloneElement(item, { ...radio, ...item.props })}
           </Fragment>
-        )
+        );
       })}
     </HStack>
-  )
-}
+  );
+};

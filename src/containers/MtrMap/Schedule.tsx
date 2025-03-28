@@ -1,36 +1,36 @@
-import { Box, BoxProps, Flex, HStack, Skeleton } from '@chakra-ui/react'
-import styled from '@emotion/styled'
-import dayjs from 'dayjs'
-import { LineCode, lineMap } from 'mtr-kit'
-import { memo, useCallback, useContext, useMemo } from 'react'
+import { Box, type BoxProps, Flex, HStack, Skeleton } from '@chakra-ui/react';
+import styled from '@emotion/styled';
+import dayjs from 'dayjs';
+import { type LineCode, lineMap } from 'mtr-kit';
+import { memo, useCallback, useContext, useMemo } from 'react';
 
-import { TimeDisplay } from '../../constants/timeDisplay'
-import { mapContext } from '../../contexts/mapContext'
-import { stopContext } from '../../contexts/stopContext'
-import { useConfig } from '../../hooks/useConfig'
-import { useTime } from '../../hooks/useTime'
+import { TimeDisplay } from '../../constants/timeDisplay';
+import { mapContext } from '../../contexts/mapContext';
+import { stopContext } from '../../contexts/stopContext';
+import { useConfig } from '../../hooks/useConfig';
+import { useTime } from '../../hooks/useTime';
 
 export const Schedule: React.FC<
   BoxProps & { line: LineCode; disabled?: boolean; dir: 'up' | 'down' }
 > = memo(({ line, disabled = false, dir, ...props }) => {
-  const now = useTime()
-  const { timeDisplay } = useConfig()
-  const { stop } = useContext(stopContext)
-  const { schedules, isScheduleLoading } = useContext(mapContext)
-  const config = lineMap[line]
+  const now = useTime();
+  const { timeDisplay } = useConfig();
+  const { stop } = useContext(stopContext);
+  const { schedules, isScheduleLoading } = useContext(mapContext);
+  const config = lineMap[line];
 
   const schedule = useMemo(
     () =>
-      schedules.find(item => item.line === line && item.stop === stop)
+      schedules.find((item) => item.line === line && item.stop === stop)
         ?.schedule?.[dir]?.[0],
-    [dir, line, schedules, stop]
-  )
+    [dir, line, schedules, stop],
+  );
 
   const getDisplayTime = useCallback(
     (time: string) => {
-      const timeDayJs = dayjs(time)
+      const timeDayJs = dayjs(time);
 
-      if (timeDisplay === TimeDisplay.ABS) return timeDayJs.format('H[:]mm')
+      if (timeDisplay === TimeDisplay.ABS) return timeDayJs.format('H[:]mm');
 
       return timeDayJs.isAfter(now)
         ? dayjs
@@ -40,10 +40,10 @@ export const Schedule: React.FC<
         : dayjs
             .duration(dayjs(now).diff(timeDayJs))
             .format('-H[:]mm:ss')
-            .replace(/^-0:/, '-')
+            .replace(/^-0:/, '-');
     },
-    [now, timeDisplay]
-  )
+    [now, timeDisplay],
+  );
 
   return (
     <Box pos="absolute" transform="scale(.8)" {...props}>
@@ -86,9 +86,9 @@ export const Schedule: React.FC<
         </Skeleton>
       </Flex>
     </Box>
-  )
-})
+  );
+});
 
 const Clock = styled(Box)`
   font-variant-numeric: tabular-nums;
-`
+`;

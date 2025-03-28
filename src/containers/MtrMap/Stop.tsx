@@ -1,60 +1,60 @@
-import { Box, BoxProps, Skeleton, useColorMode } from '@chakra-ui/react'
-import { useLocalStorageValue } from '@react-hookz/web'
-import { Link } from '@tanstack/react-router'
-import { StopCode, lines } from 'mtr-kit'
-import { isEmpty, path } from 'ramda'
-import { memo, useContext, useMemo, useState } from 'react'
+import { Box, type BoxProps, Skeleton, useColorMode } from '@chakra-ui/react';
+import { useLocalStorageValue } from '@react-hookz/web';
+import { Link } from '@tanstack/react-router';
+import { type StopCode, lines } from 'mtr-kit';
+import { path, isEmpty } from 'ramda';
+import { memo, useContext, useMemo, useState } from 'react';
 
-import { FaresPassengerType } from '../../constants/faresPassengerType'
-import { FaresType } from '../../constants/faresType'
-import { LocalStorageKey } from '../../constants/localStorageKey'
-import { MapMode } from '../../constants/mapMode'
-import { mapContext } from '../../contexts/mapContext'
-import { stopContext } from '../../contexts/stopContext'
+import { FaresPassengerType } from '../../constants/faresPassengerType';
+import { FaresType } from '../../constants/faresType';
+import { LocalStorageKey } from '../../constants/localStorageKey';
+import { MapMode } from '../../constants/mapMode';
+import { mapContext } from '../../contexts/mapContext';
+import { stopContext } from '../../contexts/stopContext';
 
 export const Stop: React.FC<
   BoxProps & { coord: [x: number, y: number]; stop: StopCode }
 > = memo(({ children, stop, coord: [x, y], ...props }) => {
-  const [isHovering, setHovering] = useState(false)
-  const { colorMode } = useColorMode()
+  const [isHovering, setHovering] = useState(false);
+  const { colorMode } = useColorMode();
   const { selectedLines, mode, selectedStop, fares, isFaresLoading } =
-    useContext(mapContext)
+    useContext(mapContext);
 
   const { value: faresType } = useLocalStorageValue<FaresType>(
     LocalStorageKey.FARES_TYPE,
     {
       defaultValue: FaresType.OCTOPUS_CARD,
-    }
-  )
+    },
+  );
 
   const { value: faresPassengerType } =
     useLocalStorageValue<FaresPassengerType>(
       LocalStorageKey.FARES_PASSENGER_TYPE,
       {
         defaultValue: FaresPassengerType.ADULT,
-      }
-    )
+      },
+    );
 
-  const isSelected = selectedStop === stop
+  const isSelected = selectedStop === stop;
   const shouldDisplayFare =
-    mode === MapMode.FARES && selectedStop && !isSelected
+    mode === MapMode.FARES && selectedStop && !isSelected;
 
   const isLineSelected = useMemo(() => {
     const stopLines = lines.filter(({ stops }) =>
-      stops.some(item => item.stop === stop)
-    )
+      stops.some((item) => item.stop === stop),
+    );
 
     return (
       isEmpty(selectedLines) ||
-      stopLines.some(line => selectedLines.includes(line.line))
-    )
-  }, [selectedLines, stop])
+      stopLines.some((line) => selectedLines.includes(line.line))
+    );
+  }, [selectedLines, stop]);
 
   const fareValue = useMemo(() => {
-    if (!faresType || !faresPassengerType) return undefined
-    const fareItem = fares.find(item => item.to === stop)
-    return path<number>([faresType, faresPassengerType], fareItem)
-  }, [fares, faresPassengerType, faresType, stop])
+    if (!faresType || !faresPassengerType) return undefined;
+    const fareItem = fares.find((item) => item.to === stop);
+    return path<number>([faresType, faresPassengerType], fareItem);
+  }, [fares, faresPassengerType, faresType, stop]);
 
   return (
     <stopContext.Provider
@@ -107,10 +107,10 @@ export const Stop: React.FC<
               whiteSpace="nowrap"
               transition="all .5s"
               onMouseEnter={() => {
-                setHovering(true)
+                setHovering(true);
               }}
               onMouseLeave={() => {
-                setHovering(false)
+                setHovering(false);
               }}
               {...(isSelected
                 ? { bg: colorMode === 'dark' ? 'blue.300' : 'blue.300' }
@@ -128,5 +128,5 @@ export const Stop: React.FC<
         </Box>
       </Box>
     </stopContext.Provider>
-  )
-})
+  );
+});

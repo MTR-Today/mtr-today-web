@@ -3,65 +3,65 @@ import {
   Route,
   Router,
   createHashHistory,
-} from '@tanstack/react-router'
+} from '@tanstack/react-router';
 
-import { AboutUs } from './containers/AboutUs'
-import { Fares } from './containers/Fares'
-import { Layout } from './containers/Layout'
-import { StopDetail } from './containers/StopDetail'
-import { StopSchedules } from './containers/StopSchedules'
+import { AboutUs } from './containers/AboutUs';
+import { Fares } from './containers/Fares';
+import { Layout } from './containers/Layout';
+import { StopDetail } from './containers/StopDetail';
+import { StopSchedules } from './containers/StopSchedules';
 
 const rootRoute = new RootRoute({
   component: Layout,
-})
+});
 
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: '/',
   component: () => <></>,
-})
+});
 
 const faresRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'fares',
   component: () => <Fares />,
-})
+});
 
 const faresDetailRoute = new Route({
   getParentRoute: () => faresRoute,
   path: '$stop',
   component: () => <></>,
-})
+});
 
-faresRoute.addChildren([faresDetailRoute])
+faresRoute.addChildren([faresDetailRoute]);
 
 const aboutUsRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'about-us',
   component: AboutUs,
-})
+});
 
 const stopDetailRoute = new Route({
   getParentRoute: () => rootRoute,
   path: 'stops/$stop',
   component: StopDetail,
-})
+});
 
 export const stopScheduleRoute = new Route({
   getParentRoute: () => stopDetailRoute,
   path: 'schedules',
   component: StopSchedules,
-})
+});
 
-stopDetailRoute.addChildren([stopScheduleRoute])
+stopDetailRoute.addChildren([stopScheduleRoute]);
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
   aboutUsRoute,
   stopDetailRoute,
   faresRoute,
-])
+]);
 
-const hashHistory = createHashHistory()
+const hashHistory = createHashHistory();
 
-export const router = new Router({ routeTree, history: hashHistory })
+export const router = new Router({ routeTree, history: hashHistory });

@@ -1,7 +1,7 @@
-import global from './global.json'
+import global from './global.json';
 
 const locals = {
   global,
-}
+};
 
-export default locals
+export default locals;
