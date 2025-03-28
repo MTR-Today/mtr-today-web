@@ -5,5 +5,11 @@
     "config:js-app",
     "config:semverAllMonthly",
     ":automergeMinor"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@chakra-ui/react"],
+      "enabled": false
+    }
   ]
 }
