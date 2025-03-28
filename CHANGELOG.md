@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.12](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.11...v1.16.12) (2025-03-28)
+
+
+### Bug Fixes
+
+* upgrade framer motion to v12 ([5321f8a](https://github.com/MTR-Today/mtr-today-web/commit/5321f8aa911ab4d1f8fb7b70b2831dceef4d3d6a))
+
 ## [1.16.11](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.10...v1.16.11) (2025-03-28)
 
 
