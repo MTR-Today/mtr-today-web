@@ -1,7 +1,7 @@
-import { gql } from 'graphql-request';
-import type { StopCode } from 'mtr-kit';
+import { gql } from "graphql-request";
+import type { StopCode } from "mtr-kit";
 
-import { apiClient } from '.';
+import { apiClient } from ".";
 
 export type Fare = {
   from?: StopCode;

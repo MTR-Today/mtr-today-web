@@ -1,8 +1,8 @@
-import { gql } from 'graphql-request';
-import type { StopCode } from 'mtr-kit';
+import { gql } from "graphql-request";
+import type { StopCode } from "mtr-kit";
 
-import { apiClient } from '.';
-import type { Schedule } from './schedules';
+import { apiClient } from ".";
+import type { Schedule } from "./schedules";
 
 export type StopSchedule = { stop: { stop: StopCode; schedules: Schedule[] } };
 

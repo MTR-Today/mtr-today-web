@@ -1,10 +1,9 @@
-import { LineCode } from 'mtr-kit';
-import { memo } from 'react';
-
-import { MAP_HEIGHT, MAP_WIDTH } from '.';
-import { lineContext } from '../../contexts/mapContext';
-import { Island } from './Island';
-import { Line } from './Line';
+import { LineCode } from "mtr-kit";
+import { memo } from "react";
+import { lineContext } from "../../contexts/mapContext";
+import { MAP_HEIGHT, MAP_WIDTH } from ".";
+import { Island } from "./Island";
+import { Line } from "./Line";
 
 type Props = {
   selectedLines?: LineCode[];
@@ -14,7 +13,7 @@ export const MapBg = memo(({ selectedLines = [] }: Props) => (
   <svg
     width={MAP_WIDTH}
     height={MAP_HEIGHT}
-    style={{ position: 'absolute' }}
+    style={{ position: "absolute" }}
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>HK Map</title>

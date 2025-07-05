@@ -1,6 +1,6 @@
-import { ArrowLeftIcon } from '@chakra-ui/icons';
-import { Box, type BoxProps } from '@chakra-ui/react';
-import { memo } from 'react';
+import { ArrowLeftIcon } from "@chakra-ui/icons";
+import { Box, type BoxProps } from "@chakra-ui/react";
+import { memo } from "react";
 
 export const ArrowLeft: React.FC<BoxProps> = memo((props) => (
   <Box pos="absolute" {...props}>

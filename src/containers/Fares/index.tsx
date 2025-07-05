@@ -1,8 +1,8 @@
-import { Box, Slide, useColorMode } from '@chakra-ui/react';
-import { useParams } from '@tanstack/react-router';
-import { useTranslation } from 'react-i18next';
+import { Box, Slide, useColorMode } from "@chakra-ui/react";
+import { useParams } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
-import { Toolbox } from './ToolBox';
+import { Toolbox } from "./ToolBox";
 
 export const Fares = () => {
   const { colorMode } = useColorMode();
@@ -25,9 +25,9 @@ export const Fares = () => {
         <Box
           py="3"
           textAlign="center"
-          bg={colorMode === 'dark' ? 'whiteAlpha.100' : 'blackAlpha.100'}
+          bg={colorMode === "dark" ? "whiteAlpha.100" : "blackAlpha.100"}
         >
-          {t('please_select_start_stop')}
+          {t("please_select_start_stop")}
         </Box>
       </Slide>
     </>

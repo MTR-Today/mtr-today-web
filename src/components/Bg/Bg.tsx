@@ -1,8 +1,8 @@
-import { type ColorMode, useColorMode } from '@chakra-ui/react';
-import styled from '@emotion/styled';
-import { useEffect, useRef } from 'react';
+import { type ColorMode, useColorMode } from "@chakra-ui/react";
+import styled from "@emotion/styled";
+import { useEffect, useRef } from "react";
 
-import { Animation } from './animation';
+import { Animation } from "./animation";
 
 export const Bg = () => {
   const { colorMode } = useColorMode();
@@ -20,5 +20,5 @@ const Water = styled.canvas<{ colorMode: ColorMode }>`
   width: 100%;
   height: 100%;
   position: absolute;
-  opacity: ${({ colorMode }) => (colorMode === 'light' ? '.5' : '.1')};
+  opacity: ${({ colorMode }) => (colorMode === "light" ? ".5" : ".1")};
 `;

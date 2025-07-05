@@ -1,4 +1,4 @@
-import global from './global.json';
+import global from "./global.json";
 
 const locals = {
   global,

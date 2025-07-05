@@ -12,17 +12,17 @@ import {
   Heading,
   Skeleton,
   useColorMode,
-} from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import { useParams } from '@tanstack/react-router';
-import { lines } from 'mtr-kit';
-import { isEmpty, range } from 'ramda';
-import { useTranslation } from 'react-i18next';
+} from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "@tanstack/react-router";
+import { lines } from "mtr-kit";
+import { isEmpty, range } from "ramda";
+import { useTranslation } from "react-i18next";
 
-import { Language } from '../../constants/language';
-import { listStopSchedules } from '../../queries/stopSchedules';
-import { Empty } from './Empty';
-import { ScheduleList } from './ScheduleList';
+import { Language } from "../../constants/language";
+import { listStopSchedules } from "../../queries/stopSchedules";
+import { Empty } from "./Empty";
+import { ScheduleList } from "./ScheduleList";
 
 export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation();
@@ -33,7 +33,7 @@ export const StopSchedules: React.FC = () => {
   );
 
   const { data, isLoading } = useQuery({
-    queryKey: ['schedules', stopCode],
+    queryKey: ["schedules", stopCode],
     queryFn: () => listStopSchedules({ stop: stopCode }),
     refetchInterval: 10000,
     refetchOnMount: true,
@@ -72,13 +72,13 @@ export const StopSchedules: React.FC = () => {
                     h="18px"
                     bg="Background"
                     borderWidth="3px"
-                    borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
+                    borderColor={colorMode === "dark" ? "white" : "gray.700"}
                     borderRadius="100%"
                     transition="transform .5s"
                   />
                   <Box pos="absolute" w="1" h="full" bg={line.color} />
                 </Flex>
-                {i18n.language === Language['ZH-HK']
+                {i18n.language === Language["ZH-HK"]
                   ? line.nameZh
                   : line.nameEn}
               </Heading>
@@ -93,7 +93,7 @@ export const StopSchedules: React.FC = () => {
                     {schedule.isDelayed && (
                       <Alert status="error">
                         <AlertIcon />
-                        <AlertDescription>{t('is_delayed')}</AlertDescription>
+                        <AlertDescription>{t("is_delayed")}</AlertDescription>
                       </Alert>
                     )}
                     <Flex>
@@ -133,7 +133,7 @@ export const StopSchedules: React.FC = () => {
                       )}
                     </Flex>
                   </>
-                )}{' '}
+                )}{" "}
               </Skeleton>
             </AccordionPanel>
           </AccordionItem>

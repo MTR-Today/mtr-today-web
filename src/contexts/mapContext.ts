@@ -1,9 +1,9 @@
-import type { LineCode, StopCode } from 'mtr-kit';
-import { createContext } from 'react';
+import type { LineCode, StopCode } from "mtr-kit";
+import { createContext } from "react";
 
-import { MapMode } from '../constants/mapMode';
-import type { Fare } from '../queries/fares';
-import type { Schedule } from '../queries/schedules';
+import { MapMode } from "../constants/mapMode";
+import type { Fare } from "../queries/fares";
+import type { Schedule } from "../queries/schedules";
 
 export const lineContext = createContext<{
   selectedLines: LineCode[];

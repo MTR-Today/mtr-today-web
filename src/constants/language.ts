@@ -1,4 +1,4 @@
 export enum Language {
-  'ZH-HK' = 'zh-HK',
-  EN = 'en',
+  "ZH-HK" = "zh-HK",
+  EN = "en",
 }

@@ -5,9 +5,9 @@ import {
   useColorMode,
   useRadio,
   useRadioGroup,
-} from '@chakra-ui/react';
-import { flatten } from 'ramda';
-import { Fragment, cloneElement } from 'react';
+} from "@chakra-ui/react";
+import { flatten } from "ramda";
+import { cloneElement, Fragment } from "react";
 
 type ItemProps<T extends string> = {
   value: T;
@@ -32,8 +32,8 @@ export const RadioSwitchItem = <T extends string>(
         fontSize="sm"
         borderRadius="md"
         _checked={{
-          bg: 'chakra-body-bg',
-          boxShadow: 'sm',
+          bg: "chakra-body-bg",
+          boxShadow: "sm",
         }}
         cursor="pointer"
       >
@@ -60,8 +60,8 @@ export const RadioSwitch = <T extends string>({
   const { colorMode } = useColorMode();
 
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: 'framework',
-    defaultValue: 'react',
+    name: "framework",
+    defaultValue: "react",
     onChange,
     value,
   });
@@ -74,7 +74,7 @@ export const RadioSwitch = <T extends string>({
       w="fit-content"
       h="32px"
       p={1}
-      bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
+      bg={colorMode === "dark" ? "gray.700" : "gray.50"}
       borderWidth="1px"
       borderRadius="md"
     >
