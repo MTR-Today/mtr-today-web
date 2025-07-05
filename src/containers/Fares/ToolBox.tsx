@@ -1,11 +1,11 @@
-import { HStack, Select, useColorMode } from '@chakra-ui/react';
-import { useLocalStorageValue } from '@react-hookz/web';
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { HStack, Select, useColorMode } from "@chakra-ui/react";
+import { useLocalStorageValue } from "@react-hookz/web";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
-import { FaresPassengerType } from '../../constants/faresPassengerType';
-import { FaresType } from '../../constants/faresType';
-import { LocalStorageKey } from '../../constants/localStorageKey';
+import { FaresPassengerType } from "../../constants/faresPassengerType";
+import { FaresType } from "../../constants/faresType";
+import { LocalStorageKey } from "../../constants/localStorageKey";
 
 export const Toolbox = () => {
   const { colorMode } = useColorMode();
@@ -28,11 +28,11 @@ export const Toolbox = () => {
     () => [
       {
         value: FaresType.OCTOPUS_CARD,
-        label: t('ticket_type.option.octopus_card'),
+        label: t("ticket_type.option.octopus_card"),
       },
       {
         value: FaresType.SINGLE_JOURNEY_TICKET,
-        label: t('ticket_type.option.single_journey_ticket'),
+        label: t("ticket_type.option.single_journey_ticket"),
       },
     ],
     [t],
@@ -44,37 +44,37 @@ export const Toolbox = () => {
         ? [
             {
               value: FaresPassengerType.CHILD,
-              label: t('passenger_type.option.child'),
+              label: t("passenger_type.option.child"),
             },
             {
               value: FaresPassengerType.ADULT,
-              label: t('passenger_type.option.adult'),
+              label: t("passenger_type.option.adult"),
             },
             {
               value: FaresPassengerType.STUDENT,
-              label: t('passenger_type.option.student'),
+              label: t("passenger_type.option.student"),
             },
             {
               value: FaresPassengerType.ELDERLY,
-              label: t('passenger_type.option.elderly'),
+              label: t("passenger_type.option.elderly"),
             },
             {
               value: FaresPassengerType.JOY_YOU,
-              label: t('passenger_type.option.joyYou'),
+              label: t("passenger_type.option.joyYou"),
             },
             {
               value: FaresPassengerType.PWD,
-              label: t('passenger_type.option.pwd'),
+              label: t("passenger_type.option.pwd"),
             },
           ]
         : [
             {
               value: FaresPassengerType.CHILD,
-              label: t('passenger_type.option.child'),
+              label: t("passenger_type.option.child"),
             },
             {
               value: FaresPassengerType.ADULT,
-              label: t('passenger_type.option.adult'),
+              label: t("passenger_type.option.adult"),
             },
           ],
     [faresType, t],
@@ -84,7 +84,7 @@ export const Toolbox = () => {
     <HStack
       gap="0"
       w="350px"
-      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+      bg={colorMode === "light" ? "gray.50" : "gray.900"}
       borderWidth="2px"
       borderRadius="md"
       shadow="sm"
@@ -101,7 +101,7 @@ export const Toolbox = () => {
         onChange={(e) => {
           setFaresType(e.target.value as FaresType);
         }}
-        placeholder={t('ticket_type.label')}
+        placeholder={t("ticket_type.label")}
         size="sm"
         value={faresType}
       >
@@ -126,7 +126,7 @@ export const Toolbox = () => {
         onChange={(e) => {
           setPassengerType(e.target.value as FaresPassengerType);
         }}
-        placeholder={t('passenger_type.label')}
+        placeholder={t("passenger_type.label")}
         size="sm"
         value={faresPassengerType}
       >

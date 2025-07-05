@@ -1,50 +1,50 @@
-import fs from 'node:fs';
-import { Readable } from 'node:stream';
+import fs from "node:fs";
+import { Readable } from "node:stream";
 
-import dayjs from 'dayjs';
-import { stops } from 'mtr-kit';
-import { SitemapStream, streamToPromise } from 'sitemap';
+import dayjs from "dayjs";
+import { stops } from "mtr-kit";
+import { SitemapStream, streamToPromise } from "sitemap";
 
 export const generateSiteMap = async () => {
   // An array with your links
   const links = [
     {
-      url: '/',
-      changefreq: 'daily',
+      url: "/",
+      changefreq: "daily",
       priority: 1,
-      lastmod: dayjs().format('YYYY-MM-DD'),
+      lastmod: dayjs().format("YYYY-MM-DD"),
     },
     {
-      url: '#/about-us',
-      changefreq: 'daily',
+      url: "#/about-us",
+      changefreq: "daily",
       priority: 1,
-      lastmod: dayjs().format('YYYY-MM-DD'),
+      lastmod: dayjs().format("YYYY-MM-DD"),
     },
     {
-      url: '#/fares',
-      changefreq: 'daily',
+      url: "#/fares",
+      changefreq: "daily",
       priority: 0.5,
-      lastmod: dayjs().format('YYYY-MM-DD'),
+      lastmod: dayjs().format("YYYY-MM-DD"),
     },
     ...stops.map(({ stop }) => ({
       url: `#/fares/${stop}`,
-      changefreq: 'daily',
+      changefreq: "daily",
       priority: 0.5,
-      lastmod: dayjs().format('YYYY-MM-DD'),
+      lastmod: dayjs().format("YYYY-MM-DD"),
     })),
     ...stops.map(({ stop }) => ({
       url: `#/stops/${stop}/schedules`,
-      changefreq: 'daily',
+      changefreq: "daily",
       priority: 0.5,
-      lastmod: dayjs().format('YYYY-MM-DD'),
+      lastmod: dayjs().format("YYYY-MM-DD"),
     })),
   ];
 
   // Create a stream to write to
-  const stream = new SitemapStream({ hostname: 'https://mtr.today' });
+  const stream = new SitemapStream({ hostname: "https://mtr.today" });
 
   // Return a promise that resolves with your XML string
   const res = await streamToPromise(Readable.from(links).pipe(stream));
 
-  fs.writeFileSync('./public/sitemap.xml', res.toString());
+  fs.writeFileSync("./public/sitemap.xml", res.toString());
 };

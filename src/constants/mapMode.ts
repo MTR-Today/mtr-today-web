@@ -1,4 +1,4 @@
 export enum MapMode {
-  SCHEDULES = 'SCHEDULES',
-  FARES = 'FARES',
+  SCHEDULES = "SCHEDULES",
+  FARES = "FARES",
 }

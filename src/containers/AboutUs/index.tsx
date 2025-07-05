@@ -12,13 +12,13 @@ import {
   ModalOverlay,
   Stack,
   useDisclosure,
-} from '@chakra-ui/react';
-import { useNavigate } from '@tanstack/react-router';
-import { useTranslation } from 'react-i18next';
-import { IoLogoGithub } from 'react-icons/io';
+} from "@chakra-ui/react";
+import { useNavigate } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
+import { IoLogoGithub } from "react-icons/io";
 
-import packageJson from '../../../package.json';
-import logo from '../../assets/logo.svg';
+import packageJson from "../../../package.json";
+import logo from "../../assets/logo.svg";
 
 export const AboutUs: React.FC = () => {
   const navigate = useNavigate();
@@ -32,13 +32,13 @@ export const AboutUs: React.FC = () => {
       isOpen={isOpen}
       onClose={onClose}
       onCloseComplete={() => {
-        navigate({ to: '/' });
+        navigate({ to: "/" });
       }}
       size="xs"
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{t('about_us')}</ModalHeader>
+        <ModalHeader>{t("about_us")}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Stack alignItems="center" mb="4" spacing={2}>
@@ -51,7 +51,7 @@ export const AboutUs: React.FC = () => {
             <Box color="GrayText">v{packageJson.version}</Box>
             <Link href="https://github.com/mtr-today">
               <Button leftIcon={<IoLogoGithub />} size="sm">
-                {t('source_code')}
+                {t("source_code")}
               </Button>
             </Link>
           </Stack>

@@ -3,7 +3,7 @@ import {
   InfoOutlineIcon,
   SunIcon,
   TimeIcon,
-} from '@chakra-ui/icons';
+} from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -20,23 +20,23 @@ import {
   Show,
   Text,
   useColorMode,
-} from '@chakra-ui/react';
-import styled from '@emotion/styled';
-import { Link } from '@tanstack/react-router';
-import { lines } from 'mtr-kit';
-import { useTranslation } from 'react-i18next';
-import { AiTwotoneApi } from 'react-icons/ai';
-import { IoLogoGithub } from 'react-icons/io';
-import { MdGTranslate, MdImage } from 'react-icons/md';
+} from "@chakra-ui/react";
+import styled from "@emotion/styled";
+import { Link } from "@tanstack/react-router";
+import { lines } from "mtr-kit";
+import { useTranslation } from "react-i18next";
+import { AiTwotoneApi } from "react-icons/ai";
+import { IoLogoGithub } from "react-icons/io";
+import { MdGTranslate, MdImage } from "react-icons/md";
 
-import logoDark from '../../assets/logoDark.svg';
-import logoLight from '../../assets/logoLight.svg';
-import { RadioSwitch, RadioSwitchItem } from '../../components/RadioSwitch';
-import { Language } from '../../constants/language';
-import { menuMap } from '../../constants/menuMap';
-import { TimeDisplay } from '../../constants/timeDisplay';
-import { useConfig } from '../../hooks/useConfig';
-import { useTime } from '../../hooks/useTime';
+import logoDark from "../../assets/logoDark.svg";
+import logoLight from "../../assets/logoLight.svg";
+import { RadioSwitch, RadioSwitchItem } from "../../components/RadioSwitch";
+import { Language } from "../../constants/language";
+import { menuMap } from "../../constants/menuMap";
+import { TimeDisplay } from "../../constants/timeDisplay";
+import { useConfig } from "../../hooks/useConfig";
+import { useTime } from "../../hooks/useTime";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
       align="center"
       overflow="hidden"
       w="calc(100% - 32px)"
-      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+      bg={colorMode === "light" ? "gray.50" : "gray.900"}
       borderWidth="2px"
       borderRadius="md"
       shadow="sm"
@@ -92,13 +92,13 @@ export const Header: React.FC = () => {
           w="24px"
           h="24px"
           borderRadius="md"
-          src={colorMode === 'light' ? logoLight : logoDark}
+          src={colorMode === "light" ? logoLight : logoDark}
         />
         <Show above="md">
           <Flex align="end">
             <Text fontWeight="semibold">MTR</Text>
             <Text
-              color={colorMode === 'dark' ? 'white' : 'gray.500'}
+              color={colorMode === "dark" ? "white" : "gray.500"}
               fontSize="xs"
             >
               .today
@@ -115,16 +115,16 @@ export const Header: React.FC = () => {
                 px="4"
                 fontSize="sm"
                 lineHeight="32px"
-                _hover={{ textDecoration: 'none' }}
+                _hover={{ textDecoration: "none" }}
                 transition="background-color 1s"
                 variant="link"
                 {...(isActive
                   ? {
-                      color: 'chakra-body-text',
-                      fontWeight: 'semibold',
-                      bg: colorMode === 'dark' ? 'whiteAlpha.50' : 'white',
-                      borderRadius: 'md',
-                      shadow: 'xs',
+                      color: "chakra-body-text",
+                      fontWeight: "semibold",
+                      bg: colorMode === "dark" ? "whiteAlpha.50" : "white",
+                      borderRadius: "md",
+                      shadow: "xs",
                     }
                   : {})}
               >
@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
           borderRightRadius="md"
           fontSize="sm"
         >
-          {now.format('YYYY-MM-DD HH:mm:ss')}
+          {now.format("YYYY-MM-DD HH:mm:ss")}
         </Clock>
       </Show>
       <Menu strategy="fixed">
@@ -161,11 +161,11 @@ export const Header: React.FC = () => {
               value={language}
               onChange={(value) => setLanguage(value)}
             >
-              <RadioSwitchItem value={Language['ZH-HK']}>
-                {t('language.zh_hk')}
+              <RadioSwitchItem value={Language["ZH-HK"]}>
+                {t("language.zh_hk")}
               </RadioSwitchItem>
               <RadioSwitchItem value={Language.EN}>
-                {t('language.en')}
+                {t("language.en")}
               </RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
@@ -174,11 +174,11 @@ export const Header: React.FC = () => {
               <MdImage />
             </Box>
             <RadioSwitch
-              value={animatedBg ? 'true' : 'false'}
-              onChange={(value) => setAnimatedBg(value === 'true')}
+              value={animatedBg ? "true" : "false"}
+              onChange={(value) => setAnimatedBg(value === "true")}
             >
-              <RadioSwitchItem value="true">{t('bg.animated')}</RadioSwitchItem>
-              <RadioSwitchItem value="false">{t('bg.static')}</RadioSwitchItem>
+              <RadioSwitchItem value="true">{t("bg.animated")}</RadioSwitchItem>
+              <RadioSwitchItem value="false">{t("bg.static")}</RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
           <MenuItem>
@@ -190,10 +190,10 @@ export const Header: React.FC = () => {
               onChange={(value) => setTimeDisplay(value)}
             >
               <RadioSwitchItem value={TimeDisplay.ABS}>
-                {t('time_display.abs')}
+                {t("time_display.abs")}
               </RadioSwitchItem>
               <RadioSwitchItem value={TimeDisplay.REL}>
-                {t('time_display.rel')}
+                {t("time_display.rel")}
               </RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
@@ -203,23 +203,23 @@ export const Header: React.FC = () => {
             </Box>
             <RadioSwitch value={colorMode} onChange={toggleColorMode}>
               <RadioSwitchItem value="light">
-                {t('color_mode.light')}
+                {t("color_mode.light")}
               </RadioSwitchItem>
               <RadioSwitchItem value="dark">
-                {t('color_mode.dark')}
+                {t("color_mode.dark")}
               </RadioSwitchItem>
             </RadioSwitch>
           </MenuItem>
           <MenuDivider />
           <ExternalLink href="https://github.com/mtr-today">
-            <MenuItem icon={<IoLogoGithub />}>{t('source_code')}</MenuItem>
+            <MenuItem icon={<IoLogoGithub />}>{t("source_code")}</MenuItem>
           </ExternalLink>
           <ExternalLink href="https://github.com/MTR-Today/mtr-today-api#-api-documentation">
-            <MenuItem icon={<AiTwotoneApi />}>{t('api')}</MenuItem>
+            <MenuItem icon={<AiTwotoneApi />}>{t("api")}</MenuItem>
           </ExternalLink>
           <MenuDivider />
           <Link to="/about-us">
-            <MenuItem icon={<InfoOutlineIcon />}>{t('about_us')}</MenuItem>
+            <MenuItem icon={<InfoOutlineIcon />}>{t("about_us")}</MenuItem>
           </Link>
         </MenuList>
       </Menu>
