@@ -12,7 +12,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "pre-commit": "pnpm biome check --fix --staged --no-errors-on-unmatched",
     "pre-push": "tsc"
   },
   "dependencies": {
