@@ -57,7 +57,7 @@
     "lefthook": "1.12.2",
     "sitemap": "8.0.0",
     "typescript": "5.9.2",
-    "vite": "7.0.6",
+    "vite": "7.0.7",
     "vite-plugin-pwa": "1.0.2"
   },
   "packageManager": "pnpm@10.14.0"
