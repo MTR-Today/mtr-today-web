@@ -53,7 +53,7 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
-    "@vitejs/plugin-react": "5.1.1",
+    "@vitejs/plugin-react": "5.1.2",
     "lefthook": "2.0.4",
     "sitemap": "9.0.0",
     "typescript": "5.9.3",
