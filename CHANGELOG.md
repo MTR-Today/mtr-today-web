@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.16.20](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.19...v1.16.20) (2025-12-01)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([#1602](https://github.com/MTR-Today/mtr-today-web/issues/1602)) ([e548013](https://github.com/MTR-Today/mtr-today-web/commit/e548013cd813b285e15a4219b5303485a3476112))
+
+## [1.16.19](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.18...v1.16.19) (2025-11-02)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([c52de50](https://github.com/MTR-Today/mtr-today-web/commit/c52de50089697e7b729f38a472045a625baa6755))
+* **deps:** update all dependencies ([f4142f7](https://github.com/MTR-Today/mtr-today-web/commit/f4142f7f88c3d721506276ed536073f2fb66d2f9))
+
+## [1.16.18](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.17...v1.16.18) (2025-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([b4d8753](https://github.com/MTR-Today/mtr-today-web/commit/b4d87539ec5814f63999572699ec23fabbc0a6a7))
+* **deps:** update all dependencies ([30e0fc9](https://github.com/MTR-Today/mtr-today-web/commit/30e0fc9bebdf3a1da7850cb5074940c9b40c208d))
+
 ## [1.16.17](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.16...v1.16.17) (2025-08-01)
 
 
