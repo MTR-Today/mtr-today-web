@@ -54,7 +54,7 @@
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
     "@vitejs/plugin-react": "5.1.2",
-    "lefthook": "2.0.4",
+    "lefthook": "2.0.16",
     "sitemap": "9.0.0",
     "typescript": "5.9.3",
     "vite": "7.2.4",
