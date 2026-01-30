@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.16.21](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.20...v1.16.21) (2026-01-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.90.20 ([#1607](https://github.com/MTR-Today/mtr-today-web/issues/1607)) ([ab965f6](https://github.com/MTR-Today/mtr-today-web/commit/ab965f681247138dbbcee271dc5cef8358f76488))
+* **deps:** update dependency @tanstack/react-router to v1.157.15 ([#1613](https://github.com/MTR-Today/mtr-today-web/issues/1613)) ([66cba59](https://github.com/MTR-Today/mtr-today-web/commit/66cba5951e29805a4979db151f3e3bd2e6a0051c))
+* **deps:** update dependency @tanstack/react-router to v1.157.16 ([#1623](https://github.com/MTR-Today/mtr-today-web/issues/1623)) ([d27a9df](https://github.com/MTR-Today/mtr-today-web/commit/d27a9dfbd21c2d4058ffc1e93a8050d67208faa5))
+* **deps:** update dependency framer-motion to v12.29.2 ([#1614](https://github.com/MTR-Today/mtr-today-web/issues/1614)) ([925ebbd](https://github.com/MTR-Today/mtr-today-web/commit/925ebbd98e50300ba83b517892232c5032e4f2b7))
+* **deps:** update dependency graphql-request to v7.4.0 ([#1615](https://github.com/MTR-Today/mtr-today-web/issues/1615)) ([2852768](https://github.com/MTR-Today/mtr-today-web/commit/2852768fd98fe66f291589a84300dc24ce388ca0))
+* **deps:** update dependency i18next to v25.8.0 ([#1616](https://github.com/MTR-Today/mtr-today-web/issues/1616)) ([3fdde9a](https://github.com/MTR-Today/mtr-today-web/commit/3fdde9ab60cae71591018d2232228b5e923af04f))
+* **deps:** update dependency react-i18next to v16.5.3 ([#1617](https://github.com/MTR-Today/mtr-today-web/issues/1617)) ([7b9048c](https://github.com/MTR-Today/mtr-today-web/commit/7b9048cad5b1148224fed435991dc7e156b2b205))
+* **deps:** update dependency react-i18next to v16.5.4 ([#1622](https://github.com/MTR-Today/mtr-today-web/issues/1622)) ([f3b90ed](https://github.com/MTR-Today/mtr-today-web/commit/f3b90edd3b12c54f018ee6547709cc74c62effd7))
+* **deps:** update react monorepo ([#1608](https://github.com/MTR-Today/mtr-today-web/issues/1608)) ([9fb9f6a](https://github.com/MTR-Today/mtr-today-web/commit/9fb9f6aa75e60c3f8a4b2c3c24b088cd968e8b08))
+
 ## [1.16.20](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.19...v1.16.20) (2025-12-01)
 
 
