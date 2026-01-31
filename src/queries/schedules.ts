@@ -1,7 +1,7 @@
-import { gql } from "graphql-request";
-import type { LineCode, StopCode } from "mtr-kit";
+import { gql } from 'graphql-request';
+import type { LineCode, StopCode } from 'mtr-kit';
 
-import { apiClient } from ".";
+import { apiClient } from '.';
 
 export type ScheduleItem = {
   platform: number;

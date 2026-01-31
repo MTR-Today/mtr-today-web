@@ -1,19 +1,19 @@
-import "./locales";
-import "./utils/dayjs";
+import './locales';
+import './utils/dayjs';
 
-import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { RouterProvider } from "@tanstack/react-router";
-import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
-import { UseConfigProvider } from "./hooks/useConfig";
-import { UseTimeProvider } from "./hooks/useTime";
-import { router } from "./Router";
+import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider } from '@tanstack/react-router';
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { UseConfigProvider } from './hooks/useConfig';
+import { UseTimeProvider } from './hooks/useTime';
+import { router } from './Router';
 
 const queryClient = new QueryClient();
 
 const config = {
-  initialColorMode: "auto",
+  initialColorMode: 'auto',
   useSystemColorMode: false,
 };
 
@@ -23,12 +23,12 @@ const theme = extendTheme({
     Drawer: {
       variants: {
         alwaysOpen: {
-          parts: ["dialog, dialogContainer"],
+          parts: ['dialog, dialogContainer'],
           dialog: {
-            pointerEvents: "auto",
+            pointerEvents: 'auto',
           },
           dialogContainer: {
-            pointerEvents: "none",
+            pointerEvents: 'none',
           },
         },
       },
@@ -36,7 +36,7 @@ const theme = extendTheme({
   },
 });
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>

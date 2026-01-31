@@ -1,6 +1,6 @@
 /* eslint-disable fp/no-mutation */
-import type { ColorMode } from "@chakra-ui/react";
-import { createNoise3D } from "simplex-noise";
+import type { ColorMode } from '@chakra-ui/react';
+import { createNoise3D } from 'simplex-noise';
 
 const noise3D = createNoise3D();
 
@@ -30,17 +30,17 @@ export class Animation {
   constructor(canvas: HTMLCanvasElement, colorMode: ColorMode) {
     this.config = {
       colorSchema:
-        colorMode === "light"
-          ? ["#F7FAFC", "#EDF2F7", "#FFFFFF"]
-          : ["#2D3748", "#1A202C", "#000000"],
+        colorMode === 'light'
+          ? ['#F7FAFC', '#EDF2F7', '#FFFFFF']
+          : ['#2D3748', '#1A202C', '#000000'],
       numOfLayers: 8,
     };
 
     this.canvas = canvas;
-    this.ctx = this.canvas.getContext("2d");
+    this.ctx = this.canvas.getContext('2d');
 
-    this.shadowCanvas = document.createElement("canvas");
-    this.shadowCtx = this.shadowCanvas.getContext("2d");
+    this.shadowCanvas = document.createElement('canvas');
+    this.shadowCtx = this.shadowCanvas.getContext('2d');
 
     this.setUpVars();
     // this.setUpListeners()
@@ -88,7 +88,7 @@ export class Animation {
   }
 
   setUpListeners() {
-    window.addEventListener("resize", this.setUpVars.bind(this));
+    window.addEventListener('resize', this.setUpVars.bind(this));
   }
 
   drawLayer(ctx: CanvasRenderingContext2D, layer: Layer) {

@@ -1,12 +1,12 @@
-import { Box } from "@chakra-ui/react";
-import styled from "@emotion/styled";
-import { min } from "ramda";
-import { useMemo } from "react";
-import { isIOS } from "react-device-detect";
-import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { Box } from '@chakra-ui/react';
+import styled from '@emotion/styled';
+import { min } from 'ramda';
+import { useMemo } from 'react';
+import { isIOS } from 'react-device-detect';
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { Toolbox } from "./Toolbox";
+import { useWindowSize } from '../../hooks/useWindowSize';
+import { Toolbox } from './Toolbox';
 
 export const CONTAINER_WIDTH = 2800 * 2;
 export const CONTAINER_HEIGHT = 1630 * 2;
@@ -49,8 +49,8 @@ export const DragContainer: React.FC<Props> = ({
           <>
             <TransformComponent
               wrapperStyle={{
-                maxWidth: "100vw",
-                maxHeight: "100vh",
+                maxWidth: '100vw',
+                maxHeight: '100vh',
               }}
             >
               <DragWrapper
@@ -62,7 +62,7 @@ export const DragContainer: React.FC<Props> = ({
                 {children}
               </DragWrapper>
             </TransformComponent>
-            <Box pos="fixed" zIndex="overlay" bottom="16px" left="16px">
+            <Box pos='fixed' zIndex='overlay' bottom='16px' left='16px'>
               <Toolbox
                 onFitScreenClick={() => {
                   centerView(fitScale);

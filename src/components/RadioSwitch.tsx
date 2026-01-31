@@ -5,9 +5,9 @@ import {
   useColorMode,
   useRadio,
   useRadioGroup,
-} from "@chakra-ui/react";
-import { flatten } from "ramda";
-import { cloneElement, Fragment } from "react";
+} from '@chakra-ui/react';
+import { flatten } from 'ramda';
+import { cloneElement, Fragment } from 'react';
 
 type ItemProps<T extends string> = {
   value: T;
@@ -23,19 +23,19 @@ export const RadioSwitchItem = <T extends string>(
   const checkbox = getRadioProps();
 
   return (
-    <Box as="label">
+    <Box as='label'>
       <input {...input} />
       <Box
         {...checkbox}
         px={4}
         py={0.5}
-        fontSize="sm"
-        borderRadius="md"
+        fontSize='sm'
+        borderRadius='md'
         _checked={{
-          bg: "chakra-body-bg",
-          boxShadow: "sm",
+          bg: 'chakra-body-bg',
+          boxShadow: 'sm',
         }}
-        cursor="pointer"
+        cursor='pointer'
       >
         {props.children}
       </Box>
@@ -60,8 +60,8 @@ export const RadioSwitch = <T extends string>({
   const { colorMode } = useColorMode();
 
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "framework",
-    defaultValue: "react",
+    name: 'framework',
+    defaultValue: 'react',
     onChange,
     value,
   });
@@ -71,12 +71,12 @@ export const RadioSwitch = <T extends string>({
   return (
     <HStack
       {...group}
-      w="fit-content"
-      h="32px"
+      w='fit-content'
+      h='32px'
       p={1}
-      bg={colorMode === "dark" ? "gray.700" : "gray.50"}
-      borderWidth="1px"
-      borderRadius="md"
+      bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
+      borderWidth='1px'
+      borderRadius='md'
     >
       {flatten(children).map((item) => {
         const radio = getRadioProps({ value: item.props.value });

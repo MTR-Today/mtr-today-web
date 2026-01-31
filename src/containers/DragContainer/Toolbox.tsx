@@ -1,7 +1,7 @@
-import { Box, IconButton, Tooltip, useColorMode } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
-import { ImEnlarge } from "react-icons/im";
-import { IoMdAdd, IoMdRemove } from "react-icons/io";
+import { Box, IconButton, Tooltip, useColorMode } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
+import { ImEnlarge } from 'react-icons/im';
+import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 
 type Props = {
   onFitScreenClick: () => void;
@@ -18,40 +18,40 @@ export const Toolbox: React.FC<Props> = ({
   const { colorMode } = useColorMode();
   return (
     <Box
-      bg={colorMode === "light" ? "gray.50" : "gray.900"}
-      borderWidth="2px"
-      borderRadius="md"
-      shadow="sm"
+      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+      borderWidth='2px'
+      borderRadius='md'
+      shadow='sm'
     >
-      <Tooltip label={t("fit_screen")}>
+      <Tooltip label={t('fit_screen')}>
         <IconButton
-          borderWidth="0"
-          borderRightWidth="1px"
-          borderRadius="0"
-          aria-label="dit-screen"
+          borderWidth='0'
+          borderRightWidth='1px'
+          borderRadius='0'
+          aria-label='dit-screen'
           icon={<ImEnlarge />}
           onClick={onFitScreenClick}
-          variant="outline"
+          variant='outline'
         />
       </Tooltip>
-      <Tooltip label={t("zoom_in")}>
+      <Tooltip label={t('zoom_in')}>
         <IconButton
-          borderWidth="0"
-          borderRadius="0"
-          aria-label="dit-screen"
+          borderWidth='0'
+          borderRadius='0'
+          aria-label='dit-screen'
           icon={<IoMdAdd />}
           onClick={onZoomInClick}
-          variant="outline"
+          variant='outline'
         />
       </Tooltip>
-      <Tooltip label={t("zoom_out")}>
+      <Tooltip label={t('zoom_out')}>
         <IconButton
-          borderWidth="0"
-          borderRadius="0"
-          aria-label="dit-screen"
+          borderWidth='0'
+          borderRadius='0'
+          aria-label='dit-screen'
           icon={<IoMdRemove />}
           onClick={onZoomOutClick}
-          variant="outline"
+          variant='outline'
         />
       </Tooltip>
     </Box>

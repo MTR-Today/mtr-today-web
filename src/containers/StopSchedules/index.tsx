@@ -12,17 +12,17 @@ import {
   Heading,
   Skeleton,
   useColorMode,
-} from "@chakra-ui/react";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "@tanstack/react-router";
-import { lines } from "mtr-kit";
-import { isEmpty, range } from "ramda";
-import { useTranslation } from "react-i18next";
+} from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from '@tanstack/react-router';
+import { lines } from 'mtr-kit';
+import { isEmpty, range } from 'ramda';
+import { useTranslation } from 'react-i18next';
 
-import { Language } from "../../constants/language";
-import { listStopSchedules } from "../../queries/stopSchedules";
-import { Empty } from "./Empty";
-import { ScheduleList } from "./ScheduleList";
+import { Language } from '../../constants/language';
+import { listStopSchedules } from '../../queries/stopSchedules';
+import { Empty } from './Empty';
+import { ScheduleList } from './ScheduleList';
 
 export const StopSchedules: React.FC = () => {
   const { i18n, t } = useTranslation();
@@ -33,7 +33,7 @@ export const StopSchedules: React.FC = () => {
   );
 
   const { data, isLoading } = useQuery({
-    queryKey: ["schedules", stopCode],
+    queryKey: ['schedules', stopCode],
     queryFn: () => listStopSchedules({ stop: stopCode }),
     refetchInterval: 10000,
     refetchOnMount: true,
@@ -42,7 +42,7 @@ export const StopSchedules: React.FC = () => {
   return (
     <Accordion
       key={stopCode}
-      mb="8"
+      mb='8'
       allowMultiple
       defaultIndex={range(0, stopLines.length + 1)}
     >
@@ -52,59 +52,59 @@ export const StopSchedules: React.FC = () => {
         );
 
         return (
-          <AccordionItem key={line.line} border="0">
-            <AccordionButton bg="blackAlpha.200">
+          <AccordionItem key={line.line} border='0'>
+            <AccordionButton bg='blackAlpha.200'>
               <Heading
-                as="h1"
-                pos="relative"
-                alignItems="center"
-                flex="1"
-                display="flex"
-                py="1"
-                textAlign="left"
-                size="md"
+                as='h1'
+                pos='relative'
+                alignItems='center'
+                flex='1'
+                display='flex'
+                py='1'
+                textAlign='left'
+                size='md'
               >
-                <Flex align="center" justify="center" mr="2">
+                <Flex align='center' justify='center' mr='2'>
                   <Box
-                    pos="relative"
-                    zIndex="1"
-                    w="18px"
-                    h="18px"
-                    bg="Background"
-                    borderWidth="3px"
-                    borderColor={colorMode === "dark" ? "white" : "gray.700"}
-                    borderRadius="100%"
-                    transition="transform .5s"
+                    pos='relative'
+                    zIndex='1'
+                    w='18px'
+                    h='18px'
+                    bg='Background'
+                    borderWidth='3px'
+                    borderColor={colorMode === 'dark' ? 'white' : 'gray.700'}
+                    borderRadius='100%'
+                    transition='transform .5s'
                   />
-                  <Box pos="absolute" w="1" h="full" bg={line.color} />
+                  <Box pos='absolute' w='1' h='full' bg={line.color} />
                 </Flex>
-                {i18n.language === Language["ZH-HK"]
+                {i18n.language === Language['ZH-HK']
                   ? line.nameZh
                   : line.nameEn}
               </Heading>
               <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel p="0">
-              <Skeleton minH="230px" isLoaded={!isLoading}>
+            <AccordionPanel p='0'>
+              <Skeleton minH='230px' isLoaded={!isLoading}>
                 {!schedule ? (
                   <Empty />
                 ) : (
                   <>
                     {schedule.isDelayed && (
-                      <Alert status="error">
+                      <Alert status='error'>
                         <AlertIcon />
-                        <AlertDescription>{t("is_delayed")}</AlertDescription>
+                        <AlertDescription>{t('is_delayed')}</AlertDescription>
                       </Alert>
                     )}
                     <Flex>
                       {!isEmpty(schedule.schedule.up || []) && (
-                        <Box w="full">
+                        <Box w='full'>
                           <Heading
-                            as="h2"
-                            p="4"
-                            py="3"
-                            textAlign="center"
-                            size="sm"
+                            as='h2'
+                            p='4'
+                            py='3'
+                            textAlign='center'
+                            size='sm'
                           >
                             上行
                           </Heading>
@@ -115,13 +115,13 @@ export const StopSchedules: React.FC = () => {
                         </Box>
                       )}
                       {!isEmpty(schedule.schedule.down || []) && (
-                        <Box w="full">
+                        <Box w='full'>
                           <Heading
-                            as="h2"
-                            p="4"
-                            py="3"
-                            textAlign="center"
-                            size="sm"
+                            as='h2'
+                            p='4'
+                            py='3'
+                            textAlign='center'
+                            size='sm'
                           >
                             下行
                           </Heading>
@@ -133,7 +133,7 @@ export const StopSchedules: React.FC = () => {
                       )}
                     </Flex>
                   </>
-                )}{" "}
+                )}{' '}
               </Skeleton>
             </AccordionPanel>
           </AccordionItem>

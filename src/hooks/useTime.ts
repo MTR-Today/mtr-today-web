@@ -1,6 +1,6 @@
-import constate from "constate";
-import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import constate from 'constate';
+import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
 
 export const [UseTimeProvider, useTime] = constate(() => {
   const [time, setTime] = useState(dayjs());

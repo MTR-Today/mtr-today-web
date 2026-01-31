@@ -1,4 +1,4 @@
 export enum TimeDisplay {
-  ABS = "ABS",
-  REL = "REL",
+  ABS = 'ABS',
+  REL = 'REL',
 }
