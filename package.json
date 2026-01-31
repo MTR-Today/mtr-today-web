@@ -47,8 +47,8 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.13",
     "@commitlint/cli": "20.3.1",
-    "@marklai/shared-config-biome": "^1.0.0",
-    "@marklai/shared-config-commitlint": "^1.0.0",
+    "@marklai/shared-config-biome": "1.0.0",
+    "@marklai/shared-config-commitlint": "1.0.0",
     "@types/color": "4.2.0",
     "@types/ramda": "0.31.1",
     "@types/react": "19.2.10",
