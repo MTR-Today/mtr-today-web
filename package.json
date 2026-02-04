@@ -51,7 +51,7 @@
     "@marklai/shared-config-commitlint": "1.0.0",
     "@types/color": "4.2.0",
     "@types/ramda": "0.31.1",
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.11",
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
     "@vitejs/plugin-react": "5.1.3",
