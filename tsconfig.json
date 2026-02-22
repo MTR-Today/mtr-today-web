@@ -1,28 +1,9 @@
 {
+  "extends": "@marklai/shared-config-typescript",
+  "include": ["src", "vite.config.ts"],
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-
-    "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-
-    "strict": true,
-    "strictFunctionTypes": false,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
-  },
-  "include": ["src", "vite.config.ts"]
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
 }
