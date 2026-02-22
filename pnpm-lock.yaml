@@ -106,7 +106,7 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(@commitlint/cli@20.4.2(@types/node@24.10.13)(typescript@5.9.3))
       '@marklai/shared-config-typescript':
-        specifier: ^1.1.0
+        specifier: 1.1.0
         version: 1.1.0(typescript@5.9.3)
       '@types/color':
         specifier: 4.2.0
