@@ -105,6 +105,9 @@ importers:
       '@marklai/shared-config-commitlint':
         specifier: 1.0.0
         version: 1.0.0(@commitlint/cli@20.4.2(@types/node@24.10.13)(typescript@5.9.3))
+      '@marklai/shared-config-typescript':
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       '@types/color':
         specifier: 4.2.0
         version: 4.2.0
@@ -1086,6 +1089,12 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       '@commitlint/cli': ^20.0.0
+
+  '@marklai/shared-config-typescript@1.1.0':
+    resolution: {integrity: sha512-YikYyh8vYpZ4ZEzOZ1+OPyaD0OYxc8JBqt/KXrA4cW9YMTTr8j2RNrGteHyxZBjnCMWRkEpAmvmfjmGPXkodQg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      typescript: ^5.0.0
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
@@ -4088,6 +4097,10 @@ snapshots:
     dependencies:
       '@commitlint/cli': 20.4.2(@types/node@24.10.13)(typescript@5.9.3)
       '@commitlint/config-conventional': 20.3.1
+
+  '@marklai/shared-config-typescript@1.1.0(typescript@5.9.3)':
+    dependencies:
+      typescript: 5.9.3
 
   '@popperjs/core@2.11.8': {}
 
