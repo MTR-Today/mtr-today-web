@@ -130,8 +130,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       sitemap:
-        specifier: 9.0.0
-        version: 9.0.0
+        specifier: 9.0.1
+        version: 9.0.1
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2607,8 +2607,8 @@ packages:
   simplex-noise@4.0.3:
     resolution: {integrity: sha512-qSE2I4AngLQG7BXqoZj51jokT4WUXe8mOBrvfOXpci8+6Yu44+/dD5zqDpOx3Ux792eamTd2lLcI8jqFntk/lg==}
 
-  sitemap@9.0.0:
-    resolution: {integrity: sha512-J/SU27FJ+I52TcDLKZzPRRVQUMj0Pp1i/HLb2lrkU+hrMLM+qdeRjdacrNxnSW48Waa3UcEOGOdX1+0Lob7TgA==}
+  sitemap@9.0.1:
+    resolution: {integrity: sha512-S6hzjGJSG3d6if0YoF5kTyeRJvia6FSTBroE5fQ0bu1QNxyJqhhinfUsXi9fH3MgtXODWvwo2BDyQSnhPQ88uQ==}
     engines: {node: '>=20.19.5', npm: '>=10.8.2'}
     hasBin: true
 
@@ -5593,7 +5593,7 @@ snapshots:
 
   simplex-noise@4.0.3: {}
 
-  sitemap@9.0.0:
+  sitemap@9.0.1:
     dependencies:
       '@types/node': 24.10.13
       '@types/sax': 1.2.7
