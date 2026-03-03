@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.5",
-    "@commitlint/cli": "20.4.2",
+    "@commitlint/cli": "20.4.3",
     "@marklai/shared-config-biome": "1.0.0",
     "@marklai/shared-config-commitlint": "1.0.0",
     "@marklai/shared-config-typescript": "1.1.0",
