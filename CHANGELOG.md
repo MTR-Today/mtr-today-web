@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.16.35](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.34...v1.16.35) (2026-03-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v12.34.4 ([#1714](https://github.com/MTR-Today/mtr-today-web/issues/1714)) ([1075d54](https://github.com/MTR-Today/mtr-today-web/commit/1075d54d0c130b803b70cdf45c2ae045d638597b))
+* **deps:** update dependency framer-motion to v12.34.5 ([#1716](https://github.com/MTR-Today/mtr-today-web/issues/1716)) ([0e09fc9](https://github.com/MTR-Today/mtr-today-web/commit/0e09fc93fe64b5169d8602db4c1735a055c7e2bf))
+* **deps:** update dependency graphql to v16.13.1 ([#1719](https://github.com/MTR-Today/mtr-today-web/issues/1719)) ([b994ddd](https://github.com/MTR-Today/mtr-today-web/commit/b994dddc486c2007d1dbf48ddf97c914bba25444))
+* **deps:** update dependency i18next to v25.8.14 ([#1718](https://github.com/MTR-Today/mtr-today-web/issues/1718)) ([e1b3d13](https://github.com/MTR-Today/mtr-today-web/commit/e1b3d1391de21a5b40ba0eda7775b1aadc0b8a34))
+
 ## [1.16.34](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.33...v1.16.34) (2026-02-28)
 
 
