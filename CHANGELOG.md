@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.36](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.35...v1.16.36) (2026-03-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-i18next to v16.5.6 ([#1721](https://github.com/MTR-Today/mtr-today-web/issues/1721)) ([85d1f86](https://github.com/MTR-Today/mtr-today-web/commit/85d1f86d077156ecbc25c46c6a6635a9c4f98d9d))
+* **deps:** update dependency react-icons to v5.6.0 ([#1722](https://github.com/MTR-Today/mtr-today-web/issues/1722)) ([e8f7c77](https://github.com/MTR-Today/mtr-today-web/commit/e8f7c779953ba4bd354d00946b79a8989c72c71c))
+
 ## [1.16.35](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.34...v1.16.35) (2026-03-04)
 
 
