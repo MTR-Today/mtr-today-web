@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.16.36](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.35...v1.16.36) (2026-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.166.2 ([#1726](https://github.com/MTR-Today/mtr-today-web/issues/1726)) ([a6a354b](https://github.com/MTR-Today/mtr-today-web/commit/a6a354b048bec666c2858b7b11dbeb476b8ad284))
+* **deps:** update dependency @tanstack/react-router to v1.166.3 ([#1728](https://github.com/MTR-Today/mtr-today-web/issues/1728)) ([7d4df64](https://github.com/MTR-Today/mtr-today-web/commit/7d4df64a8b0076b99808a702555fecd7c37c6633))
+* **deps:** update dependency @tanstack/react-router to v1.166.6 ([#1732](https://github.com/MTR-Today/mtr-today-web/issues/1732)) ([50c8fd2](https://github.com/MTR-Today/mtr-today-web/commit/50c8fd2bc7975a8bdcc9f329f6707ac31b84bb94))
+* **deps:** update dependency framer-motion to v12.35.0 ([#1725](https://github.com/MTR-Today/mtr-today-web/issues/1725)) ([1670ae3](https://github.com/MTR-Today/mtr-today-web/commit/1670ae31c34a62a8142c9599b6346b96247652e9))
+* **deps:** update dependency framer-motion to v12.35.1 ([#1727](https://github.com/MTR-Today/mtr-today-web/issues/1727)) ([c5415b1](https://github.com/MTR-Today/mtr-today-web/commit/c5415b1a792d30d64e9fa6c6e4a223e233599b7e))
+* **deps:** update dependency framer-motion to v12.35.2 ([#1730](https://github.com/MTR-Today/mtr-today-web/issues/1730)) ([e06d513](https://github.com/MTR-Today/mtr-today-web/commit/e06d513a196cb570c9c4ec12a79e7c1ac6b94fd7))
+* **deps:** update dependency i18next to v25.8.16 ([#1731](https://github.com/MTR-Today/mtr-today-web/issues/1731)) ([43a415a](https://github.com/MTR-Today/mtr-today-web/commit/43a415a38e17757421d725b334a1e075211649cd))
+* **deps:** update dependency i18next to v25.8.17 ([#1733](https://github.com/MTR-Today/mtr-today-web/issues/1733)) ([85f63c6](https://github.com/MTR-Today/mtr-today-web/commit/85f63c601c04fb702aa3849617448364cd63940c))
+* **deps:** update dependency react-i18next to v16.5.6 ([#1721](https://github.com/MTR-Today/mtr-today-web/issues/1721)) ([85d1f86](https://github.com/MTR-Today/mtr-today-web/commit/85d1f86d077156ecbc25c46c6a6635a9c4f98d9d))
+* **deps:** update dependency react-icons to v5.6.0 ([#1722](https://github.com/MTR-Today/mtr-today-web/issues/1722)) ([e8f7c77](https://github.com/MTR-Today/mtr-today-web/commit/e8f7c779953ba4bd354d00946b79a8989c72c71c))
+
 ## [1.16.35](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.34...v1.16.35) (2026-03-04)
 
 
