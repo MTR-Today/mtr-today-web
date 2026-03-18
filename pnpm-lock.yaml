@@ -109,8 +109,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(typescript@5.9.3)
       '@types/color':
-        specifier: 4.2.0
-        version: 4.2.0
+        specifier: 4.2.1
+        version: 4.2.1
       '@types/ramda':
         specifier: 0.31.1
         version: 0.31.1
@@ -1348,8 +1348,8 @@ packages:
   '@types/color-name@1.1.5':
     resolution: {integrity: sha512-j2K5UJqGTxeesj6oQuGpMgifpT5k9HprgQd8D1Y0lOFqKHl3PJu5GMeS4Y5EgjS55AE6OQxf8mPED9uaGbf4Cg==}
 
-  '@types/color@4.2.0':
-    resolution: {integrity: sha512-6+xrIRImMtGAL2X3qYkd02Mgs+gFGs+WsK0b7VVMaO4mYRISwyTjcqNrO0mNSmYEoq++rSLDB2F5HDNmqfOe+A==}
+  '@types/color@4.2.1':
+    resolution: {integrity: sha512-ResWeDLy1vozIMbD6JLRKuNBbIcIlBkjTIxVHHd5Cqtm77T+ahH3BWE/PWv1OhFd1HAwcn8no4ig2uTaRXpYQQ==}
 
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
@@ -4402,7 +4402,7 @@ snapshots:
 
   '@types/color-name@1.1.5': {}
 
-  '@types/color@4.2.0':
+  '@types/color@4.2.1':
     dependencies:
       '@types/color-convert': 2.0.4
 
