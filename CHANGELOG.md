@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.16.40](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.39...v1.16.40) (2026-03-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.91.0 ([#1765](https://github.com/MTR-Today/mtr-today-web/issues/1765)) ([91d43a3](https://github.com/MTR-Today/mtr-today-web/commit/91d43a3fb200e517b6131671fca43741ec30ef96))
+* **deps:** update dependency @tanstack/react-query to v5.91.3 ([#1766](https://github.com/MTR-Today/mtr-today-web/issues/1766)) ([acb97a4](https://github.com/MTR-Today/mtr-today-web/commit/acb97a46a029399e6da90f795d6c1c47caf7d376))
+* **deps:** update dependency @tanstack/react-router to v1.167.5 ([#1757](https://github.com/MTR-Today/mtr-today-web/issues/1757)) ([91c6eb3](https://github.com/MTR-Today/mtr-today-web/commit/91c6eb3ac34bb0b72b61166ea9d4151146fe9810))
+* **deps:** update dependency framer-motion to v12.37.0 ([#1761](https://github.com/MTR-Today/mtr-today-web/issues/1761)) ([7856d4c](https://github.com/MTR-Today/mtr-today-web/commit/7856d4cce96a7482322b660f5bfe690e03b1e2e5))
+* **deps:** update dependency framer-motion to v12.38.0 ([#1763](https://github.com/MTR-Today/mtr-today-web/issues/1763)) ([334e3a9](https://github.com/MTR-Today/mtr-today-web/commit/334e3a955e0190ee4cd5985768d11c1295298509))
+* **deps:** update dependency i18next to v25.8.19 ([#1760](https://github.com/MTR-Today/mtr-today-web/issues/1760)) ([822b9d9](https://github.com/MTR-Today/mtr-today-web/commit/822b9d9f6b5c5910ec90902f7fd21c579c13894c))
+* **deps:** update dependency i18next to v25.8.20 ([#1762](https://github.com/MTR-Today/mtr-today-web/issues/1762)) ([38ec52d](https://github.com/MTR-Today/mtr-today-web/commit/38ec52d8ab692cdfbc2d75ef4c84b94ee0c73bdf))
+
 ## [1.16.39](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.38...v1.16.39) (2026-03-17)
 
 
