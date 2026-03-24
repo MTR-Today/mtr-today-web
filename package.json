@@ -28,7 +28,7 @@
     "constate": "3.3.3",
     "dayjs": "1.11.20",
     "framer-motion": "12.38.0",
-    "graphql": "16.13.1",
+    "graphql": "16.13.2",
     "graphql-request": "7.4.0",
     "i18next": "25.9.0",
     "mtr-kit": "1.13.9",
