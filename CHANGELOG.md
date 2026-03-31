@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.46](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.45...v1.16.46) (2026-03-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.168.10 ([#1799](https://github.com/MTR-Today/mtr-today-web/issues/1799)) ([f61d3ba](https://github.com/MTR-Today/mtr-today-web/commit/f61d3baf369c496d1c3a46de761f8214b3a1fb31))
+* **deps:** update dependency react-i18next to v17.0.2 ([#1800](https://github.com/MTR-Today/mtr-today-web/issues/1800)) ([4cd390f](https://github.com/MTR-Today/mtr-today-web/commit/4cd390f752a178f3591e6ebecfb82a1e6ecdad7f))
+
 ## [1.16.45](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.44...v1.16.45) (2026-03-30)
 
 
