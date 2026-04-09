@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.50](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.49...v1.16.50) (2026-04-09)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v19.2.5 ([#1816](https://github.com/MTR-Today/mtr-today-web/issues/1816)) ([fe2df81](https://github.com/MTR-Today/mtr-today-web/commit/fe2df8142d35eacad8579df9fdb9d8e5b4d91a2e))
+
 ## [1.16.49](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.48...v1.16.49) (2026-04-08)
 
 
