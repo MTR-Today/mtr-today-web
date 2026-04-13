@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.53](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.52...v1.16.53) (2026-04-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.168.19 ([#1829](https://github.com/MTR-Today/mtr-today-web/issues/1829)) ([60026fb](https://github.com/MTR-Today/mtr-today-web/commit/60026fb944989177f7d6d6ac81c039553fd84f2a))
+
 ## [1.16.52](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.51...v1.16.52) (2026-04-13)
 
 
