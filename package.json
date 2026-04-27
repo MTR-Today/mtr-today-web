@@ -45,7 +45,7 @@
     "svg-round-corners": "0.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12",
+    "@biomejs/biome": "2.4.13",
     "@commitlint/cli": "20.5.0",
     "@marklai/shared-config-biome": "1.0.0",
     "@marklai/shared-config-commitlint": "1.0.1",
@@ -59,7 +59,7 @@
     "lefthook": "2.1.6",
     "sitemap": "9.0.1",
     "typescript": "6.0.3",
-    "vite": "8.0.8",
+    "vite": "8.0.10",
     "vite-plugin-pwa": "1.2.0"
   },
   "packageManager": "pnpm@10.33.2"
