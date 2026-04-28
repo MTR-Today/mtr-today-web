@@ -39,12 +39,7 @@ export const DragContainer: React.FC<Props> = ({
     <>
       {/* Scaling Canvas will crash IOS device */}
       {isIOS && bg}
-      <TransformWrapper
-        centerOnInit
-        minScale={fitScale}
-        alignmentAnimation={{ disabled: true, sizeX: 0, sizeY: 0 }}
-        centerZoomedOut
-      >
+      <TransformWrapper centerOnInit minScale={fitScale} centerZoomedOut>
         {({ zoomIn, zoomOut, centerView }) => (
           <>
             <TransformComponent
