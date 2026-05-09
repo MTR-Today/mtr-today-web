@@ -1,4 +1,4 @@
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - esbuild
-  - lefthook
+allowBuilds:
+  '@biomejs/biome': true
+  esbuild: true
+  lefthook: true
