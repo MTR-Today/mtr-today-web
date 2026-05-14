@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.68](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.67...v1.16.68) (2026-05-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.100.10 ([#1890](https://github.com/MTR-Today/mtr-today-web/issues/1890)) ([8829a0c](https://github.com/MTR-Today/mtr-today-web/commit/8829a0cae2a58f3e320da8e99c39079555e45953))
+
 ## [1.16.67](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.66...v1.16.67) (2026-05-14)
 
 
