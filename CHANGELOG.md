@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.80](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.79...v1.16.80) (2026-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dayjs to v1.11.21 ([#1930](https://github.com/MTR-Today/mtr-today-web/issues/1930)) ([4f8ea7a](https://github.com/MTR-Today/mtr-today-web/commit/4f8ea7a2deca85391a714c9f2ded34196b5c367a))
+* **deps:** update dependency i18next to v26.3.0 ([#1932](https://github.com/MTR-Today/mtr-today-web/issues/1932)) ([7b7544d](https://github.com/MTR-Today/mtr-today-web/commit/7b7544d1bec2a31310e3c152b585038a2b36516b))
+
 ## [1.16.79](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.78...v1.16.79) (2026-05-27)
 
 
