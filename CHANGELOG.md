@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.83](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.82...v1.16.83) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql to v16.14.1 ([#1941](https://github.com/MTR-Today/mtr-today-web/issues/1941)) ([d09388a](https://github.com/MTR-Today/mtr-today-web/commit/d09388abf55ef14564784b09d3e58a441aa7143c))
+
 ## [1.16.82](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.81...v1.16.82) (2026-06-02)
 
 
