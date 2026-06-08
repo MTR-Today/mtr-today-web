@@ -45,10 +45,10 @@
     "svg-round-corners": "0.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@biomejs/biome": "2.4.16",
     "@commitlint/cli": "21.0.2",
     "@marklai/shared-config-biome": "1.0.0",
-    "@marklai/shared-config-commitlint": "1.0.3",
+    "@marklai/shared-config-commitlint": "1.0.4",
     "@marklai/shared-config-typescript": "1.1.0",
     "@types/color": "4.2.1",
     "@types/ramda": "0.31.1",
@@ -56,10 +56,10 @@
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
     "@vitejs/plugin-react": "6.0.2",
-    "lefthook": "2.1.8",
+    "lefthook": "2.1.9",
     "sitemap": "9.0.1",
     "typescript": "6.0.3",
-    "vite": "8.0.14",
+    "vite": "8.0.16",
     "vite-plugin-pwa": "1.3.0"
   },
   "packageManager": "pnpm@11.5.1"
