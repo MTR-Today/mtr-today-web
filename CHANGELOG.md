@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.16.84](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.83...v1.16.84) (2026-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency i18next to v26.3.1 ([#1947](https://github.com/MTR-Today/mtr-today-web/issues/1947)) ([31c0f4b](https://github.com/MTR-Today/mtr-today-web/commit/31c0f4b018254c9e74cb27f2e8f19d3bb7329c50))
+* **deps:** update tanstack-query monorepo to v5.101.0 ([#1945](https://github.com/MTR-Today/mtr-today-web/issues/1945)) ([d12c4fe](https://github.com/MTR-Today/mtr-today-web/commit/d12c4fecc9b24e20fa1ccdb20af806e4e155c41d))
+* **deps:** update tanstack-router monorepo to v1.170.11 ([#1944](https://github.com/MTR-Today/mtr-today-web/issues/1944)) ([835e235](https://github.com/MTR-Today/mtr-today-web/commit/835e235734c4402ab6da146cdfd8fe046e0fbf0a))
+
 ## [1.16.83](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.82...v1.16.83) (2026-06-05)
 
 
