@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.86](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.85...v1.16.86) (2026-06-09)
+
+
+### Bug Fixes
+
+* **deps:** update tanstack-router monorepo to v1.170.15 ([#1953](https://github.com/MTR-Today/mtr-today-web/issues/1953)) ([113308c](https://github.com/MTR-Today/mtr-today-web/commit/113308c7c949e18bfb422ff8ccacc58ee86b5acf))
+
 ## [1.16.85](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.84...v1.16.85) (2026-06-09)
 
 
