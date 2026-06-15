@@ -48,7 +48,7 @@
     "@biomejs/biome": "2.4.16",
     "@commitlint/cli": "21.0.2",
     "@marklai/shared-config-biome": "1.0.0",
-    "@marklai/shared-config-commitlint": "1.0.4",
+    "@marklai/shared-config-commitlint": "1.0.5",
     "@marklai/shared-config-typescript": "1.1.0",
     "@types/color": "4.2.1",
     "@types/ramda": "0.31.1",
