@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.87](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.86...v1.16.87) (2026-06-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql to v16.14.2 ([#1956](https://github.com/MTR-Today/mtr-today-web/issues/1956)) ([b4c331d](https://github.com/MTR-Today/mtr-today-web/commit/b4c331d61e20cb89033d1be03bdb02ee86ce6792))
+* **deps:** update react monorepo ([#1959](https://github.com/MTR-Today/mtr-today-web/issues/1959)) ([93e905d](https://github.com/MTR-Today/mtr-today-web/commit/93e905d0f0cb9b38ca3879f7817a345211da8954))
+
 ## [1.16.86](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.85...v1.16.86) (2026-06-09)
 
 
