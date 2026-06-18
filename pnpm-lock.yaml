@@ -48,11 +48,11 @@ importers:
         specifier: 12.40.0
         version: 12.40.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       graphql:
-        specifier: 16.14.2
-        version: 16.14.2
+        specifier: 17.0.0
+        version: 17.0.0
       graphql-request:
         specifier: 7.4.0
-        version: 7.4.0(graphql@16.14.2)
+        version: 7.4.0(graphql@17.0.0)
       i18next:
         specifier: 26.3.1
         version: 26.3.1(typescript@6.0.3)
@@ -1854,9 +1854,9 @@ packages:
     peerDependencies:
       graphql: 14 - 16
 
-  graphql@16.14.2:
-    resolution: {integrity: sha512-Chq1s4CY7jmh8gO2qvLIJyfCDIN+EHLFW/9iShnp1z8FjBQMoodWP1kDC36VAMXXIvAjj4ARa7ntfAV2BrjsbA==}
-    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+  graphql@17.0.0:
+    resolution: {integrity: sha512-RSEgqrRNqHVGa46w2pmL9uTFkYPJiJbD5kksOvOaPLrKvBIidX/ttQVlWsR3+Ee8l+mNroC6darpcPIZeElbNg==}
+    engines: {node: ^22.0.0 || ^24.0.0 || ^25.0.0 || >=26.0.0}
 
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
@@ -3981,9 +3981,9 @@ snapshots:
 
   '@emotion/weak-memoize@0.4.0': {}
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@16.14.2)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@17.0.0)':
     dependencies:
-      graphql: 16.14.2
+      graphql: 17.0.0
 
   '@isaacs/cliui@9.0.0': {}
 
@@ -4835,12 +4835,12 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-request@7.4.0(graphql@16.14.2):
+  graphql-request@7.4.0(graphql@17.0.0):
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.14.2)
-      graphql: 16.14.2
+      '@graphql-typed-document-node/core': 3.2.0(graphql@17.0.0)
+      graphql: 17.0.0
 
-  graphql@16.14.2: {}
+  graphql@17.0.0: {}
 
   has-bigints@1.1.0: {}
 
