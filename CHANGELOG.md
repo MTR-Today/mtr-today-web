@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.89](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.88...v1.16.89) (2026-06-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql to v17.0.1 ([#1964](https://github.com/MTR-Today/mtr-today-web/issues/1964)) ([9e9e201](https://github.com/MTR-Today/mtr-today-web/commit/9e9e201ae051a6bc145b478bc8a7ebb58df3f9fb))
+* **deps:** update tanstack-router monorepo to v1.170.16 ([#1966](https://github.com/MTR-Today/mtr-today-web/issues/1966)) ([ea04b37](https://github.com/MTR-Today/mtr-today-web/commit/ea04b379a822e670c04e1f6523fe35be6a77d9ae))
+
 ## [1.16.88](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.87...v1.16.88) (2026-06-18)
 
 
