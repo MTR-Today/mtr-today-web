@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.91](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.90...v1.16.91) (2026-06-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v12.41.0 ([#1976](https://github.com/MTR-Today/mtr-today-web/issues/1976)) ([19017f1](https://github.com/MTR-Today/mtr-today-web/commit/19017f1c512ff10b40be9d5ebf0f6eac2ae94bac))
+
 ## [1.16.90](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.89...v1.16.90) (2026-06-26)
 
 
