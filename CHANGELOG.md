@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.16.96](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.95...v1.16.96) (2026-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v12.42.1 ([#1987](https://github.com/MTR-Today/mtr-today-web/issues/1987)) ([a71ff2e](https://github.com/MTR-Today/mtr-today-web/commit/a71ff2e2ea8563c76fb881a69eb166228242f8b4))
+* **deps:** update dependency i18next to v26.3.4 ([#1986](https://github.com/MTR-Today/mtr-today-web/issues/1986)) ([cc301a1](https://github.com/MTR-Today/mtr-today-web/commit/cc301a1b0cd4d6a3ddcc12fde32b22d3e464e330))
+* **deps:** update dependency react-icons to v5.7.0 ([#1989](https://github.com/MTR-Today/mtr-today-web/issues/1989)) ([3d8e5cc](https://github.com/MTR-Today/mtr-today-web/commit/3d8e5cca1fa9b844284341209743abb8e8cd8627))
+
 ## [1.16.95](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.94...v1.16.95) (2026-07-01)
 
 
