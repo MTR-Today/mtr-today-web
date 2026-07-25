@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.104](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.103...v1.16.104) (2026-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @react-hookz/web to v25.2.1 ([#2023](https://github.com/MTR-Today/mtr-today-web/issues/2023)) ([294eb7a](https://github.com/MTR-Today/mtr-today-web/commit/294eb7a9aca9983aa5f0d2326184306faf1ba048))
+
 ## [1.16.103](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.102...v1.16.103) (2026-07-24)
 
 
