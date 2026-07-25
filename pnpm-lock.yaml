@@ -27,8 +27,8 @@ importers:
         specifier: 11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@19.2.17)(react@19.2.8))(@types/react@19.2.17)(react@19.2.8)
       '@react-hookz/web':
-        specifier: 25.2.0
-        version: 25.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 25.2.1
+        version: 25.2.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@tanstack/react-query':
         specifier: 5.101.4
         version: 5.101.4(react@19.2.8)
@@ -971,8 +971,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@react-hookz/web@25.2.0':
-    resolution: {integrity: sha512-60iU7lGnZOjdkNVpu/8xNEnTPVQQ5ckauIEvsh9S+58v2j/mY1lhgNas+w+9UF8VoUhWC4/cpaxT64EUC6DgsQ==}
+  '@react-hookz/web@25.2.1':
+    resolution: {integrity: sha512-E8tw9nW0NrmBLEvNTMycHoKJGWVRnJE/2qyf259p9pWLZhCDPTUos/n7J/PR6Ep8pSrpVtTcqhYlgDZduOliog==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       js-cookie: ^3.0.5
@@ -1481,9 +1481,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@ver0/deep-equal@1.0.1':
-    resolution: {integrity: sha512-XSvL5wKXBZIv7fflMqhQx936sRpEtzxeV25xAEt0rLLXzbF6RCQaRA1jrVIn8JCubMyn/y0TaidphUtilLzl1A==}
-    engines: {node: '>=18'}
+  '@ver0/deep-equal@2.0.1':
+    resolution: {integrity: sha512-JVSbDwzKASqorJum+ATnnZNIkni4K4G3aeJDsTgEhHcm0CiCwAVaLbhFByeNAir1HExEWjHxhIXVR+d8ZzeJGw==}
+    engines: {node: '>=20'}
 
   '@vitejs/plugin-react@6.0.3':
     resolution: {integrity: sha512-vmFvco5/QuC2f9Oj+wTk0+9XeDFkHxSamwZKYc7MxYwKICfvUvlMhqKI0VuICPltGqh1neqBKDvO4kes1ya8vg==}
@@ -4162,9 +4162,9 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@react-hookz/web@25.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@react-hookz/web@25.2.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
-      '@ver0/deep-equal': 1.0.1
+      '@ver0/deep-equal': 2.0.1
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
@@ -4497,7 +4497,7 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@ver0/deep-equal@1.0.1': {}
+  '@ver0/deep-equal@2.0.1': {}
 
   '@vitejs/plugin-react@6.0.3(vite@8.1.5(@types/node@24.13.3)(jiti@2.6.1)(terser@5.49.0))':
     dependencies:
