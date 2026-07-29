@@ -27,8 +27,8 @@ importers:
         specifier: 11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@19.2.17)(react@19.2.8))(@types/react@19.2.17)(react@19.2.8)
       '@react-hookz/web':
-        specifier: 26.0.0
-        version: 26.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 26.1.0
+        version: 26.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@tanstack/react-query':
         specifier: 5.101.4
         version: 5.101.4(react@19.2.8)
@@ -971,8 +971,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@react-hookz/web@26.0.0':
-    resolution: {integrity: sha512-N/rYwM+UStzG8UoiQmqQDhEWzLilXCrhyGsIV5eSyKdn/zcVxLokoAITXsVb0ul3uQuRnbFCZ0VObJAwhLyEsw==}
+  '@react-hookz/web@26.1.0':
+    resolution: {integrity: sha512-GKErtGGoaPNWc8rp4SE/rVgJT1kJ/3s6n3q+Vs6DM4TRVsLqbsIGU9u3jTwcV3tCYgxAwz9DqJZxCaal89Lxqg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       js-cookie: ^3.0.5
@@ -4141,7 +4141,7 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@react-hookz/web@26.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@react-hookz/web@26.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@ver0/deep-equal': 2.0.1
       react: 19.2.8
