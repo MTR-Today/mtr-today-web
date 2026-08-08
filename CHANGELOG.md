@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.109](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.108...v1.16.109) (2026-08-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.170.19 ([#2046](https://github.com/MTR-Today/mtr-today-web/issues/2046)) ([7642e43](https://github.com/MTR-Today/mtr-today-web/commit/7642e438fdd0187a70f9f2b4259e911192a6d7e4))
+* **deps:** update dependency react-zoom-pan-pinch to v4.0.4 ([#2045](https://github.com/MTR-Today/mtr-today-web/issues/2045)) ([2ba769f](https://github.com/MTR-Today/mtr-today-web/commit/2ba769f51ab9c463451796fd6a6ff91e1a1b7e2a))
+
 ## [1.16.108](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.107...v1.16.108) (2026-08-03)
 
 
