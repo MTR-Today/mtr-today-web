@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.126](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.125...v1.16.126) (2026-09-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency motion to v13.2.0 ([#2110](https://github.com/MTR-Today/mtr-today-web/issues/2110)) ([1a43765](https://github.com/MTR-Today/mtr-today-web/commit/1a43765ab6e45126f126d9ef5cacbb833234ebf3))
+* **deps:** update dependency react-zoom-pan-pinch to v4.1.1 ([#2108](https://github.com/MTR-Today/mtr-today-web/issues/2108)) ([6c55ef9](https://github.com/MTR-Today/mtr-today-web/commit/6c55ef94ae6ebc3f627e33c1cea54950070ba931))
+
 ## [1.16.125](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.124...v1.16.125) (2026-09-04)
 
 
