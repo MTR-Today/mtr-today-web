@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.127](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.126...v1.16.127) (2026-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency i18next to v26.4.2 ([#2115](https://github.com/MTR-Today/mtr-today-web/issues/2115)) ([098ec24](https://github.com/MTR-Today/mtr-today-web/commit/098ec245082203f9e914cbf5199b4b55e27985b2))
+* **deps:** update dependency react-zoom-pan-pinch to v4.2.0 ([#2113](https://github.com/MTR-Today/mtr-today-web/issues/2113)) ([53431a7](https://github.com/MTR-Today/mtr-today-web/commit/53431a76f435535d79880f8aad61182097a818eb))
+
 ## [1.16.126](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.125...v1.16.126) (2026-09-05)
 
 
