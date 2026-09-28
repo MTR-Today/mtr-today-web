@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.16.134](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.133...v1.16.134) (2026-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.170.39 ([#2148](https://github.com/MTR-Today/mtr-today-web/issues/2148)) ([0b40d64](https://github.com/MTR-Today/mtr-today-web/commit/0b40d64c4f257b034ebc76f6aa738fb221790586))
+* **deps:** update dependency motion to v13.4.2 ([#2150](https://github.com/MTR-Today/mtr-today-web/issues/2150)) ([633c96b](https://github.com/MTR-Today/mtr-today-web/commit/633c96bc72c7f252060160745feddbc25883fe0b))
+* **deps:** update dependency motion to v13.4.3 ([#2151](https://github.com/MTR-Today/mtr-today-web/issues/2151)) ([7b8cc15](https://github.com/MTR-Today/mtr-today-web/commit/7b8cc1510a615642f2384c57c89ed3fda94449ab))
+
 ## [1.16.133](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.132...v1.16.133) (2026-09-26)
 
 
