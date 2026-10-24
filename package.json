@@ -62,5 +62,5 @@
     "vite": "8.3.4",
     "vite-plugin-pwa": "2.0.0"
   },
-  "packageManager": "pnpm@12.14.0"
+  "packageManager": "pnpm@12.15.0"
 }
