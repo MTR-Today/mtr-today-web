@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.16.152](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.151...v1.16.152) (2026-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-router to v1.170.46 ([#2234](https://github.com/MTR-Today/mtr-today-web/issues/2234)) ([59524cf](https://github.com/MTR-Today/mtr-today-web/commit/59524cf6cdac04e297a518a6a176c7cb84d886bc))
+* **deps:** update dependency i18next to v26.5.4 ([#2226](https://github.com/MTR-Today/mtr-today-web/issues/2226)) ([5855ef2](https://github.com/MTR-Today/mtr-today-web/commit/5855ef202d0154ec2661bc6a02a5882d52682a4e))
+* **deps:** update dependency i18next to v26.5.5 ([#2230](https://github.com/MTR-Today/mtr-today-web/issues/2230)) ([cb5abb2](https://github.com/MTR-Today/mtr-today-web/commit/cb5abb2346877a08c4ebcfef0b5f56c76878b73e))
+* **deps:** update dependency i18next to v26.5.6 ([#2235](https://github.com/MTR-Today/mtr-today-web/issues/2235)) ([a99f95c](https://github.com/MTR-Today/mtr-today-web/commit/a99f95ce3574b1ab65a73e2eb9ce00677f534027))
+* **deps:** update dependency motion to v14.5.0 ([#2227](https://github.com/MTR-Today/mtr-today-web/issues/2227)) ([4b2fd65](https://github.com/MTR-Today/mtr-today-web/commit/4b2fd6579857df70730daf08437a2e5bbb1c67a3))
+* **deps:** update dependency motion to v14.6.0 ([#2232](https://github.com/MTR-Today/mtr-today-web/issues/2232)) ([a7a9169](https://github.com/MTR-Today/mtr-today-web/commit/a7a916973e9488bdf1b4547168573bfb35a4d56f))
+* **deps:** update dependency react-i18next to v17.1.1 ([#2231](https://github.com/MTR-Today/mtr-today-web/issues/2231)) ([5641726](https://github.com/MTR-Today/mtr-today-web/commit/564172615d8e9c4578aef83a6f748c37531a0101))
+* **deps:** update dependency react-i18next to v17.1.3 ([#2233](https://github.com/MTR-Today/mtr-today-web/issues/2233)) ([cf47c29](https://github.com/MTR-Today/mtr-today-web/commit/cf47c2954c9a75eb8a3bf99849a5764bbf5ab43f))
+* **deps:** update dependency react-i18next to v17.1.4 ([#2239](https://github.com/MTR-Today/mtr-today-web/issues/2239)) ([8d67e5a](https://github.com/MTR-Today/mtr-today-web/commit/8d67e5aa18c7a15b78c9f81569903d09c4ea59c2))
+
 ## [1.16.151](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.150...v1.16.151) (2026-10-23)
 
 
