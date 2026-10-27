@@ -2,6 +2,6 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["@marklai/shared-config-biome"],
   "files": {
-    "includes": ["**", "!CHANGELOG.md"]
+    "includes": ["**", "!CHANGELOG.md", "!pnpm-lock.yaml"]
   }
 }
