@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.170](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.169...v1.16.170) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency motion to v14.11.1 ([#2296](https://github.com/MTR-Today/mtr-today-web/issues/2296)) ([5bf9c3d](https://github.com/MTR-Today/mtr-today-web/commit/5bf9c3ddb639eb7d8741522f0dc68e29c78277a5))
+
 ## [1.16.169](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.168...v1.16.169) (2026-11-12)
 
 
