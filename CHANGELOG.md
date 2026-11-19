@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.176](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.175...v1.16.176) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency i18next to v27.1.3 ([#2314](https://github.com/MTR-Today/mtr-today-web/issues/2314)) ([e420367](https://github.com/MTR-Today/mtr-today-web/commit/e420367bfefe1631d785280ff4ca27fddd0c15fa))
+* **deps:** update dependency react-i18next to v18.0.2 ([#2315](https://github.com/MTR-Today/mtr-today-web/issues/2315)) ([91a0ba5](https://github.com/MTR-Today/mtr-today-web/commit/91a0ba529561cbab920f03e31bdb9d100e8286af))
+
 ## [1.16.175](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.174...v1.16.175) (2026-11-18)
 
 
