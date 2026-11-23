@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.16.179](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.178...v1.16.179) (2026-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.108.1 ([#2326](https://github.com/MTR-Today/mtr-today-web/issues/2326)) ([c9b4d59](https://github.com/MTR-Today/mtr-today-web/commit/c9b4d597bf4c8382ddf9fbe4b73be575741090d5))
+* **deps:** update dependency i18next to v27.2.2 ([#2322](https://github.com/MTR-Today/mtr-today-web/issues/2322)) ([700a0a6](https://github.com/MTR-Today/mtr-today-web/commit/700a0a644fb3edc37761aab5e3614f277ce13a39))
+* **deps:** update dependency react-i18next to v18.0.3 ([#2323](https://github.com/MTR-Today/mtr-today-web/issues/2323)) ([3e3eef4](https://github.com/MTR-Today/mtr-today-web/commit/3e3eef48500d133d8ad3138d84ecdd52b11e5ce6))
+* **deps:** update dependency react-zoom-pan-pinch to v4.4.0 ([#2325](https://github.com/MTR-Today/mtr-today-web/issues/2325)) ([ee09570](https://github.com/MTR-Today/mtr-today-web/commit/ee09570e4c6bfd93331bab5dc8e6400cc9b637a2))
+
 ## [1.16.178](https://github.com/MTR-Today/mtr-today-web/compare/v1.16.177...v1.16.178) (2026-11-22)
 
 
